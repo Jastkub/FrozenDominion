@@ -1,0 +1,52 @@
+{
+  "display": {
+    "icon": {
+      "item": "frozen_dominion:everfrost_chestplate"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.armor.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.armor.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "suited": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frozen_dominion:everfrost_helmet"
+            ]
+          },
+          {
+            "items": [
+              "frozen_dominion:everfrost_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "frozen_dominion:everfrost_leggings"
+            ]
+          },
+          {
+            "items": [
+              "frozen_dominion:everfrost_boots"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "frozen_dominion:ingot",
+  "requirements": [
+    [
+      "suited"
+    ]
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "frozen_dominion:block/frosted_stone_bricks"
+      },
+      {
+        "model": "frozen_dominion:block/frosted_stone_bricks_1"
+      },
+      {
+        "model": "frozen_dominion:block/frosted_stone_bricks_2"
+      }
+    ]
+  }
+}

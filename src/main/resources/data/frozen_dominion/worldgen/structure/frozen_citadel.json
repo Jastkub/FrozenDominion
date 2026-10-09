@@ -1,0 +1,136 @@
+{
+  "type": "frozen_dominion:citadel",
+  "biomes": "#frozen_dominion:has_structure/frozen_citadel",
+  "step": "top_layer_modification",
+  "terrain_adaptation": "none",
+  "spawn_overrides": {
+    "monster": {
+      "bounding_box": "piece",
+      "spawns": []
+    }
+  },
+  "size_x": 240,
+  "size_z": 240,
+  "terrain_level": 116,
+  "tiles": [
+    {
+      "name": "frozen_dominion:citadel/gb_0_3",
+      "x": 0,
+      "z": 144
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_0_4",
+      "x": 0,
+      "z": 192
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_1_0",
+      "x": 48,
+      "z": 0
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_1_1",
+      "x": 48,
+      "z": 48
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_1_2",
+      "x": 48,
+      "z": 96
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_1_3",
+      "x": 48,
+      "z": 144
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_1_4",
+      "x": 48,
+      "z": 192
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_2_0",
+      "x": 96,
+      "z": 0
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_2_1",
+      "x": 96,
+      "z": 48
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_2_2",
+      "x": 96,
+      "z": 96
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_2_3",
+      "x": 96,
+      "z": 144
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_2_4",
+      "x": 96,
+      "z": 192
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_3_0",
+      "x": 144,
+      "z": 0
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_3_1",
+      "x": 144,
+      "z": 48
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_3_2",
+      "x": 144,
+      "z": 96
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_3_3",
+      "x": 144,
+      "z": 144
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_3_4",
+      "x": 144,
+      "z": 192
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_4_0",
+      "x": 192,
+      "z": 0
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_4_1",
+      "x": 192,
+      "z": 48
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_4_2",
+      "x": 192,
+      "z": 96
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_4_3",
+      "x": 192,
+      "z": 144
+    },
+    {
+      "name": "frozen_dominion:citadel/gb_4_4",
+      "x": 192,
+      "z": 192
+    }
+  ],
+  "shafts": [
+    {
+      "x0": 110,
+      "z0": 3,
+      "x1": 234,
+      "z1": 50,
+      "floor": 2
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "frozen_dominion:block/chained_chest"
+    },
+    "facing=south": {
+      "model": "frozen_dominion:block/chained_chest"
+    },
+    "facing=east": {
+      "model": "frozen_dominion:block/chained_chest"
+    },
+    "facing=west": {
+      "model": "frozen_dominion:block/chained_chest"
+    }
+  }
+}

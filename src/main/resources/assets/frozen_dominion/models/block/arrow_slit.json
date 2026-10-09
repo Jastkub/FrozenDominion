@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "frozen_dominion:block/arrow_slit",
+    "side": "minecraft:block/stone_bricks",
+    "top": "minecraft:block/stone_bricks"
+  }
+}

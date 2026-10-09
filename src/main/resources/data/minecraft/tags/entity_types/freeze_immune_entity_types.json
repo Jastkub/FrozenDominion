@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "frozen_dominion:velkhar",
+    "frozen_dominion:velkhar_clone",
+    "frozen_dominion:frostbound_sentinel",
+    "frozen_dominion:rimeweaver",
+    "frozen_dominion:stillbow",
+    "frozen_dominion:frostmaw",
+    "frozen_dominion:vault_warden",
+    "frozen_dominion:frost_skeleton",
+    "frozen_dominion:lamplighter"
+  ]
+}

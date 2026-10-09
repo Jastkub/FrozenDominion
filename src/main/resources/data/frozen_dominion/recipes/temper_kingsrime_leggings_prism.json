@@ -1,0 +1,20 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:kingsrime_leggings"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:rimeweaver_prism"
+  },
+  "base": {
+    "item": "frozen_dominion:kingsrime_leggings"
+  },
+  "result": {
+    "item": "frozen_dominion:kingsrime_leggings",
+    "nbt": {
+      "frozen_dominion:temper": "prism"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "frozen_dominion:kingsrime_helmet",
+    "frozen_dominion:kingsrime_chestplate",
+    "frozen_dominion:kingsrime_leggings",
+    "frozen_dominion:kingsrime_boots"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:kingsrime_chestplate"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:attuned_prism"
+  },
+  "base": {
+    "item": "frozen_dominion:kingsrime_chestplate"
+  },
+  "result": {
+    "item": "frozen_dominion:kingsrime_chestplate",
+    "nbt": {
+      "frozen_dominion:temper": "attuned"
+    }
+  }
+}

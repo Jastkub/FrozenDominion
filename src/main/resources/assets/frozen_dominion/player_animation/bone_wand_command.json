@@ -1,0 +1,91 @@
+{
+ "name": "bone_wand_command",
+ "author": "Frozen Dominion",
+ "description": "Command: point the wand at the foe",
+ "emote": {
+  "isLoop": false,
+  "returnTick": 0,
+  "beginTick": 0,
+  "endTick": 16,
+  "stopTick": 20,
+  "degrees": true,
+  "moves": [
+   {
+    "tick": 0,
+    "easing": "EASEOUTQUAD",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    },
+    "body": {
+     "pitch": 0.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 3,
+    "easing": "EASEOUTBACK",
+    "rightArm": {
+     "pitch": -42.0,
+     "yaw": -4.0,
+     "roll": 2.0
+    },
+    "leftArm": {
+     "pitch": 34.0,
+     "yaw": 0.0,
+     "roll": -22.0
+    },
+    "body": {
+     "pitch": 0.0,
+     "yaw": -12.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 8,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -46.0,
+     "yaw": -4.0,
+     "roll": 2.0
+    },
+    "leftArm": {
+     "pitch": 28.0,
+     "yaw": 0.0,
+     "roll": -18.0
+    },
+    "body": {
+     "pitch": 0.0,
+     "yaw": -9.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 16,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    },
+    "body": {
+     "pitch": 0.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   }
+  ]
+ }
+}

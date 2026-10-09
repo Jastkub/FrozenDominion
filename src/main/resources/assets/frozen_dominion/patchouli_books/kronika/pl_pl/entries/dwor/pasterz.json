@@ -1,0 +1,31 @@
+{
+  "name": "Pasterz Cieni",
+  "icon": "frozen_dominion:shepherd_bell",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_pasterz.png"
+      ],
+      "title": "Pasterz",
+      "border": true,
+      "text": "Poza światłem - tylko cień."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Jego sala to ogniska i ciemność. Gasi ogień, a w ciemności on i jego stado są groźniejsi. Światełka na jego barkach to stado - gasną, gdy je przetrzebisz.$(br2)Zgaszone ognisko chwilę się tli i nie da się go od razu rozpalić."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_puls.png"
+      ],
+      "title": "Puls",
+      "border": true,
+      "text": "Kto stoi na ziemi, ten ogłuchnie."
+    }
+  ],
+  "advancement": "frozen_dominion:met/shade_shepherd"
+}

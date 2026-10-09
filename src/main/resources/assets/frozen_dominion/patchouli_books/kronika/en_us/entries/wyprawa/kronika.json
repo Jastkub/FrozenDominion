@@ -1,0 +1,16 @@
+{
+  "name": "About this chronicle",
+  "icon": "frozen_dominion:everfrost_shard",
+  "category": "frozen_dominion:wyprawa",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Gathered here is what three expeditions left behind: letters, sketches, notes in the margins. Not all of it agrees, and not all of it is certain."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The chronicle opens to you slowly. When you see something for the first time, come back - someone has probably written of it already."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "frozen_dominion:font/monstrosity_sketch.png",
+      "ascent": 7,
+      "height": 96,
+      "chars": [
+        "\ue000\ue001"
+      ]
+    }
+  ]
+}

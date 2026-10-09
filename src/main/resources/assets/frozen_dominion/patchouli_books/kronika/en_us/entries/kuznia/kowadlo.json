@@ -1,0 +1,34 @@
+{
+  "name": "The Frost Anvil",
+  "icon": "frozen_dominion:frost_anvil",
+  "category": "frozen_dominion:kuznia",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Frost Anvils stand here and there by the way. A grid as on a table - and one socket apart, for what changes a thing from within. On the anvil you also apply the books you find."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "frozen_dominion:everfrost_crystal",
+      "text": ""
+    },
+    {
+      "type": "frozen_dominion:forging",
+      "header": "",
+      "text": "",
+      "core": "minecraft:air",
+      "result": "frozen_dominion:everfrost_ingot#2",
+      "i0": "frozen_dominion:everfrost_crystal",
+      "i1": "minecraft:gold_ingot",
+      "i2": "frozen_dominion:everfrost_crystal",
+      "i3": "minecraft:gold_ingot",
+      "i4": "frozen_dominion:nest_shard",
+      "i5": "minecraft:gold_ingot",
+      "i6": "frozen_dominion:everfrost_crystal",
+      "i7": "minecraft:gold_ingot",
+      "i8": "frozen_dominion:everfrost_crystal"
+    }
+  ],
+  "advancement": "frozen_dominion:shard"
+}

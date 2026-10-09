@@ -1,0 +1,81 @@
+{
+  "name": "The court's weapons",
+  "icon": "frozen_dominion:crown_shard",
+  "category": "frozen_dominion:kuznia",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Each of the seven courtiers leaves behind something found nowhere else. From that and from shards of the crown the smiths forged weapons the expedition only heard of.$(br2)The Everfrost sword and bow went onto the anvil as they were, and were forged on."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Read the weapons' descriptions holding Shift."
+    },
+    {
+      "type": "frozen_dominion:forging",
+      "header": "",
+      "text": "",
+      "core": "frozen_dominion:crown_shard",
+      "result": "frozen_dominion:throne_bane",
+      "i0": "frozen_dominion:aurochs_horn",
+      "i1": "frozen_dominion:overseer_hammerhead",
+      "i2": "frozen_dominion:kingsrime_ingot",
+      "i3": "frozen_dominion:kingsrime_ingot",
+      "i4": "frozen_dominion:kingsrime_ingot",
+      "i5": "frozen_dominion:kingsrime_ingot",
+      "i6": "minecraft:air",
+      "i7": "minecraft:air",
+      "i8": "minecraft:air"
+    },
+    {
+      "type": "frozen_dominion:forging",
+      "header": "",
+      "text": "",
+      "core": "frozen_dominion:crown_shard",
+      "result": "frozen_dominion:sovereigns_lament",
+      "i0": "frozen_dominion:kingsrime_sword",
+      "i1": "frozen_dominion:drowned_braid",
+      "i2": "frozen_dominion:shepherd_bell",
+      "i3": "frozen_dominion:kingsrime_ingot",
+      "i4": "frozen_dominion:kingsrime_ingot",
+      "i5": "minecraft:air",
+      "i6": "minecraft:air",
+      "i7": "minecraft:air",
+      "i8": "minecraft:air"
+    },
+    {
+      "type": "frozen_dominion:forging",
+      "header": "",
+      "text": "",
+      "core": "frozen_dominion:crown_shard",
+      "result": "frozen_dominion:hollow_kings_staff",
+      "i0": "frozen_dominion:priestess_crystal",
+      "i1": "frozen_dominion:shepherd_bell",
+      "i2": "frozen_dominion:drowned_braid",
+      "i3": "frozen_dominion:kingsrime_ingot",
+      "i4": "frozen_dominion:kingsrime_ingot",
+      "i5": "frozen_dominion:kingsrime_ingot",
+      "i6": "frozen_dominion:kingsrime_ingot",
+      "i7": "minecraft:air",
+      "i8": "minecraft:air"
+    },
+    {
+      "type": "frozen_dominion:forging",
+      "header": "",
+      "text": "",
+      "core": "frozen_dominion:crown_shard",
+      "result": "frozen_dominion:last_watch_bow",
+      "i0": "frozen_dominion:kingsrime_bow",
+      "i1": "frozen_dominion:lantern_lens",
+      "i2": "frozen_dominion:turnkey_chain",
+      "i3": "frozen_dominion:kingsrime_ingot",
+      "i4": "frozen_dominion:kingsrime_ingot",
+      "i5": "minecraft:air",
+      "i6": "minecraft:air",
+      "i7": "minecraft:air",
+      "i8": "minecraft:air"
+    }
+  ],
+  "advancement": "frozen_dominion:shard"
+}

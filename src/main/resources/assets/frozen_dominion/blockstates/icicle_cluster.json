@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "vertical_direction=down": {
+      "model": "frozen_dominion:block/icicle_cluster"
+    },
+    "vertical_direction=up": {
+      "model": "frozen_dominion:block/icicle_cluster",
+      "x": 180
+    }
+  }
+}

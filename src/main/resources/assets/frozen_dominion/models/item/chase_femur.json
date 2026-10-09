@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "frozen_dominion:item/chase_femur"
+  }
+}

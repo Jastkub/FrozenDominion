@@ -1,0 +1,21 @@
+{
+  "name": "The dodge roll",
+  "icon": "minecraft:feather",
+  "category": "frozen_dominion:wyprawa",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/roll.png"
+      ],
+      "title": "Through the blow, not away",
+      "border": true,
+      "text": "Key $(k:key.frozen_dominion.roll)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The veterans said you cannot run from a colossus's blow - but you can roll through it. For that short moment nothing aimed at you lands. The cold, water and a fall still do.$(br2)Hungry and spent, you will not roll."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "pattern": [
+    "ICI"
+  ],
+  "key": {
+    "I": {
+      "item": "frozen_dominion:everfrost_ingot"
+    },
+    "C": {
+      "item": "frozen_dominion:sovereign_ice"
+    }
+  },
+  "result": {
+    "item": "frozen_dominion:everfrost_shield"
+  }
+}

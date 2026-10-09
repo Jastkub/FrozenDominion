@@ -1,0 +1,26 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "textures": {
+    "particle": "frozen_dominion:item/hollow_kings_staff"
+  },
+  "base": {
+    "parent": "frozen_dominion:item/hollow_kings_staff_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "frozen_dominion:item/hollow_kings_staff"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "frozen_dominion:requiem": 1
+      },
+      "model": "frozen_dominion:item/hollow_kings_staff_requiem"
+    }
+  ]
+}

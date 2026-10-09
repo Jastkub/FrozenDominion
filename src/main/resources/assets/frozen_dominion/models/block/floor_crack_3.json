@@ -1,0 +1,1078 @@
+{
+ "parent": "block/block",
+ "ambientocclusion": false,
+ "textures": {
+  "chasm": "frozen_dominion:block/scar_chasm",
+  "vein": "frozen_dominion:block/scar_vein",
+  "shard": "frozen_dominion:block/scar_shard",
+  "particle": "frozen_dominion:block/scar_shard"
+ },
+ "elements": [
+  {
+   "from": [
+    -2.85,
+    0.02,
+    2.32
+   ],
+   "to": [
+    2.99,
+    0.02,
+    4.38
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": 45.0,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    0.25,
+    0.024,
+    4.26
+   ],
+   "to": [
+    7.04,
+    0.024,
+    7.53
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": 22.5,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    4.96,
+    0.028,
+    4.82
+   ],
+   "to": [
+    12.12,
+    0.028,
+    8.55
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   }
+  },
+  {
+   "from": [
+    10.97,
+    0.02,
+    6.46
+   ],
+   "to": [
+    17.69,
+    0.02,
+    9.73
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": 22.5,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    16.29,
+    0.024,
+    7.07
+   ],
+   "to": [
+    24.28,
+    0.024,
+    9.12
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": 22.5,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    2.73,
+    0.028,
+    8.86
+   ],
+   "to": [
+    8.3,
+    0.028,
+    10.32
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": -22.5,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    7.54,
+    0.02,
+    8.89
+   ],
+   "to": [
+    14.66,
+    0.02,
+    10.35
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#chasm"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": -45.0,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    -2.32,
+    0.055,
+    3.0
+   ],
+   "to": [
+    2.46,
+    0.055,
+    3.7
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": 45.0,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    0.86,
+    0.059,
+    5.34
+   ],
+   "to": [
+    6.43,
+    0.059,
+    6.45
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": 22.5,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    5.6,
+    0.063,
+    6.05
+   ],
+   "to": [
+    11.48,
+    0.063,
+    7.32
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   }
+  },
+  {
+   "from": [
+    11.57,
+    0.055,
+    7.54
+   ],
+   "to": [
+    17.09,
+    0.055,
+    8.65
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": 22.5,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    17.01,
+    0.059,
+    7.75
+   ],
+   "to": [
+    23.56,
+    0.059,
+    8.45
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": 22.5,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    3.23,
+    0.063,
+    9.34
+   ],
+   "to": [
+    7.8,
+    0.063,
+    9.84
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": -22.5,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    8.18,
+    0.055,
+    9.37
+   ],
+   "to": [
+    14.02,
+    0.055,
+    9.87
+   ],
+   "shade": false,
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vein"
+    }
+   },
+   "forge_data": {
+    "block_light": 15,
+    "sky_light": 15,
+    "ambient_occlusion": false
+   },
+   "rotation": {
+    "origin": [
+     8.0,
+     0,
+     8.0
+    ],
+    "axis": "y",
+    "angle": -45.0,
+    "rescale": false
+   }
+  },
+  {
+   "from": [
+    7.53,
+    0.0,
+    10.87
+   ],
+   "to": [
+    9.31,
+    4.17,
+    13.05
+   ],
+   "rotation": {
+    "origin": [
+     8.42,
+     0.0,
+     11.96
+    ],
+    "axis": "z",
+    "angle": -22.5,
+    "rescale": true
+   },
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      3.54,
+      8.34
+     ],
+     "texture": "#shard"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      3.54,
+      8.34
+     ],
+     "texture": "#shard"
+    },
+    "east": {
+     "uv": [
+      0,
+      0,
+      4.37,
+      8.34
+     ],
+     "texture": "#shard"
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      4.37,
+      8.34
+     ],
+     "texture": "#shard"
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      3.54,
+      4.37
+     ],
+     "texture": "#shard"
+    }
+   }
+  },
+  {
+   "from": [
+    7.45,
+    0.0,
+    4.67
+   ],
+   "to": [
+    9.63,
+    3.45,
+    6.53
+   ],
+   "rotation": {
+    "origin": [
+     8.54,
+     0.0,
+     5.6
+    ],
+    "axis": "x",
+    "angle": 22.5,
+    "rescale": true
+   },
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      4.35,
+      6.9
+     ],
+     "texture": "#shard"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      4.35,
+      6.9
+     ],
+     "texture": "#shard"
+    },
+    "east": {
+     "uv": [
+      0,
+      0,
+      3.74,
+      6.9
+     ],
+     "texture": "#shard"
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      3.74,
+      6.9
+     ],
+     "texture": "#shard"
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      4.35,
+      3.74
+     ],
+     "texture": "#shard"
+    }
+   }
+  },
+  {
+   "from": [
+    0.3,
+    0.0,
+    3.32
+   ],
+   "to": [
+    3.3,
+    3.79,
+    5.52
+   ],
+   "rotation": {
+    "origin": [
+     1.8,
+     0.0,
+     4.42
+    ],
+    "axis": "z",
+    "angle": -22.5,
+    "rescale": true
+   },
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      6.0,
+      7.58
+     ],
+     "texture": "#shard"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      6.0,
+      7.58
+     ],
+     "texture": "#shard"
+    },
+    "east": {
+     "uv": [
+      0,
+      0,
+      4.4,
+      7.58
+     ],
+     "texture": "#shard"
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      4.4,
+      7.58
+     ],
+     "texture": "#shard"
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      6.0,
+      4.4
+     ],
+     "texture": "#shard"
+    }
+   }
+  },
+  {
+   "from": [
+    0.87,
+    0.0,
+    4.08
+   ],
+   "to": [
+    3.43,
+    5.8,
+    6.46
+   ],
+   "rotation": {
+    "origin": [
+     2.15,
+     0.0,
+     5.27
+    ],
+    "axis": "z",
+    "angle": 45,
+    "rescale": true
+   },
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      5.14,
+      11.61
+     ],
+     "texture": "#shard"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      5.14,
+      11.61
+     ],
+     "texture": "#shard"
+    },
+    "east": {
+     "uv": [
+      0,
+      0,
+      4.74,
+      11.61
+     ],
+     "texture": "#shard"
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      4.74,
+      11.61
+     ],
+     "texture": "#shard"
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      5.14,
+      4.74
+     ],
+     "texture": "#shard"
+    }
+   }
+  },
+  {
+   "from": [
+    7.59,
+    0.0,
+    5.88
+   ],
+   "to": [
+    9.49,
+    4.89,
+    7.8
+   ],
+   "rotation": {
+    "origin": [
+     8.54,
+     0.0,
+     6.84
+    ],
+    "axis": "z",
+    "angle": -22.5,
+    "rescale": true
+   },
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      3.8,
+      9.78
+     ],
+     "texture": "#shard"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      3.8,
+      9.78
+     ],
+     "texture": "#shard"
+    },
+    "east": {
+     "uv": [
+      0,
+      0,
+      3.84,
+      9.78
+     ],
+     "texture": "#shard"
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      3.84,
+      9.78
+     ],
+     "texture": "#shard"
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      3.8,
+      3.84
+     ],
+     "texture": "#shard"
+    }
+   }
+  },
+  {
+   "from": [
+    7.93,
+    4.29,
+    6.25
+   ],
+   "to": [
+    9.15,
+    8.05,
+    7.43
+   ],
+   "rotation": {
+    "origin": [
+     8.54,
+     0.0,
+     6.84
+    ],
+    "axis": "z",
+    "angle": -22.5,
+    "rescale": true
+   },
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      2.44,
+      7.52
+     ],
+     "texture": "#shard"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      2.44,
+      7.52
+     ],
+     "texture": "#shard"
+    },
+    "east": {
+     "uv": [
+      0,
+      0,
+      2.37,
+      7.52
+     ],
+     "texture": "#shard"
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      2.37,
+      7.52
+     ],
+     "texture": "#shard"
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      2.44,
+      2.37
+     ],
+     "texture": "#shard"
+    }
+   }
+  }
+ ]
+}

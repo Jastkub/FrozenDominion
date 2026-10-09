@@ -1,0 +1,26 @@
+# Adres każdego obrazka po wgraniu na CurseForge (zakładka Images). Kolejność jak w opisie.
+banner.png = https://media.forgecdn.net/attachments/description/1627721/description_ea73eb7c-b373-4e71-bb7a-3534d666ca7a.png
+garrison.png = https://media.forgecdn.net/attachments/description/1627721/description_6efbac9a-44a0-424d-81cc-a357e0873c76.png
+court_turnkey.png = https://media.forgecdn.net/attachments/description/1627721/description_09d6fda0-cbc5-4965-8e35-2330c807f8cd.png
+court_rime_priestess.png = https://media.forgecdn.net/attachments/description/1627721/description_32c9838b-5c30-4cf3-a18c-3a9f5221f16f.png
+court_lamplighter.png = https://media.forgecdn.net/attachments/description/1627721/description_9e834dd3-a78c-4b08-a1f3-2931d168a3bb.png
+court_drowned_lady.png = https://media.forgecdn.net/attachments/description/1627721/description_ede46444-f54e-4017-bec9-0a3defa7a309.png
+court_ice_aurochs.png = https://media.forgecdn.net/attachments/description/1627721/description_8e6219b8-db8d-4eed-965f-17c675aa6acd.png
+court_shade_shepherd.png = https://media.forgecdn.net/attachments/description/1627721/description_60a329a6-5669-4a72-8248-aac03f0f245d.png
+court_forge_overseer.png = https://media.forgecdn.net/attachments/description/1627721/description_7c0ccc50-1b75-4bb8-b8f1-e7551c3fbe79.png
+court_bone_lord.png = https://media.forgecdn.net/attachments/description/1627721/description_60de356b-4601-44ab-b7b4-c608d02a966a.png
+velkhar_smith.png = https://media.forgecdn.net/attachments/description/1627721/description_f08f8312-8cac-4940-9dc1-124aa2a71601.png
+ice_monstrosity.png = https://media.forgecdn.net/attachments/description/1627721/description_38ed71e8-2085-46b6-ba8c-2d55600b3da1.png
+velkhar_phases.png = https://media.forgecdn.net/attachments/description/1627721/description_f0ffc80d-079b-4c65-82ba-d343a14a3973.png
+arsenal.png = https://media.forgecdn.net/attachments/description/1627721/description_66d5e1d5-8892-459b-bcc5-704b005e434c.png
+recipe_frozen_sigil.png = https://media.forgecdn.net/attachments/description/1627721/description_2a05c53f-5786-4697-b193-da0a5da90d56.png
+recipe_shackle_key.png = https://media.forgecdn.net/attachments/description/1627721/description_f1de0fa1-335c-486d-ad10-7de516705645.png
+recipe_everfrost_crystal.png = https://media.forgecdn.net/attachments/description/1627721/description_0a97f566-b2f5-4ecf-b989-d38254df4666.png
+recipe_everfrost_ingot.png = https://media.forgecdn.net/attachments/description/1627721/description_1a347a98-1096-4be2-bceb-1ec1a14558c5.png
+recipe_kingsrime_ingot.png = https://media.forgecdn.net/attachments/description/1627721/description_6a950dc0-cf54-4558-99b4-9a65021c353d.png
+recipe_everfrost_sword.png = https://media.forgecdn.net/attachments/description/1627721/description_fbc3e926-885c-412d-a33b-e89451ba3fc5.png
+recipe_throne_bane.png = https://media.forgecdn.net/attachments/description/1627721/description_35d05d51-b5cc-4e93-8d93-b99a7931cff7.png
+recipe_sovereigns_lament.png = https://media.forgecdn.net/attachments/description/1627721/description_200f7f96-8f1d-46b2-901f-2feb5adbf23d.png
+recipe_hollow_kings_staff.png = https://media.forgecdn.net/attachments/description/1627721/description_21e2cfa4-74e6-4ca7-947d-2f31a8e454d4.png
+recipe_last_watch_bow.png = https://media.forgecdn.net/attachments/description/1627721/description_b59885ad-e635-48aa-8218-a7dde0ecd78e.png
+recipe_bone_wand.png = https://media.forgecdn.net/attachments/description/1627721/description_ad022887-4c90-46da-b3ff-eae9af98a486.png

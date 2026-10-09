@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CCC",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "frozen_dominion:everfrost_crystal"
+    }
+  },
+  "result": {
+    "item": "frozen_dominion:everfrost_block"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:item_layers",
+  "textures": {
+    "layer0": "frozen_dominion:item/priestess_crystal",
+    "layer1": "frozen_dominion:item/priestess_crystal_glow"
+  },
+  "forge_data": {
+    "layers": {
+      "1": {
+        "block_light": 15,
+        "sky_light": 15
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "The statue",
+  "icon": "frozen_dominion:monstrosity_skull",
+  "category": "frozen_dominion:rytual",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/posag.png"
+      ],
+      "title": "A sketch from the Antechamber",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "The statue",
+      "multiblock": {
+        "mapping": {
+          "I": "frozen_dominion:sovereign_ice",
+          "K": "frozen_dominion:monstrosity_skull[facing=south]",
+          "0": "minecraft:blackstone"
+        },
+        "pattern": [
+          [
+            "_K_"
+          ],
+          [
+            "III"
+          ],
+          [
+            "_I_"
+          ],
+          [
+            "_0_"
+          ]
+        ]
+      },
+      "enable_visualize": true,
+      "text": "Click to see a hologram in the world."
+    }
+  ],
+  "advancement": "frozen_dominion:velkhar"
+}

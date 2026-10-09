@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "frozen_dominion:block/frost_lantern"
+    },
+    "hanging=true": {
+      "model": "frozen_dominion:block/frost_lantern_hanging"
+    }
+  }
+}

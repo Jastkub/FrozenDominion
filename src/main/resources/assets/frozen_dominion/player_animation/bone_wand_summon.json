@@ -1,0 +1,129 @@
+{
+ "name": "bone_wand_summon",
+ "author": "Frozen Dominion",
+ "description": "Call of the Grave: raise, bring down, rise",
+ "emote": {
+  "isLoop": false,
+  "returnTick": 0,
+  "beginTick": 0,
+  "endTick": 20,
+  "stopTick": 24,
+  "degrees": true,
+  "moves": [
+   {
+    "tick": 0,
+    "easing": "EASEOUTQUAD",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    },
+    "head": {
+     "pitch": 0.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 4,
+    "easing": "EASEOUTQUAD",
+    "rightArm": {
+     "pitch": -168.0,
+     "yaw": 0.0,
+     "roll": 14.0
+    },
+    "leftArm": {
+     "pitch": -50.0,
+     "yaw": 0.0,
+     "roll": -34.0
+    },
+    "head": {
+     "pitch": -14.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 6,
+    "easing": "EASEINQUAD",
+    "rightArm": {
+     "pitch": -176.0,
+     "yaw": 0.0,
+     "roll": 16.0
+    },
+    "leftArm": {
+     "pitch": -56.0,
+     "yaw": 0.0,
+     "roll": -38.0
+    },
+    "head": {
+     "pitch": -16.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 9,
+    "easing": "EASEOUTBACK",
+    "rightArm": {
+     "pitch": 20.0,
+     "yaw": 6.0,
+     "roll": 2.0
+    },
+    "leftArm": {
+     "pitch": -70.0,
+     "yaw": 10.0,
+     "roll": -24.0
+    },
+    "head": {
+     "pitch": 14.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 14,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": 10.0,
+     "yaw": 4.0,
+     "roll": 2.0
+    },
+    "leftArm": {
+     "pitch": -118.0,
+     "yaw": 12.0,
+     "roll": -18.0
+    },
+    "head": {
+     "pitch": 6.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 20,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    },
+    "head": {
+     "pitch": 0.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   }
+  ]
+ }
+}

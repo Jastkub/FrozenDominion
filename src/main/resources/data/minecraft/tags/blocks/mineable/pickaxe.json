@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "frozen_dominion:sovereign_ice",
+    "frozen_dominion:everfrost_block",
+    "frozen_dominion:stormcrown_beacon",
+    "frozen_dominion:frosted_stone_bricks",
+    "frozen_dominion:snowy_stone_bricks",
+    "frozen_dominion:icebound_stone_bricks",
+    "frozen_dominion:black_iron_fence",
+    "frozen_dominion:frost_candelabra",
+    "frozen_dominion:frost_candlestick",
+    "frozen_dominion:fluted_stone_pillar",
+    "frozen_dominion:unmelting_ice",
+    "frozen_dominion:frost_anvil"
+  ]
+}

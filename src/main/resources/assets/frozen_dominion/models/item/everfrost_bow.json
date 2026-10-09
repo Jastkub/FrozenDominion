@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:item/bow",
+  "loader": "forge:item_layers",
+  "textures": {
+    "layer0": "frozen_dominion:item/everfrost_bow",
+    "layer1": "frozen_dominion:item/everfrost_bow_glow"
+  },
+  "forge_data": {
+    "layers": {
+      "1": {
+        "block_light": 15,
+        "sky_light": 15
+      }
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pulling": 1
+      },
+      "model": "frozen_dominion:item/everfrost_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65
+      },
+      "model": "frozen_dominion:item/everfrost_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9
+      },
+      "model": "frozen_dominion:item/everfrost_bow_pulling_2"
+    }
+  ]
+}

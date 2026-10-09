@@ -1,0 +1,31 @@
+{
+  "name": "Topielica",
+  "icon": "frozen_dominion:drowned_braid",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_topielica.png"
+      ],
+      "title": "Topielica",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_topielica.png"
+      ],
+      "title": "Jej lód",
+      "border": true,
+      "text": "Pęknięty lód nie wytrzyma długo."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Walczy na lodzie nad czarną wodą i to ona decyduje, który lód pęknie - tylko płyt z wyciętymi runami nie ruszy. Pod lodem sunie jej cień - trudno go dostrzec, a tam, gdzie stanie, wyrastają ręce.$(br2)Woda pod lodem zabija szybciej, niż się wydaje. Gdy zawyje, lód zacznie znikać połaciami. Nie walczy też sama."
+    }
+  ],
+  "advancement": "frozen_dominion:met/drowned_lady"
+}

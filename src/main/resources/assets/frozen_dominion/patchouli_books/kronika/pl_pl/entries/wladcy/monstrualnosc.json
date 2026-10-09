@@ -1,0 +1,26 @@
+{
+  "name": "Lodowa Monstrualność",
+  "icon": "frozen_dominion:monstrosity_skull",
+  "category": "frozen_dominion:wladcy",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/wstaje.png"
+      ],
+      "title": "Więzień",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Szarżując, pokazuje swoją drogę - zejdź z niej. Rozpędzony kolos i filar to złe połączenie dla kolosa, a sklepienie nad filarem nie lubi wstrząsów.$(br2)Gdy ryczy, z sufitu leci lód. Ten lód nie wybiera, na kogo spada."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ściana śniegu da się przejść - jeśli się przez nią przetoczysz. Z jego uścisku nie wyjdzie nikt.$(br2)Gdy padnie, zostawi swoją głowę. Kronika ma o niej osobny rozdział."
+    }
+  ],
+  "advancement": "frozen_dominion:met/ice_monstrosity"
+}

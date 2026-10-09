@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "frozen_dominion:block/arrow_slit"
+    },
+    "facing=east": {
+      "model": "frozen_dominion:block/arrow_slit",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "frozen_dominion:block/arrow_slit",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "frozen_dominion:block/arrow_slit",
+      "y": 270
+    }
+  }
+}

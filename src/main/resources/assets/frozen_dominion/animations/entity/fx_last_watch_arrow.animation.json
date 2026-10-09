@@ -1,0 +1,69 @@
+{
+ "format_version": "1.8.0",
+ "animations": {
+  "animation.fx_last_watch_arrow.fly": {
+   "animation_length": 0.4,
+   "bones": {
+    "head": {
+     "rotation": {
+      "0": [
+       0,
+       0,
+       0
+      ],
+      "0.4": [
+       0,
+       0,
+       360
+      ]
+     }
+    },
+    "trail": {
+     "scale": {
+      "0": {
+       "post": [
+        1,
+        1,
+        1
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "0.1": {
+       "post": [
+        1.25,
+        1.25,
+        0.9
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "0.2": {
+       "post": [
+        1,
+        1,
+        1.05
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "0.3": {
+       "post": [
+        1.2,
+        1.2,
+        0.92
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "0.4": {
+       "post": [
+        1,
+        1,
+        1
+       ],
+       "lerp_mode": "catmullrom"
+      }
+     }
+    }
+   },
+   "loop": true
+  }
+ }
+}

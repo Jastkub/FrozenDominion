@@ -1,0 +1,32 @@
+# Gradle output and caches
+build/
+.gradle/
+
+# The dev-run world, logs and configs. Nothing here is the mod.
+run/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Generated intermediates. Every one of these is rebuilt by the scripts in
+# tools/, so committing them only creates merge noise - but note that
+# tools/build/uvmaps/*.json IS kept, because the texture painters read it and
+# regenerating it means regenerating the models first.
+tools/build/*
+!tools/build/uvmaps/
+tools/build/uvmaps/*
+!tools/build/uvmaps/*.json
+
+# Raw sample material for the audio pipeline: 20 MB of source recordings that
+# the synthesiser only reads. Kept out of history deliberately.
+tools/sfx_source/*
+# ...but the user's own voice (Velkhar, the minibosses: recorded by him, made over by gen_audio_samples /
+# gen_voices) is not to be had anywhere else - kept, so a lost disk does not lose it (08.10.2026)
+!tools/sfx_source/boss_vo/
+!tools/sfx_source/velkhar_vo/
+
+# Editors and OS litter
+*.bbmodel.bak
+.DS_Store
+Thumbs.db

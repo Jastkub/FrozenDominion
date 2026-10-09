@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "frozen_dominion:glacial_glass"
+    }
+  },
+  "result": {
+    "item": "frozen_dominion:glacial_glass_pane",
+    "count": 16
+  }
+}

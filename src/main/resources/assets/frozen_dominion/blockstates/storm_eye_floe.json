@@ -1,0 +1,89 @@
+{
+  "variants": {
+    "stage=0": [
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_fresh"
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_fresh",
+        "y": 90
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_fresh",
+        "y": 180
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_fresh",
+        "y": 270
+      }
+    ],
+    "stage=1": [
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_marked"
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_marked",
+        "y": 90
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_marked",
+        "y": 180
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_marked",
+        "y": 270
+      }
+    ],
+    "stage=2": [
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_cracked"
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_cracked",
+        "y": 90
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_cracked",
+        "y": 180
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_cracked",
+        "y": 270
+      }
+    ],
+    "stage=3": [
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_slush"
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_slush",
+        "y": 90
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_slush",
+        "y": 180
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_slush",
+        "y": 270
+      }
+    ],
+    "stage=4": [
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_forming"
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_forming",
+        "y": 90
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_forming",
+        "y": 180
+      },
+      {
+        "model": "frozen_dominion:block/storm_eye_floe_forming",
+        "y": 270
+      }
+    ]
+  }
+}

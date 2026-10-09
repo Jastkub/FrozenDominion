@@ -1,0 +1,22 @@
+{
+  "name": "Frost Hearts",
+  "icon": "minecraft:blue_ice",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_serce.png"
+      ],
+      "title": "A heart's hall",
+      "border": true,
+      "text": "Warmth only reaches so far."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In some halls a heart beats that pumps cold. Away from fire you freeze - slowly at first, then all at once. Nothing can be built in such a hall, and the gates will not rise while the heart beats.$(br2)Each heart dies differently. Look at what the hall is for."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

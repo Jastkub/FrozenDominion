@@ -1,0 +1,13 @@
+{
+  "name": "Zaklęcia cytadeli",
+  "icon": "minecraft:enchanted_book",
+  "category": "frozen_dominion:kuznia",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Pięć zaklęć zna tylko to miejsce: na sługi króla, na mróz w ostrzu, na ciepło serca, na pewny krok i na echo, które zostaje po strzale. Księgi leżą w skrzyniach, a stół do zaklęć też je czasem odda."
+    }
+  ],
+  "advancement": "frozen_dominion:shard"
+}

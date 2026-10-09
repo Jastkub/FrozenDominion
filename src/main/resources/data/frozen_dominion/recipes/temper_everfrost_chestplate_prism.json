@@ -1,0 +1,20 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:everfrost_chestplate"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:rimeweaver_prism"
+  },
+  "base": {
+    "item": "frozen_dominion:everfrost_chestplate"
+  },
+  "result": {
+    "item": "frozen_dominion:everfrost_chestplate",
+    "nbt": {
+      "frozen_dominion:temper": "prism"
+    }
+  }
+}

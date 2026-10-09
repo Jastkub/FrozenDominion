@@ -1,0 +1,71 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+issueTrackerURL="https://github.com/Jastkub/FrozenDominion/issues"
+
+[[mods]]
+modId="frozen_dominion"
+version="1.0.0"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/velkhar-the-frozen-dominion"
+displayName="Frozen Dominion"
+logoFile="logo.png"
+authors="Jastkub"
+description='''
+A colossal frozen citadel lost in the eternal snow. Explore its cathedrals,
+crypts and vaults, survive its frost-bound servants, and face Velkhar,
+the Hollow Sovereign - a three-phase soulslike boss with cinematic combat,
+dynamic music and legendary loot.
+
+Music in the citadel by SunixMuz, licensed under CC BY 4.0
+(https://creativecommons.org/licenses/by/4.0/): "Dark Cave" (https://freesound.org/s/767841/),
+"Dark Castle" (https://freesound.org/s/767840/), "Blessed Hall" (https://freesound.org/s/767837/),
+"Battle Melody" (https://freesound.org/s/767835/).
+'''
+credits="Music: \"Dark Cave\", \"Dark Castle\", \"Blessed Hall\" and \"Battle Melody\" by SunixMuz, licensed under CC BY 4.0"
+
+[[dependencies.frozen_dominion]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.frozen_dominion]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.frozen_dominion]]
+    modId="geckolib"
+    mandatory=true
+    versionRange="[4.4,)"
+    ordering="AFTER"
+    side="BOTH"
+
+# Required: the artifacts are built around Curios slots and their effects
+# only exist while worn. Loading AFTER it matters - the slot data and the
+# registerCurio calls both expect Curios to have set itself up first.
+[[dependencies.frozen_dominion]]
+    modId="curios"
+    mandatory=true
+    versionRange="[5.2,)"
+    ordering="AFTER"
+    side="BOTH"
+
+# Optional (07.10.2026): the guide book is Patchouli's - without it the book and its recipe simply are not there.
+[[dependencies.frozen_dominion]]
+    modId="patchouli"
+    mandatory=false
+    versionRange="[1.20.1-80,)"
+    ordering="NONE"
+    side="BOTH"
+
+# Optional: the legendary weapons' body animations. Without it they fight the same, only the player does not move.
+[[dependencies.frozen_dominion]]
+    modId="playeranimator"
+    mandatory=false
+    versionRange="[1.0,)"
+    ordering="NONE"
+    side="BOTH"

@@ -1,0 +1,19 @@
+{
+  "name": "Kapliczki Szronu",
+  "icon": "frozen_dominion:frost_shrine",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "frozen_dominion:frost_shrine",
+      "title": "Kapliczka Szronu",
+      "text": "Połóż na niej rękę."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Przed drzwiami każdej sali, w której ktoś czeka, stoi kapliczka. Połóż na niej rękę, a zapłonie i zapamięta cię.$(br2)Gdy padniesz gdziekolwiek w cytadeli, wstaniesz przy najbliższej zapalonej kapliczce, z tym, co niosłeś - czasem czeka to na samej kapliczce i trzeba po to sięgnąć. Przepada tylko doświadczenie."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

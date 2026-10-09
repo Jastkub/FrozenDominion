@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "PWC",
+    "RHS",
+    "WDW"
+  ],
+  "key": {
+    "P": {
+      "item": "frozen_dominion:rune_prisons"
+    },
+    "C": {
+      "item": "frozen_dominion:rune_crypts"
+    },
+    "R": {
+      "item": "frozen_dominion:rune_court"
+    },
+    "S": {
+      "item": "frozen_dominion:rune_storm"
+    },
+    "D": {
+      "item": "frozen_dominion:rune_depths"
+    },
+    "W": {
+      "item": "frozen_dominion:warden_shard"
+    },
+    "H": {
+      "item": "frozen_dominion:seal_core"
+    }
+  },
+  "result": {
+    "item": "frozen_dominion:frozen_sigil"
+  }
+}

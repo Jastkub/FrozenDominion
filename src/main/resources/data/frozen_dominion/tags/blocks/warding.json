@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "frozen_dominion:sovereign_ice",
+    "frozen_dominion:sealed_sovereign_ice",
+    "frozen_dominion:everfrost_block",
+    "frozen_dominion:sigil_lock",
+    "frozen_dominion:stormcrown_beacon",
+    "frozen_dominion:frost_lantern",
+    "frozen_dominion:frost_chandelier",
+    "frozen_dominion:glacial_glass",
+    "frozen_dominion:glacial_glass_pane"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "The Rime Priestess",
+  "icon": "frozen_dominion:priestess_crystal",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_kaplanka.png"
+      ],
+      "title": "The Priestess",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_kaplanka.png"
+      ],
+      "title": "The litany",
+      "border": true,
+      "text": "The book tells you where to stand."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When she returns to the altar she reads - and nothing touches her then. The floor lights with runes, and over the open book one of them turns. At the Amen everything that does not bear it freezes.$(br2)When there are several of her, the true one holds the book."
+    }
+  ],
+  "advancement": "frozen_dominion:met/rime_priestess"
+}

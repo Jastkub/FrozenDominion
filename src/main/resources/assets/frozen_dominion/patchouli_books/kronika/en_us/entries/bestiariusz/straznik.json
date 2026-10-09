@@ -1,0 +1,22 @@
+{
+  "name": "Frostbound Sentinel",
+  "icon": "frozen_dominion:sentinel_rivet",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_straznik.png"
+      ],
+      "title": "Behind the shield",
+      "border": true,
+      "text": "The shield holds a lot. Not everything."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "From the front nothing moves him - but that shield has its limit. From the side and behind he is only plate.$(br2)Raise your own shield just as his blow comes and you turn it aside and stun him. When he crouches and aims, he goes straight ahead. Step off his line. Several march in line - do not stand against the whole wall."
+    }
+  ],
+  "advancement": "frozen_dominion:met/frostbound_sentinel"
+}

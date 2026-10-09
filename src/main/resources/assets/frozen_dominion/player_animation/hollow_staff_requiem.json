@@ -1,0 +1,131 @@
+{
+ "name": "hollow_staff_requiem",
+ "author": "Frozen Dominion",
+ "description": "Requiem: it begins",
+ "emote": {
+  "isLoop": false,
+  "returnTick": 0,
+  "beginTick": 0,
+  "endTick": 30,
+  "stopTick": 34,
+  "degrees": true,
+  "moves": [
+   {
+    "tick": 0,
+    "easing": "EASEOUTQUAD",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    },
+    "head": {
+     "pitch": 0.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    },
+    "rightLeg": {
+     "pitch": 0.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    },
+    "leftLeg": {
+     "pitch": 0.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 6,
+    "easing": "EASEOUTBACK",
+    "rightArm": {
+     "pitch": -105.0,
+     "yaw": -10.0,
+     "roll": 10.0
+    },
+    "leftArm": {
+     "pitch": -160.0,
+     "yaw": 0.0,
+     "roll": -38.0
+    },
+    "head": {
+     "pitch": -28.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    },
+    "rightLeg": {
+     "pitch": 10.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftLeg": {
+     "pitch": -6.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    }
+   },
+   {
+    "tick": 20,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -108.0,
+     "yaw": -6.0,
+     "roll": 12.0
+    },
+    "leftArm": {
+     "pitch": -150.0,
+     "yaw": 0.0,
+     "roll": -44.0
+    },
+    "head": {
+     "pitch": -22.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    },
+    "rightLeg": {
+     "pitch": 14.0,
+     "yaw": 0.0,
+     "roll": 6.0
+    },
+    "leftLeg": {
+     "pitch": -2.0,
+     "yaw": 0.0,
+     "roll": -6.0
+    }
+   },
+   {
+    "tick": 30,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    },
+    "head": {
+     "pitch": 0.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    },
+    "rightLeg": {
+     "pitch": 4.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    },
+    "leftLeg": {
+     "pitch": 0.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   }
+  ]
+ }
+}

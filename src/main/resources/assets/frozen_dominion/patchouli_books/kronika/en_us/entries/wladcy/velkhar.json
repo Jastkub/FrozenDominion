@@ -1,0 +1,26 @@
+{
+  "name": "Velkhar",
+  "icon": "frozen_dominion:crown_shard",
+  "category": "frozen_dominion:wladcy",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_velkhar.png"
+      ],
+      "title": "The Shield King",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": "He has four faces, and each must be beaten differently. The counsel lies under his statues - the last page of each book.$(br2)The shield in front turns everything, but the king does not always turn. The Stormblade must be waited out. The Twin Blades catch their breath. And the Hollow Magus does not like arrows."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Above the clouds the Storm Anchors on the outer floes hold him - while even one stands, nothing hurts him. Break them and he falls.$(br2)Whoever falls off the ice is thrown back once by the gale. After that every fall eats a Gale Feather."
+    }
+  ],
+  "advancement": "frozen_dominion:met/velkhar"
+}

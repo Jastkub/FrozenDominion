@@ -1,0 +1,22 @@
+{
+  "name": "Vault Warden",
+  "icon": "frozen_dominion:warden_shard",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_warden.png"
+      ],
+      "title": "The vault's colossus",
+      "border": true,
+      "text": "It does not sleep."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Glacial brick and black iron. Whoever keeps his distance gets spears; whoever comes close, the hammer. When it crosses its arms it turns everything - wait.$(br2)Inside it is something the Sigil needs."
+    }
+  ],
+  "advancement": "frozen_dominion:met/vault_warden"
+}

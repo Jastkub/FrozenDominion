@@ -1,0 +1,88 @@
+citadel_dark_cave.ogg
+  "Dark Cave (Opening, trailer, epic music, Free CCBY)" by SunixMuz
+  https://freesound.org/s/767841/
+  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+  Converted to Ogg Vorbis and normalised; otherwise unchanged.
+  Music by SunixMuz, licensed under CC BY.
+
+turnkey_dark_castle.ogg (the Turnkey's fight)
+  "Dark Castle (Opening, trailer, epic music, Free CCBY)" by SunixMuz
+  https://freesound.org/s/767840/
+  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+  From the HQ preview; loudness matched to the citadel's theme, 30 ms fades at
+  the ends for the loop; otherwise unchanged.
+  Music by SunixMuz, licensed under CC BY.
+
+priestess_blessed_hall.ogg (the Priestess's fight)
+  "Blessed Hall (Opening, trailer, epic music, Free CCBY)" by SunixMuz
+  https://freesound.org/s/767837/
+  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+  From the HQ preview; loudness matched to the citadel's theme, 30 ms fades at
+  the ends for the loop; otherwise unchanged.
+  Music by SunixMuz, licensed under CC BY.
+
+monstrosity_battle_melody.ogg (the Ice Monstrosity's fight)
+  "Battle Melody (Opening, trailer, epic music, Free CCBY)" by SunixMuz
+  https://freesound.org/s/767835/
+  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+  From the HQ preview; loudness matched to the citadel's theme, trimmed of
+  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
+  Music by SunixMuz, licensed under CC BY.
+
+drowned_fountain_of_life.ogg (the Drowned Lady's fight)
+  "Fountain of Life (Opening, trailer, epic music, Free CCBY)" by SunixMuz
+  https://freesound.org/s/767845/
+  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+  From the HQ preview; loudness matched to the citadel's theme, trimmed of
+  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
+  Music by SunixMuz, licensed under CC BY.
+
+aurochs_brave_fight.ogg (the Ice Aurochs's fight)
+  "Brave Fight (Opening, trailer, epic music, Free CCBY)" by SunixMuz
+  https://freesound.org/s/767838/
+  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+  From the HQ preview; loudness matched to the citadel's theme, trimmed of
+  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
+  Music by SunixMuz, licensed under CC BY.
+
+shepherd_devil_dance.ogg (the Shade Shepherd's fight)
+  "Devil Dance (Opening, trailer, epic music, Free CCBY)" by SunixMuz
+  https://freesound.org/s/767842/
+  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+  From the HQ preview; loudness matched to the citadel's theme, trimmed of
+  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
+  Music by SunixMuz, licensed under CC BY.
+
+overseer_battle_of_avalon.ogg (the Forge Overseer's fight)
+  "Battle Of Avalon (Opening, trailer, epic music, Free CCBY)" by SunixMuz
+  https://freesound.org/s/767836/
+  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+  From the HQ preview; loudness matched to the citadel's theme, trimmed of
+  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
+  Music by SunixMuz, licensed under CC BY.
+
+lamplighter_bravery.ogg (the Lamplighter's fight)
+  "Bravery (Opening, trailer, epic music, Free CCBY)" by SunixMuz
+  https://freesound.org/s/767839/
+  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+  From the HQ preview; loudness matched to the citadel's theme, trimmed of
+  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
+  Music by SunixMuz, licensed under CC BY.
+
+bone_lord_an_epic_journey.ogg (the Bone Lord's chase)
+  "An Epic Journey (Opening, trailer, epic music, Free CCBY)" by SunixMuz
+  https://freesound.org/s/767834/
+  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+  From the HQ preview; loudness matched to the citadel's theme, trimmed of
+  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
+  Music by SunixMuz, licensed under CC BY.

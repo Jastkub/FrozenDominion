@@ -1,0 +1,76 @@
+{
+  "display": {
+    "icon": {
+      "item": "frozen_dominion:rimebound_focus"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.tools.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.tools.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "focus": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frozen_dominion:rimebound_focus"
+            ]
+          }
+        ]
+      }
+    },
+    "bow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frozen_dominion:everfrost_bow"
+            ]
+          }
+        ]
+      }
+    },
+    "horn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frozen_dominion:winters_horn"
+            ]
+          }
+        ]
+      }
+    },
+    "signet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frozen_dominion:sovereigns_signet"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "frozen_dominion:ingot",
+  "requirements": [
+    [
+      "focus",
+      "bow",
+      "horn",
+      "signet"
+    ]
+  ]
+}

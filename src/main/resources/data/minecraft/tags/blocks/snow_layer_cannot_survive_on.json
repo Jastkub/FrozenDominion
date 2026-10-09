@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "frozen_dominion:statue_core",
+    "frozen_dominion:citadel_statue",
+    "frozen_dominion:citadel_spawner"
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "name": "throne_bane_slam",
+  "author": "Frozen Dominion",
+  "description": "Mlot Nadzorcy - the slam",
+  "emote": {
+    "isLoop": false,
+    "returnTick": 0,
+    "beginTick": 0,
+    "endTick": 10,
+    "stopTick": 16,
+    "degrees": false,
+    "easeBeforeKeyframe": true,
+    "moves": [
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -2.95,
+          "yaw": 0.3,
+          "roll": 0.2,
+          "y": 1.2,
+          "z": 1.0
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -2.95,
+          "yaw": -0.3,
+          "roll": -0.2,
+          "y": 1.2,
+          "z": 1.0
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "pitch": 0.3
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": -0.95
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": -0.3
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "head": {
+          "pitch": -0.25
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -0.5,
+          "yaw": -0.45,
+          "roll": 0.1,
+          "z": -1.5
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -0.45,
+          "yaw": 0.5,
+          "roll": -0.1,
+          "z": -1.5
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "torso": {
+          "pitch": -0.7,
+          "y": -0.3,
+          "z": -0.25
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": -1.25
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": -0.1
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "head": {
+          "pitch": -0.6
+        }
+      },
+      {
+        "tick": 7,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -0.5,
+          "yaw": -0.45,
+          "roll": 0.1,
+          "z": -1.5
+        }
+      },
+      {
+        "tick": 7,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -0.45,
+          "yaw": 0.5,
+          "roll": -0.1,
+          "z": -1.5
+        }
+      },
+      {
+        "tick": 7,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "torso": {
+          "pitch": -0.7,
+          "y": -0.3,
+          "z": -0.25
+        }
+      },
+      {
+        "tick": 7,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": -1.25
+        }
+      },
+      {
+        "tick": 7,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": -0.1
+        }
+      },
+      {
+        "tick": 7,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "head": {
+          "pitch": -0.6
+        }
+      },
+      {
+        "tick": 10,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "pitch": -0.35,
+          "y": -0.12,
+          "z": -0.1
+        }
+      }
+    ]
+  }
+}

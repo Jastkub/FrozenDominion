@@ -1,0 +1,31 @@
+{
+ "format_version": "1.8.0",
+ "animations": {
+  "animation.velkhar_gate_throw.idle": {
+   "animation_length": 1.0,
+   "bones": {
+    "spin": {
+     "rotation": {
+      "0": {
+       "post": [
+        0,
+        0,
+        0
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "1": {
+       "post": [
+        0,
+        0,
+        0
+       ],
+       "lerp_mode": "catmullrom"
+      }
+     }
+    }
+   },
+   "loop": true
+  }
+ }
+}

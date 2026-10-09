@@ -1,0 +1,62 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frozen_dominion:monstrosity_skull"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frozen_dominion:kingsrime_seal",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frozen_dominion:everfrost_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 60,
+                "max": 80
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{title:'What Sleeps Beyond the Gate',author:\"\",resolved:1b,generation:0,pages:['{\"translate\": \"book.frozen_dominion.monstrosity_sketch.p1\"}','[\"\", {\"text\": \"\\\\ue000\", \"font\": \"frozen_dominion:sketch\", \"color\": \"white\"}, {\"text\": \"\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\"}, {\"translate\": \"book.frozen_dominion.monstrosity_sketch.cap1\"}]','[\"\", {\"text\": \"\\\\ue001\", \"font\": \"frozen_dominion:sketch\", \"color\": \"white\"}, {\"text\": \"\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\"}, {\"translate\": \"book.frozen_dominion.monstrosity_sketch.cap2\"}]','{\"translate\": \"book.frozen_dominion.monstrosity_sketch.p4\"}'],display:{Name:'{\"translate\": \"book.frozen_dominion.monstrosity_sketch.name\", \"italic\": false}'}}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

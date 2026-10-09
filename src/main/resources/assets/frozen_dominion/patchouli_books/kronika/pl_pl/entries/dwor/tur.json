@@ -1,0 +1,31 @@
+{
+  "name": "Lodowy Tur",
+  "icon": "frozen_dominion:aurochs_horn",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_tur.png"
+      ],
+      "title": "Szarża",
+      "border": true,
+      "text": "Najpierw grzebie kopytem."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_tur.png"
+      ],
+      "title": "Filar",
+      "border": true,
+      "text": "Rozpędzony nie skręci."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Nienawidzi ognia - depcze ogniska i każdego, kto się przy nich grzeje. Rozpędzony nie skręca, a wolno stojące filary są twardsze od jego czaszki.$(br2)Z bliska podrzuca rogami i kopie tych, którzy trzymają się jego zadu."
+    }
+  ],
+  "advancement": "frozen_dominion:met/ice_aurochs"
+}

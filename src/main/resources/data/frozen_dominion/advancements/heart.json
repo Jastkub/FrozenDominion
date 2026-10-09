@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "frozen_dominion:heart_of_the_silent_winter"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.heart.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.heart.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "eaten": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "frozen_dominion:heart_of_the_silent_winter"
+          ]
+        }
+      }
+    }
+  },
+  "parent": "frozen_dominion:velkhar",
+  "requirements": [
+    [
+      "eaten"
+    ]
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "The Heart of the Silent Winter",
+  "icon": "frozen_dominion:heart_of_the_silent_winter",
+  "category": "frozen_dominion:rytual",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "frozen_dominion:heart_of_the_silent_winter",
+      "title": "The Heart of the Silent Winter",
+      "text": "It still beats."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "You have one heart and two ways, both for ever. Eaten, it warms you for the rest of your life. Given to the ice, it wakes something that will listen only to you.$(br2)An eaten heart does not come back."
+    }
+  ],
+  "advancement": "frozen_dominion:velkhar"
+}

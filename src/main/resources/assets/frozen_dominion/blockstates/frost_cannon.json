@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "frozen_dominion:block/frost_cannon"
+    },
+    "facing=south": {
+      "model": "frozen_dominion:block/frost_cannon"
+    },
+    "facing=east": {
+      "model": "frozen_dominion:block/frost_cannon"
+    },
+    "facing=west": {
+      "model": "frozen_dominion:block/frost_cannon"
+    }
+  }
+}

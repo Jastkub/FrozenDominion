@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "I",
+    "S",
+    "C"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "frozen_dominion:nest_shard"
+    },
+    "C": {
+      "item": "frozen_dominion:everfrost_crystal"
+    }
+  },
+  "result": {
+    "item": "frozen_dominion:shackle_key"
+  }
+}

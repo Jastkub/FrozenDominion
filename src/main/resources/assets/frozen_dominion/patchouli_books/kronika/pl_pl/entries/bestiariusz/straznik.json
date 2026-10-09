@@ -1,0 +1,22 @@
+{
+  "name": "Mrozoskuty Strażnik",
+  "icon": "frozen_dominion:sentinel_rivet",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_straznik.png"
+      ],
+      "title": "Za tarczą",
+      "border": true,
+      "text": "Tarcza wytrzyma wiele. Nie wszystko."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Od przodu nic go nie rusza - ale ta tarcza ma swoją wytrzymałość. Z boku i z tyłu to tylko blacha.$(br2)Unieś własną tarczę w chwili jego ciosu, a odbijesz go i Strażnik zostanie ogłuszony. Kiedy przykuca i celuje, idzie prosto przed siebie. Zejdź mu z linii. Kilku idzie w szyku - nie stawaj naprzeciw całego muru."
+    }
+  ],
+  "advancement": "frozen_dominion:met/frostbound_sentinel"
+}

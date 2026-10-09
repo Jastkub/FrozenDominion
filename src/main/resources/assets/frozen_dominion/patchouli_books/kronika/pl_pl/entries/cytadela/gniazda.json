@@ -1,0 +1,13 @@
+{
+  "name": "Gniazda",
+  "icon": "frozen_dominion:nest_shard",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Gniazda rodzą sługi, gdy ktoś jest blisko, ale nie bez końca. Koronołom je rozłupuje - zostaje z nich odłamek, czasem dwa.$(br2)Te odłamki są cenniejsze, niż wyglądają: bez nich nie wykujesz ani klucza do okowów, ani sztabki."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

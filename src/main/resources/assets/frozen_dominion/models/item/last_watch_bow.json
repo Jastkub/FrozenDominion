@@ -1,0 +1,69 @@
+{
+ "loader": "forge:separate_transforms",
+ "gui_light": "front",
+ "textures": {
+  "particle": "frozen_dominion:item/last_watch_bow"
+ },
+ "base": {
+  "parent": "frozen_dominion:item/last_watch_bow_3d"
+ },
+ "perspectives": {
+  "gui": {
+   "parent": "minecraft:item/generated",
+   "textures": {
+    "layer0": "frozen_dominion:item/last_watch_bow"
+   }
+  }
+ },
+ "overrides": [
+  {
+   "predicate": {
+    "pulling": 1
+   },
+   "model": "frozen_dominion:item/last_watch_bow_pulling_0"
+  },
+  {
+   "predicate": {
+    "pulling": 1,
+    "pull": 0.65
+   },
+   "model": "frozen_dominion:item/last_watch_bow_pulling_1"
+  },
+  {
+   "predicate": {
+    "pulling": 1,
+    "pull": 0.9
+   },
+   "model": "frozen_dominion:item/last_watch_bow_pulling_2"
+  },
+  {
+   "predicate": {
+    "frozen_dominion:vigil": 1
+   },
+   "model": "frozen_dominion:item/last_watch_bow_vigil"
+  },
+  {
+   "predicate": {
+    "pulling": 1,
+    "frozen_dominion:vigil": 1
+   },
+   "model": "frozen_dominion:item/last_watch_bow_vigil_pulling_0"
+  },
+  {
+   "predicate": {
+    "pulling": 1,
+    "pull": 0.65,
+    "frozen_dominion:vigil": 1
+   },
+   "model": "frozen_dominion:item/last_watch_bow_vigil_pulling_1"
+  },
+  {
+   "predicate": {
+    "pulling": 1,
+    "pull": 0.9,
+    "frozen_dominion:vigil": 1
+   },
+   "model": "frozen_dominion:item/last_watch_bow_vigil_pulling_2"
+  }
+ ]
+}

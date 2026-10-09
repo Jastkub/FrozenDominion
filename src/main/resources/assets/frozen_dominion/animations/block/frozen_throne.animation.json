@@ -1,0 +1,87 @@
+{
+ "format_version": "1.8.0",
+ "animations": {
+  "animation.frozen_throne.idle": {
+   "animation_length": 10.0,
+   "bones": {
+    "root": {
+     "scale": {
+      "0": {
+       "post": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "1.25": {
+       "post": [
+        1.0042426406871192,
+        1.0042426406871192,
+        1.0042426406871192
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "2.5": {
+       "post": [
+        1.006,
+        1.006,
+        1.006
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "3.75": {
+       "post": [
+        1.0042426406871192,
+        1.0042426406871192,
+        1.0042426406871192
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "5": {
+       "post": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "6.25": {
+       "post": [
+        0.9957573593128807,
+        0.9957573593128807,
+        0.9957573593128807
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "7.5": {
+       "post": [
+        0.994,
+        0.994,
+        0.994
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "8.75": {
+       "post": [
+        0.9957573593128807,
+        0.9957573593128807,
+        0.9957573593128807
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "10": {
+       "post": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "lerp_mode": "catmullrom"
+      }
+     }
+    }
+   },
+   "loop": true
+  }
+ }
+}

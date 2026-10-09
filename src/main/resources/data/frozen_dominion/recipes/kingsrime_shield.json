@@ -1,0 +1,23 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:everfrost_shield"
+    },
+    {
+      "item": "frozen_dominion:kingsrime_ingot"
+    },
+    {
+      "item": "frozen_dominion:kingsrime_ingot"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:kingsrime_seal"
+  },
+  "base": {
+    "item": "frozen_dominion:everfrost_shield"
+  },
+  "result": {
+    "item": "frozen_dominion:kingsrime_shield"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Gdzie jej szukać",
+  "icon": "minecraft:compass",
+  "category": "frozen_dominion:wyprawa",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Pierwsza wyprawa szła tak długo, aż śnieg przestał topnieć. Cytadela stoi na śnieżnych równinach - nad ziemią ruina i brama z wieżą, reszta głęboko pod spodem."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Kto szuka, niech zacznie od obozu wyprawy i wieży strażniczej. Ich lektory opowiadają początek tej historii."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "\"Latarnik wciąż pilnuje latarni. Pod nią trzyma skrzynię w okowach, klucz nosi przy sobie, a w skrzyni klin, który wykuliśmy na Koronę, i klucz do zejścia.\"$(br2)\"Bez ciepła z obozu nie przeżyjesz pod Koroną nawet godziny.\""
+    }
+  ]
+}

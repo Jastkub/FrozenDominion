@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.jastkub.frozenfortress.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "frozen_dominion.refmap.json",
+  "mixins": [
+    "StructureStartMixin",
+    "ChunkGeneratorMixin",
+    "WorldGenRegionMixin",
+    "ChunkSerializerMixin",
+    "FeatureMixin",
+    "LevelWeatherMixin"
+  ],
+  "client": [
+    "SoundEngineMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

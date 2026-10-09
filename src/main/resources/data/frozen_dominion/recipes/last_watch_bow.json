@@ -1,0 +1,29 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:kingsrime_bow"
+    },
+    {
+      "item": "frozen_dominion:lantern_lens"
+    },
+    {
+      "item": "frozen_dominion:turnkey_chain"
+    },
+    {
+      "item": "frozen_dominion:kingsrime_ingot"
+    },
+    {
+      "item": "frozen_dominion:kingsrime_ingot"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:crown_shard"
+  },
+  "base": {
+    "item": "frozen_dominion:kingsrime_bow"
+  },
+  "result": {
+    "item": "frozen_dominion:last_watch_bow"
+  }
+}

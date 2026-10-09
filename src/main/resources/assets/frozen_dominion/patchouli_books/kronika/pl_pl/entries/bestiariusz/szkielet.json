@@ -1,0 +1,22 @@
+{
+  "name": "Mroźny Szkielet",
+  "icon": "minecraft:bone",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_szkielet.png"
+      ],
+      "title": "Umarły",
+      "border": true,
+      "text": "Nigdy sam."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Sam niegroźny, ale nigdy nie chodzi sam, a jego dotyk spowalnia. Rozbity składa się z powrotem - chyba że nie dasz mu czasu. Ogień go nie lubi.$(br2)Podobno niektóre noszą w sobie coś, z czego da się zrobić różdżkę."
+    }
+  ],
+  "advancement": "frozen_dominion:met/frost_skeleton"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Chained chests",
+  "icon": "frozen_dominion:shackle_key",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "frozen_dominion:shackle_key",
+      "text": "It breaks in the lock. Always."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each floor's best things lie in chests bound in chains. They say the citadel never gives the same talisman twice - whoever finds a repeat gets something else."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

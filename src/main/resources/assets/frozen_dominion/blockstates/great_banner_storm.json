@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "frozen_dominion:block/great_banner_storm"
+    },
+    "facing=west": {
+      "model": "frozen_dominion:block/great_banner_storm",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "frozen_dominion:block/great_banner_storm",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "frozen_dominion:block/great_banner_storm",
+      "y": 270
+    }
+  }
+}

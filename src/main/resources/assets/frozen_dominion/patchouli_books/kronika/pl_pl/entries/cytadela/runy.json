@@ -1,0 +1,18 @@
+{
+  "name": "Runy i Pieczęć",
+  "icon": "frozen_dominion:frozen_sigil",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "frozen_dominion:frozen_sigil",
+      "text": "Pieczęć Pustego Króla."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Runy leżą tam, gdzie nikt nie zagląda. Ich opisy to zagadki - czytaj je uważnie, zanim zaczniesz obstukiwać ściany.$(br2)Pieczęć złożysz tuż przed Wrotami Więzienia. Strażnicy skarbców noszą w sobie to, czego jej jeszcze brakuje."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

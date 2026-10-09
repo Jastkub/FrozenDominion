@@ -1,0 +1,22 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "pattern": [
+    "F",
+    "I",
+    "V"
+  ],
+  "key": {
+    "F": {
+      "item": "frozen_dominion:wand_fitting"
+    },
+    "I": {
+      "item": "frozen_dominion:everfrost_ingot"
+    },
+    "V": {
+      "item": "frozen_dominion:frost_vertebra"
+    }
+  },
+  "result": {
+    "item": "frozen_dominion:bone_wand"
+  }
+}

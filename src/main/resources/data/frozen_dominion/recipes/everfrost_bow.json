@@ -1,0 +1,22 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "pattern": [
+    "B S",
+    " IS",
+    "B S"
+  ],
+  "key": {
+    "B": {
+      "item": "frozen_dominion:frozen_bowstave"
+    },
+    "I": {
+      "item": "frozen_dominion:everfrost_ingot"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "frozen_dominion:everfrost_bow"
+  }
+}

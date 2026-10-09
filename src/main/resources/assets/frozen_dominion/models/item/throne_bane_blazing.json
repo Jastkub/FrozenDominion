@@ -1,0 +1,18 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "textures": {
+    "particle": "frozen_dominion:item/throne_bane_blazing"
+  },
+  "base": {
+    "parent": "frozen_dominion:item/throne_bane_blazing_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "frozen_dominion:item/throne_bane_blazing"
+      }
+    }
+  }
+}

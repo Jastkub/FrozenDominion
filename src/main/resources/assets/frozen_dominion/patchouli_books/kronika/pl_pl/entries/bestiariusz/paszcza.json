@@ -1,0 +1,22 @@
+{
+  "name": "Mrożna Paszcza",
+  "icon": "frozen_dominion:frostmaw_fang",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_paszcza.png"
+      ],
+      "title": "Skok",
+      "border": true,
+      "text": "Leci tam, gdzie byłeś."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Stado poluje po kolei: jedna gryzie, reszta krąży i czeka, aż odwrócisz się plecami. Wycie przyspiesza wszystkie naraz.$(br2)Przed skokiem przysiada i warczy."
+    }
+  ],
+  "advancement": "frozen_dominion:met/frostmaw"
+}

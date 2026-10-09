@@ -1,0 +1,20 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:everfrost_bow"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:stillbow_fletching"
+  },
+  "base": {
+    "item": "frozen_dominion:everfrost_bow"
+  },
+  "result": {
+    "item": "frozen_dominion:everfrost_bow",
+    "nbt": {
+      "frozen_dominion:temper": "fletching"
+    }
+  }
+}

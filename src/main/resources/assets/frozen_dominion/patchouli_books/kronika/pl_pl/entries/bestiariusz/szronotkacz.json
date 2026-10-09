@@ -1,0 +1,22 @@
+{
+  "name": "Szronotkacz",
+  "icon": "frozen_dominion:rimeweaver_prism",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_szronotkacz.png"
+      ],
+      "title": "Za plecami innych",
+      "border": true,
+      "text": "Zawsze z tyłu."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ten nie walczy sam - pracuje dla reszty: osłania ich i leczy. Każdy jego czar trwa chwilę, a przerwany w połowie pęka mu w rękach.$(br2)Wyprawa nauczyła się jednego: jego najpierw."
+    }
+  ],
+  "advancement": "frozen_dominion:met/rimeweaver"
+}

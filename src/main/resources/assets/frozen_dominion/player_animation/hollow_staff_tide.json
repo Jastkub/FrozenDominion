@@ -1,0 +1,148 @@
+{
+ "name": "hollow_staff_tide",
+ "author": "Frozen Dominion",
+ "description": "Black Tide: sweep out, drag back",
+ "emote": {
+  "isLoop": false,
+  "returnTick": 0,
+  "beginTick": 0,
+  "endTick": 34,
+  "stopTick": 38,
+  "degrees": true,
+  "moves": [
+   {
+    "tick": 0,
+    "easing": "EASEOUTQUAD",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    },
+    "body": {
+     "pitch": 0.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 3,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -30.0,
+     "yaw": 60.0,
+     "roll": 0.0
+    },
+    "leftArm": {
+     "pitch": -30.0,
+     "yaw": 0.0,
+     "roll": -40.0
+    },
+    "body": {
+     "pitch": 0.0,
+     "yaw": -8.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 8,
+    "easing": "EASEOUTQUAD",
+    "rightArm": {
+     "pitch": -30.0,
+     "yaw": -55.0,
+     "roll": 0.0
+    },
+    "leftArm": {
+     "pitch": -60.0,
+     "yaw": 30.0,
+     "roll": -50.0
+    },
+    "body": {
+     "pitch": 0.0,
+     "yaw": 10.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 14,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -34.0,
+     "yaw": -50.0,
+     "roll": 0.0
+    },
+    "leftArm": {
+     "pitch": -90.0,
+     "yaw": -10.0,
+     "roll": -30.0
+    },
+    "body": {
+     "pitch": 0.0,
+     "yaw": 6.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 18,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -40.0,
+     "yaw": -40.0,
+     "roll": 0.0
+    },
+    "leftArm": {
+     "pitch": -96.0,
+     "yaw": -20.0,
+     "roll": -20.0
+    },
+    "body": {
+     "pitch": 0.0,
+     "yaw": 4.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 26,
+    "easing": "EASEINQUAD",
+    "rightArm": {
+     "pitch": -97.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -80.0,
+     "yaw": -30.0,
+     "roll": 10.0
+    },
+    "body": {
+     "pitch": 0.0,
+     "yaw": -4.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 34,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    },
+    "body": {
+     "pitch": 0.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "open=false": {
+      "model": "frozen_dominion:block/citadel_door"
+    },
+    "open=true": {
+      "model": "frozen_dominion:block/citadel_door"
+    }
+  }
+}

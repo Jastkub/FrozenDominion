@@ -1,0 +1,22 @@
+{
+  "name": "Strażnik Skarbca",
+  "icon": "frozen_dominion:warden_shard",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_warden.png"
+      ],
+      "title": "Kolos skarbca",
+      "border": true,
+      "text": "Nie śpi."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Lodowa cegła i czarne żelazo. Kto trzyma dystans, dostaje włócznie; kto podejdzie, młot. Gdy krzyżuje ręce, odbija wszystko - czekaj.$(br2)W jego wnętrzu jest coś, czego potrzebuje Pieczęć."
+    }
+  ],
+  "advancement": "frozen_dominion:met/vault_warden"
+}

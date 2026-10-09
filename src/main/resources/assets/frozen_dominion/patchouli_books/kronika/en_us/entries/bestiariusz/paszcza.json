@@ -1,0 +1,22 @@
+{
+  "name": "Frostmaw",
+  "icon": "frozen_dominion:frostmaw_fang",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_paszcza.png"
+      ],
+      "title": "The pounce",
+      "border": true,
+      "text": "It flies where you were."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The pack hunts in turns: one bites, the rest circle and wait for you to turn your back. A howl quickens them all at once.$(br2)Before the pounce it crouches and growls."
+    }
+  ],
+  "advancement": "frozen_dominion:met/frostmaw"
+}

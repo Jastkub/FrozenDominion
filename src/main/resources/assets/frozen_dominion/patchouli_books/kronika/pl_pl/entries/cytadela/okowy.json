@@ -1,0 +1,18 @@
+{
+  "name": "Okute skrzynie",
+  "icon": "frozen_dominion:shackle_key",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "frozen_dominion:shackle_key",
+      "text": "Pęka w zamku. Zawsze."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Najlepsze rzeczy każdego piętra leżą w skrzyniach skutych łańcuchem. Mówi się, że cytadela nie daje dwa razy tego samego talizmanu - kto znajdzie powtórkę, dostanie coś innego."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

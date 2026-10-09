@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "frozen_dominion:block/frost_anvil",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "frozen_dominion:block/frost_anvil"
+    },
+    "facing=east": {
+      "model": "frozen_dominion:block/frost_anvil",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "frozen_dominion:block/frost_anvil",
+      "y": 90
+    }
+  }
+}

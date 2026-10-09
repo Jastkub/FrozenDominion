@@ -1,0 +1,149 @@
+{
+  "name": "throne_bane_release",
+  "author": "Frozen Dominion",
+  "description": "Tronobojca - the release",
+  "emote": {
+    "isLoop": false,
+    "returnTick": 0,
+    "beginTick": 0,
+    "endTick": 9,
+    "stopTick": 15,
+    "degrees": false,
+    "easeBeforeKeyframe": true,
+    "moves": [
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "yaw": -0.55,
+          "pitch": 0.1,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -2.25,
+          "yaw": -0.25,
+          "roll": 0.35
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -1.7,
+          "yaw": 0.65,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "torso": {
+          "yaw": 0.8,
+          "pitch": -0.3,
+          "z": -0.2,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -0.7,
+          "yaw": 0.35,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -0.65,
+          "yaw": 0.75,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": 0.35
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": -0.65
+        }
+      },
+      {
+        "tick": 6,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "torso": {
+          "yaw": 0.8,
+          "pitch": -0.3,
+          "z": -0.2,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 6,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -0.7,
+          "yaw": 0.35,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 6,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -0.65,
+          "yaw": 0.75,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 6,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": 0.35
+        }
+      },
+      {
+        "tick": 6,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": -0.65
+        }
+      },
+      {
+        "tick": 9,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "yaw": 0.3,
+          "pitch": -0.1
+        }
+      }
+    ]
+  }
+}

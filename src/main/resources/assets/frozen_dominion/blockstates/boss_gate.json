@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "deep=true": {
+      "model": "frozen_dominion:block/boss_gate_deep"
+    },
+    "deep=false": {
+      "model": "frozen_dominion:block/boss_gate_stone"
+    }
+  }
+}

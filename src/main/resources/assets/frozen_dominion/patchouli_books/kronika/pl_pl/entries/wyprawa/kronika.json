@@ -1,0 +1,16 @@
+{
+  "name": "O tej kronice",
+  "icon": "frozen_dominion:everfrost_shard",
+  "category": "frozen_dominion:wyprawa",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Zebrano tu to, co zostało po trzech wyprawach: listy, szkice, notatki na marginesach. Nie wszystko się zgadza i nie wszystko jest pewne."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Kronika otwiera się przed tobą powoli. Gdy coś zobaczysz po raz pierwszy, wróć tu - ktoś pewnie już to opisał."
+    }
+  ]
+}

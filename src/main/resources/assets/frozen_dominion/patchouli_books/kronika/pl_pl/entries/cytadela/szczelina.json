@@ -1,0 +1,35 @@
+{
+  "name": "Szczelina",
+  "icon": "frozen_dominion:seal_core",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/szczelina.png"
+      ],
+      "title": "Droga nad kolcami",
+      "border": true,
+      "text": "Zielony - start, niebieski - serce, czerwona - droga."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Nad przepaścią biegnie droga z kolumn i kruchego lodu, tam i z powrotem. Lód pęka pod stopami, ale odrasta. Kto spadnie, wraca drabiną na początek swojego rzędu - i tylko tam.$(br2)Nad niektórymi przerwami kołyszą się topory. Policz ich rytm, zanim skoczysz."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_paszcza.png"
+      ],
+      "title": "Paszcza w ścianie",
+      "border": true,
+      "text": "Kryształ najpierw się napełnia."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Paszcze w ścianach pilnują drogi. Z czasem tracą cierpliwość i plują coraz częściej. Nie zwlekaj.$(br2)Na drugim brzegu czeka serce - i to, co otwiera Wrota Więzienia."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

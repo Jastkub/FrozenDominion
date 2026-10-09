@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "frozen_dominion:block/everfrost_block"
+  }
+}

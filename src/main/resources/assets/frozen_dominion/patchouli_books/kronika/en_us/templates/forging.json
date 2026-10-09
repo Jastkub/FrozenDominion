@@ -1,0 +1,95 @@
+{
+  "components": [
+    {
+      "type": "header",
+      "text": "#header",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "image",
+      "image": "frozen_dominion:textures/gui/kronika/kowadlo.png",
+      "x": 0,
+      "y": 14,
+      "u": 0,
+      "v": 0,
+      "width": 116,
+      "height": 78,
+      "texture_width": 128,
+      "texture_height": 128
+    },
+    {
+      "type": "item",
+      "item": "#i0",
+      "x": 5,
+      "y": 17
+    },
+    {
+      "type": "item",
+      "item": "#i1",
+      "x": 23,
+      "y": 17
+    },
+    {
+      "type": "item",
+      "item": "#i2",
+      "x": 41,
+      "y": 17
+    },
+    {
+      "type": "item",
+      "item": "#i3",
+      "x": 5,
+      "y": 35
+    },
+    {
+      "type": "item",
+      "item": "#i4",
+      "x": 23,
+      "y": 35
+    },
+    {
+      "type": "item",
+      "item": "#i5",
+      "x": 41,
+      "y": 35
+    },
+    {
+      "type": "item",
+      "item": "#i6",
+      "x": 5,
+      "y": 53
+    },
+    {
+      "type": "item",
+      "item": "#i7",
+      "x": 23,
+      "y": 53
+    },
+    {
+      "type": "item",
+      "item": "#i8",
+      "x": 41,
+      "y": 53
+    },
+    {
+      "type": "item",
+      "item": "#core",
+      "x": 23,
+      "y": 73
+    },
+    {
+      "type": "item",
+      "item": "#result",
+      "x": 97,
+      "y": 35
+    },
+    {
+      "type": "text",
+      "text": "#text",
+      "x": 0,
+      "y": 98,
+      "max_width": 116
+    }
+  ]
+}

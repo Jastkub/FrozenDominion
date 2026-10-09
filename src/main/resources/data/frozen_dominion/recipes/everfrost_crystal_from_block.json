@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:everfrost_block"
+    }
+  ],
+  "result": {
+    "item": "frozen_dominion:everfrost_crystal",
+    "count": 9
+  }
+}

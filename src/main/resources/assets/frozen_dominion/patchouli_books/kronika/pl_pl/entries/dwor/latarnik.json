@@ -1,0 +1,31 @@
+{
+  "name": "Latarnik",
+  "icon": "frozen_dominion:lantern_lens",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_latarnik.png"
+      ],
+      "title": "Kopuła z góry",
+      "border": true,
+      "text": "Cień jest twoim sprzymierzeńcem."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_latarnik.png"
+      ],
+      "title": "Latarnik",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Światło chroni jego i rani ciebie. Cień - odwrotnie. Filary rzucają jedyny cień w kopule; zwab go tam.$(br2)Promień latarni krąży. Im słabszy Latarnik, tym bardziej promień szuka właśnie ciebie."
+    }
+  ],
+  "advancement": "frozen_dominion:met/lamplighter"
+}

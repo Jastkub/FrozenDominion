@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "frozen_dominion:vault_warden_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.warden.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.warden.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "slain": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "frozen_dominion:vault_warden"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "frozen_dominion:root",
+  "requirements": [
+    [
+      "slain"
+    ]
+  ]
+}
