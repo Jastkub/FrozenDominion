@@ -1,0 +1,10 @@
+{
+  "type": "irons_spellbooks:append_loot",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "frozen_dominion:entities/rime_priestess"
+    }
+  ],
+  "key": "frozen_dominion_spells:entities/rime_breviary"
+}

@@ -1,0 +1,18 @@
+Frozen Dominion
+Copyright (c) 2026 Jastkub. All Rights Reserved.
+
+The source code, models, textures, sounds, voice recordings, structures and texts of this project are the property of
+the author. You may view the source and build it for your own personal use.
+
+Permitted without asking:
+  - including the mod, unmodified, in modpacks distributed through CurseForge;
+  - showing the mod in videos, streams and screenshots.
+
+Anything else - redistributing the mod or its files elsewhere, porting it, or reusing its code or assets in other
+projects - requires the author's written permission.
+
+Third-party material included in this repository keeps its own license and is not covered by the above:
+  - music and sound sources credited in CREDITS.txt (CC BY 4.0 and others, as listed there);
+  - the libraries in libs/ (their own licenses, MIT).
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

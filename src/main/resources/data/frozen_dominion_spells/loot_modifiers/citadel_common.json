@@ -1,0 +1,43 @@
+{
+  "type": "irons_spellbooks:append_loot",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "frozen_dominion:chests/citadel/common"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "frozen_dominion:chests/citadel/crypt"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "frozen_dominion:chests/citadel/armory"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "frozen_dominion:chests/citadel/court_stores"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "frozen_dominion:chests/citadel/archive_vault"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "frozen_dominion:chests/citadel/reliquary"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "frozen_dominion:chests/citadel/steward"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "frozen_dominion:chests/citadel/chamberlain"
+        }
+      ]
+    }
+  ],
+  "key": "frozen_dominion_spells:chests/citadel_common"
+}

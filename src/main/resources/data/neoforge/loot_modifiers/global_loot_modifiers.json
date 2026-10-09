@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "entries": [
+    "frozen_dominion_spells:citadel_common",
+    "frozen_dominion_spells:citadel_chained",
+    "frozen_dominion_spells:citadel_secret",
+    "frozen_dominion_spells:rime_breviary"
+  ]
+}
