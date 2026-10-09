@@ -1,0 +1,13 @@
+{
+  "name": "Lektory",
+  "icon": "minecraft:lectern",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Pod posągami króla leżą księgi o każdym z jego obliczy. Ostatnia strona w każdej jest pisana inną ręką.$(br2)Przed Wrotami Więzienia leży jeszcze jedna księga. Bez podpisu, za to z rysunkami."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

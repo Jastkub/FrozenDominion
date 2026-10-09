@@ -1,0 +1,22 @@
+{
+  "name": "Stillbow",
+  "icon": "frozen_dominion:stillbow_fletching",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_cichy_luk.png"
+      ],
+      "title": "The glint of the point",
+      "border": true,
+      "text": "You see the glint - take a step."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It does not stand still and will not be caught - but it folds into the cold only now and then, so it can be run down.$(br2)Frost on the ground round you means a volley is about to fall from the sky."
+    }
+  ],
+  "advancement": "frozen_dominion:met/stillbow"
+}

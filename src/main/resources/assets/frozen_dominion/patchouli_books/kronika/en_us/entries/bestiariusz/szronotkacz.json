@@ -1,0 +1,22 @@
+{
+  "name": "Rimeweaver",
+  "icon": "frozen_dominion:rimeweaver_prism",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_szronotkacz.png"
+      ],
+      "title": "Behind the others",
+      "border": true,
+      "text": "Always at the back."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This one does not fight alone - it works for the rest: wards them and heals them. Every spell of its takes a moment, and broken half-way it shatters in its hands.$(br2)The expedition learned one thing: it first."
+    }
+  ],
+  "advancement": "frozen_dominion:met/rimeweaver"
+}

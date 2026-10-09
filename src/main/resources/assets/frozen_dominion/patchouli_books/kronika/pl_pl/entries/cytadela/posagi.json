@@ -1,0 +1,22 @@
+{
+  "name": "Posągi",
+  "icon": "frozen_dominion:sentinel_rivet",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_posagi.png"
+      ],
+      "title": "Gdy zadrży",
+      "border": true,
+      "text": "Nie czekaj, aż lód puści."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Nie każdy posąg jest kamieniem. Te, które drżą, gdy na nie patrzysz, zaraz wstaną - chyba że wcześniej je rozbijesz.$(br2)Co nie ożywa, nie pęka. Królewskie posągi i pomniki są tylko kamieniem.$(br2)Leżący w lodzie umarli też potrafią wstać - i wstać ponownie."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

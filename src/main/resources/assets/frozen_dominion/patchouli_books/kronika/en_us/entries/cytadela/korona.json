@@ -1,0 +1,19 @@
+{
+  "name": "The Stormcrown",
+  "icon": "frozen_dominion:stormcrown_beacon",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "frozen_dominion:crownbreaker",
+      "title": "The Crownbreaker",
+      "text": "Forged for one purpose. We never got to use it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "While the Crown burns with ice, the citadel is the king's: his servants are stronger, the stone will not yield, and the cold never lets go.$(br2)Drive the wedge into it and its light changes colour - and from then on it burns for you. The stone, though, holds for as long as the king lives."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

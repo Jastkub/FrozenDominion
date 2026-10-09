@@ -1,0 +1,21 @@
+{
+  "name": "Przewrót",
+  "icon": "minecraft:feather",
+  "category": "frozen_dominion:wyprawa",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/roll.png"
+      ],
+      "title": "Przez cios, nie przed nim",
+      "border": true,
+      "text": "Klawisz $(k:key.frozen_dominion.roll)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Weterani mówili, że przed ciosem kolosa nie uciekniesz - ale przetoczysz się przez niego. Na tę krótką chwilę nic, co w ciebie mierzy, nie trafia. Zimno, woda i upadek - owszem.$(br2)Głodny i zmęczony się nie przetoczysz."
+    }
+  ]
+}

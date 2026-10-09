@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,turned=false": {
+      "model": "frozen_dominion:block/turnkey_lock"
+    },
+    "facing=north,turned=true": {
+      "model": "frozen_dominion:block/turnkey_lock_turned"
+    },
+    "facing=east,turned=false": {
+      "model": "frozen_dominion:block/turnkey_lock",
+      "y": 90
+    },
+    "facing=east,turned=true": {
+      "model": "frozen_dominion:block/turnkey_lock_turned",
+      "y": 90
+    },
+    "facing=south,turned=false": {
+      "model": "frozen_dominion:block/turnkey_lock",
+      "y": 180
+    },
+    "facing=south,turned=true": {
+      "model": "frozen_dominion:block/turnkey_lock_turned",
+      "y": 180
+    },
+    "facing=west,turned=false": {
+      "model": "frozen_dominion:block/turnkey_lock",
+      "y": 270
+    },
+    "facing=west,turned=true": {
+      "model": "frozen_dominion:block/turnkey_lock_turned",
+      "y": 270
+    }
+  }
+}

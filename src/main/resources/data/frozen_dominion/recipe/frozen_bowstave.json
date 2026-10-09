@@ -1,0 +1,17 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:stillbow_fletching"
+    },
+    {
+      "item": "frozen_dominion:sentinel_rivet"
+    },
+    {
+      "item": "frozen_dominion:everfrost_ingot"
+    }
+  ],
+  "result": {
+    "id": "frozen_dominion:frozen_bowstave"
+  }
+}

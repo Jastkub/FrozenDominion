@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "frozen_dominion:block/snowy_stone_bricks"
+      },
+      {
+        "model": "frozen_dominion:block/snowy_stone_bricks",
+        "y": 90
+      },
+      {
+        "model": "frozen_dominion:block/snowy_stone_bricks_1"
+      },
+      {
+        "model": "frozen_dominion:block/snowy_stone_bricks_1",
+        "y": 180
+      }
+    ]
+  }
+}

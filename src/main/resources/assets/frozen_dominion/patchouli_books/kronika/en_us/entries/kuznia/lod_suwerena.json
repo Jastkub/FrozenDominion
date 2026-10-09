@@ -1,0 +1,13 @@
+{
+  "name": "Sovereign Ice",
+  "icon": "frozen_dominion:sovereign_ice",
+  "category": "frozen_dominion:kuznia",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The king had his floors laid with it - it glows, and lifts out in a bare hand. The kind without the glow is sealed and yields to nothing."
+    }
+  ],
+  "advancement": "frozen_dominion:shard"
+}

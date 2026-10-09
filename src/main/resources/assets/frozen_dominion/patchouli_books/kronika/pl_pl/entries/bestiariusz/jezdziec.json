@@ -1,0 +1,22 @@
+{
+  "name": "Jeździec Szronu",
+  "icon": "minecraft:snowball",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "frozen_dominion:frost_rider",
+      "scale": 0.9,
+      "offset": 0.0,
+      "rotate": true,
+      "default_rotation": -40.0,
+      "text": "W siodle Mrożnej Paszczy."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Jeden z umarłych straży w siodle Mrożnej Paszczy. Wilk krąży wokół ciebie na rzut kamieniem, a jeździec ciska śnieżkami ubitymi jak lód - po trzy naraz. Trafienie spowalnia i mrozi. Podejdź blisko, a wilk gryzie.$(br2)Zabij wilka, a jeździec spada i walczy pieszo. Zrzuć jeźdźca, a wilk wpada w szał."
+    }
+  ],
+  "advancement": "frozen_dominion:met/frost_rider"
+}

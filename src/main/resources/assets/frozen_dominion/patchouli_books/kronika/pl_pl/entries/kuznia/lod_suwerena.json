@@ -1,0 +1,13 @@
+{
+  "name": "Lód Suwerena",
+  "icon": "frozen_dominion:sovereign_ice",
+  "category": "frozen_dominion:kuznia",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Król kazał wykładać nim posadzki - świeci, a wyjmuje się go gołą ręką. Ten bez blasku jest zapieczętowany i nie ustąpi niczemu."
+    }
+  ],
+  "advancement": "frozen_dominion:shard"
+}

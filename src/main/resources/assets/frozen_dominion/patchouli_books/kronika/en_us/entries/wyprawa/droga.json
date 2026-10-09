@@ -1,0 +1,20 @@
+{
+  "name": "Where to look for it",
+  "icon": "minecraft:compass",
+  "category": "frozen_dominion:wyprawa",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The first expedition walked until the snow stopped melting. The citadel stands on snowy plains - above ground a ruin and a gate with a tower, the rest deep beneath."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Whoever seeks it should begin at the expedition's camp and the watchtower. Their lecterns tell the beginning of this story."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "\"The Lamplighter still keeps the lantern. Under it he holds a chained chest, the key on him, and in the chest the wedge we forged for the Crown, and the key to the descent.\"$(br2)\"Without the warmth from the camp you will not last an hour under the Crown.\""
+    }
+  ]
+}

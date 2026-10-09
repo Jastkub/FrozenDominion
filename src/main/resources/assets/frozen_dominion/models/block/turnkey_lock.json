@@ -1,0 +1,78 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "plate": "frozen_dominion:block/turnkey_lock",
+    "particle": "frozen_dominion:block/turnkey_lock"
+  },
+  "elements": [
+    {
+      "from": [
+        3,
+        2,
+        14
+      ],
+      "to": [
+        13,
+        14,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#plate",
+          "uv": [
+            3,
+            2,
+            13,
+            14
+          ]
+        },
+        "south": {
+          "texture": "#plate",
+          "uv": [
+            3,
+            2,
+            13,
+            14
+          ],
+          "cullface": "south"
+        },
+        "east": {
+          "texture": "#plate",
+          "uv": [
+            0,
+            2,
+            2,
+            14
+          ]
+        },
+        "west": {
+          "texture": "#plate",
+          "uv": [
+            0,
+            2,
+            2,
+            14
+          ]
+        },
+        "up": {
+          "texture": "#plate",
+          "uv": [
+            3,
+            0,
+            13,
+            2
+          ]
+        },
+        "down": {
+          "texture": "#plate",
+          "uv": [
+            3,
+            0,
+            13,
+            2
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "The Forge Overseer",
+  "icon": "frozen_dominion:overseer_hammerhead",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_nadzorca.png"
+      ],
+      "title": "The hammer",
+      "border": true,
+      "text": "A wave along the floor - jump it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When he quenches the hammer in a trough he is open - but after it every blow of his freezes and hits harder. The water in the trough is not his; take it before he gets there, and you see him go without. The forge's buckets hang on the wall by the way in."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The tongs seize whoever stands before him; he must be hurt hard to let go. In the cell next door someone waits for the overseer to stop watching."
+    }
+  ],
+  "advancement": "frozen_dominion:met/forge_overseer"
+}

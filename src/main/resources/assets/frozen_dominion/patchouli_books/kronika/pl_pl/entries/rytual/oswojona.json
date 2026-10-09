@@ -1,0 +1,26 @@
+{
+  "name": "Oswojona Monstrualność",
+  "icon": "frozen_dominion:monstrosity_saddle",
+  "category": "frozen_dominion:rytual",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/wstaje.png"
+      ],
+      "title": "Twoja",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Chodzi za tobą i staje w twojej obronie. Zostawiona za daleko, wynurza się z podłogi obok. Kucnij i dotknij: zostanie albo pójdzie. Kryształ Wiecznego Mrozu ją leczy."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Kowal Velkhara wykuwa siodło na jej grzbiet. Z siodła tupnie na klawisz $(k:key.frozen_dominion.monstrosity_stomp) (przytrzymaj i puść), przytrzymany do pełna rusza z szarżą, a zamachnie się, gdy ty uderzysz."
+    }
+  ],
+  "advancement": "frozen_dominion:velkhar"
+}

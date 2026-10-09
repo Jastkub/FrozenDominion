@@ -1,0 +1,54 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:written_book"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.chronicle.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.chronicle.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "first": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:written_book"
+            ],
+            "predicates": {"minecraft:custom_data": "{ff_chronicle:1b}"}
+          }
+        ]
+      }
+    },
+    "second": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:written_book"
+            ],
+            "predicates": {"minecraft:custom_data": "{ff_chronicle:2b}"}
+          }
+        ]
+      }
+    }
+  },
+  "parent": "frozen_dominion:root",
+  "requirements": [
+    [
+      "first"
+    ],
+    [
+      "second"
+    ]
+  ]
+}

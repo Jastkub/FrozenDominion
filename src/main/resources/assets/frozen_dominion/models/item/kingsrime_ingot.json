@@ -1,0 +1,200 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "textures": {
+    "particle": "frozen_dominion:item/kingsrime_ingot"
+  },
+  "base": {
+    "textures": {
+      "m": "frozen_dominion:item/kingsrime_ingot_model",
+      "particle": "frozen_dominion:item/kingsrime_ingot"
+    },
+    "elements": [
+      {
+        "from": [2, 6.5, 6],
+        "to": [14, 9.5, 10],
+        "faces": {
+          "north": {
+            "uv": [0, 4, 10, 7],
+            "texture": "#m"
+          },
+          "south": {
+            "uv": [0, 4, 10, 7],
+            "texture": "#m"
+          },
+          "east": {
+            "uv": [10, 4, 14, 7],
+            "texture": "#m"
+          },
+          "west": {
+            "uv": [10, 4, 14, 7],
+            "texture": "#m"
+          },
+          "up": {
+            "uv": [0, 0, 10, 4],
+            "texture": "#m"
+          },
+          "down": {
+            "uv": [0, 4, 10, 7],
+            "texture": "#m"
+          }
+        }
+      },
+      {
+        "from": [5, 9.5, 8.5],
+        "to": [11, 10.25, 9.5],
+        "faces": {
+          "north": {
+            "uv": [9, 10, 15, 10.75],
+            "texture": "#m"
+          },
+          "south": {
+            "uv": [9, 10, 15, 10.75],
+            "texture": "#m"
+          },
+          "east": {
+            "uv": [9, 10, 10, 10.75],
+            "texture": "#m"
+          },
+          "west": {
+            "uv": [9, 10, 10, 10.75],
+            "texture": "#m"
+          },
+          "up": {
+            "uv": [9, 8, 15, 9],
+            "texture": "#m"
+          },
+          "down": {
+            "uv": [9, 10, 15, 11],
+            "texture": "#m"
+          }
+        }
+      },
+      {
+        "from": [5, 9.5, 7],
+        "to": [6, 10.25, 8.5],
+        "faces": {
+          "north": {
+            "uv": [9, 10, 10, 10.75],
+            "texture": "#m"
+          },
+          "south": {
+            "uv": [9, 10, 10, 10.75],
+            "texture": "#m"
+          },
+          "east": {
+            "uv": [9, 10, 10.5, 10.75],
+            "texture": "#m"
+          },
+          "west": {
+            "uv": [9, 10, 10.5, 10.75],
+            "texture": "#m"
+          },
+          "up": {
+            "uv": [9, 8, 10, 9.5],
+            "texture": "#m"
+          },
+          "down": {
+            "uv": [9, 10, 10, 11],
+            "texture": "#m"
+          }
+        }
+      },
+      {
+        "from": [7.5, 9.5, 6.5],
+        "to": [8.5, 10.25, 8.5],
+        "faces": {
+          "north": {
+            "uv": [9, 10, 10, 10.75],
+            "texture": "#m"
+          },
+          "south": {
+            "uv": [9, 10, 10, 10.75],
+            "texture": "#m"
+          },
+          "east": {
+            "uv": [9, 10, 11, 10.75],
+            "texture": "#m"
+          },
+          "west": {
+            "uv": [9, 10, 11, 10.75],
+            "texture": "#m"
+          },
+          "up": {
+            "uv": [9, 8, 10, 10],
+            "texture": "#m"
+          },
+          "down": {
+            "uv": [9, 10, 10, 11],
+            "texture": "#m"
+          }
+        }
+      },
+      {
+        "from": [10, 9.5, 7],
+        "to": [11, 10.25, 8.5],
+        "faces": {
+          "north": {
+            "uv": [9, 10, 10, 10.75],
+            "texture": "#m"
+          },
+          "south": {
+            "uv": [9, 10, 10, 10.75],
+            "texture": "#m"
+          },
+          "east": {
+            "uv": [9, 10, 10.5, 10.75],
+            "texture": "#m"
+          },
+          "west": {
+            "uv": [9, 10, 10.5, 10.75],
+            "texture": "#m"
+          },
+          "up": {
+            "uv": [9, 8, 10, 9.5],
+            "texture": "#m"
+          },
+          "down": {
+            "uv": [9, 10, 10, 11],
+            "texture": "#m"
+          }
+        }
+      }
+    ],
+    "display": {
+      "thirdperson_righthand": {
+        "rotation": [10, 0, 0],
+        "translation": [0, 2, 1],
+        "scale": [0.6, 0.6, 0.6]
+      },
+      "firstperson_righthand": {
+        "rotation": [0, -50, 10],
+        "translation": [1.13, 3.2, 1.13],
+        "scale": [0.62, 0.62, 0.62]
+      },
+      "ground": {
+        "rotation": [0, 0, 0],
+        "translation": [0, 2, 0],
+        "scale": [0.5, 0.5, 0.5]
+      },
+      "fixed": {
+        "rotation": [-90, 180, 0],
+        "translation": [0, 0, 0],
+        "scale": [1, 1, 1]
+      },
+      "head": {
+        "rotation": [0, 180, 0],
+        "translation": [0, 13, 7],
+        "scale": [1, 1, 1]
+      }
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "frozen_dominion:item/kingsrime_ingot"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "frozen_dominion:block/unmelting_ice"
+    }
+  }
+}

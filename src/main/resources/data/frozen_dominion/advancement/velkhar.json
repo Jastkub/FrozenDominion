@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "frozen_dominion:crown_of_the_hollow_king"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.velkhar.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.velkhar.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "slain": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "frozen_dominion:velkhar"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "frozen_dominion:sigil",
+  "requirements": [
+    [
+      "slain"
+    ]
+  ]
+}

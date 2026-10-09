@@ -1,0 +1,26 @@
+{
+  "name": "Nadzorca Kuźni",
+  "icon": "frozen_dominion:overseer_hammerhead",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_nadzorca.png"
+      ],
+      "title": "Młot",
+      "border": true,
+      "text": "Fala po ziemi - przeskocz ją."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Gdy chłodzi młot w korycie, jest odsłonięty - ale potem każdy jego cios mrozi i bije mocniej. Woda w korycie nie należy do niego; kto mu ją zabierze, zanim dojdzie, tego zobaczy bez hartowania. Wiadra kuźni wiszą na ścianie przy wejściu."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Kleszcze chwytają tego, kto stoi przed nim; trzeba go mocno zranić, żeby puścił. W celi obok ktoś czeka, aż nadzorca przestanie pilnować."
+    }
+  ],
+  "advancement": "frozen_dominion:met/forge_overseer"
+}

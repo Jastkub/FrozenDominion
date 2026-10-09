@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "frozen_dominion:everfrost_shard"
+    }
+  },
+  "result": {
+    "count": 2,
+    "id": "frozen_dominion:icicle_cluster"
+  }
+}

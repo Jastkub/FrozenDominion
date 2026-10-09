@@ -1,0 +1,19 @@
+{
+  "name": "Burzowa Korona",
+  "icon": "frozen_dominion:stormcrown_beacon",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "frozen_dominion:crownbreaker",
+      "title": "Koronołom",
+      "text": "Wykuty w jednym celu. Nie zdążyliśmy go użyć."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Póki Korona płonie lodem, cytadela należy do króla: jego słudzy są silniejsi, kamień nie ustępuje, a zimno nie odpuszcza.$(br2)Wbij w nią klin, a jej światło zmieni barwę - i odtąd będzie płonąć dla ciebie. Kamień trzyma jednak dalej, dopóki żyje król."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GSG",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "S": {
+      "item": "frozen_dominion:everfrost_shard"
+    }
+  },
+  "result": {
+    "count": 8,
+    "id": "frozen_dominion:glacial_glass"
+  }
+}

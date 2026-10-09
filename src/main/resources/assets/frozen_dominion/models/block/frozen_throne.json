@@ -1,0 +1,112 @@
+{
+  "__comment": "The Frozen Throne. One block, but the model reaches out to -6..22 on X and up to 32 on Y - the fortress must leave that space clear.",
+  "textures": {
+    "bricks": "frozen_dominion:block/chiseled_glacial_bricks",
+    "ice": "frozen_dominion:block/sovereign_ice",
+    "pillar": "frozen_dominion:block/glacial_pillar",
+    "particle": "frozen_dominion:block/chiseled_glacial_bricks"
+  },
+  "elements": [
+    {
+      "__c": "dais / plinth",
+      "from": [-6, 0, 2],
+      "to": [22, 6, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 6], "texture": "#bricks"},
+        "south": {"uv": [0, 0, 16, 6], "texture": "#bricks"},
+        "east":  {"uv": [0, 0, 14, 6], "texture": "#bricks"},
+        "west":  {"uv": [0, 0, 14, 6], "texture": "#bricks"},
+        "up":    {"uv": [0, 0, 16, 14], "texture": "#bricks"},
+        "down":  {"uv": [0, 0, 16, 14], "texture": "#bricks", "cullface": "down"}
+      }
+    },
+    {
+      "__c": "seat - the sovereign's own ice",
+      "from": [-2, 6, 3],
+      "to": [18, 10, 15],
+      "faces": {
+        "north": {"uv": [0, 6, 16, 10], "texture": "#ice"},
+        "south": {"uv": [0, 6, 16, 10], "texture": "#ice"},
+        "east":  {"uv": [3, 6, 15, 10], "texture": "#ice"},
+        "west":  {"uv": [3, 6, 15, 10], "texture": "#ice"},
+        "up":    {"uv": [0, 3, 16, 15], "texture": "#ice"},
+        "down":  {"uv": [0, 3, 16, 15], "texture": "#ice"}
+      }
+    },
+    {
+      "__c": "backrest",
+      "from": [-2, 10, 12],
+      "to": [18, 28, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#bricks"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#bricks"},
+        "east":  {"uv": [12, 0, 16, 16], "texture": "#bricks"},
+        "west":  {"uv": [12, 0, 16, 16], "texture": "#bricks"},
+        "up":    {"uv": [0, 12, 16, 16], "texture": "#bricks"},
+        "down":  {"uv": [0, 12, 16, 16], "texture": "#bricks"}
+      }
+    },
+    {
+      "__c": "left armrest",
+      "from": [-6, 10, 3],
+      "to": [-2, 17, 15],
+      "faces": {
+        "north": {"uv": [0, 0, 4, 7], "texture": "#pillar"},
+        "south": {"uv": [0, 0, 4, 7], "texture": "#pillar"},
+        "east":  {"uv": [3, 0, 15, 7], "texture": "#pillar"},
+        "west":  {"uv": [3, 0, 15, 7], "texture": "#pillar"},
+        "up":    {"uv": [0, 3, 4, 15], "texture": "#pillar"},
+        "down":  {"uv": [0, 3, 4, 15], "texture": "#pillar"}
+      }
+    },
+    {
+      "__c": "right armrest",
+      "from": [18, 10, 3],
+      "to": [22, 17, 15],
+      "faces": {
+        "north": {"uv": [0, 0, 4, 7], "texture": "#pillar"},
+        "south": {"uv": [0, 0, 4, 7], "texture": "#pillar"},
+        "east":  {"uv": [3, 0, 15, 7], "texture": "#pillar"},
+        "west":  {"uv": [3, 0, 15, 7], "texture": "#pillar"},
+        "up":    {"uv": [0, 3, 4, 15], "texture": "#pillar"},
+        "down":  {"uv": [0, 3, 4, 15], "texture": "#pillar"}
+      }
+    },
+    {
+      "__c": "crown spire - left",
+      "from": [1, 28, 12.5],
+      "to": [4, 32, 15.5],
+      "faces": {
+        "north": {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "south": {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "east":  {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "west":  {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "up":    {"uv": [0, 0, 3, 3], "texture": "#ice"}
+      }
+    },
+    {
+      "__c": "crown spire - centre, the tall one",
+      "from": [6.5, 28, 12.5],
+      "to": [9.5, 32, 15.5],
+      "faces": {
+        "north": {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "south": {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "east":  {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "west":  {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "up":    {"uv": [0, 0, 3, 3], "texture": "#ice"}
+      }
+    },
+    {
+      "__c": "crown spire - right",
+      "from": [12, 28, 12.5],
+      "to": [15, 32, 15.5],
+      "faces": {
+        "north": {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "south": {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "east":  {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "west":  {"uv": [0, 0, 3, 4], "texture": "#ice"},
+        "up":    {"uv": [0, 0, 3, 3], "texture": "#ice"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "The Drowned Lady",
+  "icon": "frozen_dominion:drowned_braid",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_topielica.png"
+      ],
+      "title": "The Drowned Lady",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_topielica.png"
+      ],
+      "title": "Her ice",
+      "border": true,
+      "text": "Cracked ice will not hold long."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "She fights on ice over black water, and it is she who decides which ice breaks - only the plates with runes cut in them she leaves be. Under the ice glides her shadow - hard to make out, and where it stops, hands rise.$(br2)The water under the ice kills faster than it looks. When she wails, the ice starts to go in sheets. Nor does she fight alone."
+    }
+  ],
+  "advancement": "frozen_dominion:met/drowned_lady"
+}

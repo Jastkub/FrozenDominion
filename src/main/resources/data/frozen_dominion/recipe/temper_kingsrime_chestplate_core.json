@@ -1,0 +1,22 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:kingsrime_chestplate"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:warden_core"
+  },
+  "base": {
+    "item": "frozen_dominion:kingsrime_chestplate"
+  },
+  "result": {
+    "id": "frozen_dominion:kingsrime_chestplate",
+    "components": {
+      "minecraft:custom_data": {
+        "frozen_dominion:temper": "core"
+      }
+    }
+  }
+}

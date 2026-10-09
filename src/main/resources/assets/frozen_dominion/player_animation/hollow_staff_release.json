@@ -1,0 +1,85 @@
+{
+ "name": "hollow_staff_release",
+ "author": "Frozen Dominion",
+ "description": "Litany: the runes let fly",
+ "emote": {
+  "isLoop": false,
+  "returnTick": 0,
+  "beginTick": 0,
+  "endTick": 18,
+  "stopTick": 22,
+  "degrees": true,
+  "moves": [
+   {
+    "tick": 0,
+    "easing": "EASEOUTQUAD",
+    "rightArm": {
+     "pitch": -97.0,
+     "yaw": -4.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -118.0,
+     "yaw": 22.0,
+     "roll": -14.0
+    }
+   },
+   {
+    "tick": 3,
+    "easing": "EASEOUTBACK",
+    "rightArm": {
+     "pitch": -22.0,
+     "yaw": 0.0,
+     "roll": -2.0
+    },
+    "leftArm": {
+     "pitch": -92.0,
+     "yaw": -18.0,
+     "roll": 4.0
+    }
+   },
+   {
+    "tick": 7,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -26.0,
+     "yaw": -4.0,
+     "roll": -2.0
+    },
+    "leftArm": {
+     "pitch": -84.0,
+     "yaw": -10.0,
+     "roll": 2.0
+    }
+   },
+   {
+    "tick": 12,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -24.0,
+     "yaw": 4.0,
+     "roll": 0.0
+    },
+    "leftArm": {
+     "pitch": -70.0,
+     "yaw": 0.0,
+     "roll": -2.0
+    }
+   },
+   {
+    "tick": 18,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    }
+   }
+  ]
+ }
+}

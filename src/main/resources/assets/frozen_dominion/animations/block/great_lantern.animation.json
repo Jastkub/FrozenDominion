@@ -1,0 +1,10 @@
+{
+ "format_version": "1.8.0",
+ "animations": {
+  "animation.great_lantern.idle": {
+   "animation_length": 2.0,
+   "bones": {},
+   "loop": true
+  }
+ }
+}

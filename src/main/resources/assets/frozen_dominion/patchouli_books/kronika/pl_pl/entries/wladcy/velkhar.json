@@ -1,0 +1,26 @@
+{
+  "name": "Velkhar",
+  "icon": "frozen_dominion:crown_shard",
+  "category": "frozen_dominion:wladcy",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_velkhar.png"
+      ],
+      "title": "Król Tarczy",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ma cztery oblicza i każde trzeba pokonać inaczej. Rady znajdziesz pod jego posągami - ostatnia strona każdej księgi.$(br2)Tarcza z przodu odbija wszystko, ale król nie zawsze się obraca. Burzowe Ostrze trzeba przeczekać. Bliźniacze Ostrza mają chwilę zadyszki. A Pusty Mag nie lubi strzał."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ponad chmurami trzymają go Kotwice Burzy na zewnętrznych krach - póki choć jedna stoi, nic go nie rani. Rozbij je, a spadnie.$(br2)Kto spadnie z kry, tego wichura raz odrzuci z powrotem. Potem każdy upadek zjada jedno Piórko Wichru."
+    }
+  ],
+  "advancement": "frozen_dominion:met/velkhar"
+}

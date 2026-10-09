@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "frozen_dominion:frozen_watchtower",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 96,
+    "separation": 64,
+    "salt": 771230415,
+    "exclusion_zone": {
+      "other_set": "frozen_dominion:frozen_citadel",
+      "chunk_count": 16
+    }
+  }
+}

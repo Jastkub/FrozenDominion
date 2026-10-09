@@ -1,0 +1,26 @@
+{
+  "name": "Władca Kości",
+  "icon": "frozen_dominion:bone_lord_femur",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_wladca.png"
+      ],
+      "title": "Pogoń",
+      "border": true,
+      "text": "Nie zatrzymuj się."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Nad przepaścią, której dno ginie we mgle, leży stos kości. Gdy wejdziesz, wstanie - i będzie cię gonić po mostach między filarami. Jeśli cię złapie, to koniec: drugie życie daje tylko totem.$(br2)Potyka się w biegu - na dziurach, na ostrych zakrętach i gdy strzała trafi go w nogi. Bij, kiedy leży."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Z mgły pod mostami wspinają się po filarach umarli. Ogniska na filarach płoną, dopóki on po nich nie przejdzie.$(br2)Jego łup czeka potem w skrzyni w okowach na środku sali."
+    }
+  ],
+  "advancement": "frozen_dominion:met/bone_lord"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "The Ice Aurochs",
+  "icon": "frozen_dominion:aurochs_horn",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_tur.png"
+      ],
+      "title": "The charge",
+      "border": true,
+      "text": "First it scrapes the floor."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_tur.png"
+      ],
+      "title": "The pillar",
+      "border": true,
+      "text": "At full speed it will not turn."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It hates fire - it tramples hearths and anyone warming himself there. At full speed it does not turn, and free-standing pillars are harder than its skull.$(br2)Close in it tosses with its horns and kicks those who hug its rump."
+    }
+  ],
+  "advancement": "frozen_dominion:met/ice_aurochs"
+}

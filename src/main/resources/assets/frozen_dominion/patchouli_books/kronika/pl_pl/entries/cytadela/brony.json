@@ -1,0 +1,13 @@
+{
+  "name": "Brony za plecami",
+  "icon": "minecraft:iron_bars",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "\"Weszliśmy do sali strażnika i krata spadła za nami. Podniosła się dopiero, gdy jeden z nas już nie oddychał - a sala była znowu taka jak przed walką.\"$(br2)Nie da się jej przytrzymać. Kto stoi w progu, trafia do środka."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

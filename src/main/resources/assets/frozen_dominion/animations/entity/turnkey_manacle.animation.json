@@ -1,0 +1,65 @@
+{
+ "format_version": "1.8.0",
+ "animations": {
+  "animation.turnkey_manacle.spin": {
+   "animation_length": 0.5,
+   "bones": {
+    "manacle": {
+     "rotation": {
+      "0": {
+       "post": [
+        0,
+        0,
+        0
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "0.25": {
+       "post": [
+        180,
+        0,
+        0
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "0.5": {
+       "post": [
+        360,
+        0,
+        0
+       ],
+       "lerp_mode": "catmullrom"
+      }
+     }
+    }
+   },
+   "loop": true
+  },
+  "animation.turnkey_manacle.held": {
+   "animation_length": 1.0,
+   "bones": {
+    "manacle": {
+     "rotation": {
+      "0": {
+       "post": [
+        90,
+        0,
+        0
+       ],
+       "lerp_mode": "catmullrom"
+      },
+      "1": {
+       "post": [
+        90,
+        0,
+        0
+       ],
+       "lerp_mode": "catmullrom"
+      }
+     }
+    }
+   },
+   "loop": true
+  }
+ }
+}

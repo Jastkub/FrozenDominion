@@ -1,0 +1,22 @@
+{
+  "name": "Cień",
+  "icon": "minecraft:black_dye",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_cien.png"
+      ],
+      "title": "W świetle ognia",
+      "border": true,
+      "text": "Tylko tak go zobaczysz."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Słychać go, zanim go zobaczysz - a zobaczysz go tylko w blasku ognia. Syk zapowiada skok z ciemności. W świetle jest słabszy i ucieka w mrok."
+    }
+  ],
+  "advancement": "frozen_dominion:met/shade"
+}

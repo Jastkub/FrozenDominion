@@ -1,0 +1,13 @@
+{
+  "name": "The citadel's enchantments",
+  "icon": "minecraft:enchanted_book",
+  "category": "frozen_dominion:kuznia",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Five enchantments are known only here: against the king's servants, frost in the blade, warmth at the heart, a sure step, and an echo left behind by an arrow. The books lie in chests, and the enchanting table sometimes gives them up too."
+    }
+  ],
+  "advancement": "frozen_dominion:shard"
+}

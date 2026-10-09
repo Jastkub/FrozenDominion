@@ -1,0 +1,22 @@
+{
+  "name": "Shade",
+  "icon": "minecraft:black_dye",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_cien.png"
+      ],
+      "title": "By firelight",
+      "border": true,
+      "text": "The only way you will see it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "You hear it before you see it - and you see it only in the glow of a fire. A hiss tells of a leap out of the dark. In the light it is weaker and flees into the gloom."
+    }
+  ],
+  "advancement": "frozen_dominion:met/shade"
+}

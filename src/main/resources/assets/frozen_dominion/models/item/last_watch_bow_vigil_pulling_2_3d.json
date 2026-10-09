@@ -1,0 +1,7 @@
+{
+ "parent": "frozen_dominion:item/last_watch_bow_pulling_2_3d",
+ "textures": {
+  "0": "frozen_dominion:item/last_watch_bow_pulling_2_model_vigil",
+  "particle": "frozen_dominion:item/last_watch_bow_vigil_pulling_2"
+ }
+}

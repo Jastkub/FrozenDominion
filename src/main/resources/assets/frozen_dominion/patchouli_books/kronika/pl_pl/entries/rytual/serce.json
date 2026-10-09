@@ -1,0 +1,19 @@
+{
+  "name": "Serce Cichej Zimy",
+  "icon": "frozen_dominion:heart_of_the_silent_winter",
+  "category": "frozen_dominion:rytual",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "frozen_dominion:heart_of_the_silent_winter",
+      "title": "Serce Cichej Zimy",
+      "text": "Wciąż bije."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Masz jedno serce i dwie drogi, obie na zawsze. Zjedzone ogrzeje cię do końca życia. Oddane lodowi obudzi coś, co będzie słuchać tylko ciebie.$(br2)Zjedzonego nie odzyskasz."
+    }
+  ],
+  "advancement": "frozen_dominion:velkhar"
+}

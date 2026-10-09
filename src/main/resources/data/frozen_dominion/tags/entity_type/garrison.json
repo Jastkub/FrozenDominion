@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "frozen_dominion:frostbound_sentinel",
+    "frozen_dominion:rimeweaver",
+    "frozen_dominion:stillbow",
+    "frozen_dominion:frostmaw",
+    "frozen_dominion:vault_warden"
+  ]
+}

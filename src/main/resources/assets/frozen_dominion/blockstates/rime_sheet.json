@@ -1,0 +1,36 @@
+{
+ "variants": {
+  "": [
+   {
+    "model": "frozen_dominion:block/rime_sheet_0"
+   },
+   {
+    "model": "frozen_dominion:block/rime_sheet_0",
+    "y": 90
+   },
+   {
+    "model": "frozen_dominion:block/rime_sheet_0",
+    "y": 180
+   },
+   {
+    "model": "frozen_dominion:block/rime_sheet_0",
+    "y": 270
+   },
+   {
+    "model": "frozen_dominion:block/rime_sheet_1"
+   },
+   {
+    "model": "frozen_dominion:block/rime_sheet_1",
+    "y": 90
+   },
+   {
+    "model": "frozen_dominion:block/rime_sheet_1",
+    "y": 180
+   },
+   {
+    "model": "frozen_dominion:block/rime_sheet_1",
+    "y": 270
+   }
+  ]
+ }
+}

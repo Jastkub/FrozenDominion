@@ -1,0 +1,31 @@
+{
+  "name": "Kapłanka Szronu",
+  "icon": "frozen_dominion:priestess_crystal",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_kaplanka.png"
+      ],
+      "title": "Kapłanka",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_kaplanka.png"
+      ],
+      "title": "Litania",
+      "border": true,
+      "text": "Księga mówi, gdzie stanąć."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Gdy wraca do ołtarza, czyta - i nic jej wtedy nie rusza. Posadzka zapala się runami, a nad otwartą księgą obraca się jedna z nich. Przy Amen zamarza wszystko, co jej nie nosi.$(br2)Gdy jest jej kilka, prawdziwa ma w rękach księgę."
+    }
+  ],
+  "advancement": "frozen_dominion:met/rime_priestess"
+}

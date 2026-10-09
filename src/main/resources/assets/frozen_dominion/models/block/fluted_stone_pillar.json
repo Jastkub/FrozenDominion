@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "frozen_dominion:block/fluted_stone_pillar",
+  "end": "frozen_dominion:block/fluted_stone_pillar_top"
+ }
+}

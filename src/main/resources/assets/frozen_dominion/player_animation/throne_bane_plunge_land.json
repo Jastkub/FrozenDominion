@@ -1,0 +1,189 @@
+{
+  "name": "throne_bane_plunge_land",
+  "author": "Frozen Dominion",
+  "description": "Upadek Korony - the landing",
+  "emote": {
+    "isLoop": false,
+    "returnTick": 0,
+    "beginTick": 0,
+    "endTick": 10,
+    "stopTick": 16,
+    "degrees": false,
+    "easeBeforeKeyframe": true,
+    "moves": [
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -2.95,
+          "yaw": 0.3,
+          "roll": 0.2,
+          "y": 1.2,
+          "z": 1.0
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -2.95,
+          "yaw": -0.3,
+          "roll": -0.2,
+          "y": 1.2,
+          "z": 1.0
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "pitch": -0.35
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": 0.05
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": 0.4
+        }
+      },
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "head": {
+          "pitch": 0.0
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -0.4,
+          "yaw": -0.35,
+          "z": -1.0
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -0.35,
+          "yaw": 0.4,
+          "z": -1.0
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "torso": {
+          "pitch": -0.85,
+          "y": -0.3,
+          "z": -0.2
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": -1.75
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": -0.25
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "head": {
+          "pitch": -0.5
+        }
+      },
+      {
+        "tick": 8,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -0.4,
+          "yaw": -0.35,
+          "z": -1.0
+        }
+      },
+      {
+        "tick": 8,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -0.35,
+          "yaw": 0.4,
+          "z": -1.0
+        }
+      },
+      {
+        "tick": 8,
+        "easing": "EASEINQUAD",
+        "turn": 0,
+        "torso": {
+          "pitch": -0.85,
+          "y": -0.3,
+          "z": -0.2
+        }
+      },
+      {
+        "tick": 8,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": -1.75
+        }
+      },
+      {
+        "tick": 8,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": -0.25
+        }
+      },
+      {
+        "tick": 8,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "head": {
+          "pitch": -0.5
+        }
+      },
+      {
+        "tick": 10,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "pitch": -0.45,
+          "y": -0.2
+        }
+      }
+    ]
+  }
+}

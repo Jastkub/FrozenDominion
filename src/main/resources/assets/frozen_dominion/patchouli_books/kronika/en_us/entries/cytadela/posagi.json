@@ -1,0 +1,22 @@
+{
+  "name": "Statues",
+  "icon": "frozen_dominion:sentinel_rivet",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_posagi.png"
+      ],
+      "title": "When it trembles",
+      "border": true,
+      "text": "Do not wait for the ice to let go."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Not every statue is stone. Those that tremble as you look at them are about to rise - unless you break them first.$(br2)What does not wake does not break. The king's statues and monuments are only stone.$(br2)The dead lying in the ice can rise too - and rise again."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

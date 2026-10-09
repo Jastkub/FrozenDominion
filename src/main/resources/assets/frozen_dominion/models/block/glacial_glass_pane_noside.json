@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_noside",
+  "textures": {
+    "pane": "frozen_dominion:block/glacial_glass",
+    "edge": "frozen_dominion:block/glacial_glass_top"
+  }
+}

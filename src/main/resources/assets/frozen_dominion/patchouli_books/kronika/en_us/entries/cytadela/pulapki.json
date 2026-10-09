@@ -1,0 +1,13 @@
+{
+  "name": "Traps",
+  "icon": "minecraft:pointed_dripstone",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A cracked plate in the floor, a shadow on the stone, then icicles. The arrow slits in the passages keep their rhythm and click just before they shoot. The Treasury does not like hands on its treasure - its guard stands round it and only pretends to be stone."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

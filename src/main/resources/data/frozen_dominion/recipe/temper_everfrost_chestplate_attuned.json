@@ -1,0 +1,22 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:everfrost_chestplate"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:attuned_prism"
+  },
+  "base": {
+    "item": "frozen_dominion:everfrost_chestplate"
+  },
+  "result": {
+    "id": "frozen_dominion:everfrost_chestplate",
+    "components": {
+      "minecraft:custom_data": {
+        "frozen_dominion:temper": "attuned"
+      }
+    }
+  }
+}

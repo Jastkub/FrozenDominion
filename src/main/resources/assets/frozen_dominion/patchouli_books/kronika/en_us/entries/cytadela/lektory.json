@@ -1,0 +1,13 @@
+{
+  "name": "Lecterns",
+  "icon": "minecraft:lectern",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Under the king's statues lie books about each of his faces. The last page of each is in another hand.$(br2)Before the Prison Gate lies one more book. Unsigned, but with drawings."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

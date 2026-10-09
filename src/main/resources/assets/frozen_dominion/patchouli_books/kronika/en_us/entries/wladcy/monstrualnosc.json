@@ -1,0 +1,26 @@
+{
+  "name": "The Ice Monstrosity",
+  "icon": "frozen_dominion:monstrosity_skull",
+  "category": "frozen_dominion:wladcy",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/wstaje.png"
+      ],
+      "title": "The prisoner",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Charging, it shows its way - get off it. A colossus at full tilt and a pillar are a bad mix for the colossus, and the vault over the pillar does not like being shaken.$(br2)When it roars, ice falls from the ceiling. That ice does not choose whom it falls on."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The wall of snow can be crossed - if you roll through it. Nobody walks out of its grip.$(br2)When it falls it leaves its head. The chronicle has a separate chapter on it."
+    }
+  ],
+  "advancement": "frozen_dominion:met/ice_monstrosity"
+}

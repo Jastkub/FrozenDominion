@@ -1,0 +1,22 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:everfrost_leggings"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:rimeweaver_prism"
+  },
+  "base": {
+    "item": "frozen_dominion:everfrost_leggings"
+  },
+  "result": {
+    "id": "frozen_dominion:everfrost_leggings",
+    "components": {
+      "minecraft:custom_data": {
+        "frozen_dominion:temper": "prism"
+      }
+    }
+  }
+}

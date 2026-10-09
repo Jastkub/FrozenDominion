@@ -1,0 +1,113 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frozen_dominion:monstrosity_skull"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frozen_dominion:kingsrime_seal",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frozen_dominion:everfrost_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 60,
+                "max": 80
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "minecraft:set_book_cover",
+              "title": "What Sleeps Beyond the Gate",
+              "author": "",
+              "generation": 0
+            },
+            {
+              "function": "minecraft:set_written_book_pages",
+              "mode": "replace_all",
+              "pages": [
+                {
+                  "translate": "book.frozen_dominion.monstrosity_sketch.p1"
+                },
+                [
+                  "",
+                  {
+                    "text": "",
+                    "font": "frozen_dominion:sketch",
+                    "color": "white"
+                  },
+                  {
+                    "text": "\n\n\n\n\n\n\n\n\n\n\n"
+                  },
+                  {
+                    "translate": "book.frozen_dominion.monstrosity_sketch.cap1"
+                  }
+                ],
+                [
+                  "",
+                  {
+                    "text": "",
+                    "font": "frozen_dominion:sketch",
+                    "color": "white"
+                  },
+                  {
+                    "text": "\n\n\n\n\n\n\n\n\n\n\n"
+                  },
+                  {
+                    "translate": "book.frozen_dominion.monstrosity_sketch.cap2"
+                  }
+                ],
+                {
+                  "translate": "book.frozen_dominion.monstrosity_sketch.p4"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "translate": "book.frozen_dominion.monstrosity_sketch.name",
+                "italic": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

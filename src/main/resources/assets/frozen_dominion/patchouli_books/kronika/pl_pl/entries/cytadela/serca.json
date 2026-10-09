@@ -1,0 +1,22 @@
+{
+  "name": "Serca Mrozu",
+  "icon": "minecraft:blue_ice",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_serce.png"
+      ],
+      "title": "Sala serca",
+      "border": true,
+      "text": "Ciepło sięga tylko tak daleko."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "W niektórych salach bije serce, które pompuje zimno. Z dala od ognia zamarzasz - najpierw powoli, potem nagle. W takiej sali nic nie zbudujesz, a brony nie podniosą się, póki serce bije.$(br2)Każde serce gaśnie inaczej. Przyjrzyj się, czemu służy sala."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

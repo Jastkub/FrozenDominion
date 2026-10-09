@@ -1,0 +1,18 @@
+{
+  "name": "Runes and the Sigil",
+  "icon": "frozen_dominion:frozen_sigil",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "frozen_dominion:frozen_sigil",
+      "text": "The Hollow King's Sigil."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The runes lie where nobody looks. Their descriptions are riddles - read them carefully before you start knocking on walls.$(br2)You put the Sigil together right before the Prison Gate. The vault guardians carry in them what it still lacks."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

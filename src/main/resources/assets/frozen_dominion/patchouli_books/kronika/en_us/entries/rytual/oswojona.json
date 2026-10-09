@@ -1,0 +1,26 @@
+{
+  "name": "The tamed Monstrosity",
+  "icon": "frozen_dominion:monstrosity_saddle",
+  "category": "frozen_dominion:rytual",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/wstaje.png"
+      ],
+      "title": "Yours",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It follows you and stands in your defence. Left too far behind, it rises from the floor beside you. Sneak and touch it: it stays or comes. An Everfrost Crystal heals it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Velkhar's smith forges a saddle for its back. From the saddle it stamps on $(k:key.frozen_dominion.monstrosity_stomp) (hold and let go), held to the full it charges, and it swings when you strike."
+    }
+  ],
+  "advancement": "frozen_dominion:velkhar"
+}

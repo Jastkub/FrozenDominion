@@ -1,0 +1,4757 @@
+{
+  "ambient_fortress_wind": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:ambient/fortress_wind",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.fortress_wind"
+  },
+  "entity_frostmaw_breath": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frostmaw_breath",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frostmaw_breath_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_frostmaw_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frostmaw_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_frostmaw_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frostmaw_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frostmaw_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frostmaw_hurt_3",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frostmaw_hurt_4",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frostmaw_hurt_5",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_frostmaw_idle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frostmaw_idle",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frostmaw_idle_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frostmaw_idle_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_frostmaw_roar": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frostmaw_roar",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frostmaw_roar_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frostmaw_roar_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_rimeweaver_cast": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/rimeweaver_cast",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/rimeweaver_cast_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_rimeweaver_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/rimeweaver_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_rimeweaver_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/rimeweaver_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/rimeweaver_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/rimeweaver_hurt_3",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/rimeweaver_hurt_4",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_rimeweaver_idle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/rimeweaver_idle",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/rimeweaver_idle_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_sentinel_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/sentinel_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_sentinel_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/sentinel_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/sentinel_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/sentinel_hurt_3",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/sentinel_hurt_4",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_sentinel_idle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/sentinel_idle",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/sentinel_idle_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_sentinel_shield": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/sentinel_shield",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_sentinel_swing": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/sentinel_swing",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/sentinel_swing_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_stillbow_blink": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/stillbow_blink",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/stillbow_blink_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_stillbow_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/stillbow_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_stillbow_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/stillbow_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/stillbow_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/stillbow_hurt_3",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/stillbow_hurt_4",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_stillbow_idle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/stillbow_idle",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/stillbow_idle_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_stillbow_shoot": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/stillbow_shoot",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/stillbow_shoot_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_vault_warden_awaken": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/vault_warden_awaken",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.vault_warden_awaken"
+  },
+  "entity_vault_warden_core": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/vault_warden_core",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_vault_warden_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/vault_warden_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.vault_warden_death"
+  },
+  "entity_vault_warden_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/vault_warden_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/vault_warden_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/vault_warden_hurt_3",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/vault_warden_hurt_4",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_vault_warden_slam": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/vault_warden_slam",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/vault_warden_slam_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_vault_warden_step": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/vault_warden_step",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/vault_warden_step_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_vault_warden_stomp": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/vault_warden_stomp",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_vault_warden_swipe": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/vault_warden_swipe",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/vault_warden_swipe_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.vault_warden_swipe"
+  },
+  "entity_velkhar_aircut": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_aircut",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_aircut_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_aircut_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_blade_whirl": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_blade_whirl",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_blade_whirl_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_blizzard": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_blizzard",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_blizzard_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_breath": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_breath",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_breath_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_cast": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_cast",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_cast_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_cleave": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_cleave",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_cleave_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_counter": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_counter",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_crown_fall": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_crown_fall",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_finale": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_finale",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_grab": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_grab",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_idle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_idle",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_idle_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_idle_3",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_idle_4",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_impact": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_impact",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_impact_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_impact_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_laugh": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_laugh",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_laugh_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_laugh_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_awaken": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_awaken",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_behind": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_behind",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_confused": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_confused",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_depths": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_depths",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_disappoint": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_disappoint",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_embrace": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_embrace",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_enough": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_enough",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_fades": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_fades",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_forgotten": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_forgotten",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_freeze": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_freeze",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_glacier": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_glacier",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_intro": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_intro",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_is_that_all": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_is_that_all",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_last": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_last",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_laugh": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_laugh",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_phase2": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_phase2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_phase3": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_phase3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_predictable": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_predictable",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_ruled": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_ruled",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_serve": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_serve",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_silent": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_silent",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_sowarm": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_sowarm",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_statue": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_statue",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_too_slow": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_too_slow",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_pathetic": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_pathetic",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_phase2": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_phase2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_phase3": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_phase3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_shield_bash": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_bash",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_bash_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_shield_charge": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_charge",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_charge_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_slam": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_slam",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_stomp": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_stomp",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_stomp_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_stomp_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_swing": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_swing",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_swing_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_swing_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_sword_pull": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_sword_pull",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_sword_pull_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_taunt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_taunt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_taunt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_taunt_3",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_taunt_4",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_teleport": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_teleport",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_teleport_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_whisper": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_whisper",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_whisper_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_blizzard_loop": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/blizzard_loop",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_frost_bolt_fire": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/frost_bolt_fire",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_frost_bolt_hit": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/frost_bolt_hit",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_ice_crack": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/ice_crack",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/ice_crack_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/ice_crack_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.misc.ice_crack"
+  },
+  "misc_ice_prison": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/ice_prison",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_ice_spike_emerge": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/ice_spike_emerge",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_shockwave": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/shockwave",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "music_disc_silent_winter": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/silent_winter",
+        "stream": true,
+        "volume": 1.0
+      }
+    ]
+  },
+  "music_velkhar_outro": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/velkhar_outro",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "music_velkhar_phase1": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/velkhar_phase1",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "music_velkhar_phase2": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/velkhar_phase2",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "music_velkhar_phase3": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/velkhar_phase3",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "entity_velkhar_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_hurt_3",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_hurt_4",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_hurt_5",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_hurt_6",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_roar": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_roar",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_roar_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_roar_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_step": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_step",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_step_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_shield_clang": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_clang",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_clang_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_clang_3",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_clang_4",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_shield_set": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_set",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_guard_tap": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_guard_tap",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_guard_tap_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_shield_hit": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_hit",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_hit_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_hit_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_blade_on_shield": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_blade_on_shield",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_blade_on_shield_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_shield_slam": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_slam",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_shield_slam_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_ice_monstrosity_emerge": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_emerge",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.emerge"
+  },
+  "entity_ice_monstrosity_step": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_step",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_step_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_step_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.step"
+  },
+  "entity_ice_monstrosity_slam": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_slam",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_slam_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.slam"
+  },
+  "entity_ice_monstrosity_sweep": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_sweep",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_sweep_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.sweep"
+  },
+  "entity_ice_monstrosity_stomp": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_stomp",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_stomp_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.stomp"
+  },
+  "entity_ice_monstrosity_roar": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_roar",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_roar_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.roar"
+  },
+  "entity_ice_monstrosity_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_hurt_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.hurt"
+  },
+  "entity_ice_monstrosity_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.death"
+  },
+  "entity_ice_monstrosity_idle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_idle",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_idle_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.idle"
+  },
+  "entity_ice_monstrosity_creak": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_creak",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_creak_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_creak_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.creak"
+  },
+  "entity_ice_monstrosity_split": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_split",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_split_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_split_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.split"
+  },
+  "entity_velkhar_beam_loop": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_beam_loop",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_assemble": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_assemble",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_uproot": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_uproot",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_tear": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_tear",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_heart": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_heart",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_storm": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_storm",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_current": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_current",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_orbs": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_orbs",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_columns": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_columns",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_wards": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_wards",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_lance": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_lance",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_doom": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_doom",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_mirror": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_mirror",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "misc_spell_forge": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/spell_forge",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_cut_throne": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_cut_throne",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.velkhar_cut_throne"
+  },
+  "entity_velkhar_cut_phase2": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_cut_phase2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.velkhar_cut_phase2"
+  },
+  "entity_velkhar_cut_phase3": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_cut_phase3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.velkhar_cut_phase3"
+  },
+  "entity_velkhar_cut_split": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_cut_split",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.velkhar_cut_split"
+  },
+  "entity_velkhar_cut_golem": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_cut_golem",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.velkhar_cut_golem"
+  },
+  "entity_velkhar_cut_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_cut_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.velkhar_cut_death"
+  },
+  "music_turnkey_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/turnkey_dark_castle",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "music_priestess_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/priestess_blessed_hall",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "entity_ice_monstrosity_statue_wake": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_statue_wake",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.ice_monstrosity_statue_wake"
+  },
+  "music_monstrosity_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/monstrosity_battle_melody",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "music_citadel_theme": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/citadel_dark_cave",
+        "stream": true,
+        "volume": 0.7
+      }
+    ]
+  },
+  "entity_frost_skeleton_idle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_idle",
+        "stream": false,
+        "volume": 0.8
+      },
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_idle_2",
+        "stream": false,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.frost_skeleton_idle"
+  },
+  "entity_frost_skeleton_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_hurt_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.frost_skeleton_hurt"
+  },
+  "entity_frost_skeleton_step": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_step",
+        "stream": false,
+        "volume": 0.5
+      },
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_step_2",
+        "stream": false,
+        "volume": 0.5
+      },
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_step_3",
+        "stream": false,
+        "volume": 0.5
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.frost_skeleton_step"
+  },
+  "entity_frost_skeleton_swing": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_swing",
+        "stream": false,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.frost_skeleton_swing"
+  },
+  "entity_frost_skeleton_rise": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_rise",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.frost_skeleton_rise"
+  },
+  "entity_frost_skeleton_collapse": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_collapse",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_collapse_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.frost_skeleton_collapse"
+  },
+  "entity_frost_skeleton_reform": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_reform",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.frost_skeleton_reform"
+  },
+  "entity_frost_skeleton_shatter": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frost_skeleton_shatter",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.frost_skeleton_shatter"
+  },
+  "entity_ice_monstrosity_bomb_charge": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_bomb_charge",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_bomb_charge_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.bomb_charge"
+  },
+  "entity_ice_monstrosity_bomb_fire": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_bomb_fire",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_bomb_fire_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.bomb_fire"
+  },
+  "entity_lamplighter_whoosh": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/lamplighter_whoosh",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/lamplighter_whoosh_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/lamplighter_whoosh_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.lamplighter.whoosh"
+  },
+  "entity_lamplighter_staff_hit": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/lamplighter_staff_hit",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/lamplighter_staff_hit_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.lamplighter.staff_hit"
+  },
+  "entity_lamplighter_slam": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/lamplighter_slam",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/lamplighter_slam_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.lamplighter.slam"
+  },
+  "entity_lamplighter_freeze": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/lamplighter_freeze",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.lamplighter.freeze"
+  },
+  "entity_ice_monstrosity_avalanche": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_avalanche",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_avalanche_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.avalanche"
+  },
+  "entity_ice_monstrosity_breath": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_breath",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_monstrosity_breath_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_monstrosity.breath"
+  },
+  "misc_ice_shatter": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/ice_shatter",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/ice_shatter_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/ice_shatter_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.misc.ice_shatter"
+  },
+  "misc_ice_impact": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/ice_impact",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/ice_impact_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/ice_impact_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.misc.ice_impact"
+  },
+  "misc_frost_charge": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/frost_charge",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/frost_charge_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/frost_charge_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.misc.frost_charge"
+  },
+  "misc_frost_release": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/frost_release",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/frost_release_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/frost_release_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.misc.frost_release"
+  },
+  "misc_ice_grind": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/ice_grind",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/ice_grind_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/ice_grind_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.misc.ice_grind"
+  },
+  "misc_crystal_chime": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/crystal_chime",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/crystal_chime_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:misc/crystal_chime_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.misc.crystal_chime"
+  },
+  "block_boss_gate_drop": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:block/boss_gate_drop",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:block/boss_gate_drop_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.boss_gate.drop"
+  },
+  "entity_sentinel_block": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/sentinel_block",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/sentinel_block_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/sentinel_block_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.sentinel.block"
+  },
+  "entity_sentinel_guard_break": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/sentinel_guard_break",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.sentinel.guard_break"
+  },
+  "entity_stillbow_draw": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/stillbow_draw",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/stillbow_draw_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.stillbow.draw"
+  },
+  "entity_stillbow_rain": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/stillbow_rain",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.stillbow.rain"
+  },
+  "entity_rimeweaver_ward": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/rimeweaver_ward",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/rimeweaver_ward_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.rimeweaver.ward"
+  },
+  "entity_rimeweaver_circle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/rimeweaver_circle",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.rimeweaver.circle"
+  },
+  "entity_frostmaw_growl": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frostmaw_growl",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frostmaw_growl_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.frostmaw.growl"
+  },
+  "entity_frostmaw_howl": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frostmaw_howl",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.frostmaw.howl"
+  },
+  "entity_frostmaw_bite": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/frostmaw_bite",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/frostmaw_bite_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.frostmaw.bite"
+  },
+  "entity_drowned_lady_idle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_idle",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/drowned_lady_idle_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.idle"
+  },
+  "entity_drowned_lady_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/drowned_lady_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/drowned_lady_hurt_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.hurt"
+  },
+  "entity_drowned_lady_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.death"
+  },
+  "entity_drowned_lady_wail": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_wail",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.wail"
+  },
+  "entity_drowned_lady_lash_tell": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_lash_tell",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/drowned_lady_lash_tell_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.lash_tell"
+  },
+  "entity_drowned_lady_lash": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_lash",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/drowned_lady_lash_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.lash"
+  },
+  "entity_drowned_lady_ice_groan": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_ice_groan",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.ice_groan"
+  },
+  "entity_drowned_lady_ice_crack": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_ice_crack",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/drowned_lady_ice_crack_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/drowned_lady_ice_crack_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.ice_crack"
+  },
+  "entity_drowned_lady_ice_break": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_ice_break",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/drowned_lady_ice_break_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.ice_break"
+  },
+  "entity_drowned_lady_splash": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_splash",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/drowned_lady_splash_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.splash"
+  },
+  "entity_drowned_lady_grasp_tell": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_grasp_tell",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.grasp_tell"
+  },
+  "entity_drowned_lady_grasp": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_grasp",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.grasp"
+  },
+  "entity_drowned_lady_tide_tell": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_tide_tell",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.tide_tell"
+  },
+  "entity_drowned_lady_tide": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_tide",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.tide"
+  },
+  "entity_drowned_lady_hands_break": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_hands_break",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.drowned_lady.hands_break"
+  },
+  "music_drowned_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/drowned_fountain_of_life",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "entity_ice_aurochs_idle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_idle",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_idle_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.idle"
+  },
+  "entity_ice_aurochs_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_hurt_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.hurt"
+  },
+  "entity_ice_aurochs_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.death"
+  },
+  "entity_ice_aurochs_bellow": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_bellow",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.bellow"
+  },
+  "entity_ice_aurochs_scrape": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_scrape",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_scrape_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.scrape"
+  },
+  "entity_ice_aurochs_snort": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_snort",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_snort_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.snort"
+  },
+  "entity_ice_aurochs_step": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_step",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_step_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_step_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.step"
+  },
+  "entity_ice_aurochs_gallop": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_gallop",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_gallop_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.gallop"
+  },
+  "entity_ice_aurochs_douse": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_douse",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.douse"
+  },
+  "entity_ice_aurochs_crash": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_crash",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.crash"
+  },
+  "entity_ice_aurochs_dizzy": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_dizzy",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_dizzy_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.dizzy"
+  },
+  "entity_ice_aurochs_toss": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_toss",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.toss"
+  },
+  "entity_ice_aurochs_rear": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_rear",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.rear"
+  },
+  "entity_ice_aurochs_stomp": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_stomp",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.stomp"
+  },
+  "entity_ice_aurochs_ring": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_ring",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.ring"
+  },
+  "entity_ice_aurochs_kick": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/ice_aurochs_kick",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.ice_aurochs.kick"
+  },
+  "entity_shade_shepherd_idle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_idle",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_idle_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.idle"
+  },
+  "entity_shade_shepherd_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.hurt"
+  },
+  "entity_shade_shepherd_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.death"
+  },
+  "entity_shade_shepherd_wake": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_wake",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.wake"
+  },
+  "entity_shade_shepherd_bell": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_bell",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.bell"
+  },
+  "entity_shade_shepherd_hook_tell": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_hook_tell",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.hook_tell"
+  },
+  "entity_shade_shepherd_hook": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_hook",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_hook_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.hook"
+  },
+  "entity_shade_shepherd_hook_hit": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_hook_hit",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.hook_hit"
+  },
+  "entity_shade_shepherd_inhale": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_inhale",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.inhale"
+  },
+  "entity_shade_shepherd_exhale": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_exhale",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.exhale"
+  },
+  "entity_shade_shepherd_snuff": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_snuff",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.snuff"
+  },
+  "entity_shade_shepherd_whistle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_whistle",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.whistle"
+  },
+  "entity_shade_shepherd_split": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_split",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.split"
+  },
+  "entity_shade_shepherd_step": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_step",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_step_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.step"
+  },
+  "entity_shade_shepherd_gust": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_gust",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_gust_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.gust"
+  },
+  "entity_shade_shepherd_gust_break": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_gust_break",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade_shepherd.gust_break"
+  },
+  "entity_shade_breath": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_breath",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_breath_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_breath_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade.breath"
+  },
+  "entity_shade_step": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_step",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_step_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_step_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade.step"
+  },
+  "entity_shade_hiss": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_hiss",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_hiss_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade.hiss"
+  },
+  "entity_shade_lunge": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_lunge",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_lunge_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade.lunge"
+  },
+  "entity_shade_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/shade_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade.hurt"
+  },
+  "entity_shade_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade.death"
+  },
+  "entity_shade_rise": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_rise",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.shade.rise"
+  },
+  "music_aurochs_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/aurochs_brave_fight",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "music_shepherd_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/shepherd_devil_dance",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "music_overseer_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/overseer_battle_of_avalon",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "music_lamplighter_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/lamplighter_bravery",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "music_bone_lord_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/bone_lord_an_epic_journey",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "entity_forge_overseer_idle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_idle",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/forge_overseer_idle_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.idle"
+  },
+  "entity_forge_overseer_hurt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_hurt",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/forge_overseer_hurt_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/forge_overseer_hurt_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.hurt"
+  },
+  "entity_forge_overseer_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.death"
+  },
+  "entity_forge_overseer_awaken": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_awaken",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.awaken"
+  },
+  "entity_forge_overseer_roar": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_roar",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.roar"
+  },
+  "entity_forge_overseer_swing": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_swing",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/forge_overseer_swing_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.swing"
+  },
+  "entity_forge_overseer_slam": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_slam",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.slam"
+  },
+  "entity_forge_overseer_shockwave": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_shockwave",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.shockwave"
+  },
+  "entity_forge_overseer_tongs": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_tongs",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/forge_overseer_tongs_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.tongs"
+  },
+  "entity_forge_overseer_grab": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_grab",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.grab"
+  },
+  "entity_forge_overseer_slag_strike": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_slag_strike",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.slag_strike"
+  },
+  "entity_forge_overseer_slag_hit": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_slag_hit",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/forge_overseer_slag_hit_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.slag_hit"
+  },
+  "entity_forge_overseer_quench": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_quench",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.quench"
+  },
+  "entity_forge_overseer_plate_break": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_plate_break",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/forge_overseer_plate_break_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.plate_break"
+  },
+  "entity_forge_overseer_plate_land": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_plate_land",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/forge_overseer_plate_land_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.plate_land"
+  },
+  "entity_forge_overseer_frost_fade": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_frost_fade",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.frost_fade"
+  },
+  "entity_forge_overseer_step": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_step",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/forge_overseer_step_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.forge_overseer.step"
+  },
+  "entity_forge_overseer_anvil": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_anvil",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/forge_overseer_anvil_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.forge_overseer_anvil"
+  },
+  "entity_turnkey_keys": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/turnkey_keys",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/turnkey_keys_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.turnkey_keys"
+  },
+  "entity_turnkey_lock": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/turnkey_lock",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.turnkey_lock"
+  },
+  "entity_rime_priestess_page": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/rime_priestess_page",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/rime_priestess_page_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.rime_priestess_page"
+  },
+  "entity_rime_priestess_book_shut": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/rime_priestess_book_shut",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.rime_priestess_book_shut"
+  },
+  "entity_lamplighter_kindle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/lamplighter_kindle",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.lamplighter_kindle"
+  },
+  "misc_cutscene_whoosh": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/cutscene_whoosh",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.cutscene_whoosh"
+  },
+  "misc_cutscene_title": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/cutscene_title",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.cutscene_title"
+  },
+  "entity_lamplighter_vo_intro": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/lamplighter_vo_intro",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.lamplighter_vo_intro"
+  },
+  "entity_lamplighter_vo_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/lamplighter_vo_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.lamplighter_vo_death"
+  },
+  "entity_turnkey_vo_intro": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/turnkey_vo_intro",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.turnkey_vo_intro"
+  },
+  "entity_turnkey_vo_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/turnkey_vo_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.turnkey_vo_death"
+  },
+  "entity_shade_shepherd_vo_intro": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_vo_intro",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.shade_shepherd_vo_intro"
+  },
+  "entity_shade_shepherd_vo_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_vo_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.shade_shepherd_vo_death"
+  },
+  "entity_drowned_lady_vo_intro": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_vo_intro",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.drowned_lady_vo_intro"
+  },
+  "entity_drowned_lady_vo_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_vo_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.drowned_lady_vo_death"
+  },
+  "entity_rime_priestess_vo_intro": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/rime_priestess_vo_intro",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.rime_priestess_vo_intro"
+  },
+  "entity_rime_priestess_vo_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/rime_priestess_vo_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.rime_priestess_vo_death"
+  },
+  "entity_forge_overseer_vo_intro": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_vo_intro",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.forge_overseer_vo_intro"
+  },
+  "entity_forge_overseer_vo_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_vo_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.forge_overseer_vo_death"
+  },
+  "item_blade_swing": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/blade_swing",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/blade_swing_2",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/blade_swing_3",
+        "stream": false,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_blade_swing"
+  },
+  "item_great_swing": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/great_swing",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/great_swing_2",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/great_swing_3",
+        "stream": false,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_great_swing"
+  },
+  "entity_shade_shepherd_deafen": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_deafen",
+        "stream": false,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.shade_deafen"
+  },
+  "item_throne_bane_stack": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_stack",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_stack"
+  },
+  "item_throne_bane_awaken": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_awaken",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_awaken"
+  },
+  "item_throne_bane_charge": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_charge",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_charge"
+  },
+  "item_throne_bane_charge_hit": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_charge_hit",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_charge_hit"
+  },
+  "item_throne_bane_leap": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_leap",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_leap"
+  },
+  "item_throne_bane_slam": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_slam",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_slam"
+  },
+  "item_throne_bane_plunge": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_plunge",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_plunge"
+  },
+  "item_throne_bane_impact": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_impact",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_impact"
+  },
+  "item_throne_bane_windup": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_windup",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_windup"
+  },
+  "item_throne_bane_ready": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_ready",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_ready"
+  },
+  "item_throne_bane_slash": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_slash",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_slash"
+  },
+  "item_throne_bane_crescent": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_crescent",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_crescent"
+  },
+  "item_throne_bane_stun": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_stun",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_stun"
+  },
+  "item_throne_bane_combo": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_combo",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_combo"
+  },
+  "item_throne_bane_denied": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/throne_bane_denied",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_throne_bane_denied"
+  },
+  "item_hollow_staff_chant": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_chant",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.chant"
+  },
+  "item_hollow_staff_rune_form": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_rune_form",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.rune_form"
+  },
+  "item_hollow_staff_rune_fire": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_rune_fire",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.rune_fire"
+  },
+  "item_hollow_staff_rune_hit": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_rune_hit",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.rune_hit"
+  },
+  "item_hollow_staff_bell_summon": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_bell_summon",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.bell_summon"
+  },
+  "item_hollow_staff_bell_fall": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_bell_fall",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.bell_fall"
+  },
+  "item_hollow_staff_bell_toll": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_bell_toll",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.bell_toll"
+  },
+  "item_hollow_staff_tide": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_tide",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.tide"
+  },
+  "item_hollow_staff_tide_pull": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_tide_pull",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.tide_pull"
+  },
+  "item_hollow_staff_mark": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_mark",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.mark"
+  },
+  "item_hollow_staff_requiem": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_requiem",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.requiem"
+  },
+  "item_hollow_staff_requiem_end": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_requiem_end",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.requiem_end"
+  },
+  "item_hollow_staff_shade_rise": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_shade_rise",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.shade_rise"
+  },
+  "item_hollow_staff_shade_attack": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_shade_attack",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.shade_attack"
+  },
+  "item_hollow_staff_shade_fade": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_shade_fade",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.shade_fade"
+  },
+  "item_hollow_staff_ready": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_ready",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.ready"
+  },
+  "item_hollow_staff_fizzle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/hollow_staff_fizzle",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.hollow_staff.fizzle"
+  },
+  "item_kingsrime_crescent": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/kingsrime_crescent",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_kingsrime_crescent"
+  },
+  "item_kingsrime_crescent_hit": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/kingsrime_crescent_hit",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_kingsrime_crescent_hit"
+  },
+  "item_kingsrime_wrath": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/kingsrime_wrath",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_kingsrime_wrath"
+  },
+  "item_kingsrime_wrath_ready": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/kingsrime_wrath_ready",
+        "stream": false,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_kingsrime_wrath_ready"
+  },
+  "item_kingsrime_step": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/kingsrime_step",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_kingsrime_step"
+  },
+  "item_kingsrime_blades_burst": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/kingsrime_blades_burst",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_kingsrime_blades_burst"
+  },
+  "item_kingsrime_crown_rise": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/kingsrime_crown_rise",
+        "stream": false,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_kingsrime_crown_rise"
+  },
+  "item_kingsrime_crown_ready": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/kingsrime_crown_ready",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_kingsrime_crown_ready"
+  },
+  "item_kingsrime_coronation": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/kingsrime_coronation",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_kingsrime_coronation"
+  },
+  "item_kingsrime_crown_sink": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/kingsrime_crown_sink",
+        "stream": false,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_kingsrime_crown_sink"
+  },
+  "item_kingsrime_ready": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/kingsrime_ready",
+        "stream": false,
+        "volume": 0.7
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_kingsrime_ready"
+  },
+  "misc_cold_heartbeat": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:misc/cold_heartbeat",
+        "stream": false
+      },
+      {
+        "name": "frozen_dominion:misc/cold_heartbeat_2",
+        "stream": false
+      },
+      {
+        "name": "frozen_dominion:misc/cold_heartbeat_3",
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.cold_heartbeat"
+  },
+  "item_last_watch_draw": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_draw",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_draw"
+  },
+  "item_last_watch_ready": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_ready",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_ready"
+  },
+  "item_last_watch_beam": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_beam",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:item/last_watch_beam_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_beam"
+  },
+  "item_last_watch_split": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_split",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_split"
+  },
+  "item_last_watch_shoot": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_shoot",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:item/last_watch_shoot_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_shoot"
+  },
+  "item_last_watch_mark": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_mark",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:item/last_watch_mark_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_mark"
+  },
+  "item_last_watch_chains": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_chains",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:item/last_watch_chains_2",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_chains"
+  },
+  "item_last_watch_chains_break": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_chains_break",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_chains_break"
+  },
+  "item_last_watch_backstep": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_backstep",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_backstep"
+  },
+  "item_last_watch_sentinel_rise": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_sentinel_rise",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_sentinel_rise"
+  },
+  "item_last_watch_sentinel_shot": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_sentinel_shot",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_sentinel_shot"
+  },
+  "item_last_watch_sentinel_end": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_sentinel_end",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_sentinel_end"
+  },
+  "item_last_watch_rain": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_rain",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_rain"
+  },
+  "item_last_watch_vigil": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/last_watch_vigil",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_last_watch_vigil"
+  },
+  "item_bone_wand_summon": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/bone_wand_summon",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.bone_wand.summon"
+  },
+  "item_bone_wand_command": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/bone_wand_command",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.bone_wand.command"
+  },
+  "item_bone_wand_crumble": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/bone_wand_crumble",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.bone_wand.crumble"
+  },
+  "item_bone_wand_ready": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/bone_wand_ready",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.bone_wand.ready"
+  },
+  "item_bone_wand_fizzle": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/bone_wand_fizzle",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitle.frozen_dominion.bone_wand.fizzle"
+  },
+  "entity_storm_eye_ascent": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_ascent",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_ascent"
+  },
+  "entity_storm_eye_wind": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_wind",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_wind"
+  },
+  "entity_storm_eye_thunder": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_thunder",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_thunder"
+  },
+  "entity_storm_eye_rune": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_rune",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_rune"
+  },
+  "entity_storm_eye_shock": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_shock",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_shock"
+  },
+  "entity_storm_eye_gale": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_gale",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_gale"
+  },
+  "entity_storm_eye_orb": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_orb",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_orb"
+  },
+  "entity_storm_eye_orb_burst": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_orb_burst",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_orb_burst"
+  },
+  "entity_storm_eye_anchor_rise": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_anchor_rise",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_anchor_rise"
+  },
+  "entity_storm_eye_anchor_break": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_anchor_break",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_anchor_break"
+  },
+  "entity_storm_eye_crack": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_crack",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_crack"
+  },
+  "entity_storm_eye_melt": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_melt",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_melt"
+  },
+  "entity_storm_eye_freeze": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_freeze",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_freeze"
+  },
+  "entity_storm_eye_gust": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_gust",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_gust"
+  },
+  "entity_storm_eye_fall": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_fall",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_fall"
+  },
+  "entity_storm_eye_close": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_close",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_close"
+  },
+  "entity_storm_eye_mirror": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/storm_eye_mirror",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.storm_eye_mirror"
+  },
+  "item_blade_backhand": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/blade_backhand",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/blade_backhand_2",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/blade_backhand_3",
+        "stream": false,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_blade_backhand"
+  },
+  "item_blade_thrust": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/blade_thrust",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/blade_thrust_2",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/blade_thrust_3",
+        "stream": false,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_blade_thrust"
+  },
+  "item_great_backhand": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/great_backhand",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/great_backhand_2",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/great_backhand_3",
+        "stream": false,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_great_backhand"
+  },
+  "item_great_thrust": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/great_thrust",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/great_thrust_2",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/great_thrust_3",
+        "stream": false,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_great_thrust"
+  },
+  "item_great_slam": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:item/great_slam",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/great_slam_2",
+        "stream": false,
+        "volume": 0.9
+      },
+      {
+        "name": "frozen_dominion:item/great_slam_3",
+        "stream": false,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.item_great_slam"
+  },
+  "entity_velkhar_line_corpse": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_corpse",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_cold": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_cold",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_preserve": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_preserve",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_rest": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_rest",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_rest_forever": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_rest_forever",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_blizzard": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_blizzard",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_judge": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_judge",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_snow": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_snow",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_wind": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_wind",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_fortress": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_fortress",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_witness": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_witness",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_gate": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_gate",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_finished": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_finished",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_storm": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_storm",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_always": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_always",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_claims": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_claims",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_journey": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_journey",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_glory": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_glory",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_frozen": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_frozen",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_line_freeze_now": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_line_freeze_now",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_velkhar_groan": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_groan",
+        "stream": false,
+        "volume": 1.0
+      }
+    ]
+  },
+  "entity_whiteout_wind": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/whiteout_wind",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.whiteout_wind"
+  },
+  "entity_whiteout_rush": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/whiteout_rush",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.whiteout_rush"
+  },
+  "entity_whiteout_ghost": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/whiteout_ghost",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.whiteout_ghost"
+  },
+  "entity_whiteout_shatter": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/whiteout_shatter",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.whiteout_shatter"
+  },
+  "entity_whiteout_stumble": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/whiteout_stumble",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.whiteout_stumble"
+  },
+  "entity_bone_lord_vo_intro": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/bone_lord_vo_intro",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.bone_lord_vo_intro"
+  },
+  "entity_bone_lord_thrown_scream": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/bone_lord_thrown_scream",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.bone_lord_thrown_scream"
+  },
+  "entity_bone_lord_step": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/bone_lord_step",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/bone_lord_step_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/bone_lord_step_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.bone_lord_step"
+  },
+  "entity_velkhar_forge_gather": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_forge_gather",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.velkhar_forge_gather"
+  },
+  "entity_velkhar_forge_lock": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_forge_lock",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_forge_lock_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_forge_lock_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.velkhar_forge_lock"
+  },
+  "entity_velkhar_weapon_set": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_weapon_set",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.velkhar_weapon_set"
+  },
+  "entity_velkhar_blade_shatter": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_blade_shatter",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.velkhar_blade_shatter"
+  },
+  "entity_velkhar_armour_crack": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/velkhar_armour_crack",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_armour_crack_2",
+        "stream": false,
+        "volume": 1.0
+      },
+      {
+        "name": "frozen_dominion:entity/velkhar_armour_crack_3",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.velkhar_armour_crack"
+  },
+  "entity_turnkey_vo_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/turnkey_vo_fight",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.turnkey_vo_fight"
+  },
+  "entity_lamplighter_vo_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/lamplighter_vo_fight",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.lamplighter_vo_fight"
+  },
+  "entity_forge_overseer_vo_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/forge_overseer_vo_fight",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.forge_overseer_vo_fight"
+  },
+  "entity_drowned_lady_vo_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/drowned_lady_vo_fight",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.drowned_lady_vo_fight"
+  },
+  "entity_rime_priestess_vo_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/rime_priestess_vo_fight",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.rime_priestess_vo_fight"
+  },
+  "entity_shade_shepherd_vo_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/shade_shepherd_vo_fight",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.shade_shepherd_vo_fight"
+  },
+  "entity_bone_lord_vo_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/bone_lord_vo_fight",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.bone_lord_vo_fight"
+  },
+  "entity_bone_lord_vo_death": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/bone_lord_vo_death",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.bone_lord_vo_death"
+  },
+  "entity_whiteout_step": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:entity/whiteout_step",
+        "stream": false,
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.frozen_dominion.whiteout_step"
+  }
+}

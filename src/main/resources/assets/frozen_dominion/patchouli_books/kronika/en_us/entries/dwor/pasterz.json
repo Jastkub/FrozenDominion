@@ -1,0 +1,31 @@
+{
+  "name": "The Shade Shepherd",
+  "icon": "frozen_dominion:shepherd_bell",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_pasterz.png"
+      ],
+      "title": "The Shepherd",
+      "border": true,
+      "text": "Out of the light - only a shadow."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "His hall is hearths and darkness. He puts out the fire, and in the dark he and his herd are deadlier. The lights on his shoulders are the herd - they go out as you thin it.$(br2)A hearth just put out smoulders a while and will not take at once."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_puls.png"
+      ],
+      "title": "The pulse",
+      "border": true,
+      "text": "Whoever stands on the floor is deafened."
+    }
+  ],
+  "advancement": "frozen_dominion:met/shade_shepherd"
+}

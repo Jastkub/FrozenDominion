@@ -1,0 +1,66 @@
+{
+ "variants": {
+  "": [
+   {
+    "model": "frozen_dominion:block/floor_crack_0"
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_0",
+    "y": 90
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_0",
+    "y": 180
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_0",
+    "y": 270
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_1"
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_1",
+    "y": 90
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_1",
+    "y": 180
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_1",
+    "y": 270
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_2"
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_2",
+    "y": 90
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_2",
+    "y": 180
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_2",
+    "y": 270
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_3"
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_3",
+    "y": 90
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_3",
+    "y": 180
+   },
+   {
+    "model": "frozen_dominion:block/floor_crack_3",
+    "y": 270
+   }
+  ]
+ }
+}

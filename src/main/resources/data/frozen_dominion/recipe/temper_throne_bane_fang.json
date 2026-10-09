@@ -1,0 +1,22 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:throne_bane"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:frostmaw_fang"
+  },
+  "base": {
+    "item": "frozen_dominion:throne_bane"
+  },
+  "result": {
+    "id": "frozen_dominion:throne_bane",
+    "components": {
+      "minecraft:custom_data": {
+        "frozen_dominion:temper": "fang"
+      }
+    }
+  }
+}

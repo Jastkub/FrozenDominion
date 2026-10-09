@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "frozen_dominion:everfrost_ingot"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.ingot.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.ingot.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "got": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frozen_dominion:everfrost_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "frozen_dominion:shard",
+  "requirements": [
+    [
+      "got"
+    ]
+  ]
+}

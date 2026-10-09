@@ -1,0 +1,22 @@
+{
+  "name": "The Turnkey",
+  "icon": "frozen_dominion:turnkey_chain",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_klucznik.png"
+      ],
+      "title": "The chain",
+      "border": true,
+      "text": "The manacle reaches far."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The gaoler still walks his cells. Whoever his manacle reaches, he drags in. When his strength starts to fail, he shakes his keys - and the cells let out their prisoners.$(br2)He carries keys you need further on."
+    }
+  ],
+  "advancement": "frozen_dominion:met/turnkey"
+}

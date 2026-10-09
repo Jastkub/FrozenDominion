@@ -1,0 +1,124 @@
+{
+ "name": "hollow_staff_chant",
+ "author": "Frozen Dominion",
+ "description": "Litany: the chant, held (loops 8-48)",
+ "emote": {
+  "isLoop": true,
+  "returnTick": 8,
+  "beginTick": 0,
+  "endTick": 48,
+  "stopTick": 52,
+  "degrees": true,
+  "moves": [
+   {
+    "tick": 0,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    }
+   },
+   {
+    "tick": 8,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -97.0,
+     "yaw": -4.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -118.0,
+     "yaw": 22.0,
+     "roll": -14.0
+    },
+    "head": {
+     "pitch": -6.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 18,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -103.0,
+     "yaw": -4.0,
+     "roll": 6.0
+    },
+    "leftArm": {
+     "pitch": -112.0,
+     "yaw": 14.0,
+     "roll": -22.0
+    },
+    "head": {
+     "pitch": -12.0,
+     "yaw": 6.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 28,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -97.0,
+     "yaw": -4.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -118.0,
+     "yaw": 22.0,
+     "roll": -14.0
+    },
+    "head": {
+     "pitch": -6.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 38,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -103.0,
+     "yaw": -4.0,
+     "roll": 6.0
+    },
+    "leftArm": {
+     "pitch": -112.0,
+     "yaw": 14.0,
+     "roll": -22.0
+    },
+    "head": {
+     "pitch": -12.0,
+     "yaw": -6.0,
+     "roll": 0.0
+    }
+   },
+   {
+    "tick": 48,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -97.0,
+     "yaw": -4.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -118.0,
+     "yaw": 22.0,
+     "roll": -14.0
+    },
+    "head": {
+     "pitch": -6.0,
+     "yaw": 0.0,
+     "roll": 0.0
+    }
+   }
+  ]
+ }
+}

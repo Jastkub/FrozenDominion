@@ -1,0 +1,22 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:kingsrime_sword"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:frostmaw_fang"
+  },
+  "base": {
+    "item": "frozen_dominion:kingsrime_sword"
+  },
+  "result": {
+    "id": "frozen_dominion:kingsrime_sword",
+    "components": {
+      "minecraft:custom_data": {
+        "frozen_dominion:temper": "fang"
+      }
+    }
+  }
+}

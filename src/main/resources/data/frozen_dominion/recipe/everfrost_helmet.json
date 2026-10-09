@@ -1,0 +1,15 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "pattern": [
+    " I ",
+    "I I"
+  ],
+  "key": {
+    "I": {
+      "item": "frozen_dominion:everfrost_ingot"
+    }
+  },
+  "result": {
+    "id": "frozen_dominion:everfrost_helmet"
+  }
+}

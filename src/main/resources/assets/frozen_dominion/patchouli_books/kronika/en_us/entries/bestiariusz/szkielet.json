@@ -1,0 +1,22 @@
+{
+  "name": "Frost Skeleton",
+  "icon": "minecraft:bone",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_szkielet.png"
+      ],
+      "title": "One of the dead",
+      "border": true,
+      "text": "Never alone."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Harmless alone, but never alone, and its touch slows. Broken, it pulls itself together again - unless you give it no time. Fire does not like it.$(br2)They say some carry something in them a wand can be made of."
+    }
+  ],
+  "advancement": "frozen_dominion:met/frost_skeleton"
+}

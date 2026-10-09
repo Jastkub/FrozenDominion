@@ -1,0 +1,13 @@
+{
+  "name": "Doors and keys",
+  "icon": "frozen_dominion:guard_key",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Every door has its key, and the key knows its door - by name. Guards and courtiers carry them; sometimes they lie in chests along the way.$(br2)Some walls lie. Look for a stone worn smooth by touch."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

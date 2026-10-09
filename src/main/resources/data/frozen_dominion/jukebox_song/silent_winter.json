@@ -1,0 +1,8 @@
+{
+  "comparator_output": 14,
+  "description": {
+    "translate": "jukebox_song.frozen_dominion.silent_winter"
+  },
+  "length_in_seconds": 180.0,
+  "sound_event": "frozen_dominion:music_disc_silent_winter"
+}

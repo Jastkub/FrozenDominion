@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "frozen_dominion:crownbreaker"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.beacon.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.beacon.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "shattered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "frozen_dominion:root",
+  "requirements": [
+    [
+      "shattered"
+    ]
+  ]
+}

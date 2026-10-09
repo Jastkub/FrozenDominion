@@ -1,0 +1,174 @@
+{
+  "name": "throne_bane_windup",
+  "author": "Frozen Dominion",
+  "description": "Tronobojca - the wind-up, held",
+  "emote": {
+    "isLoop": true,
+    "returnTick": 8,
+    "beginTick": 0,
+    "endTick": 14,
+    "stopTick": 18,
+    "degrees": false,
+    "easeBeforeKeyframe": true,
+    "moves": [
+      {
+        "tick": 0,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "yaw": -0.1
+        }
+      },
+      {
+        "tick": 5,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "yaw": -0.55,
+          "pitch": 0.1,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 5,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -2.25,
+          "yaw": -0.25,
+          "roll": 0.35
+        }
+      },
+      {
+        "tick": 5,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -1.7,
+          "yaw": 0.65,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 8,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "yaw": -0.55,
+          "pitch": 0.1,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 8,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -2.25,
+          "yaw": -0.25,
+          "roll": 0.35
+        }
+      },
+      {
+        "tick": 8,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -1.7,
+          "yaw": 0.65,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 10,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "yaw": -0.57,
+          "pitch": 0.1,
+          "roll": 0.03
+        }
+      },
+      {
+        "tick": 10,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -2.3,
+          "yaw": -0.25,
+          "roll": 0.37
+        }
+      },
+      {
+        "tick": 10,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -1.75,
+          "yaw": 0.65,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 12,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "yaw": -0.53,
+          "pitch": 0.1,
+          "roll": -0.03
+        }
+      },
+      {
+        "tick": 12,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -2.21,
+          "yaw": -0.25,
+          "roll": 0.33
+        }
+      },
+      {
+        "tick": 12,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -1.66,
+          "yaw": 0.65,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 14,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "yaw": -0.55,
+          "pitch": 0.1,
+          "roll": 0.0
+        }
+      },
+      {
+        "tick": 14,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -2.25,
+          "yaw": -0.25,
+          "roll": 0.35
+        }
+      },
+      {
+        "tick": 14,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -1.7,
+          "yaw": 0.65,
+          "roll": 0.0
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "pattern": [
+    "I",
+    "I",
+    "S"
+  ],
+  "key": {
+    "I": {
+      "item": "frozen_dominion:everfrost_ingot"
+    },
+    "S": {
+      "item": "frozen_dominion:sentinel_rivet"
+    }
+  },
+  "result": {
+    "id": "frozen_dominion:everfrost_sword"
+  }
+}

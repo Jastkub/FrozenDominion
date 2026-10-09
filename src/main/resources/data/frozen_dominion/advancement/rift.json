@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "frozen_dominion:frost_icicle"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.rift.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.rift.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "heart_out": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "frozen_dominion:root",
+  "requirements": [
+    [
+      "heart_out"
+    ]
+  ]
+}

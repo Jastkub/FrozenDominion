@@ -1,0 +1,22 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:sovereigns_lament"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:frostmaw_fang"
+  },
+  "base": {
+    "item": "frozen_dominion:sovereigns_lament"
+  },
+  "result": {
+    "id": "frozen_dominion:sovereigns_lament",
+    "components": {
+      "minecraft:custom_data": {
+        "frozen_dominion:temper": "fang"
+      }
+    }
+  }
+}

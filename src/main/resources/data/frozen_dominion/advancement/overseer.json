@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:iron_ingot"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.overseer.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.overseer.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "defeated": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "frozen_dominion:root",
+  "requirements": [
+    [
+      "defeated"
+    ]
+  ]
+}

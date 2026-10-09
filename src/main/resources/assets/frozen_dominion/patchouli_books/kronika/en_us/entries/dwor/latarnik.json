@@ -1,0 +1,31 @@
+{
+  "name": "The Lamplighter",
+  "icon": "frozen_dominion:lantern_lens",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/d_latarnik.png"
+      ],
+      "title": "The dome from above",
+      "border": true,
+      "text": "Shadow is your ally."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_latarnik.png"
+      ],
+      "title": "The Lamplighter",
+      "border": true,
+      "text": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Light shields him and hurts you. Shadow - the other way round. The piers throw the only shadow in the dome; lure him there.$(br2)The lantern's beam circles. The weaker the Lamplighter, the more the beam looks for you."
+    }
+  ],
+  "advancement": "frozen_dominion:met/lamplighter"
+}

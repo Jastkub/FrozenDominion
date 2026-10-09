@@ -1,0 +1,22 @@
+{
+  "name": "The cold",
+  "icon": "frozen_dominion:hearth_amulet",
+  "category": "frozen_dominion:wyprawa",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The cold here has three faces.$(br2)$(l)Frostbite$() is what the king's servants leave in you: it slows, it bites, and it will not let you heal. Against it there are potions of warmth - nobody knows how to brew them, so do not waste them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)The Chill$() is laid by the Crown over the citadel on everyone who does not carry fire at their breast. Nothing washes it off.$(br2)$(l)Heart's Frost$() is born of the hearts in the trap rooms. Only a burning hearth helps against it - nothing else."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "frozen_dominion:warmth_potion",
+      "title": "Potion of Warmth",
+      "text": "The expedition's fire sealed in brass. Thrown, it bursts: a minute of warmth for all within four blocks - throw it at your feet to warm yourself. Only in chests: camp, tower and citadel."
+    }
+  ]
+}

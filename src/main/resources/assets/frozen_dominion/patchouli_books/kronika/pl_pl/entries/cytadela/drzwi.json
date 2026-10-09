@@ -1,0 +1,13 @@
+{
+  "name": "Drzwi i klucze",
+  "icon": "frozen_dominion:guard_key",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Każde drzwi mają swój klucz, a klucz zna swoje drzwi - po nazwie. Noszą je strażnicy i dworzanie, czasem leżą w skrzyniach przy drodze.$(br2)Niektóre ściany kłamią. Szukaj kamienia wytartego od dotyku."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

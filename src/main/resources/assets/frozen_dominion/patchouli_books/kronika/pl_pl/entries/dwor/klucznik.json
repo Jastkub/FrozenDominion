@@ -1,0 +1,22 @@
+{
+  "name": "Klucznik",
+  "icon": "frozen_dominion:turnkey_chain",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_klucznik.png"
+      ],
+      "title": "Łańcuch",
+      "border": true,
+      "text": "Kajdan dosięgnie cię z daleka."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Strażnik lochów wciąż obchodzi cele. Kogo dosięgnie kajdanem, tego przyciągnie. Gdy zacznie mu brakować sił, potrząśnie kluczami - i cele wypuszczą więźniów.$(br2)Nosi klucze, których potrzebujesz dalej."
+    }
+  ],
+  "advancement": "frozen_dominion:met/turnkey"
+}

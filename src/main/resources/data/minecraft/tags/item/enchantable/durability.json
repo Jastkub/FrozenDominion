@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "frozen_dominion:everfrost_bow",
+    "frozen_dominion:kingsrime_bow",
+    "frozen_dominion:everfrost_shield",
+    "frozen_dominion:kingsrime_shield",
+    "frozen_dominion:rimebound_focus",
+    "frozen_dominion:winters_horn",
+    "frozen_dominion:sovereigns_signet",
+    "frozen_dominion:hollow_breath",
+    "frozen_dominion:crownbreaker",
+    "frozen_dominion:wardens_lodestone"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:priestess_crystal"
+    },
+    {
+      "item": "frozen_dominion:shepherd_bell"
+    },
+    {
+      "item": "frozen_dominion:drowned_braid"
+    },
+    {
+      "item": "frozen_dominion:kingsrime_ingot"
+    },
+    {
+      "item": "frozen_dominion:kingsrime_ingot"
+    },
+    {
+      "item": "frozen_dominion:kingsrime_ingot"
+    },
+    {
+      "item": "frozen_dominion:kingsrime_ingot"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:crown_shard"
+  },
+  "result": {
+    "id": "frozen_dominion:hollow_kings_staff"
+  }
+}

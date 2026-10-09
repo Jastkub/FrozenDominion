@@ -1,0 +1,99 @@
+{
+ "name": "hollow_staff_bell",
+ "author": "Frozen Dominion",
+ "description": "Bell of Penance: raise, strike",
+ "emote": {
+  "isLoop": false,
+  "returnTick": 0,
+  "beginTick": 0,
+  "endTick": 22,
+  "stopTick": 26,
+  "degrees": true,
+  "moves": [
+   {
+    "tick": 0,
+    "easing": "EASEOUTQUAD",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    }
+   },
+   {
+    "tick": 5,
+    "easing": "EASEOUTQUAD",
+    "rightArm": {
+     "pitch": -125.0,
+     "yaw": 0.0,
+     "roll": 8.0
+    },
+    "leftArm": {
+     "pitch": -140.0,
+     "yaw": 0.0,
+     "roll": -30.0
+    }
+   },
+   {
+    "tick": 7,
+    "easing": "EASEINQUAD",
+    "rightArm": {
+     "pitch": -158.0,
+     "yaw": 0.0,
+     "roll": 12.0
+    },
+    "leftArm": {
+     "pitch": -150.0,
+     "yaw": 0.0,
+     "roll": -34.0
+    }
+   },
+   {
+    "tick": 10,
+    "easing": "EASEOUTBACK",
+    "rightArm": {
+     "pitch": -12.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    },
+    "leftArm": {
+     "pitch": -60.0,
+     "yaw": 0.0,
+     "roll": -40.0
+    }
+   },
+   {
+    "tick": 16,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -44.0,
+     "yaw": 0.0,
+     "roll": -2.0
+    },
+    "leftArm": {
+     "pitch": -52.0,
+     "yaw": 0.0,
+     "roll": -36.0
+    }
+   },
+   {
+    "tick": 22,
+    "easing": "EASEINOUTSINE",
+    "rightArm": {
+     "pitch": -18.0,
+     "yaw": 0.0,
+     "roll": 4.0
+    },
+    "leftArm": {
+     "pitch": -8.0,
+     "yaw": 0.0,
+     "roll": -4.0
+    }
+   }
+  ]
+ }
+}

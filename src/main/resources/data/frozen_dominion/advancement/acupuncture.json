@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "frozen_dominion:frost_icicle"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.acupuncture.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.acupuncture.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "survived": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "frozen_dominion:root",
+  "requirements": [
+    [
+      "survived"
+    ]
+  ]
+}

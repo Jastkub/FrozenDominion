@@ -1,0 +1,22 @@
+{
+  "name": "Cichy Łuk",
+  "icon": "frozen_dominion:stillbow_fletching",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_cichy_luk.png"
+      ],
+      "title": "Błysk grotu",
+      "border": true,
+      "text": "Widzisz błysk - zrób krok."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Nie stoi w miejscu i nie daje się złapać - ale znika w zimnie tylko od czasu do czasu, więc da się go dogonić.$(br2)Szron na ziemi wokół ciebie znaczy, że z nieba zaraz spadnie salwa."
+    }
+  ],
+  "advancement": "frozen_dominion:met/stillbow"
+}

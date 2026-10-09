@@ -1,0 +1,167 @@
+{
+  "name": "throne_bane_charge",
+  "author": "Frozen Dominion",
+  "description": "Szarza - the lowered shoulder",
+  "emote": {
+    "isLoop": false,
+    "returnTick": 0,
+    "beginTick": 0,
+    "endTick": 12,
+    "stopTick": 17,
+    "degrees": false,
+    "easeBeforeKeyframe": true,
+    "moves": [
+      {
+        "tick": 0,
+        "easing": "EASEOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "pitch": -0.2,
+          "yaw": -0.2
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "pitch": -0.5,
+          "yaw": -0.4,
+          "y": -0.08,
+          "z": -0.15
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -0.7,
+          "yaw": -0.3,
+          "roll": 0.15
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -1.15,
+          "yaw": 0.45,
+          "roll": -0.1
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "head": {
+          "pitch": -0.35
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": -1.45
+        }
+      },
+      {
+        "tick": 2,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": 0.25
+        }
+      },
+      {
+        "tick": 5,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": 0.25
+        }
+      },
+      {
+        "tick": 5,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": -1.45
+        }
+      },
+      {
+        "tick": 8,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": -1.45
+        }
+      },
+      {
+        "tick": 8,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": 0.25
+        }
+      },
+      {
+        "tick": 11,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightLeg": {
+          "pitch": 0.25
+        }
+      },
+      {
+        "tick": 11,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftLeg": {
+          "pitch": -1.45
+        }
+      },
+      {
+        "tick": 12,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "torso": {
+          "pitch": -0.5,
+          "yaw": -0.4,
+          "y": -0.08,
+          "z": -0.15
+        }
+      },
+      {
+        "tick": 12,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "rightArm": {
+          "pitch": -0.7,
+          "yaw": -0.3,
+          "roll": 0.15
+        }
+      },
+      {
+        "tick": 12,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "leftArm": {
+          "pitch": -1.15,
+          "yaw": 0.45,
+          "roll": -0.1
+        }
+      },
+      {
+        "tick": 12,
+        "easing": "EASEINOUTQUAD",
+        "turn": 0,
+        "head": {
+          "pitch": -0.35
+        }
+      }
+    ]
+  }
+}

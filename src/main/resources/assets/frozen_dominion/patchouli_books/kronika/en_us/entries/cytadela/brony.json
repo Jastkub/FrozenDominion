@@ -1,0 +1,13 @@
+{
+  "name": "The gates behind you",
+  "icon": "minecraft:iron_bars",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "\"We entered the keeper's hall and the portcullis fell behind us. It rose only when one of us no longer breathed - and the hall was as it had been before the fight.\"$(br2)It cannot be held. Whoever stands in the doorway ends up inside."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

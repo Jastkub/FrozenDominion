@@ -1,0 +1,22 @@
+{
+  "name": "Zimno",
+  "icon": "frozen_dominion:hearth_amulet",
+  "category": "frozen_dominion:wyprawa",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Tutejsze zimno ma trzy twarze.$(br2)$(l)Ukąszenie$() zostawiają ciosy sług króla: spowalnia, kąsa i nie daje się leczyć. Na nie są mikstury ciepła - nikt nie wie, jak je warzyć, więc nie marnuj ich."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Chłód$() kładzie Korona nad cytadelą na każdego, kto nie nosi ognia na piersi. Nic go nie zmywa.$(br2)$(l)Odmrożenie$() rodzą serca w salach-pułapkach. Na nie pomaga tylko płonące ognisko - nic innego."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "frozen_dominion:warmth_potion",
+      "title": "Mikstura Ciepła",
+      "text": "Ogień wyprawy zamknięty w mosiądzu. Rzucona pęka i daje minutę ciepła każdemu w promieniu czterech bloków - rzuć pod nogi, by ogrzać siebie. Tylko w skrzyniach: w obozie, w wieży i w cytadeli."
+    }
+  ]
+}

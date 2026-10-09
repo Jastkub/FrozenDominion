@@ -1,0 +1,18 @@
+{
+ "loader": "neoforge:separate_transforms",
+ "gui_light": "front",
+ "textures": {
+  "particle": "frozen_dominion:item/last_watch_bow_pulling_1"
+ },
+ "base": {
+  "parent": "frozen_dominion:item/last_watch_bow_pulling_1_3d"
+ },
+ "perspectives": {
+  "gui": {
+   "parent": "minecraft:item/generated",
+   "textures": {
+    "layer0": "frozen_dominion:item/last_watch_bow_pulling_1"
+   }
+  }
+ }
+}

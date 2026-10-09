@@ -1,0 +1,26 @@
+{
+  "name": "The Bone Lord",
+  "icon": "frozen_dominion:bone_lord_femur",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "frozen_dominion:textures/gui/kronika/c_wladca.png"
+      ],
+      "title": "The chase",
+      "border": true,
+      "text": "Do not stop."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Over a chasm whose floor is lost in fog lies a heap of bones. When you come in, it rises - and hunts you over the bridges between the pillars. If it catches you, that is the end: only a totem gives a second life.$(br2)It trips on the run - over holes, at sharp turns, and when an arrow takes it in the legs. Strike while it is down."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Out of the fog under the bridges the dead climb the pillars. The fires on the pillars burn until he walks over them.$(br2)His spoils wait afterwards in a chained chest in the middle of the hall."
+    }
+  ],
+  "advancement": "frozen_dominion:met/bone_lord"
+}

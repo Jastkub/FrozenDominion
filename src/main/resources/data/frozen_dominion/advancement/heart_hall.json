@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:flint_and_steel"
+    },
+    "title": {
+      "translate": "advancements.frozen_dominion.heart_hall.title"
+    },
+    "description": {
+      "translate": "advancements.frozen_dominion.heart_hall.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "smashed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "frozen_dominion:root",
+  "requirements": [
+    [
+      "smashed"
+    ]
+  ]
+}

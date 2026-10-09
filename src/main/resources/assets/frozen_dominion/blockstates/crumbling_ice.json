@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "stage=0": {
+      "model": "frozen_dominion:block/crumbling_ice"
+    },
+    "stage=1": {
+      "model": "frozen_dominion:block/crumbling_ice_cracked"
+    },
+    "stage=2": {
+      "model": "frozen_dominion:block/crumbling_ice_cracked"
+    }
+  }
+}

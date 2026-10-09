@@ -1,0 +1,11 @@
+{
+ "variants": {
+  "axis=x": {
+   "model": "frozen_dominion:block/frost_candlestick"
+  },
+  "axis=z": {
+   "model": "frozen_dominion:block/frost_candlestick",
+   "y": 90
+  }
+ }
+}

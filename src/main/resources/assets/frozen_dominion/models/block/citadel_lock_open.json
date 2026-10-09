@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "frozen_dominion:block/citadel_lock_open"
+  }
+}

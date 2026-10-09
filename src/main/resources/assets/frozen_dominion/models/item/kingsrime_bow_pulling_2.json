@@ -1,0 +1,16 @@
+{
+  "parent": "minecraft:item/bow",
+  "loader": "neoforge:item_layers",
+  "textures": {
+    "layer0": "frozen_dominion:item/kingsrime_bow_pulling_2",
+    "layer1": "frozen_dominion:item/kingsrime_bow_pulling_2_glow"
+  },
+  "neoforge_data": {
+    "layers": {
+      "1": {
+        "block_light": 15,
+        "sky_light": 15
+      }
+    }
+  }
+}

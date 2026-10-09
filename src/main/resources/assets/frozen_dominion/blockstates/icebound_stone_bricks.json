@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "frozen_dominion:block/icebound_stone_bricks"
+      },
+      {
+        "model": "frozen_dominion:block/icebound_stone_bricks",
+        "y": 90
+      }
+    ]
+  }
+}

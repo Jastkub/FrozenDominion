@@ -1,0 +1,13 @@
+{
+  "name": "Pułapki",
+  "icon": "minecraft:pointed_dripstone",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Pęknięta płyta w posadzce, cień na podłodze, a potem sople. Strzelnice w korytarzach mają swój rytm i klikają tuż przed strzałem. Skarbiec nie lubi, gdy ktoś sięga po jego skarb - jego straż stoi wokół i tylko udaje kamień."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

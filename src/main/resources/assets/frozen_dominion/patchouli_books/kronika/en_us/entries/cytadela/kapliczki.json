@@ -1,0 +1,23 @@
+{
+  "name": "Frost Shrines",
+  "icon": "frozen_dominion:frost_shrine",
+  "category": "frozen_dominion:cytadela",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "frozen_dominion:frost_shrine",
+      "title": "The Frost Shrine",
+      "text": "Lay your hand on it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Before the doors of every hall where someone waits stands a shrine. Lay your hand on it and it kindles and remembers you."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Fall anywhere in the citadel and you rise at the nearest shrine you kindled, with what you carried - sometimes it waits on the shrine itself and you must reach for it. Only your experience is lost."
+    }
+  ],
+  "advancement": "frozen_dominion:root"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Frost Rider",
+  "icon": "minecraft:snowball",
+  "category": "frozen_dominion:bestiariusz",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "frozen_dominion:frost_rider",
+      "scale": 0.9,
+      "offset": 0.0,
+      "rotate": true,
+      "default_rotation": -40.0,
+      "text": "In a Frostmaw's saddle."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "One of the guard's dead in a Frostmaw's saddle. The hound circles you at a stone's throw and the rider hurls snowballs packed hard as ice - three at a time. A hit slows and chills. Come close and the hound bites.$(br2)Kill the hound and the rider falls and fights on foot. Throw the rider off and the hound goes mad."
+    }
+  ],
+  "advancement": "frozen_dominion:met/frost_rider"
+}

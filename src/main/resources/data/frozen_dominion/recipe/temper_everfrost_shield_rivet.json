@@ -1,0 +1,22 @@
+{
+  "type": "frozen_dominion:frost_forging",
+  "ingredients": [
+    {
+      "item": "frozen_dominion:everfrost_shield"
+    }
+  ],
+  "core": {
+    "item": "frozen_dominion:sentinel_rivet"
+  },
+  "base": {
+    "item": "frozen_dominion:everfrost_shield"
+  },
+  "result": {
+    "id": "frozen_dominion:everfrost_shield",
+    "components": {
+      "minecraft:custom_data": {
+        "frozen_dominion:temper": "rivet"
+      }
+    }
+  }
+}
