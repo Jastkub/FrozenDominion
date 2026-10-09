@@ -1,0 +1,51 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+issueTrackerURL="https://github.com/Jastkub/FrozenDominion/issues"
+
+[[mods]]
+modId="frozen_dominion_spells"
+version="1.0.0"
+displayURL="https://github.com/Jastkub/FrozenDominion"
+displayName="Iron's Spellbooks: Frozen Dominion"
+authors="Jastkub"
+description='''
+Eight spells of ice for Iron's Spells 'n Spellbooks, out of the Frozen Dominion: Avalanche, Icicle Rain,
+Frost Javelin, Frost Shackles, Frost Heart, Rune Litany, Ice Sentinel and Frost Shell.
+With Frozen Dominion installed, their scrolls turn up in the citadel's chests.
+'''
+
+[[dependencies.frozen_dominion_spells]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.frozen_dominion_spells]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.frozen_dominion_spells]]
+    modId="irons_spellbooks"
+    mandatory=true
+    versionRange="[1.20.1-3.4.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.frozen_dominion_spells]]
+    modId="geckolib"
+    mandatory=true
+    versionRange="[4.4,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.frozen_dominion_spells]]
+    modId="frozen_dominion"
+    mandatory=false
+    versionRange="[1.0.0,)"
+    ordering="AFTER"
+    side="BOTH"

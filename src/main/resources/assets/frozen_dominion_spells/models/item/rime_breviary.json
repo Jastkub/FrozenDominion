@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "textures": {
+      "book": "frozen_dominion_spells:item/spell_book_models/rime_breviary",
+      "particle": "frozen_dominion_spells:item/spell_book_models/rime_breviary"
+    },
+    "parent": "irons_spellbooks:item/template_spell_book_model"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "frozen_dominion_spells:item/rime_breviary"
+      }
+    },
+    "head": {
+      "textures": {
+        "book": "frozen_dominion_spells:item/spell_book_models/rime_breviary",
+        "particle": "frozen_dominion_spells:item/spell_book_models/rime_breviary"
+      },
+      "parent": "irons_spellbooks:item/template_spell_book_model_open"
+    }
+  }
+}

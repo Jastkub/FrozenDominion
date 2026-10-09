@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.6
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "irons_spellbooks:scroll",
+          "functions": [
+            {
+              "function": "irons_spellbooks:randomize_spell",
+              "quality": {
+                "min": 0.3,
+                "max": 1.0
+              },
+              "spell_filter": {
+                "spells": [
+                  "frozen_dominion_spells:avalanche",
+                  "frozen_dominion_spells:icicle_rain",
+                  "frozen_dominion_spells:frost_javelin",
+                  "frozen_dominion_spells:frost_shackles",
+                  "frozen_dominion_spells:frost_heart",
+                  "frozen_dominion_spells:rune_litany",
+                  "frozen_dominion_spells:ice_sentinel",
+                  "frozen_dominion_spells:frost_shell"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

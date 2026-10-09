@@ -1,0 +1,11 @@
+build/
+.gradle/
+run/
+__pycache__/
+*.pyc
+tools/build/*
+!tools/build/uvmaps/
+tools/build/uvmaps/*
+!tools/build/uvmaps/*.json
+# Iron's Spells jar copied in from the instance (not ours to keep in history)
+libs/

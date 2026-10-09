@@ -1,0 +1,184 @@
+{
+  "ice_shatter": {
+    "sounds": [
+      "frozen_dominion_spells:ice_shatter",
+      "frozen_dominion_spells:ice_shatter_2",
+      "frozen_dominion_spells:ice_shatter_3"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.ice_shatter"
+  },
+  "ice_impact": {
+    "sounds": [
+      "frozen_dominion_spells:ice_impact",
+      "frozen_dominion_spells:ice_impact_2",
+      "frozen_dominion_spells:ice_impact_3"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.ice_impact"
+  },
+  "frost_charge": {
+    "sounds": [
+      "frozen_dominion_spells:frost_charge",
+      "frozen_dominion_spells:frost_charge_2",
+      "frozen_dominion_spells:frost_charge_3"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.frost_charge"
+  },
+  "frost_release": {
+    "sounds": [
+      "frozen_dominion_spells:frost_release",
+      "frozen_dominion_spells:frost_release_2",
+      "frozen_dominion_spells:frost_release_3"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.frost_release"
+  },
+  "ice_grind": {
+    "sounds": [
+      "frozen_dominion_spells:ice_grind",
+      "frozen_dominion_spells:ice_grind_2",
+      "frozen_dominion_spells:ice_grind_3"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.ice_grind"
+  },
+  "crystal_chime": {
+    "sounds": [
+      "frozen_dominion_spells:crystal_chime",
+      "frozen_dominion_spells:crystal_chime_2",
+      "frozen_dominion_spells:crystal_chime_3"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.crystal_chime"
+  },
+  "rune_form": {
+    "sounds": [
+      "frozen_dominion_spells:rune_form"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.rune_form"
+  },
+  "rune_fire": {
+    "sounds": [
+      "frozen_dominion_spells:rune_fire"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.rune_fire"
+  },
+  "rune_hit": {
+    "sounds": [
+      "frozen_dominion_spells:rune_hit"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.rune_hit"
+  },
+  "chains": {
+    "sounds": [
+      "frozen_dominion_spells:chains",
+      "frozen_dominion_spells:chains_2"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.chains"
+  },
+  "chains_break": {
+    "sounds": [
+      "frozen_dominion_spells:chains_break"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.chains_break"
+  },
+  "whoosh": {
+    "sounds": [
+      "frozen_dominion_spells:whoosh",
+      "frozen_dominion_spells:whoosh_2"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.whoosh"
+  },
+  "cast_avalanche_charge": {
+    "sounds": [
+      "frozen_dominion_spells:cast_avalanche_charge"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_avalanche_charge"
+  },
+  "cast_avalanche_release": {
+    "sounds": [
+      "frozen_dominion_spells:cast_avalanche_release"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_avalanche_release"
+  },
+  "cast_icicle_rain_charge": {
+    "sounds": [
+      "frozen_dominion_spells:cast_icicle_rain_charge"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_icicle_rain_charge"
+  },
+  "cast_icicle_rain_release": {
+    "sounds": [
+      "frozen_dominion_spells:cast_icicle_rain_release"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_icicle_rain_release"
+  },
+  "cast_frost_javelin_charge": {
+    "sounds": [
+      "frozen_dominion_spells:cast_frost_javelin_charge"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_frost_javelin_charge"
+  },
+  "cast_frost_javelin_release": {
+    "sounds": [
+      "frozen_dominion_spells:cast_frost_javelin_release"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_frost_javelin_release"
+  },
+  "cast_frost_shackles_charge": {
+    "sounds": [
+      "frozen_dominion_spells:cast_frost_shackles_charge"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_frost_shackles_charge"
+  },
+  "cast_frost_shackles_release": {
+    "sounds": [
+      "frozen_dominion_spells:cast_frost_shackles_release"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_frost_shackles_release"
+  },
+  "cast_frost_heart_charge": {
+    "sounds": [
+      "frozen_dominion_spells:cast_frost_heart_charge"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_frost_heart_charge"
+  },
+  "cast_frost_heart_release": {
+    "sounds": [
+      "frozen_dominion_spells:cast_frost_heart_release"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_frost_heart_release"
+  },
+  "cast_rune_litany_charge": {
+    "sounds": [
+      "frozen_dominion_spells:cast_rune_litany_charge"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_rune_litany_charge"
+  },
+  "cast_rune_litany_release": {
+    "sounds": [
+      "frozen_dominion_spells:cast_rune_litany_release"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_rune_litany_release"
+  },
+  "cast_ice_sentinel_charge": {
+    "sounds": [
+      "frozen_dominion_spells:cast_ice_sentinel_charge"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_ice_sentinel_charge"
+  },
+  "cast_ice_sentinel_release": {
+    "sounds": [
+      "frozen_dominion_spells:cast_ice_sentinel_release"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_ice_sentinel_release"
+  },
+  "cast_frost_shell_charge": {
+    "sounds": [
+      "frozen_dominion_spells:cast_frost_shell_charge"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_frost_shell_charge"
+  },
+  "cast_frost_shell_release": {
+    "sounds": [
+      "frozen_dominion_spells:cast_frost_shell_release"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_frost_shell_release"
+  }
+}
