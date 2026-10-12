@@ -21,6 +21,8 @@ import com.jastkub.fdspells.spells.FrostShacklesSpell;
 import com.jastkub.fdspells.spells.FrostShellSpell;
 import com.jastkub.fdspells.spells.IceSentinelSpell;
 import com.jastkub.fdspells.spells.IcicleRainSpell;
+import com.jastkub.fdspells.spells.RimePathSpell;
+import com.jastkub.fdspells.spells.WintersSorrowSpell;
 import com.jastkub.fdspells.spells.RuneLitanySpell;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
@@ -72,6 +74,10 @@ public final class FDSRegistry {
     public static final RegistryObject<AbstractSpell> ICE_SENTINEL_SPELL =
             SPELLS.register("ice_sentinel", IceSentinelSpell::new);
     public static final RegistryObject<AbstractSpell> FROST_SHELL = SPELLS.register("frost_shell", FrostShellSpell::new);
+    // the swords' spikes, as spells (12.10.2026, a comment on the mod's page)
+    public static final RegistryObject<AbstractSpell> WINTERS_SORROW =
+            SPELLS.register("winters_sorrow", WintersSorrowSpell::new);
+    public static final RegistryObject<AbstractSpell> RIME_PATH = SPELLS.register("rime_path", RimePathSpell::new);
 
     // ------------------------------------------------------------------ what they put in the world
     public static final RegistryObject<EntityType<AvalancheWaveEntity>> AVALANCHE_WAVE =
@@ -96,6 +102,8 @@ public final class FDSRegistry {
             fx("litany_rune", LitanyRuneEntity::new, 0.5F, 0.5F, 1);
     public static final RegistryObject<EntityType<FrostShellEntity>> FROST_SHELL_ENTITY =
             fx("frost_shell", FrostShellEntity::new, 1.0F, 2.0F, 1);
+    public static final RegistryObject<EntityType<com.jastkub.fdspells.entity.IceSpireEntity>> ICE_SPIRE =
+            fx("ice_spire", com.jastkub.fdspells.entity.IceSpireEntity::new, 0.8F, 1.4F, 20);
     public static final RegistryObject<EntityType<IceShardEntity>> ICE_SHARD =
             fx("ice_shard", IceShardEntity::new, 0.4F, 0.4F, 1);
     public static final RegistryObject<EntityType<IceSentinelEntity>> ICE_SENTINEL =
@@ -123,7 +131,7 @@ public final class FDSRegistry {
     public static final java.util.Map<String, RegistryObject<SoundEvent>> CAST_RELEASE = new java.util.HashMap<>();
 
     static {
-        for (String id : new String[]{"avalanche", "icicle_rain", "frost_javelin", "frost_shackles", "frost_heart", "rune_litany", "ice_sentinel", "frost_shell"}) {
+        for (String id : new String[]{"avalanche", "icicle_rain", "frost_javelin", "frost_shackles", "frost_heart", "rune_litany", "ice_sentinel", "frost_shell", "winters_sorrow", "rime_path"}) {
             CAST_CHARGE.put(id, sound("cast_" + id + "_charge"));
             CAST_RELEASE.put(id, sound("cast_" + id + "_release"));
         }

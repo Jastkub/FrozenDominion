@@ -29,7 +29,9 @@
                   "frozen_dominion_spells:frost_heart",
                   "frozen_dominion_spells:rune_litany",
                   "frozen_dominion_spells:ice_sentinel",
-                  "frozen_dominion_spells:frost_shell"
+                  "frozen_dominion_spells:frost_shell",
+                  "frozen_dominion_spells:winters_sorrow",
+                  "frozen_dominion_spells:rime_path"
                 ]
               }
             }
