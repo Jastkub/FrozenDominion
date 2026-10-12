@@ -9,7 +9,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * AN ARROW SLIT'S SHOT (ArrowSlitBlockEntity) - its own, apart from the Stillbow's (IceArrowEntity):
+ * AN ARROW SLIT'S SHOT - its own, apart from the Stillbow's (IceArrowEntity):
  * a bolt of ice straight across the passage, a little hurt and nothing more - no frostbite, no slowing - shattering on
  * the far wall rather than staying stuck in it.
  */

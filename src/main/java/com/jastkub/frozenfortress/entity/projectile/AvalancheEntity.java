@@ -49,7 +49,7 @@ public class AvalancheEntity extends Entity {
     /**
      * IT GATHERS AS IT GOES: it leaves his fists at SMALL of its full size and reaches the
      * whole of it FULL_AT blocks on - width, height, its reach and the weight of its blow all by that one number
-     * (size()). So close to him it is a slide you can step round and that bruises; far out it is the wall.
+     * (size). So close to him it is a slide you can step round and that bruises; far out it is the wall.
      */
     public static final double SMALL = 0.35D, FULL_AT = 16.0D;
 

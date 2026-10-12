@@ -69,10 +69,10 @@ public class DrownedIcePlateEntity extends Entity implements GeoEntity {
     static final int APPEAR_T = 20;
     static final int FADE_T = 24;
     /** The ice under you giving way. */
-    static final float BREAK_DMG = 5.0F;
+    static final float BREAK_DMG = 6.0F;                  // (11.10.2026: 5)
     /** The water's bite, every second you are in it. */
     // three, from one; and it drags you down (chill)
-    static final float COLD_DMG = 5.0F;
+    static final float COLD_DMG = 7.0F;                   // (11.10.2026: 5)
     /** Half its width, in blocks. */
     public static final double HALF = 1.5D;
 
@@ -147,7 +147,7 @@ public class DrownedIcePlateEntity extends Entity implements GeoEntity {
      *  water the hole leaves cannot run away anywhere). */
     public static boolean iceCell(Level level, BlockPos p) {
         BlockPos below = p.below();
-        //  SEALED ICE IS HER ICE TOO. Her arena was
+        // SEALED ICE IS HER ICE TOO. Her arena was
         // sealed that day so no tool goes through it, and the sealing turned her floor to sealed_ice - which this did
         // not count, so no plate could crack anywhere, nor a rune be laid. The plate keeps what it took and puts it
         // back (originals/restore), so the floor stays sealed after every hole.

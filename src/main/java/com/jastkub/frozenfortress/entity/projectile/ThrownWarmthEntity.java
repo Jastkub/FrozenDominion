@@ -13,6 +13,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -66,6 +67,8 @@ public class ThrownWarmthEntity extends ThrowableItemProjectile {
                 who -> who.isAlive() && !who.isSpectator())) {
             if (p.distanceToSqr(at) <= RADIUS * RADIUS) {
                 p.addEffect(new MobEffectInstance(FFEffects.WARMTH.get(), WarmthPotionItem.DURATION), getOwner());
+                p.addEffect(new MobEffectInstance(MobEffects.REGENERATION, WarmthPotionItem.REGEN_TICKS,
+                        WarmthPotionItem.REGEN_LEVEL), getOwner());
             }
         }
         s.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, getItem()), at.x, at.y + 0.1D, at.z,

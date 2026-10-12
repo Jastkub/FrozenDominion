@@ -386,7 +386,7 @@ public class FrostBoltEntity extends AbstractHurtingProjectile
      *
      * <p>AbstractHurtingProjectile is pickable by default, because that is how
      * a ghast's fireball can be batted back. This one cannot be batted back -
-     * hurt() above refuses every point of damage - so the flag bought nothing
+     * hurt above refuses every point of damage - so the flag bought nothing
      * and cost a crash: Projectile.canHitEntity accepts anything pickable, so
      * other mods' projectiles were selecting a crystal in mid-air as the thing
      * they had just hit. LegendaryMonsters' annihilation bomb then cast it

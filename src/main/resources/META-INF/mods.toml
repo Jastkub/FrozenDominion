@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/Jastkub/FrozenDominion/issues"
 
 [[mods]]
 modId="frozen_dominion"
-version="1.0.0"
+version="1.0.2"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/velkhar-the-frozen-dominion"
 displayName="Frozen Dominion"
 logoFile="logo.png"
@@ -16,12 +16,10 @@ crypts and vaults, survive its frost-bound servants, and face Velkhar,
 the Hollow Sovereign - a three-phase soulslike boss with cinematic combat,
 dynamic music and legendary loot.
 
-Music in the citadel by SunixMuz, licensed under CC BY 4.0
-(https://creativecommons.org/licenses/by/4.0/): "Dark Cave" (https://freesound.org/s/767841/),
-"Dark Castle" (https://freesound.org/s/767840/), "Blessed Hall" (https://freesound.org/s/767837/),
-"Battle Melody" (https://freesound.org/s/767835/).
+Every boss fight has its own original music, and so has the citadel - played
+with the VSCO 2 Community Edition orchestral samples (CC0).
 '''
-credits="Music: \"Dark Cave\", \"Dark Castle\", \"Blessed Hall\" and \"Battle Melody\" by SunixMuz, licensed under CC BY 4.0"
+credits="Music: original, written for Frozen Dominion; instruments: VSCO 2 Community Edition samples (CC0)"
 
 [[dependencies.frozen_dominion]]
     modId="forge"

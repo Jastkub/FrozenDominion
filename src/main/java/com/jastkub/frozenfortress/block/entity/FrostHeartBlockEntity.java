@@ -54,7 +54,7 @@ import java.util.WeakHashMap;
  *       the heart.</li>
  *   <li>THE HEART'S HALL'S (mode "fires"): its four hearths, all burning, lay it open - its shell parts - and
  *       then it can be struck to pieces (six blows).</li>
- *   <li>A KEEPER'S (mode "keeper"): on its keeper's altar, beating for
+ *   <li>A KEEPER'S: on its keeper's altar, beating for
  *       him - nothing puts it out but his death ({@link #keeperFell}).</li>
  * </ul>
  */
@@ -125,6 +125,9 @@ public class FrostHeartBlockEntity extends BlockEntity implements GeoBlockEntity
 
     /** Its time to freeze one through, in ticks (see {@link #freeze}). */
     public int freezeTicks() {
+        if (freeze == 140) {
+            return 120;            // the Tur's hall, a second sooner (11.10.2026) - in a citadel laid before it too
+        }
         if (freeze > 0) {
             return freeze;
         }
@@ -197,7 +200,7 @@ public class FrostHeartBlockEntity extends BlockEntity implements GeoBlockEntity
         scanned = true;
         hearths.clear();
         cannons.clear();
-        // (the maws sit IN the walls, just outside the room's box)
+        //
         AABB r = room().inflate(2.0D);
         for (BlockPos q : BlockPos.betweenClosed((int) Math.floor(r.minX), (int) Math.floor(r.minY), (int) Math.floor(r.minZ),
                 (int) Math.floor(r.maxX) - 1, (int) Math.floor(r.maxY) - 1, (int) Math.floor(r.maxZ) - 1)) {

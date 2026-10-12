@@ -1634,7 +1634,7 @@
   "music_turnkey_fight": {
     "sounds": [
       {
-        "name": "frozen_dominion:music/turnkey_dark_castle",
+        "name": "frozen_dominion:music/turnkey_fight",
         "stream": true,
         "volume": 0.9
       }
@@ -1643,7 +1643,7 @@
   "music_priestess_fight": {
     "sounds": [
       {
-        "name": "frozen_dominion:music/priestess_blessed_hall",
+        "name": "frozen_dominion:music/priestess_fight",
         "stream": true,
         "volume": 0.9
       }
@@ -1662,7 +1662,7 @@
   "music_monstrosity_fight": {
     "sounds": [
       {
-        "name": "frozen_dominion:music/monstrosity_battle_melody",
+        "name": "frozen_dominion:music/monstrosity_fight",
         "stream": true,
         "volume": 0.9
       }
@@ -1671,7 +1671,7 @@
   "music_citadel_theme": {
     "sounds": [
       {
-        "name": "frozen_dominion:music/citadel_dark_cave",
+        "name": "frozen_dominion:music/citadel_theme",
         "stream": true,
         "volume": 0.7
       }
@@ -2360,7 +2360,7 @@
   "music_drowned_fight": {
     "sounds": [
       {
-        "name": "frozen_dominion:music/drowned_fountain_of_life",
+        "name": "frozen_dominion:music/drowned_fight",
         "stream": true,
         "volume": 0.9
       }
@@ -2864,7 +2864,7 @@
   "music_aurochs_fight": {
     "sounds": [
       {
-        "name": "frozen_dominion:music/aurochs_brave_fight",
+        "name": "frozen_dominion:music/aurochs_fight",
         "stream": true,
         "volume": 0.9
       }
@@ -2873,7 +2873,7 @@
   "music_shepherd_fight": {
     "sounds": [
       {
-        "name": "frozen_dominion:music/shepherd_devil_dance",
+        "name": "frozen_dominion:music/shepherd_fight",
         "stream": true,
         "volume": 0.9
       }
@@ -2882,7 +2882,7 @@
   "music_overseer_fight": {
     "sounds": [
       {
-        "name": "frozen_dominion:music/overseer_battle_of_avalon",
+        "name": "frozen_dominion:music/overseer_fight",
         "stream": true,
         "volume": 0.9
       }
@@ -2891,7 +2891,16 @@
   "music_lamplighter_fight": {
     "sounds": [
       {
-        "name": "frozen_dominion:music/lamplighter_bravery",
+        "name": "frozen_dominion:music/lamplighter_fight",
+        "stream": true,
+        "volume": 0.9
+      }
+    ]
+  },
+  "music_frosty_fight": {
+    "sounds": [
+      {
+        "name": "frozen_dominion:music/frosty_fight",
         "stream": true,
         "volume": 0.9
       }
@@ -2900,7 +2909,7 @@
   "music_bone_lord_fight": {
     "sounds": [
       {
-        "name": "frozen_dominion:music/bone_lord_an_epic_journey",
+        "name": "frozen_dominion:music/bone_lord_fight",
         "stream": true,
         "volume": 0.9
       }

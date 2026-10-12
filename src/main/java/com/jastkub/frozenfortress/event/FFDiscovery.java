@@ -25,7 +25,7 @@ public final class FFDiscovery {
     /** Whose pages open on sight. */
     public static final Set<String> MET = Set.of("frostbound_sentinel", "rimeweaver", "stillbow", "frostmaw",
             "frost_skeleton", "shade", "vault_warden", "turnkey", "lamplighter", "shade_shepherd", "drowned_lady",
-            "rime_priestess", "ice_aurochs", "forge_overseer", "ice_monstrosity", "velkhar");
+            "rime_priestess", "ice_aurochs", "forge_overseer", "ice_monstrosity", "velkhar", "frosty");
     private static final double SIGHT = 28.0D;
 
     private FFDiscovery() {

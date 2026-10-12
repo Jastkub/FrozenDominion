@@ -45,6 +45,8 @@ minecraft {
 
         server {
             property 'forge.enabledGameTestNamespaces', mod_id
+            // (12.10.2026) every boss's beat in the log - read by tools/server_frosty_test.py; the dev server only
+            property 'frozen_dominion.logBeats', 'true'
             args '--nogui'
         }
     }
@@ -81,7 +83,7 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")
     // Curios is a hard dependency: the artifacts are built around its slots.
-    // The full jar (not the :api classifier) so the dev runtime has it too.
+    // The full jar (not the:api classifier) so the dev runtime has it too.
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
     // JEI's API, only to compile the Frost Anvil's tab against (integration/jei): the jar the instance already has,
     // copied into libs/ - nothing fetched; JEI itself is not in the dev runtime, so the plugin is never loaded there

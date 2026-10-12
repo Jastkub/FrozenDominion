@@ -50,7 +50,8 @@ public final class CourtBossBar {
         AUROCHS("ice_aurochs_bossbar", new float[]{0.50F}, 0xBFE8FF, 0xC6D6E2),
         SHEPHERD("shade_shepherd_bossbar", new float[]{0.50F}, 0xC8C0A8, 0xB8B4A8),
         OVERSEER("forge_overseer_bossbar", new float[]{0.50F}, 0x9FE6FF, 0xB8C2CC),
-        BONE_LORD("bone_lord_bossbar", new float[]{0.50F}, 0xE8E0C8, 0xD8D0BC);
+        BONE_LORD("bone_lord_bossbar", new float[]{0.50F}, 0xE8E0C8, 0xD8D0BC),
+        FROSTY("frosty_bossbar", new float[]{0.66F, 0.50F, 0.33F}, 0xD8F4FF, 0xD0DCE8);
 
         final ResourceLocation tex;
         final float[] marks;
@@ -223,6 +224,33 @@ public final class CourtBossBar {
             col = 0xFFB0A0;
         }
         return draw(mc, g, topY, Kind.AUROCHS, progress, progress <= 0.5F, -1.0F, sub, col, wash);
+    }
+
+    /**
+     * FROSTY - storm-grey iron and frost-white ice, the alpha's head in the medallion; stones where his pack comes
+     * (two thirds, one third) and at half, where the blizzard comes down (the track goes storm-white). Crouched to
+     * leap, the line says to move; his jaws stuck in the ice, the bar pulses gold - he is open; in the storm, it says
+     * to listen.
+     */
+    public static int renderFrosty(GuiGraphics g, int topY, Component name, float progress) {
+        Minecraft mc = Minecraft.getInstance();
+        com.jastkub.frozenfortress.entity.FrostyEntity f = nearest(mc, com.jastkub.frozenfortress.entity.FrostyEntity.class);
+        int st = f != null ? f.getAttackState() : 0;
+        Component sub = name;
+        int col = Kind.FROSTY.nameCol;
+        Wash wash = Wash.NONE;
+        if (f != null && f.isStuck()) {
+            sub = Component.translatable("entity.frozen_dominion.frosty.stuck");
+            col = 0xFFD98A;
+            wash = Wash.OPEN;
+        } else if (st == com.jastkub.frozenfortress.entity.FrostyEntity.LEAP) {
+            sub = Component.translatable("entity.frozen_dominion.frosty.leap");
+            col = 0xFFB0A0;
+        } else if (f != null && f.stormy()) {
+            sub = Component.translatable("entity.frozen_dominion.frosty.storm");
+            col = 0xE8F6FF;
+        }
+        return draw(mc, g, topY, Kind.FROSTY, progress, progress <= 0.5F, -1.0F, sub, col, wash);
     }
 
     /**

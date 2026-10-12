@@ -162,7 +162,7 @@ public class ForgeOverseerEntity extends FrostServantEntity implements GateKeepe
             {5.6, 9.4, -3.8}, {-5.6, 9.4, -3.8}};
     /** Model units its plate model is drawn over the plate entity while it falls (PLATE_FALL_LIFT). */
     static final double PLATE_LIFT = 7.0D;
-    static final float PLATE_HP = 20.0F, HEAVY_BLOW = 7.0F, LIGHT_WEAR = 0.45F, PLATE_GUARD = 0.07F, BARE_CORE = 1.25F;
+    static final float PLATE_HP = 20.0F, HEAVY_BLOW = 7.0F, LIGHT_WEAR = 0.45F, PLATE_GUARD = 0.12F, BARE_CORE = 1.25F;
     private static final UUID LIGHTER = UUID.fromString("5b0f3c7e-9d0e-4b4f-8a63-6f6f72676531");
 
     private static final String P = "animation.forge_overseer.";
@@ -223,7 +223,7 @@ public class ForgeOverseerEntity extends FrostServantEntity implements GateKeepe
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 300.0D)
+                .add(Attributes.MAX_HEALTH, 345.0D)          // (+15%: 11.10.2026)
                 .add(Attributes.ATTACK_DAMAGE, 12.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.21D)
                 .add(Attributes.ARMOR, 4.0D)
@@ -1034,6 +1034,14 @@ public class ForgeOverseerEntity extends FrostServantEntity implements GateKeepe
     }
 
     // ------------------------------------------------------------------------------------------------ hurt, death
+    /** The miniboss's ceiling (BossCeiling), lifted while it is open: his core bare. */
+    private final BossCeiling ceiling = new BossCeiling();
+
+    @Override
+    protected float getDamageAfterMagicAbsorb(DamageSource source, float amount) {
+        return ceiling.apply(this, source, super.getDamageAfterMagicAbsorb(source, amount), coreBare());
+    }
+
     @Override
     public boolean hurt(DamageSource source, float amount) {
         if (!source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {

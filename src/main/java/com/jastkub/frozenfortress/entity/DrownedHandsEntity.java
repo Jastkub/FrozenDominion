@@ -57,7 +57,7 @@ public class DrownedHandsEntity extends Mob implements GeoEntity {
     /** How near the middle you must be to be taken, and how near the floor. */
     // from 1.3 and 1.6
     static final double GRAB_R = 2.4D, GRAB_H = 2.4D;
-    static final float GRAB_DMG = 4.0F, SQUEEZE_DMG = 2.0F;
+    static final float GRAB_DMG = 6.0F, SQUEEZE_DMG = 3.0F;        // (11.10.2026: 4, 2)
 
     private static final EntityDataAccessor<Integer> PHASE =
             SynchedEntityData.defineId(DrownedHandsEntity.class, EntityDataSerializers.INT);

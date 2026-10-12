@@ -201,7 +201,7 @@ public final class StormEyeArena {
     /**
      * HELD UP BY A MOVING FLOE the server cannot see (StormEyeFloeEntity is solid only on the client). The server must
      * not take standing on it for flying: a dedicated server kicks anybody with no block about their feet for four
-     * seconds. The same hidden levitation as airborne() - but put straight into the server's own list and never sent:
+     * seconds. The same hidden levitation as airborne - but put straight into the server's own list and never sent:
      * on the client it would float them up off the ice. The server only asks whether they have it. Put in only when
      * they have none (never over a real one, never over one the client was sent - that one must run out and be taken
      * off the client); it lasts ten ticks and is put in again when it has gone.

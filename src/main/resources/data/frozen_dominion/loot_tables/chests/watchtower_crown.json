@@ -15,15 +15,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "frozen_dominion:descent_key"
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
           "name": "minecraft:map",
           "functions": [
             {

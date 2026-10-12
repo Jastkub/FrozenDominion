@@ -36,8 +36,10 @@ import net.minecraft.world.phys.shapes.VoxelShape;
  *
  * <p>Two things at once, for whoever is about to go through that door:
  * <ul>
- *   <li>A CHECKPOINT: a hand laid on it KINDLES it (stage 2), and whoever did it comes back to life in front of it
- *   from then on - until they kindle another, or sleep in a bed. It heals nothing.</li>
+ *   <li>A CHECKPOINT: a hand laid on it KINDLES it (stage 2) and makes it its giver's return - but they come back to
+ *   life before it only while it keeps VIGIL over them: a Vigil Shard given to it (offer) is one
+ *   rising, spent by the death it saves. Without a vigil a death is a death (FrostShrineBlockEntity.onDeath). It heals
+ *   nothing.</li>
  *   <li>A RELIQUARY: whoever dies in the boss's hall behind the door (or, before the throne hall, in the Eye of the
  *   Storm) finds everything they carried kept in the casket in its plinth (FrostShrineBlockEntity) - lit (FULL) while
  *   it keeps anybody's things. The same hand laid on it gives them back.</li>
@@ -119,9 +121,37 @@ public class FrostShrineBlock extends Block implements EntityBlock {
         if (!(player instanceof ServerPlayer sp)) {
             return InteractionResult.SUCCESS;
         }
+        net.minecraft.world.item.ItemStack held = sp.getMainHandItem();
+        if (held.is(com.jastkub.frozenfortress.registry.FFItems.VIGIL_SHARD.get())) {
+            return offer(level.getBlockState(pos), level, pos, sp, held);
+        }
         // one hand on it, both of its offices: what it keeps for you back, and your return here
         boolean gave = level.getBlockEntity(pos) instanceof FrostShrineBlockEntity be && be.giveBack(sp);
         return kindle(level.getBlockState(pos), level, pos, sp, gave);
+    }
+
+    /**
+     * A VIGIL SHARD GIVEN TO IT: the shard goes into its flame and
+     * the shrine keeps one more vigil over its giver - one more rising before it, with everything they carry - and it
+     * is their return. Seen: fx_shrine_vigil (the shard sinking into the flame, the column of light, the ring of runes).
+     */
+    private static InteractionResult offer(BlockState state, Level level, BlockPos pos, ServerPlayer sp,
+                                           net.minecraft.world.item.ItemStack held) {
+        if (!sp.getAbilities().instabuild) {
+            held.shrink(1);
+        }
+        int n = FrostShrineBlockEntity.vigils(sp) + 1;
+        FrostShrineBlockEntity.setVigils(sp, n);
+        kindle(state, level, pos, sp, true);
+        com.jastkub.frozenfortress.entity.AttackFxEntity.spawn(level, "shrine_vigil",
+                net.minecraft.world.phys.Vec3.atBottomCenterOf(pos), state.getValue(FACING).toYRot(), 1.0F, 48, null);
+        if (level.getBlockEntity(pos) instanceof FrostShrineBlockEntity be) {
+            be.triggerAnim("remember", "remember");
+        }
+        level.playSound(null, pos, SoundEvents.AMETHYST_BLOCK_RESONATE, SoundSource.BLOCKS, 1.6F, 0.5F);
+        level.playSound(null, pos, SoundEvents.BEACON_POWER_SELECT, SoundSource.BLOCKS, 0.9F, 1.4F);
+        sp.displayClientMessage(Component.translatable("message.frozen_dominion.shrine_vigil_given", n), true);
+        return InteractionResult.CONSUME;
     }
 
     /** It kindles (if it has not been) and takes this one's return. `quiet`: something else was just said. */
@@ -130,7 +160,8 @@ public class FrostShrineBlock extends Block implements EntityBlock {
         BlockPos stand = pos.relative(facing);
         if (level.dimension().equals(sp.getRespawnDimension()) && stand.equals(sp.getRespawnPosition())) {
             if (!quiet) {
-                sp.displayClientMessage(Component.translatable("message.frozen_dominion.shrine_already"), true);
+                sp.displayClientMessage(Component.translatable("message.frozen_dominion.shrine_already",
+                        FrostShrineBlockEntity.vigils(sp)), true);
             }
             return InteractionResult.CONSUME;
         }
@@ -140,9 +171,17 @@ public class FrostShrineBlock extends Block implements EntityBlock {
             // burning already: it takes you in all the same
             be.triggerAnim("remember", "remember");
         }
-        // back on your feet before it, looking out into the room before the door
+        // back on your feet before it, looking out into the room before the door - while a vigil is kept over you
+        if (level instanceof net.minecraft.server.level.ServerLevel sl) {
+            FrostShrineBlockEntity.rememberHome(sp, sl);
+        }
         sp.setRespawnPosition(level.dimension(), stand, facing.toYRot(), true, false);
-        sp.displayClientMessage(Component.translatable("message.frozen_dominion.shrine_kindled"), true);
+        int vigils = FrostShrineBlockEntity.vigils(sp);
+        if (!quiet) {
+            sp.displayClientMessage(vigils > 0
+                    ? Component.translatable("message.frozen_dominion.shrine_kindled_vigils", vigils)
+                    : Component.translatable("message.frozen_dominion.shrine_kindled_cold"), true);
+        }
         level.playSound(null, pos, SoundEvents.RESPAWN_ANCHOR_SET_SPAWN, SoundSource.BLOCKS, 1.0F, 1.25F);
         level.playSound(null, pos, SoundEvents.AMETHYST_BLOCK_RESONATE, SoundSource.BLOCKS, 1.2F, 0.7F);
         return InteractionResult.CONSUME;

@@ -26,6 +26,10 @@ tools/sfx_source/*
 !tools/sfx_source/boss_vo/
 !tools/sfx_source/velkhar_vo/
 
+# The VSCO 2 Community Edition sample library (CC0) that the music in tools/music/ is played with: a 5 GB
+# checkout of sgossner/VSCO-2-CE (its SFZ branch), only read by sampler.py - never committed.
+tools/music/vsco/
+
 # Editors and OS litter
 *.bbmodel.bak
 .DS_Store

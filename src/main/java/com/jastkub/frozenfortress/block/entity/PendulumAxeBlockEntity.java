@@ -32,8 +32,7 @@ import net.minecraft.world.phys.Vec3;
  */
 public class PendulumAxeBlockEntity extends BlockEntity {
 
-    /** The blade's half-reach along its swing, and how close it must come to a body to strike it. (A little less of
-     *  both) */
+    /** The blade's half-reach along its swing, and how close it must come to a body to strike it. */
     public static final double BLADE_HALF = 0.7D, TOUCH = 0.12D;
     private static final float DAMAGE = 4.0F;
     private static final double THROW = 1.05D, LIFT = 0.32D;

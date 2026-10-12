@@ -15,7 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 /**
  * Once, a rune of the prison's seal could come off one of the garrison (a
  * nest's creatures carried the rune of their part of the citadel). No longer
- * each rune lies in one chest, always
+ *: each rune lies in one chest, always
  * the same - three in the hidden rooms, the depths' in the cisterns' chained
  * coffer - and no creature carries one. The handler is kept unsubscribed so
  * the tags a nest of an older world still writes come to nothing.

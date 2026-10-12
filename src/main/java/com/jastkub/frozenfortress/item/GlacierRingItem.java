@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * THE GLACIER RING: a band of old glacier ice with a block of the glacier on it - worn, every knockback, throw, shove and
- * gust on its wearer is seventy percent weaker (FFEnchantments.steady -).
+ * gust on its wearer is seventy percent weaker (FFEnchantments.steady - "daj mu jednak 70% redukcji knockback nie 100").
  * One in the citadel, in the chest of the Ancestors' hidden stash ("w jakiejs niszowej skrzynce": secret_glacier).
  */
 public class GlacierRingItem extends Item {

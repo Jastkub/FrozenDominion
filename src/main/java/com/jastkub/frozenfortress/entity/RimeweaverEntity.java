@@ -57,7 +57,11 @@ public class RimeweaverEntity extends FrostServantEntity {
     private static final RawAnimation CIRCLE_ANIM = RawAnimation.begin().thenPlay("animation.rimeweaver.circle");
     private static final RawAnimation BROKEN_ANIM = RawAnimation.begin().thenPlay("animation.rimeweaver.interrupted");
     private static final RawAnimation HURT = RawAnimation.begin().thenPlay("animation.rimeweaver.hurt");
-    private static final RawAnimation DEATH = RawAnimation.begin().thenPlay("animation.rimeweaver.death");
+    /** Its three deaths (tools/gen_defenders.py), one at random as it dies (12.10.2026). */
+    private static final RawAnimation[] DEATHS = {
+            RawAnimation.begin().thenPlayAndHold("animation.rimeweaver.death"),
+            RawAnimation.begin().thenPlayAndHold("animation.rimeweaver.death_2"),
+            RawAnimation.begin().thenPlayAndHold("animation.rimeweaver.death_3")};
 
 
     public RimeweaverEntity(EntityType<? extends Monster> type, Level level) {
@@ -83,9 +87,42 @@ public class RimeweaverEntity extends FrostServantEntity {
         targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
 
+    /** It falls and lies (tools/gen_defenders.py: its death clip, 56 ticks), then fades - no shattering. */
     @Override
-    protected int shatterTick() {
-        return 30;
+    protected int getDeathDuration() {
+        return 60;
+    }
+
+    @Override
+    protected int deathVariants() {
+        return DEATHS.length;
+    }
+
+    /**
+     * IT COMES APART INTO SHADOW: as the robe's hem goes, the shadow's shards burst from it and drift away (fx_rimeweaver_shadow); its
+     * third, the empty robe: a last breath of frost out of the hood as whoever was in it goes.
+     */
+    @Override
+    protected void tickDeath() {
+        super.tickDeath();
+        if (level().isClientSide || isRemoved()) {
+            return;
+        }
+        if (deathVariant() == 1 && deathTime == 16) {
+            AttackFxEntity.spawn(level(), "rimeweaver_shadow", position().add(0.0D, 0.9D, 0.0D), yBodyRot, 1.5F, 40,
+                    this);
+            playSound(net.minecraft.sounds.SoundEvents.SOUL_ESCAPE, 1.6F, 0.6F);
+            playSound(net.minecraft.sounds.SoundEvents.WITHER_SHOOT, 0.4F, 1.8F);
+        } else if (deathVariant() == 2 && deathTime == 10) {
+            AttackFxEntity.spawn(level(), AttackFxEntity.SNOW_BURST, position().add(0.0D, 2.0D, 0.0D), yBodyRot, 0.9F,
+                    20, this);
+            playSound(net.minecraft.sounds.SoundEvents.SOUL_ESCAPE, 1.4F, 0.9F);
+        }
+    }
+
+    @Override
+    public int fadeTicks() {
+        return 18;
     }
 
     /** Is it in the middle of weaving something that a blow can break? */
@@ -324,7 +361,7 @@ public class RimeweaverEntity extends FrostServantEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController<>(this, "main", 3, state -> {
             if (isDeadOrDying()) {
-                return state.setAndContinue(DEATH);
+                return state.setAndContinue(deathAnim(DEATHS));
             }
             switch (getAttackState()) {
                 case CAST: return state.setAndContinue(CAST_ANIM);

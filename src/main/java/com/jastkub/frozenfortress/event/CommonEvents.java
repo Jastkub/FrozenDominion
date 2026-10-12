@@ -239,6 +239,7 @@ public final class CommonEvents {
         String adv = switch (String.valueOf(net.minecraftforge.registries.ForgeRegistries.ENTITY_TYPES.getKey(dead.getType()))) {
             case "frozen_dominion:drowned_lady" -> "drowned";
             case "frozen_dominion:ice_aurochs" -> "aurochs";
+            case "frozen_dominion:frosty" -> "frosty";
             case "frozen_dominion:shade_shepherd" -> "shepherd";
             case "frozen_dominion:forge_overseer" -> "overseer";
             case "frozen_dominion:turnkey" -> "turnkey";
@@ -400,8 +401,7 @@ public final class CommonEvents {
      */
     @SubscribeEvent
     public static void onHeal(net.minecraftforge.event.entity.living.LivingHealEvent event) {
-        // (08.10.2026: Velkhar's own seal on every wound he cut is gone - "usunac te mechanike blokady leczenia"; his
-        // blows lay Frostbite on, and that is all, which a Potion of Warmth keeps off)
+        //
         if (event.getEntity().hasEffect(FFEffects.FROSTBITE.get())) {
             event.setCanceled(true);
         }

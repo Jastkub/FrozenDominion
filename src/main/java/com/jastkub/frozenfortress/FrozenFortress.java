@@ -127,6 +127,7 @@ public class FrozenFortress {
         event.put(FFEntities.DROWNED_LADY.get(), com.jastkub.frozenfortress.entity.DrownedLadyEntity.createAttributes().build());
         event.put(FFEntities.VELKHAR_SMITH.get(), com.jastkub.frozenfortress.entity.VelkharSmithEntity.createAttributes().build());
         event.put(FFEntities.ICE_AUROCHS.get(), com.jastkub.frozenfortress.entity.IceAurochsEntity.createAttributes().build());
+        event.put(FFEntities.FROSTY.get(), com.jastkub.frozenfortress.entity.FrostyEntity.createAttributes().build());
         event.put(FFEntities.FORGE_OVERSEER.get(), com.jastkub.frozenfortress.entity.ForgeOverseerEntity.createAttributes().build());
         event.put(FFEntities.SHADE_SHEPHERD.get(), com.jastkub.frozenfortress.entity.ShadeShepherdEntity.createAttributes().build());
         event.put(FFEntities.SHADE.get(), com.jastkub.frozenfortress.entity.ShadeEntity.createAttributes().build());

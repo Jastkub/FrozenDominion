@@ -217,7 +217,7 @@ public class FrostShrineBlockEntity extends BlockEntity implements GeoBlockEntit
             return near(s, arena.home);
         }
         // the one whose Room is the smallest of those it lies in: a keeper's hall before the whole of the underground
-        // (whose station keeps what is lost down there anywhere else); the nearer of two the same
+        //; the nearer of two the same
         List<FrostShrineBlockEntity> near = new ArrayList<>();
         int cx = BlockPos.containing(at).getX() >> 4, cz = BlockPos.containing(at).getZ() >> 4;
         for (int dx = -SEARCH_CHUNKS - 4; dx <= SEARCH_CHUNKS + 4; dx++) {
@@ -293,12 +293,6 @@ public class FrostShrineBlockEntity extends BlockEntity implements GeoBlockEntit
         return s.getGameRules().getBoolean(net.minecraft.world.level.GameRules.RULE_KEEPINVENTORY);
     }
 
-    private static String keptMessage(ServerLevel s, Vec3 at, FrostShrineBlockEntity r, boolean theirs) {
-        String k = StormEyeArena.at(s, at) != null ? "message.frozen_dominion.shrine_kept_throne"
-                : r.wide ? "message.frozen_dominion.shrine_kept_below" : "message.frozen_dominion.shrine_kept";
-        return theirs ? k : k.replace("shrine_kept", "shrine_wait");
-    }
-
     /** How far from the shrine that is their return a death is still its own (horizontally, in blocks): the whole
      *  citadel and the land round it, not the world. */
     private static final double OWN_REACH = 256.0D;
@@ -325,13 +319,6 @@ public class FrostShrineBlockEntity extends BlockEntity implements GeoBlockEntit
         return null;
     }
 
-    /** Whose this death is: the shrine that is their return (within its reach), else the one whose hall it was in. */
-    @Nullable
-    private static FrostShrineBlockEntity forPlayer(ServerPlayer p, ServerLevel s) {
-        FrostShrineBlockEntity r = own(p, s);
-        return r != null ? r : forDeath(s, p.position());
-    }
-
     /** Is this shrine their return - laid a hand on, so they rise before it (their respawn is its standing cell)? */
     private static boolean theirs(ServerPlayer p, ServerLevel s, BlockPos shrine) {
         BlockState st = s.getBlockState(shrine);
@@ -355,10 +342,23 @@ public class FrostShrineBlockEntity extends BlockEntity implements GeoBlockEntit
                 || keepsInventory(s)) {
             return;
         }
-        FrostShrineBlockEntity r = forPlayer(p, s);
-        if (r == null) {
+        // NO VIGIL, NO RISING: a
+        // death in the citadel is a rising before your shrine, with everything, only while a Vigil Shard given to a
+        // shrine still keeps vigil over you - and it spends one. Without one it is death as it always was: what you
+        // carried falls where you fell, and you wake where you woke before the citadel (goHome).
+        FrostShrineBlockEntity r = own(p, s);
+        int vigils = vigils(p);
+        if (r == null || vigils <= 0) {
+            boolean citadel = r != null || forDeath(s, p.position()) != null;
+            if (r != null || ownShrine(p, s) != null) {
+                goHome(p);
+            }
+            if (citadel) {
+                p.sendSystemMessage(Component.translatable("message.frozen_dominion.shrine_no_vigil"));
+            }
             return;
         }
+        setVigils(p, vigils - 1);
         CompoundTag rec = new CompoundTag();
         rec.putString("Dim", s.dimension().location().toString());
         rec.putLong("Pos", r.getBlockPos().asLong());
@@ -390,9 +390,80 @@ public class FrostShrineBlockEntity extends BlockEntity implements GeoBlockEntit
         rec.put("Loose", loose);
         kept.put(PENDING, rec);
         p.getPersistentData().put(net.minecraft.world.entity.player.Player.PERSISTED_NBT_TAG, kept);
-        boolean theirs = theirs(p, s, r.getBlockPos());
-        p.sendSystemMessage(Component.translatable(theirs && forDeath(s, p.position()) != r
-                ? "message.frozen_dominion.shrine_kept_own" : keptMessage(s, p.position(), r, theirs)));
+        p.sendSystemMessage(Component.translatable("message.frozen_dominion.shrine_vigil_spent", vigils - 1));
+    }
+
+    // ------------------------------------------------------------------------------------------------ the vigils
+    /** Vigils kept over a player: Vigil Shards given to shrines and not yet spent on a rising. */
+    private static final String VIGILS = "ffVigils";
+    /** Where they woke before a shrine was their return (a bed, the world's spawn): goHome sends them back there. */
+    private static final String HOME = "ffHomeSpawn";
+
+    private static CompoundTag persisted(Player p) {
+        return p.getPersistentData().getCompound(Player.PERSISTED_NBT_TAG);
+    }
+
+    public static int vigils(Player p) {
+        return persisted(p).getInt(VIGILS);
+    }
+
+    public static void setVigils(Player p, int n) {
+        CompoundTag kept = persisted(p);
+        kept.putInt(VIGILS, Math.max(0, n));
+        p.getPersistentData().put(Player.PERSISTED_NBT_TAG, kept);
+    }
+
+    /** The shrine whose standing cell is their return, wherever they are (own wants them within its reach). */
+    @Nullable
+    private static FrostShrineBlockEntity ownShrine(ServerPlayer p, ServerLevel s) {
+        BlockPos stand = p.getRespawnPosition();
+        ServerLevel at = p.server.getLevel(p.getRespawnDimension());
+        if (stand == null || at == null || !at.isLoaded(stand)) {
+            return null;
+        }
+        for (net.minecraft.core.Direction d : net.minecraft.core.Direction.Plane.HORIZONTAL) {
+            BlockPos pos = stand.relative(d);
+            BlockState st = at.getBlockState(pos);
+            if (st.getBlock() instanceof FrostShrineBlock && pos.relative(st.getValue(FrostShrineBlock.FACING)).equals(stand)
+                    && at.getBlockEntity(pos) instanceof FrostShrineBlockEntity r) {
+                return r;
+            }
+        }
+        return null;
+    }
+
+    /** Before a shrine becomes their return: where they woke until now, kept (unless that was a shrine too). */
+    public static void rememberHome(ServerPlayer p, ServerLevel s) {
+        if (ownShrine(p, s) != null) {
+            return;
+        }
+        CompoundTag kept = persisted(p);
+        BlockPos at = p.getRespawnPosition();
+        if (at == null) {
+            kept.remove(HOME);
+        } else {
+            CompoundTag home = new CompoundTag();
+            home.putString("Dim", p.getRespawnDimension().location().toString());
+            home.putLong("Pos", at.asLong());
+            home.putFloat("Angle", p.getRespawnAngle());
+            home.putBoolean("Forced", p.isRespawnForced());
+            kept.put(HOME, home);
+        }
+        p.getPersistentData().put(Player.PERSISTED_NBT_TAG, kept);
+    }
+
+    /** No vigil kept: their return is no longer a shrine - back to where they woke before (or the world's spawn). */
+    private static void goHome(ServerPlayer p) {
+        CompoundTag kept = persisted(p);
+        if (kept.contains(HOME)) {
+            CompoundTag home = kept.getCompound(HOME);
+            p.setRespawnPosition(net.minecraft.resources.ResourceKey.create(
+                            net.minecraft.core.registries.Registries.DIMENSION,
+                            new net.minecraft.resources.ResourceLocation(home.getString("Dim"))),
+                    BlockPos.of(home.getLong("Pos")), home.getFloat("Angle"), home.getBoolean("Forced"), false);
+        } else {
+            p.setRespawnPosition(net.minecraft.world.level.Level.OVERWORLD, null, 0.0F, false, false);
+        }
     }
 
     /** The record of what a fallen player carried, in their persisted data until they rise (onRespawn). */
@@ -401,7 +472,7 @@ public class FrostShrineBlockEntity extends BlockEntity implements GeoBlockEntit
     /**
      * RISEN: before the shrine that kept their things, with everything back in its own slot; what finds its slot taken
      * goes anywhere in the pack, what will not fit into the shrine's casket. Their return stays where it was - only a
-     * hand laid on a shrine makes it theirs (rising here once set it for good).
+     * hand laid on a shrine makes it theirs.
      *
      * <p>AND ONLY BEFORE ONE THAT IS THEIRS: whoever died in a shrine's hall - the shrine of the underground's hall is ALL of the underground - was
      * carried to it on rising, laid a hand on it or not. Now a shrine they have not kindled for themselves keeps their
@@ -436,6 +507,12 @@ public class FrostShrineBlockEntity extends BlockEntity implements GeoBlockEntit
                 net.minecraft.core.Direction facing = st.getValue(FrostShrineBlock.FACING);
                 BlockPos stand = pos.relative(facing);
                 p.teleportTo(at, stand.getX() + 0.5D, stand.getY(), stand.getZ() + 0.5D, facing.toYRot(), 0.0F);
+                // made again out of the cold before it (tools/gen_shrine_fx.py: fx_shrine_rise), the shrine's flame
+                // drawing itself up as it lets them go
+                com.jastkub.frozenfortress.entity.AttackFxEntity.spawn(at, "shrine_rise",
+                        Vec3.atBottomCenterOf(stand), facing.toYRot(), 1.0F, 32, null);
+                b.triggerAnim("remember", "remember");
+                at.playSound(null, stand, SoundEvents.AMETHYST_BLOCK_RESONATE, SoundSource.PLAYERS, 1.4F, 0.6F);
             }
         }
         List<ItemStack> over = new ArrayList<>();
@@ -469,7 +546,7 @@ public class FrostShrineBlockEntity extends BlockEntity implements GeoBlockEntit
                 continue;
             }
             // armour (and a shield) comes back ON, wherever it came back from: its own slot taken by nothing, it is
-            // put on 
+            // put on
             net.minecraft.world.entity.EquipmentSlot wear = net.minecraft.world.entity.Mob.getEquipmentSlotForItem(st);
             if ((wear.getType() == net.minecraft.world.entity.EquipmentSlot.Type.ARMOR
                     || wear == net.minecraft.world.entity.EquipmentSlot.OFFHAND)
@@ -511,22 +588,11 @@ public class FrostShrineBlockEntity extends BlockEntity implements GeoBlockEntit
                 || event.getDrops().isEmpty()) {
             return;
         }
-        FrostShrineBlockEntity r = forPlayer(p, s);
-        if (r != null) {
-            CompoundTag kept = p.getPersistentData().getCompound(net.minecraft.world.entity.player.Player.PERSISTED_NBT_TAG);
+        CompoundTag kept = p.getPersistentData().getCompound(net.minecraft.world.entity.player.Player.PERSISTED_NBT_TAG);
+        if (kept.contains(PENDING)) {
+            // a vigil was spent on this death (onDeath): whatever still comes to be dropped rises with them too.
+            // (No record: no vigil - what they carried falls where they fell, as death has it.)
             CompoundTag rec = kept.getCompound(PENDING);
-            if (!kept.contains(PENDING)) {
-                // (no record - the death was not ours to take: into the casket, as before)
-                List<ItemStack> stacks = new ArrayList<>();
-                for (ItemEntity e : event.getDrops()) {
-                    if (!e.getItem().isEmpty()) {
-                        stacks.add(e.getItem().copy());
-                    }
-                }
-                event.getDrops().clear();
-                r.keep(p.getUUID(), stacks);
-                return;
-            }
             ListTag loose = rec.getList("Loose", Tag.TAG_COMPOUND);
             for (ItemEntity e : event.getDrops()) {
                 if (!e.getItem().isEmpty()) {

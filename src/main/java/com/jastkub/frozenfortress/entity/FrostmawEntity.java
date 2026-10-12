@@ -45,7 +45,7 @@ import java.util.List;
  * for half a second, the leap aimed where you were when it left the ground, so a step aside lets it sail by;
  * and the breath, a short cone of cold. Lighter than before (34 health, 6.5 a bite).
  */
-public class FrostmawEntity extends FrostServantEntity {
+public class FrostmawEntity extends FrostServantEntity implements BreathingMaw {
 
     public static final int BITE = 1, POUNCE = 2, BREATH = 3, HOWL = 4;
 
@@ -60,7 +60,11 @@ public class FrostmawEntity extends FrostServantEntity {
     private static final RawAnimation BREATH_ANIM = RawAnimation.begin().thenPlay("animation.frostmaw.breath");
     private static final RawAnimation HOWL_ANIM = RawAnimation.begin().thenPlay("animation.frostmaw.howl");
     private static final RawAnimation HURT = RawAnimation.begin().thenPlay("animation.frostmaw.hurt");
-    private static final RawAnimation DEATH = RawAnimation.begin().thenPlay("animation.frostmaw.death");
+    /** Its three deaths (tools/gen_defenders.py), one at random as it dies (12.10.2026). */
+    private static final RawAnimation[] DEATHS = {
+            RawAnimation.begin().thenPlayAndHold("animation.frostmaw.death"),
+            RawAnimation.begin().thenPlayAndHold("animation.frostmaw.death_2"),
+            RawAnimation.begin().thenPlayAndHold("animation.frostmaw.death_3")};
 
     /** 0 walking, 1 prowling the circle, 2 running (the chase, the retreat). */
     private static final EntityDataAccessor<Integer> GAIT =
@@ -113,9 +117,20 @@ public class FrostmawEntity extends FrostServantEntity {
         targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
 
+    /** It falls and lies (tools/gen_defenders.py: its death clip, 56 ticks), then fades - no shattering. */
     @Override
-    protected int shatterTick() {
-        return 30;
+    protected int getDeathDuration() {
+        return 60;
+    }
+
+    @Override
+    protected int deathVariants() {
+        return DEATHS.length;
+    }
+
+    @Override
+    public int fadeTicks() {
+        return 18;
     }
 
     // ------------------------------------------------------------------ the Frost Rider
@@ -238,6 +253,9 @@ public class FrostmawEntity extends FrostServantEntity {
             target.addEffect(new MobEffectInstance(FFEffects.FROSTBITE.get(), 80, amp), this);
         }
         playSound(FFSounds.FROSTMAW_BITE.get(), 1.0F, 0.9F + random.nextFloat() * 0.2F);
+        // the snap seen (12.10.2026, the garrison's effects): its alpha's rake, small - one way, then the other
+        AttackFxEntity.spawn(level(), (tickCount / 20) % 2 == 0 ? "frosty_claw_r" : "frosty_claw_l", position(),
+                yBodyRot, 0.6F, 10, this);
     }
 
     /** The leap: aimed where they stand as it leaves the ground, and no steering after. */
@@ -300,6 +318,8 @@ public class FrostmawEntity extends FrostServantEntity {
             m.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 160, 0));
         }
         playSound(FFSounds.FROSTMAW_HOWL.get(), 2.0F, 0.95F + random.nextFloat() * 0.1F);
+        // the air shivers with it - its alpha's master's bending, faint (RoarWarpEntity)
+        RoarWarpEntity.roar(this, 24, 0.3F, 5.0F, 1);
     }
 
     @Override
@@ -521,7 +541,7 @@ public class FrostmawEntity extends FrostServantEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController<>(this, "main", 3, state -> {
             if (isDeadOrDying()) {
-                return state.setAndContinue(DEATH);
+                return state.setAndContinue(deathAnim(DEATHS));
             }
             switch (getAttackState()) {
                 case BITE: return state.setAndContinue(BITE_ANIM);

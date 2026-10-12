@@ -52,6 +52,15 @@
           "name": "frozen_dominion:drowned_braid"
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frozen_dominion:shackle_key"
+        }
+      ]
     }
   ]
 }

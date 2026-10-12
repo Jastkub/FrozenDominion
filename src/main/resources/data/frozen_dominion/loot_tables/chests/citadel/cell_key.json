@@ -2,15 +2,6 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "frozen_dominion:cell_key"
-        }
-      ]
-    },
-    {
       "rolls": {
         "min": 2,
         "max": 4
@@ -76,6 +67,15 @@
         {
           "type": "minecraft:empty",
           "weight": 60
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frozen_dominion:vigil_shard"
         }
       ]
     }

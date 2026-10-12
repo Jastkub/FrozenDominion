@@ -15,7 +15,7 @@ public class FrostmawRenderer extends FrostGeoRenderer<FrostmawEntity> {
         super(context, new DefaultedEntityGeoModel<>(FrozenFortress.id("frostmaw"), true));
         this.shadowRadius = 0.8F;
         addRenderLayer(new software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer<>(this));   // its ice and its eyes light themselves
-        addRenderLayer(new FrostmawBreathLayer(this));                                              // its breath, as geometry
+        addRenderLayer(new FrostmawBreathLayer<>(this));                                              // its breath, as geometry
     }
 
     /** Its saddle only under a rider (FrostRiderEntity) - and then the middle of its crest is not there to sit on. */

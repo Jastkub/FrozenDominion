@@ -88,7 +88,11 @@ public class FrostboundSentinelEntity extends FrostServantEntity {
     private static final RawAnimation LUNGE_ANIM = RawAnimation.begin().thenPlay("animation.sentinel.lunge");
     private static final RawAnimation STAGGER_ANIM = RawAnimation.begin().thenPlay("animation.sentinel.staggered");
     private static final RawAnimation HURT = RawAnimation.begin().thenPlay("animation.sentinel.hurt");
-    private static final RawAnimation DEATH = RawAnimation.begin().thenPlay("animation.sentinel.death");
+    /** Its three deaths (tools/gen_defenders.py), one at random as it dies (12.10.2026). */
+    private static final RawAnimation[] DEATHS = {
+            RawAnimation.begin().thenPlayAndHold("animation.sentinel.death"),
+            RawAnimation.begin().thenPlayAndHold("animation.sentinel.death_2"),
+            RawAnimation.begin().thenPlayAndHold("animation.sentinel.death_3")};
 
     /** In the line: shield up, walking - the animation's and the shield's business both. */
     private static final EntityDataAccessor<Boolean> MARCHING =
@@ -143,9 +147,20 @@ public class FrostboundSentinelEntity extends FrostServantEntity {
         targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
 
+    /** It falls and lies (tools/gen_defenders.py: its death clip, 56 ticks), then fades - no shattering. */
     @Override
-    protected int shatterTick() {
-        return 30;
+    protected int getDeathDuration() {
+        return 60;
+    }
+
+    @Override
+    protected int deathVariants() {
+        return DEATHS.length;
+    }
+
+    @Override
+    public int fadeTicks() {
+        return 18;
     }
 
     @Override
@@ -224,6 +239,11 @@ public class FrostboundSentinelEntity extends FrostServantEntity {
         setMarching(false);
         getNavigation().stop();
         playSound(FFSounds.SENTINEL_GUARD_BREAK.get(), 1.5F, 1.0F);
+        // the guard broken, seen: the rime off his shield in a burst, a flash where it gave
+        AttackFxEntity.spawn(level(), AttackFxEntity.SNOW_BURST, position().add(0.0D, 1.3D, 0.0D), yBodyRot, 1.4F, 20,
+                this);
+        AttackFxEntity.spawn(level(), AttackFxEntity.GLINT, position().add(Vec3.directionFromRotation(0.0F, yBodyRot)
+                .scale(0.8D)).add(0.0D, 1.4D, 0.0D), yBodyRot, 1.6F, 10, this);
         if (level() instanceof ServerLevel sl) {
             sl.sendParticles(FFParticles.ICE_SHARD.get(), getX(), getY() + 1.4D, getZ(), 24, 0.5D, 0.5D, 0.5D, 0.2D);
         }
@@ -559,7 +579,7 @@ public class FrostboundSentinelEntity extends FrostServantEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController<>(this, "main", 4, state -> {
             if (isDeadOrDying()) {
-                return state.setAndContinue(DEATH);
+                return state.setAndContinue(deathAnim(DEATHS));
             }
             switch (getAttackState()) {
                 case SLASH: return state.setAndContinue(SLASH_ANIM);

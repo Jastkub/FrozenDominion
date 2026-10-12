@@ -37,11 +37,11 @@ import java.util.Set;
 @Mod.EventBusSubscriber(modid = FrozenFortress.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public final class KeeperReset {
 
-    /** Who resets. (The Ice Monstrosity and Velkhar keep their wounds) */
+    /** Who resets. */
     public static final Set<String> KEEPERS = Set.of(
             "frozen_dominion:turnkey", "frozen_dominion:shade_shepherd", "frozen_dominion:rime_priestess",
             "frozen_dominion:forge_overseer", "frozen_dominion:ice_aurochs", "frozen_dominion:drowned_lady",
-            "frozen_dominion:lamplighter", "frozen_dominion:bone_lord");
+            "frozen_dominion:lamplighter", "frozen_dominion:bone_lord", "frozen_dominion:frosty");
     /** How near its post a fighter has to be for it not to be alone, horizontally and up or down. */
     private static final double REACH = 40.0D, REACH_Y = 24.0D;
     /** How long it has to be alone before it is whole again (after a death the screen alone takes longer). */

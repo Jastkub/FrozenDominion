@@ -54,7 +54,7 @@ public class ThrownBladeEntity extends Projectile implements GeoEntity {
      *
      * <p>This used to be 200 and the comment beside it read "four hearts
      * through a full set" - a raw-points figure, back when the hit was dealt
-     * with a bare hurt(). It goes through VelkharEntity.strikeFor now, so the
+     * with a bare hurt. It goes through VelkharEntity.strikeFor now, so the
      * number means what DMG_BLADE_THROW meant all along. The default only ever
      * applies to a blade restored from NBT with no Damage tag.
      */
@@ -176,7 +176,7 @@ public class ThrownBladeEntity extends Projectile implements GeoEntity {
             // of constants beside DMG_COMBO and DMG_CHARGE, and every one of
             // those is hearts of intent: VelkharEntity.strikeFor multiplies by
             // sixteen and then guarantees a floor. Feeding 2.8 straight into
-            // hurt() instead meant a two-block greatsword flung the length of
+            // hurt instead meant a two-block greatsword flung the length of
             // the hall landed 2.8 RAW - about six tenths of a point through
             // endgame plate. The heaviest-looking thing he does was the
             // weakest thing in the fight by an order of magnitude.

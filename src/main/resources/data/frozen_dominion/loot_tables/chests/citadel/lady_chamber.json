@@ -69,6 +69,15 @@
           "weight": 60
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frozen_dominion:vigil_shard"
+        }
+      ]
     }
   ]
 }

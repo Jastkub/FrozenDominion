@@ -22,7 +22,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import javax.annotation.Nullable;
 
 /**
- * AN ARROW SLIT (ArrowSlitBlockEntity): a block of the wall with a dark slit in its face, iced at
+ * AN ARROW SLIT: a block of the wall with a dark slit in its face, iced at
  * the lips - it shoots a bolt of ice out of it, FACING the way it looks, on its beat. Masonry: it breaks like the wall
  * round it (which the Stormcrown's hold on the pick makes slow), and gives nothing.
  */

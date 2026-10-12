@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 /**
  * A chunk of floor thrown into the air. Purely something to look at.
  *
- * <p>Vanilla's FallingBlockEntity cannot be used for this: {@code fall()}
+ * <p>Vanilla's FallingBlockEntity cannot be used for this: {@code fall}
  * deletes the source block, and 1.20.1 exposes no way to cancel what a
  * falling block does when it lands, so a slam in the throne room would
  * quietly chew holes in a hand-built arena. Mowzie's Mobs hit the same wall
@@ -52,13 +52,13 @@ public class FallingDebrisEntity extends Entity {
      *
      * <p>Forge's RuntimeDistCleaner strips @OnlyIn members from mod classes
      * exactly as it does from vanilla's, so on a dedicated server this field
-     * did not exist - while tick() below reads and writes it on both sides,
+     * did not exist - while tick below reads and writes it on both sides,
      * including inside a ServerLevel branch. The first lump of debris to tick
      * server-side threw NoSuchFieldError, and debris comes off floorBurst,
      * which nearly every heavy attack in the fight calls.
      *
      * <p>The annotation is gone rather than moved down. On the spin fields it
-     * would be just as wrong: they are referenced from tick(), which is a
+     * would be just as wrong: they are referenced from tick, which is a
      * common method, and a common method referencing a member that is not
      * there on this side is the same crash with a different field name. The
      * isClientSide guard already does the job it was reaching for, and it

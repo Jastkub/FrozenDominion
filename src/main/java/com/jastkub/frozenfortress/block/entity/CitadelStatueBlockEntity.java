@@ -109,7 +109,7 @@ public class CitadelStatueBlockEntity extends BlockEntity implements GeoBlockEnt
     }
 
     /**
-     * A DRIFT, not a statue (the expedition camp's ambush, user 06.10.2026: "zasadzka stada frostmawow"): a
+     * A DRIFT, not a statue: a
      * frostmaw lying low under the snow, its shape a drift in a snow hide (textures/block/statue/snow_*). It
      * stirs at once, wakes the rest of its pack lying round it, and bursts out of the snow - no splinters of
      * ice, it was never ice - leaping at whoever woke it.
@@ -269,7 +269,7 @@ public class CitadelStatueBlockEntity extends BlockEntity implements GeoBlockEnt
         // they do not break. Any other creature's statue breaks under a pick, empty or not
         // - a great one with a creature
         // in it is no monument: what wakes can be broken first, whatever its size. And the other way round (the same
-        // day - the Aurochs among the king's
+        // day: "sprawdz czy sa jeszcze jakies posagi ktore da sie rozbic a nie ozywaja" - the Aurochs among the king's
         // servants broke under a pick): WHAT DOES NOT WAKE DOES NOT BREAK. Every figure of the garrison holds its
         // creature (the scenes' too); what holds none is the citadel's stone.
         // A GUARD THAT ANSWERS ONLY A CALL DOES NOT CRACK: the treasury's statues wait for their ambush and nothing else - a pick rings off them like a
@@ -512,7 +512,7 @@ public class CitadelStatueBlockEntity extends BlockEntity implements GeoBlockEnt
     }
 
     /**
-     * One of the dead gets up (Frost Skeleton): not out of
+     * One of the dead gets up: not out of
      * a shell of ice but out of its own pose, the creature's clip starting on
      * the statue's very frame. Its band claws up out of the floor round it, one
      * or two more, and the dead lying near hear them and stir in their turn.

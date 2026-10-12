@@ -57,8 +57,7 @@ import java.util.UUID;
  * <ul>
  *   <li>DORMANT: a heap of bones on the hall's middle pillar. Somebody in his hall (its Arena box, from the citadel's
  *   generator) and the heap pulls itself together - ASSEMBLE, the scene: it sits up, kneels, picks its ushanka up off
- *   the heap and puts it on, stands, leans down to you and says it: "run" (BossScenes says it on
- *   the 94th tick). Nothing hurts it while it does.</li>
+ *   the heap and puts it on, stands, leans down to you and says it: "run". Nothing hurts it while it does.</li>
  *   <li>THE CHASE: after whoever is nearest, a little slower than a sprinting player with Speed I; now and then a
  *   burst (SPRINT) to a fifth over that. Every footfall is felt (ScreenShake, through BoneLordClient). Cobwebs do not
  *   hold it; it is too big for the holes in the bridges to take its feet.</li>
@@ -114,7 +113,7 @@ public class BoneLordEntity extends FrostServantEntity implements GateKeeper {
     static final int CLIMB_CAP = 30;
     /** A MASS OF THEM COMING UP OUT OF THE MIST: up to this many on the pillars' faces at once, a new one every one and a
      *  half to two seconds, from twelve under the bridges - deep in the mist, seven seconds of climbing in sight - and
-     *  CLIMB_CAP (in the hall, climbed and still about) keeps the
+     *  CLIMB_CAP (in the hall, climbed and still about: "max 30 ale daj ze w odleglosciach od siebie") keeps the
      *  bridges from filling with them - and no new one comes up within CLIMB_APART of another. */
     static final int CLIMB_AT_ONCE = 6;
     static final double CLIMB_APART = 7.0D;
@@ -220,7 +219,7 @@ public class BoneLordEntity extends FrostServantEntity implements GateKeeper {
 
     @Override
     protected void registerGoals() {
-        // (no HurtByTargetGoal)
+        //
     }
 
     @Override
@@ -470,7 +469,7 @@ public class BoneLordEntity extends FrostServantEntity implements GateKeeper {
                     thump(0.75F);
                     dust(s, BoneLordFrames.at(this, attackYaw(), BoneLordFrames.row(BoneLordFrames.BODY_TRIP, TRIP_HIT), 0),
                             3.0D);
-                    // (no tenth of his health off it any more)
+                    //
                 }
                 if (attackTicks >= TRIP_T) {
                     setAttackState(DOWN);
@@ -718,9 +717,7 @@ public class BoneLordEntity extends FrostServantEntity implements GateKeeper {
     public void move(net.minecraft.world.entity.MoverType type, Vec3 by) {
         if (!level().isClientSide && onGround() && !isDeadOrDying() && by.horizontalDistanceSqr() > 1.0E-6D
                 && footed(position()) && !footed(position().add(by.x, 0.0D, by.z))) {
-            // THE NEAREST WAY THAT STAYS ON THE BRIDGE (with the
-            // step and both its halves over the drop he was stopped dead, and his path, which runs a big thing round a
-            // corner by its outside edge, pushed him the same way every tick: he stood): the step turned by fifteen
+            // THE NEAREST WAY THAT STAYS ON THE BRIDGE: the step turned by fifteen
             // degrees, thirty, ... to ninety either way, the least turn that keeps his middle over the deck - round the
             // corner along its edge. Nothing at all only when there is no such way.
             Vec3 flat = new Vec3(by.x, 0.0D, by.z);

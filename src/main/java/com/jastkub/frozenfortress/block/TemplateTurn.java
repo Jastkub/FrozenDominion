@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
  * HOW FAR A STRUCTURE WAS TURNED WHEN IT WAS PLACED. Worldgen turns a jigsaw piece (the watchtower,
  * the camp) any of four ways, and a template turns its blocks and their block states with it - but
  * not what its block entities keep in their own NBT (a gate's facing and the boxes it shuts, a
- * statue's yaw). Seen (05.10.2026): the watchtower's gate hung across the passage
+ * statue's yaw). The author saw it (05.10.2026): the watchtower's gate hung across the passage
  * instead of across the doorway.
  *
  * <p>So the blocks that keep a direction of their own carry {@link #FACING} too: written NORTH by

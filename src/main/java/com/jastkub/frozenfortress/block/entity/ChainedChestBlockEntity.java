@@ -55,7 +55,7 @@ public class ChainedChestBlockEntity extends BlockEntity implements GeoBlockEnti
     private ResourceLocation lootTable;
     private long lootSeed;
     /**
-     * A coffer GUARDED as well as locked (the watchtower's, with the Crownbreaker):
+     * A coffer GUARDED as well as locked:
      * the creature that holds its chains. No key turns them while it lives; once there is none of
      * it left near, it is a chained coffer like any other - the key is on its keeper.
      */
@@ -99,7 +99,7 @@ public class ChainedChestBlockEntity extends BlockEntity implements GeoBlockEnti
     }
 
     /**
-     * A REWARD, NOT A LOCK (Velkhar's hoard): this coffer holds `table` (rolled with `seed` when it
+     * A REWARD, NOT A LOCK: this coffer holds `table` (rolled with `seed` when it
      * is opened) and lets its chains go by themselves `delay` ticks from now - the same animation and sounds as a key,
      * no key and no keeper.
      */
@@ -126,6 +126,14 @@ public class ChainedChestBlockEntity extends BlockEntity implements GeoBlockEnti
         lootTable = null;
         keeper = "";
         releaseIn = 0;
+        sync();
+    }
+
+    /** And a table rolled into what is left of it when it is opened (the prison's reliquary over the Monstrosity's
+     *  own spoils), the kept things first. */
+    public void alsoRoll(ResourceLocation table, long seed) {
+        lootTable = table;
+        lootSeed = seed;
         sync();
     }
 

@@ -37,10 +37,7 @@ import java.util.WeakHashMap;
 public final class FrostVeil {
 
     private static final ResourceLocation TEX = FrozenFortress.id("textures/misc/frost_veil.png");
-    /** How far into the hall each layer hangs, and how much of what is behind it each takes. (five layers of 0.36; and that night, a keeper plain through it:
-     *  the
-     *  five, thinning as they went and through a texture three quarters opaque, hid two thirds. Six now, all of 0.6:
-     *  about 97% - a shape at most; the Lamplighter's Candle thins it to about 70%.) */
+    /** How far into the hall each layer hangs, and how much of what is behind it each takes. */
     private static final float[] DEPTHS = {0.25F, 0.75F, 1.3F, 1.9F, 2.5F, 3.1F};
     private static final float LAYER_ALPHA = 0.6F, CANDLE = 0.42F;
     /** The least block light it is drawn in: a pale haze in the darkest hall, not a dark pane. */
@@ -84,11 +81,13 @@ public final class FrostVeil {
         }
         AABB room = gate.roomBox();
         Camera cam = mc.gameRenderer.getMainCamera();
-        if (room.contains(cam.getPosition())) {
-            return;                                          // from inside, the way out is clear
-        }
         //
         if (!keeperIn(gate, room) && !gate.prisonerHeld()) {
+            return;
+        }
+        // ONCE: a hall you have gone into once is not veiled from you again
+        String key = passKey(gate);
+        if (key != null && passed().contains(key) && !midPassage(gate)) {
             return;
         }
         float alpha = LAYER_ALPHA * (com.jastkub.frozenfortress.item.LamplighterCandleItem.worn(mc.player) ? CANDLE : 1.0F);
@@ -101,6 +100,25 @@ public final class FrostVeil {
         if (into == 0.0D) {
             into = 1.0D;
         }
+        // GOING THROUGH IT: inside the hall, the layers still ahead of you are still there - only
+        // those behind you (the way out) are not drawn; and the frost you walked through clings to you a while
+        // (linger: the fog round you, thinning over LINGER ticks).
+        Vec3 eye = cam.getPosition();
+        double past = Double.NEGATIVE_INFINITY;
+        if (room.contains(eye)) {
+            double plane = alongX ? (into > 0 ? open.maxX : open.minX) : (into > 0 ? open.maxZ : open.minZ);
+            past = ((alongX ? eye.x : eye.z) - plane) * into;
+            if (past > DEPTHS[DEPTHS.length - 1] + 0.5D) {
+                if (key != null && MID.remove(gate) && passed().add(key)) {
+                    save();                                  // through it, the first time: remembered
+                }
+                return;                                      // through it all: from inside, the way out is clear
+            }
+            if (past > -0.5D && past < DEPTHS[DEPTHS.length - 1] + 0.5D) {
+                linger(gate.getLevel().getGameTime());
+                MID.add(gate);
+            }
+        }
         int light = LevelRenderer.getLightColor(gate.getLevel(), BlockPos.containing(c.x + (alongX ? into : 0), c.y,
                 c.z + (alongX ? 0 : into)));
         light = Math.max(light & 0xFFFF, HAZE_LIGHT << 4) | (light & 0xFFFF0000);   // a pale haze even in the dark
@@ -110,6 +128,9 @@ public final class FrostVeil {
         Matrix3f n = pose.last().normal();
         double y0 = open.minY, y1 = open.maxY;
         for (int i = 0; i < DEPTHS.length; i++) {
+            if (DEPTHS[i] < past + 0.1D) {
+                continue;                                    // a layer behind you as you go through
+            }
             double d = (alongX ? (into > 0 ? open.maxX : open.minX) : (into > 0 ? open.maxZ : open.minZ)) + into * DEPTHS[i];
             float du = t * (0.035F + 0.018F * i) * (i % 2 == 0 ? 1 : -1), dv = t * (0.012F + 0.006F * i);
             float a = alpha;
@@ -138,6 +159,107 @@ public final class FrostVeil {
         for (int k = 0; k < 4; k++) {
             vc.vertex(m, p[k][0], p[k][1], p[k][2]).color(RED, GREEN, BLUE, alpha).uv(uv[k][0], uv[k][1])
                     .overlayCoords(OverlayTexture.NO_OVERLAY).uv2(light).normal(n, nx, 0.0F, nz).endVertex();
+        }
+    }
+
+    // ------------------------------------------------------------------------------------------------ the frost that clings
+    /** How long the veil's frost clings to whoever came through it (ticks), and how close it closes in at first: the
+     *  hall a shape a few blocks off, coming clear as it thins. */
+    private static final int LINGER = 64;
+    private static final float LINGER_NEAR = 0.0F, LINGER_FAR = 5.0F;
+    /** Its colour - the veil's, a little darker (the halls are dark: a bright fog would glow). */
+    private static final float LR = 0.66F, LG = 0.73F, LB = 0.84F;
+    private static long lingerAt = Long.MIN_VALUE;
+
+    /** In the veil this frame: the frost on you is renewed - it starts thinning once you are through. */
+    private static void linger(long now) {
+        lingerAt = now;
+    }
+
+    /** How thick the clinging frost is now: 1 in the veil, thinning to 0 over LINGER ticks after it. */
+    private static float clinging(double partialTick) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.level == null || mc.player == null || lingerAt == Long.MIN_VALUE) {
+            return 0.0F;
+        }
+        double since = mc.level.getGameTime() - lingerAt + partialTick;
+        if (since < 0.0D || since > LINGER) {
+            return 0.0F;
+        }
+        float k = 1.0F - (float) since / LINGER;
+        float s = k * k * (3.0F - 2.0F * k);                 // slow to start thinning, slow to finish
+        return s * (com.jastkub.frozenfortress.item.LamplighterCandleItem.worn(mc.player) ? CANDLE + 0.2F : 1.0F);
+    }
+
+    @net.minecraftforge.eventbus.api.SubscribeEvent
+    public static void onRenderFog(net.minecraftforge.client.event.ViewportEvent.RenderFog event) {
+        float s = clinging(event.getPartialTick());
+        if (s <= 0.01F) {
+            return;
+        }
+        event.setFarPlaneDistance(Math.min(event.getFarPlaneDistance(),
+                net.minecraft.util.Mth.lerp(s, event.getFarPlaneDistance(), LINGER_FAR)));
+        event.setNearPlaneDistance(Math.min(event.getNearPlaneDistance(),
+                net.minecraft.util.Mth.lerp(s, event.getNearPlaneDistance(), LINGER_NEAR)));
+        event.setCanceled(true);
+    }
+
+    @net.minecraftforge.eventbus.api.SubscribeEvent
+    public static void onFogColor(net.minecraftforge.client.event.ViewportEvent.ComputeFogColor event) {
+        float s = clinging(event.getPartialTick());
+        if (s <= 0.01F) {
+            return;
+        }
+        event.setRed(net.minecraft.util.Mth.lerp(s, event.getRed(), LR));
+        event.setGreen(net.minecraft.util.Mth.lerp(s, event.getGreen(), LG));
+        event.setBlue(net.minecraft.util.Mth.lerp(s, event.getBlue(), LB));
+    }
+
+    // ------------------------------------------------------------------------------------------------ once a hall
+    /** Gates whose veil is being walked through right now (so it does not vanish halfway). */
+    private static final java.util.Set<BossGateBlockEntity> MID =
+            java.util.Collections.newSetFromMap(new WeakHashMap<>());
+    /** The halls this player has gone into, for this world - kept in config/frozen_dominion_veils.txt across restarts. */
+    private static java.util.Set<String> passed;
+    private static final java.nio.file.Path FILE = net.minecraftforge.fml.loading.FMLPaths.CONFIGDIR.get()
+            .resolve("frozen_dominion_veils.txt");
+
+    private static boolean midPassage(BossGateBlockEntity gate) {
+        return MID.contains(gate);
+    }
+
+    /** Which world this is (the save's name, or the server's address) and which gate in it. */
+    @javax.annotation.Nullable
+    private static String passKey(BossGateBlockEntity gate) {
+        Minecraft mc = Minecraft.getInstance();
+        String world = mc.getSingleplayerServer() != null
+                ? "sp:" + mc.getSingleplayerServer().getWorldData().getLevelName()
+                : mc.getCurrentServer() != null ? "mp:" + mc.getCurrentServer().ip : null;
+        if (world == null || gate.getLevel() == null) {
+            return null;
+        }
+        return world + "|" + gate.getLevel().dimension().location() + "|" + gate.getBlockPos().asLong();
+    }
+
+    private static java.util.Set<String> passed() {
+        if (passed == null) {
+            passed = new java.util.HashSet<>();
+            try {
+                if (java.nio.file.Files.exists(FILE)) {
+                    passed.addAll(java.nio.file.Files.readAllLines(FILE));
+                }
+            } catch (java.io.IOException ignored) {
+                // (no memory of halls: each is veiled once more)
+            }
+        }
+        return passed;
+    }
+
+    private static void save() {
+        try {
+            java.nio.file.Files.write(FILE, passed());
+        } catch (java.io.IOException ignored) {
+            // (not written: remembered for this session only)
         }
     }
 

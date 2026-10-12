@@ -12,11 +12,17 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Before the doors of every hall where someone waits stands a shrine. Lay your hand on it and it kindles and remembers you."
+      "text": "Before the doors of every hall where someone waits stands a shrine. Lay your hand on it and it kindles and remembers you.$(br2)But to remember is not to keep vigil. A shrine keeps vigil over you only when you give it a Vigil Shard."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "frozen_dominion:vigil_shard",
+      "title": "The Vigil Shard",
+      "text": "One shard, one rising."
     },
     {
       "type": "patchouli:text",
-      "text": "Fall anywhere in the citadel and you rise at the nearest shrine you kindled, with what you carried - sometimes it waits on the shrine itself and you must reach for it. Only your experience is lost."
+      "text": "The shards lie in the citadel's chests - no more than a dozen or so in all of it. Each one given to a shrine is one rising before it, with everything you carry; only your experience is lost.$(br2)When no one keeps vigil over you, death is death: what you carried lies where you fell, and you wake where you slept before the citadel."
     }
   ],
   "advancement": "frozen_dominion:root"

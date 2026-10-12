@@ -32,6 +32,7 @@ public final class ClientEvents {
     private static final String LAMPLIGHTER_TITLE_KEY = "entity.frozen_dominion.lamplighter";
     private static final String DROWNED_TITLE_KEY = "entity.frozen_dominion.drowned_lady";
     private static final String AUROCHS_TITLE_KEY = "entity.frozen_dominion.ice_aurochs";
+    private static final String FROSTY_TITLE_KEY = "entity.frozen_dominion.frosty";
     private static final String SHEPHERD_TITLE_KEY = "entity.frozen_dominion.shade_shepherd";
     private static final String OVERSEER_TITLE_KEY = "entity.frozen_dominion.forge_overseer";
 
@@ -62,7 +63,7 @@ public final class ClientEvents {
      * THE SPOKEN SENTENCE, put on the screen while it is being spoken.
      *
      * <p>Chat is one of the overlays a cutscene cancels, so the words {@code
-     * speak()} sends there go nowhere during a scene - which is precisely when
+     * speak} sends there go nowhere during a scene - which is precisely when
      * they matter most. These three fields mirror the impact-shake pattern: the
      * boss publishes {@code (sequence << 4) | id}, and the client watches for
      * the NUMBER CHANGING rather than for a particular value, so the same line
@@ -266,6 +267,9 @@ public final class ClientEvents {
         if (keeper.endsWith("lamplighter")) {
             return FFSounds.MUSIC_LAMPLIGHTER.get();
         }
+        if (keeper.endsWith("frosty")) {
+            return FFSounds.MUSIC_FROSTY.get();
+        }
         if (keeper.endsWith("bone_lord")) {
             return FFSounds.MUSIC_BONE_LORD.get();
         }
@@ -460,6 +464,12 @@ public final class ClientEvents {
         if (hasKey(name, SHEPHERD_TITLE_KEY)) {
             event.setCanceled(true);
             event.setIncrement(badge(event, party, com.jastkub.frozenfortress.client.gui.CourtBossBar.renderShepherd(
+                    event.getGuiGraphics(), event.getY(), name, event.getBossEvent().getProgress())));
+            return;
+        }
+        if (hasKey(name, FROSTY_TITLE_KEY)) {
+            event.setCanceled(true);
+            event.setIncrement(badge(event, party, com.jastkub.frozenfortress.client.gui.CourtBossBar.renderFrosty(
                     event.getGuiGraphics(), event.getY(), name, event.getBossEvent().getProgress())));
             return;
         }
@@ -703,7 +713,7 @@ public final class ClientEvents {
         //
         // The three ground strikes were sending debris and playing impact
         // sounds, but the screen sat perfectly still through all of them -
-        // shakeNearbyPlayers() only throws particles; the camera is driven
+        // shakeNearbyPlayers only throws particles; the camera is driven
         // from here, off the attack state, and these states were simply not
         // in the list. A room that erupts under a still camera tells the
         // player two different stories about the same hit.

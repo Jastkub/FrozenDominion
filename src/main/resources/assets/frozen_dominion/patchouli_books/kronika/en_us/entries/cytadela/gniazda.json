@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Nests breed servants when someone is near, but not without end. The Crownbreaker splits them - a shard is left, sometimes two.$(br2)Those shards are worth more than they look: without them you forge neither a key for the chains nor an ingot."
+      "text": "Nests breed servants when someone is near, but not without end. The Crownbreaker splits them - a shard is left, sometimes two.$(br2)Those shards are worth more than they look: without them you make no key for the chains."
     }
   ],
   "advancement": "frozen_dominion:root"

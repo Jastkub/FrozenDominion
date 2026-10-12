@@ -57,7 +57,11 @@ public class StillbowEntity extends FrostServantEntity {
     private static final RawAnimation BLINK_ANIM = RawAnimation.begin().thenPlay("animation.stillbow.blink");
     private static final RawAnimation BACKSTEP_ANIM = RawAnimation.begin().thenPlay("animation.stillbow.backstep");
     private static final RawAnimation HURT = RawAnimation.begin().thenPlay("animation.stillbow.hurt");
-    private static final RawAnimation DEATH = RawAnimation.begin().thenPlay("animation.stillbow.death");
+    /** Its three deaths (tools/gen_defenders.py), one at random as it dies (12.10.2026). */
+    private static final RawAnimation[] DEATHS = {
+            RawAnimation.begin().thenPlayAndHold("animation.stillbow.death"),
+            RawAnimation.begin().thenPlayAndHold("animation.stillbow.death_2"),
+            RawAnimation.begin().thenPlayAndHold("animation.stillbow.death_3")};
 
     int blinkCooldown;
     int backstepCooldown;
@@ -95,9 +99,20 @@ public class StillbowEntity extends FrostServantEntity {
         targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
 
+    /** It falls and lies (tools/gen_defenders.py: its death clip, 56 ticks), then fades - no shattering. */
     @Override
-    protected int shatterTick() {
-        return 30;
+    protected int getDeathDuration() {
+        return 60;
+    }
+
+    @Override
+    protected int deathVariants() {
+        return DEATHS.length;
+    }
+
+    @Override
+    public int fadeTicks() {
+        return 18;
     }
 
     @Override
@@ -435,7 +450,7 @@ public class StillbowEntity extends FrostServantEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController<>(this, "main", 3, state -> {
             if (isDeadOrDying()) {
-                return state.setAndContinue(DEATH);
+                return state.setAndContinue(deathAnim(DEATHS));
             }
             switch (getAttackState()) {
                 case SHOOT: return state.setAndContinue(SHOOT_ANIM);

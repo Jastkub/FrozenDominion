@@ -183,7 +183,7 @@ public class KingsrimeSwordItem extends SwordItem {
             }
             return InteractionResultHolder.consume(stack);
         }
-        // A SHIELD IN THE OTHER HAND : the plain use key raises it, at once,
+        // A SHIELD IN THE OTHER HAND: the plain use key raises it, at once,
         // as it would with any sword - a block a moment late is no block against the king's twin blades. The Royal
         // Step stays on sneak; the crescent and the coronation are for a free hand: sword and board, or the full art.
         if (player.getOffhandItem().canPerformAction(net.minecraftforge.common.ToolActions.SHIELD_BLOCK)) {

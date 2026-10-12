@@ -113,7 +113,9 @@ public class RimePriestessEntity extends FrostServantEntity implements GateKeepe
     private static final double LEASH = 20.0D;
     /** Ticks of the Litany: three verses, then the Amen. */
     static final int VERSE_2 = 40, VERSE_3 = 80, AMEN_AT = 110;
-    private static final float AMEN_DAMAGE = 22.0F;
+    /** A soul was off the rune at the last Amen: she rises from it unspent. */
+    private boolean amenPaid;
+    private static final float AMEN_DAMAGE = 22.0F;    //
 
     private final ServerBossEvent bossEvent = new ServerBossEvent(
             Component.translatable("entity.frozen_dominion.rime_priestess"),
@@ -140,7 +142,7 @@ public class RimePriestessEntity extends FrostServantEntity implements GateKeepe
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 220.0D)
+                .add(Attributes.MAX_HEALTH, 253.0D)          // (+15%: 11.10.2026)
                 .add(Attributes.ATTACK_DAMAGE, 8.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.30D)
                 .add(Attributes.ARMOR, 6.0D)
@@ -257,7 +259,14 @@ public class RimePriestessEntity extends FrostServantEntity implements GateKeepe
             if (getAttackState() == LITANY) {
                 tickLitany();
             } else if (getAttackState() == AMEN && attackTicks > 16) {
-                setAttackState(SPENT);
+                if (amenPaid) {
+                    // THE RITE WAS PAID FOR (11.10.2026): a soul was off the rune - she is not spent, she does not
+                    // kneel; the window the Amen opens is only there for those who stood where the book said
+                    setAttackState(0);
+                    playSound(SoundEvents.BELL_BLOCK, 2.0F, 1.4F);
+                } else {
+                    setAttackState(SPENT);
+                }
             } else if (getAttackState() == SPENT && attackTicks > 80) {
                 setAttackState(0);
             }
@@ -321,6 +330,14 @@ public class RimePriestessEntity extends FrostServantEntity implements GateKeepe
         if (t >= INTRO_T) {
             setAttackState(0);
         }
+    }
+
+    /** The miniboss's ceiling (BossCeiling), lifted while it is open: spent after the Amen. */
+    private final BossCeiling ceiling = new BossCeiling();
+
+    @Override
+    protected float getDamageAfterMagicAbsorb(DamageSource source, float amount) {
+        return ceiling.apply(this, source, super.getDamageAfterMagicAbsorb(source, amount), getAttackState() == SPENT);
     }
 
     @Override
@@ -444,6 +461,7 @@ public class RimePriestessEntity extends FrostServantEntity implements GateKeepe
     private void amen() {
         setAttackState(AMEN);
         entityData.set(RUNE, -1);
+        amenPaid = false;
         if (!(level() instanceof ServerLevel s) || home == null) {
             return;
         }
@@ -464,7 +482,9 @@ public class RimePriestessEntity extends FrostServantEntity implements GateKeepe
                 }
             }
             if (!safe) {
-                p.hurt(damageSources().indirectMagic(this, this), AMEN_DAMAGE);
+                // half of whatever the soul has, at the least
+                p.hurt(damageSources().indirectMagic(this, this), Math.max(AMEN_DAMAGE, p.getMaxHealth() * 0.5F));
+                amenPaid = true;
                 // AND SHE IS MENDED BY IT: every soul off the rune is three tenths of her health back -
                 // a wrong step costs the fight, not only the hearts
                 heal(getMaxHealth() * 0.30F);
@@ -584,7 +604,7 @@ public class RimePriestessEntity extends FrostServantEntity implements GateKeepe
     /** Begin THE STEP AWAY: gone to snow, back out of reach (the veil, quick). */
     void beginBlink() {
         blinkAway = true;
-        blinkCooldown = 60;
+        blinkCooldown = 60;                 //
         setAttackState(VEIL);
     }
 

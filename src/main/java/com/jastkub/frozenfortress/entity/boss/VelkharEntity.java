@@ -396,8 +396,8 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      *
      * <p>From the third phase he carries a focus, not a blade; the greatsword
      * was torn in two at the transition before and both halves dropped. An
-     * attack whose payload is meleeArc() cannot belong to him any more. It
-     * also had no offer() anywhere, so it could never actually fire - this
+     * attack whose payload is meleeArc cannot belong to him any more. It
+     * also had no offer anywhere, so it could never actually fire - this
      * was dead code describing a move that no longer made sense.
      *
      * <p>The number stays because state ids index attackCooldowns.
@@ -543,7 +543,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * failing to load or failing to animate, they were never legal.
      *
      * <p>The lesson is that a bounds check written as a guard became a filter.
-     * ready() returning false for an out-of-range id looks defensive and is
+     * ready returning false for an out-of-range id looks defensive and is
      * indistinguishable from "on cooldown", which is why nothing anywhere
      * complained. Any new attack id must move this number.
      */
@@ -580,8 +580,8 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     private static final int GATE_RELEASE = 14, GATE_MAX = 170, GATE_CATCH = 12;
     /** The first sword's tick, the beat between the three, and the most a sword takes to land. */
     private static final int JUDGMENT_FIRST = 16, JUDGMENT_STEP = 18, JUDGMENT_LAND = 26;
-    /** Hearts of intent, through strike(): his ordinary blow, which does not pierce armour. The thrown shield 2.6 -> 3.2
-     * , still under the charge's 3.6 - it can land twice. */
+    /** Hearts of intent, through strike: his ordinary blow, which does not pierce armour. The thrown shield 2.6 -> 3.2
+     *, still under the charge's 3.6 - it can land twice. */
     private static final float DMG_GATE = 3.2F, DMG_JUDGMENT = 2.2F;
     /** The tick the shield came back to his hand, or -1 while it is away. */
     private int gateCaughtAt = -1;
@@ -618,8 +618,9 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     public static final int STORM_STUMBLE = 119;
     /** The eye closes with this share of the last phase's health left (of what he went up with: ASCENT_AT). */
     private static final float STORM_CLOSE_AT = 0.35F;
-    /** Ticks (of his attack clock) he lies on the ice once he has landed; then he rises for sixteen. */
-    private static final int STORM_STUN = 120, STORM_GET_UP = 16;
+    /** Ticks (of his attack clock) he lies on the ice once he has landed; then he rises for sixteen (11.10.2026: the
+     *  window to hit him in, twice what it was - about ten seconds). */
+    private static final int STORM_STUN = 240, STORM_GET_UP = 16;
     /**
      * THE ASCENT IS SEEN, ALL OF IT. Its parts run on the REAL clock (ticks, not
      * his x1.2 attack clock - see tickAscent): fly at them, seize, to the middle of the rotunda, up through the dome and
@@ -699,7 +700,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     private static final EntityDataAccessor<Integer> DAMAGE_STAGE =
             SynchedEntityData.defineId(VelkharEntity.class, EntityDataSerializers.INT);
 
-    /** See {@link #phantomStage()}. Animation staging for the clone summon. */
+    /** See {@link #phantomStage}. Animation staging for the clone summon. */
     private static final EntityDataAccessor<Integer> PHANTOM_STAGE =
             SynchedEntityData.defineId(VelkharEntity.class, EntityDataSerializers.INT);
 
@@ -751,7 +752,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             SynchedEntityData.defineId(VelkharEntity.class, EntityDataSerializers.BOOLEAN);
 
     /**
-     * Which way he is shuffling round, or 0. See {@link #turnDir()}.
+     * Which way he is shuffling round, or 0. See {@link #turnDir}.
      *
      * <p>He turns at 1.3 degrees a tick in the first phase - a full about-face
      * takes nine seconds - and for every one of those ticks his feet were
@@ -769,7 +770,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             SynchedEntityData.defineId(VelkharEntity.class, EntityDataSerializers.INT);
 
     /**
-     * The faceplate has actually left him. See {@link #isMaskOff()}.
+     * The faceplate has actually left him. See {@link #isMaskOff}.
      *
      * <p>The renderer had only "is the transition running", and a transition
      * that runs for a hundred and twelve ticks while the mask leaves on
@@ -834,7 +835,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     }
 
     /**
-     * How much of the wand exists yet. See {@link #staffForm()}.
+     * How much of the wand exists yet. See {@link #staffForm}.
      *
      * <p>He used to arrive in the third phase already holding it: the phase
      * flag flips on the FIRST tick of the transition, and the renderer draws
@@ -851,7 +852,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     private static final EntityDataAccessor<Float> STAFF_FORM =
             SynchedEntityData.defineId(VelkharEntity.class, EntityDataSerializers.FLOAT);
     /**
-     * How much of the CROSSBOW exists yet, 0 to 1. See {@link #bowForm()}.
+     * How much of the CROSSBOW exists yet, 0 to 1. See {@link #bowForm}.
      *
      * <p>The same idea as the wand and for the same reason: the weapon is made
      * in front of the player rather than handed to him. The difference is what
@@ -1466,7 +1467,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     // eighty-five that nothing reduces - it took Ignis off the board in about
     // a second. The number was set before the unstoppable floor existed and
     // they multiply: what looks like a trim is really the two being reconciled.
-    // THIRTEEN (9 until 06.10.2026): it is the one blow of
+    // THIRTEEN: it is the one blow of
     // the fourth phase you are meant to fear; nine was shrugged off.
     private static final float BASE_BEAM_DAMAGE = 13.0F;
     private static float BEAM_DAMAGE = BASE_BEAM_DAMAGE;
@@ -1489,12 +1490,11 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     /** Degrees a tick it may bend toward its target before it has picked anyone up. */
     private static final double CLEAVE_STEER = 2.5D;
     /**
-     * Hearts at release with no distance behind it (1.6 before 06.10.2026: "zmniejsz troszeczke dmg"; 1.3 before the
-     * evening of 07.10.2026: "zabilo mnie w prawie pelnej zbroji na hita").
+     * Hearts at release with no distance behind it.
      *
      * <p>THE ONE-SHOT WAS THE FUNNEL, NOT ONLY THE NUMBER. The release went through strikeHeavy - the finisher's
      * path: a raw ceiling of 61 instead of 45, and a guaranteed 15 driven through any armour. A full run against a
-     * wall asked for 6.4 hearts of intent, which hit the 61 and left ~42 after netherite. It goes through strike()
+     * wall asked for 6.4 hearts of intent, which hit the 61 and left ~42 after netherite. It goes through strike
      * now (no armour-piercing floor), and the numbers below put a full run against a wall at ~30 raw - some 15
      * through full diamond - a drag cut short at ~12.
      */
@@ -1546,7 +1546,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     /**
      * Thirty-five seconds between berserks, counted in game time.
      *
-     * <p>NOT A COOLDOWN ENTRY AND NOT A WEIGHT. cooldownFor() stops an attack
+     * <p>NOT A COOLDOWN ENTRY AND NOT A WEIGHT. cooldownFor stops an attack
      * repeating but says nothing about how often it comes round, and a weight
      * in the pool is a dice roll - either would let this land twice in a row
      * or go a minute without appearing. It has to be a CLOCK, because the only
@@ -1637,7 +1637,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     // nearly four hundred points from one cast, which is a boss deleted. A
     // ring is a shotgun - the shape of the attack is that a LOT of them
     // arrive, so each one has to be worth very little.
-    // 0.60 (0.40 until 06.10.2026): half again, not more - the
+    // 0.60: half again, not more - the
     // arithmetic above still holds, a ring that lands whole must stay a punishment, not a deletion.
     private static final float BASE_ORBIT_DAMAGE = 0.60F;
     private static float ORBIT_DAMAGE = BASE_ORBIT_DAMAGE;
@@ -2019,7 +2019,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     // this size there will be a better set - walks through all of it again and
     // the whole exercise has to be repeated.
     //
-    // The figures below are INTENT, in hearts, and strike() delivers them two
+    // The figures below are INTENT, in hearts, and strike delivers them two
     // ways at once: a very large raw hit that lighter armour eats whole, and a
     // guaranteed floor that lands whatever is being worn. Wear less and it is
     // catastrophic; wear the best set in the pack and it still costs what the
@@ -2028,7 +2028,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     /** Raw damage per heart of intent. Deliberately far past any sane armour. */
     // Pulled right down from 45. At that figure the raw component alone
     // deleted anyone not in the very best armour in the pack, and the brief is
-    // an endgame boss - not a boss that one-shots. The floor in strike() is
+    // an endgame boss - not a boss that one-shots. The floor in strike is
     // what keeps him from being out-geared; the raw part only needs to make
     // lighter armour hurt, not evaporate.
     private static final float RAW_PER_HEART = 16.0F;
@@ -2083,13 +2083,12 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     // hits softer than the rest is not what the fight wants to say.
     private static final float PHASE1_DAMAGE = 1.0F;
 
-    /** Temporary: prints every blow he takes. See the note in hurt(). */
+    /** Temporary: prints every blow he takes. See the note in hurt. */
     private static final boolean DAMAGE_TRACE = true;
 
     /** Everything he does while both blades are out, times this (and times PHASE2_DAMAGE: the twins are phase two's
      *  half-phase). 1.75 -> 1.2: 1.49 of phase
-     *  two's blow down to 1.02 - two swords hit more often, not each one twice as hard. 1.2 -> 1.05 (08.10.2026: "jeszcze
-     *  delikatnie oslab ataki velkhara w 3 fazie" - the bar's third phase is these blades): 1.02 -> 0.89. */
+     *  two's blow down to 1.02 - two swords hit more often, not each one twice as hard. 1.2 -> 1.05: 1.02 -> 0.89. */
     private static final float TWIN_DAMAGE = 1.05F;
     private static final float BASE_DMG_COMBO = 1.9F;
     private static float DMG_COMBO = BASE_DMG_COMBO;
@@ -2137,7 +2136,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * Down from eleven, which floored at twenty-two and made the two counters
      * indistinguishable in play.
      */
-    private static final float BASE_DMG_PUNISH = 4.8F;    // (6, a fifth off)
+    private static final float BASE_DMG_PUNISH = 4.8F;    //
     private static float DMG_PUNISH = BASE_DMG_PUNISH;
     /**
      * What the LIT wall throws back, and it is the hardest single blow of the
@@ -2247,7 +2246,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     /**
      * True from the frame the faceplate leaves his head onward.
      *
-     * <p>{@link #isDiscardingVisor()} answers "is the unmasking playing", which
+     * <p>{@link #isDiscardingVisor} answers "is the unmasking playing", which
      * stays true for fifty-four ticks after the mask is already tumbling away.
      * This answers "is it off yet", which is the question the head swap needs.
      */
@@ -2304,8 +2303,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     }
 
     /** First tick of the forge, and the tick it finishes on. */
-    // (07.10.2026, the animation agent's slower phase 2 -> 3 transition: 66 -> 112, 100 -> 163 - and with them the
-    // crack 30-69, the visor and the nova 71, the faceplate down 99, the eyes 105, the line 171; mirrors the clip)
+    //
     public static final int STAFF_FORGE_FROM = 112;
     public static final int STAFF_FORGE_TO = 163;
 
@@ -2538,7 +2536,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             case SKYHOOK -> 220;
             case GRAVE_BLADE -> 200;
             case SPIN_CUT -> 120;
-            case PHANTOM_EDGE -> 480;
+            case PHANTOM_EDGE -> 480;       //
             // THE TWIN BLADES. Short cooldowns on both working attacks,
             // because the whole point of this half is that it is faster - a
             // rotation with gaps in it would just be phase two again with a
@@ -2604,7 +2602,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * a particular tick and a later tick of the same attack clears it. Every
      * one of those clears is correct. The problem is the exits that never
      * reach them: three handlers end with a bare setAttackState(NONE) instead
-     * of finish(), the watchdog can cut an attack anywhere, a phase change can
+     * of finish, the watchdog can cut an attack anywhere, a phase change can
      * land mid-swing, and the entity can be unloaded and reloaded between the
      * set and the clear.
      *
@@ -2646,7 +2644,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // counts down to zero. Anything that stops that countdown being
         // reached - a phase change, the entity unloading mid-dodge, an exit
         // that skips the block - leaves it set forever. And a stuck EVADE is
-        // loud, because the animator tests evadeKind() BEFORE everything
+        // loud, because the animator tests evadeKind BEFORE everything
         // else: he would walk around permanently wearing a dodge pose, feet
         // still, which is "he slides without moving his legs" exactly.
         //
@@ -2724,7 +2722,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         }
         // AND GRAVITY COMES BACK ON. Same latch, one level further out, and
         // the loudest one of the family: four attacks switch gravity off and
-        // switch it back on at the end of their own script. finish() clears it
+        // switch it back on at the end of their own script. finish clears it
         // too - but the watchdog, a phase change, the target dying mid-haul
         // and an unload/reload between the two ticks all skip that, and what
         // is left is a boss hanging in the air over the arena until the world
@@ -2739,7 +2737,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // Three things are allowed to float: the two attacks that lift him,
         // the throne, and the mage. Everything else, including nothing at all,
         // falls.
-        // AND THE SHUFFLE STOPS WHEN HE IS DOING ANYTHING ELSE. faceTarget()
+        // AND THE SHUFFLE STOPS WHEN HE IS DOING ANYTHING ELSE. faceTarget
         // sets this, but it has three early returns above the line that does -
         // the mid-attack yaw lock and the phase-two travel branch among them -
         // so a turn interrupted by an attack would leave him shuffling on the
@@ -2952,7 +2950,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         finishHeavy(cooldown, justDid);
         // AND HE DOES NOT STAND THERE AFTERWARDS.
         //
-        // Two separate rests were stacking on the end of a string. finish()
+        // Two separate rests were stacking on the end of a string. finish
         // puts a thirty-tick floor under every attack in the phase, and
         // COMBO_REST then took all five combo moves off the table for ten
         // seconds - so on a roster where most of what he has IS the combo, a
@@ -3012,7 +3010,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * Can this combo move actually land on them from here?
      *
      * <p>The numbers are the ones each move already enforces for itself -
-     * taken off its own offer() line, or off the reach test it aborts on when
+     * taken off its own offer line, or off the reach test it aborts on when
      * it has no offer of its own. Written down in one place so the chain can
      * ask the question BEFORE committing, which is the only difference
      * between a blow that misses and a blow that was never thrown.
@@ -3115,7 +3113,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * while he stands side-on to the player.
      *
      * <p>The chain looked as if it tracked and did not: it calls
-     * faceChainTarget, whose rate is turnRate() x 1.5 + 0.5, and turnRate()
+     * faceChainTarget, whose rate is turnRate x 1.5 + 0.5, and turnRate
      * is ZERO during any attack that does not steer. Half a degree a tick,
      * which across its wind-up is ten degrees. The grave blade had no aim at
      * all. Both now use the same creep and quarter-turn limit as phase two.
@@ -3271,10 +3269,10 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * NOTHING ELSE TURNS HIM WHILE HE IS FIGHTING.
      *
      * <p>This is why the slow turn did not work. The rate limit was right and
-     * applyYaw was right; the problem is WHEN. faceTarget() runs at the end of
-     * aiStep - and LivingEntity.tick() calls tickHeadTurn AFTER aiStep, which
+     * applyYaw was right; the problem is WHEN. faceTarget runs at the end of
+     * aiStep - and LivingEntity.tick calls tickHeadTurn AFTER aiStep, which
      * runs vanilla's BodyRotationControl, which drags yBodyRot toward yHeadRot
-     * at up to getMaxHeadYRot() degrees a tick. That default is SEVENTY-FIVE.
+     * at up to getMaxHeadYRot degrees a tick. That default is SEVENTY-FIVE.
      * So every tick this entity carefully turned itself 1.3 degrees, and then
      * the engine turned it another seventy-five back to wherever its head was
      * pointing. Hence "he spins a hundred and eighty degrees in a fraction of
@@ -3491,8 +3489,8 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             // guarantee, because whatever the frames in between look like, the
             // blow itself lands facing forward.
             //
-            // THE HALF-PHASE IS ASKED FOR BY NAME. isDualWielding() rather
-            // than trusting getPhase() to cover it: the twins are half of what
+            // THE HALF-PHASE IS ASKED FOR BY NAME. isDualWielding rather
+            // than trusting getPhase to cover it: the twins are half of what
             // this was reported against, and hanging the rule on a phase
             // number is how it would quietly stop applying if the break ever
             // moved off phase two.
@@ -3661,7 +3659,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             new Bark(FFSounds.VELKHAR_LINE_FROZEN, "velkhar.line.frozen"),
             new Bark(FFSounds.VELKHAR_LINE_PRESERVE, "velkhar.line.preserve"),
     };
-    // ("Behind you." is not one of these any more)
+    //
     private static final Bark[] BARKS_FAR = {
             new Bark(FFSounds.VELKHAR_LINE_FREEZE, "velkhar.line.freeze"),
             new Bark(FFSounds.VELKHAR_LINE_DEPTHS, "velkhar.line.depths"),
@@ -3896,7 +3894,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // HE CIRCLES THEM. And this is where it has to happen.
         //
         // The orbit was written into VelkharMovementGoal, which is the natural
-        // place for it and the wrong one: goals run inside super.aiStep(), and
+        // place for it and the wrong one: goals run inside super.aiStep, and
         // THIS METHOD RUNS AFTERWARDS. So every tick the goal set a tangential
         // velocity and eleven lines below this comment it was overwritten by a
         // pull straight at the target. The net of the two was a boss creeping
@@ -4162,7 +4160,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * even begun to strain, and the whole point of the transition is that the
      * new look arrives WITH the explosion, not four seconds ahead of it.
      *
-     * <p>So the skin lags until the plates blow. shedStage() reaches 2 on the
+     * <p>So the skin lags until the plates blow. shedStage reaches 2 on the
      * detonation tick (77), which is the same burst that throws the armour and
      * flashes the cracks - so the texture swap now rides the bang instead of
      * leading it.
@@ -4178,7 +4176,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     /**
      * THE FOUR PHASES THE PLAYER IS TOLD OF: the Bulwark
      * King, the Stormblade, the Twin Blades - from the sword torn in two, once only a half-phase - and the Hollow
-     * Magus. The fight's own systems go on keying off getPhase() (1..3); this is what the bar and its advice show.
+     * Magus. The fight's own systems go on keying off getPhase (1..3); this is what the bar and its advice show.
      */
     public int officialPhase() {
         int p = getPhase();
@@ -4315,12 +4313,12 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // a creative player across the room is the single loudest way of
         // saying "this is a mob in a world" rather than "this is an opponent".
         // THE LOOK GOAL IS GONE. Three separate things were aiming him at the
-        // player - this goal, the movement goal, and faceTarget() - and the
+        // player - this goal, the movement goal, and faceTarget - and the
         // first two exist to make an ordinary mob feel attentive. He is not
         // an ordinary mob. What "always watching you" bought was a head that
         // snapped between the 1.3 degrees a tick his body is allowed, which
         // reads as twitchy and eager, and eager is the opposite of the thing
-        // he is meant to be. faceTarget() is now the only thing that turns
+        // he is meant to be. faceTarget is now the only thing that turns
         // him, and it turns him slowly.
         //
         // AND IT REALLY IS GONE NOW. A second, completely unguarded
@@ -4410,7 +4408,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             }
             // NO LOOK CONTROL HERE. This ran every tick he was walking and it
             // is the last of three places that were all aiming him at once.
-            // faceTarget() owns his facing now and turns him at 1.3 degrees a
+            // faceTarget owns his facing now and turns him at 1.3 degrees a
             // tick in phase one - which is the point of him. A look control
             // snapping his head onto the player between those degrees is what
             // produced the twitching, and worse, it made a knight in half a
@@ -4448,12 +4446,12 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             // it the animator plays the standing hover over a boss who is
             // travelling, which is the "slides without moving" fault one phase
             // down wearing different clothes.
-            // THE ORBIT LIVES IN tickHover() NOW, and not because it fits
+            // THE ORBIT LIVES IN tickHover NOW, and not because it fits
             // better there - because it fits WORSE here. This goal runs inside
-            // super.aiStep(); tickHover() runs after it and rewrites his
+            // super.aiStep; tickHover runs after it and rewrites his
             // horizontal motion unconditionally. Whatever this branch computed
             // was overwritten in the same tick, every tick, and the boss the
-            // player actually saw was the one tickHover() described: drifting
+            // player actually saw was the one tickHover described: drifting
             // inward, never circling. A goal that cannot win an argument with
             // the code downstream of it should not be having the argument.
             //
@@ -4511,9 +4509,9 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             // LIT MEANS IMMUNE, AND NOTHING ELSE.
             //
             // This has been wrong twice, each time by picking a predicate that
-            // sounded right. First isGuardUp(), which stays true through his
-            // own swings. Then isGuarding() - which is barely better, because
-            // isGuarding() is "phase one, not dormant, not mid-attack", and
+            // sounded right. First isGuardUp, which stays true through his
+            // own swings. Then isGuarding - which is barely better, because
+            // isGuarding is "phase one, not dormant, not mid-attack", and
             // WALKING TOWARD YOU satisfies all three. He spends most of the
             // fight between attacks, so the gate burned almost permanently
             // and the readout meant nothing at all.
@@ -4575,7 +4573,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             // he has neither yet. The flags default to shown, so without this he
             // sat there fully armed and then "formed" weapons he already held.
             // Set gone here and the intro's gather beats - which are gated on
-            // isShieldGone()/isSwordGone() - actually run and hand them to him.
+            // isShieldGone/isSwordGone - actually run and hand them to him.
             entityData.set(SHIELD_GONE, true);
             entityData.set(SWORD_GONE, true);
             if (tickCount % 100 == 0) {
@@ -4618,7 +4616,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // any scrap of horizontal momentum left on him while he is NOT striding
         // and NOT attacking is damped hard, so a standing pose can never slide -
         // the "he stands up like a pole and drifts" bug, killed at the source.
-        // THE SUMMONING CUTSCENE OUTLIVES HIS PART OF IT. finish() clears the
+        // THE SUMMONING CUTSCENE OUTLIVES HIS PART OF IT. finish clears the
         // flag when the rite ends, but the Monstrosity is only half out of the
         // floor by then and has not bellowed yet - which is the half worth
         // watching. So while the beast is still arriving the flag is re-raised
@@ -4790,7 +4788,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                 // CUTSCENE SIX: the summoning. The camera is held from the
                 // moment he drives the wand into the floor right through the
                 // Monstrosity hauling itself up and bellowing - unlike the
-                // others this one does NOT end at finish(), because the thing
+                // others this one does NOT end at finish, because the thing
                 // worth watching happens after his part is over. It is held
                 // open below, while the beast is still arriving.
                 if (cinematic) {
@@ -5019,7 +5017,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             applyYaw(attackFacing, attackFacing);
         }
         // THE CAMERA TAKES OVER for the throne rise, but only on the fortress
-        // king - a hand-spawned copy just stands up. Cleared in finish().
+        // king - a hand-spawned copy just stands up. Cleared in finish.
         if (cinematic) {
             entityData.set(CUTSCENE, 1);
         }
@@ -5275,8 +5273,8 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
 
         // THE FALLBACK IS NOT A FREE PASS INTO THE PHASE, and this one was.
         //
-        // chooseOffered() takes its fallback WITHOUT asking any of the range
-        // or phase questions offer() asks - that is the point of it, so a
+        // chooseOffered takes its fallback WITHOUT asking any of the range
+        // or phase questions offer asks - that is the point of it, so a
         // decision can never come up empty. But the reach fallback here was
         // LUNGE_STRIKE, which is a phase-two combo move and the only thing in
         // the roster that leaves the ground. So whenever the player stood
@@ -5344,7 +5342,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // CUTSCENE THREE: the gauntlet cracks open and the greatsword tears into
         // two blades. Only the BREAK fury is a cutscene - the combat fury that
         // reuses the state is not - and only on the fortress king. Cleared in
-        // finish(); the client frames it and titles it "The gauntlet shatters".
+        // finish; the client frames it and titles it "The gauntlet shatters".
         if (cinematic) {
             entityData.set(CUTSCENE, 3);
         }
@@ -5411,7 +5409,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // scenery. It should be the opposite: the one stretch of the fight
         // where everything else is stripped away and what is left is two
         // people and their blades. So every option below that is not the
-        // sword is gated on !stormActive().
+        // sword is gated on !stormActive.
         //
         // It also gives the phase a SHAPE. Without it, phase two is a bag of
         // attacks in random order; with it there is a rhythm of open ground
@@ -5609,7 +5607,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         //
         // What is left inside the weather is the combo and nothing else,
         // which is what the phase was for.
-        // offer(BERSERK_DIVE, stormActive(), 12);
+        // offer(BERSERK_DIVE, stormActive, 12);
         // ---- AND NO SHIELD CHARGE IN A PHASE WITHOUT A SHIELD.
         //
         // The cleave's offer was taken out of this phase on purpose - the
@@ -5621,9 +5619,9 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         //
         // Nothing is the right answer at that range. The fallback was only
         // ever needed because this method is expected to start SOMETHING, and
-        // it is not: returning without begin() leaves the global cooldown at
+        // it is not: returning without begin leaves the global cooldown at
         // zero, so he keeps walking and asks again next tick - the same early
-        // return maybeTearSword() already makes above. Phase two stalks; when
+        // return maybeTearSword already makes above. Phase two stalks; when
         // nothing reaches, it stalks further.
         if (options.isEmpty() && dist >= 5.5D) {
             return;
@@ -5693,7 +5691,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             case PHANTOM_EDGE -> FFSounds.VELKHAR_TELEPORT;
             case GRAVE_BLADE -> FFSounds.VELKHAR_CAST;
             case DOOM_BLADE -> FFSounds.SPELL_DOOM;
-            // NO OPENING SOUND ON THE PUNCH. begin() plays this on tick zero,
+            // NO OPENING SOUND ON THE PUNCH. begin plays this on tick zero,
             // and hip_fist does not land until 27 - so the player heard a
             // whoosh, waited, and then got hit, which reads as the audio being
             // out of sync with the blow rather than as a wind-up. The other
@@ -5757,7 +5755,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         offer(HEART_BARRAGE, dist < 26.0D, 5);
         // Gone from here too - see the note in phase two. The berserk run only
         // ever fired inside the storm, and the storm is not that any more.
-        // offer(BERSERK_DIVE, stormActive(), 10);
+        // offer(BERSERK_DIVE, stormActive, 10);
         // The chain carries over from phase two - it is the showpiece set-up
         // for the execution, and the only attack that ends with the player
         // stood in front of him with no footing left.
@@ -5785,7 +5783,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
 
     /**
      * The line that goes with an attack, if it has one. Kept apart from
-     * soundFor() because these are dialogue: they carry a chat message and
+     * soundFor because these are dialogue: they carry a chat message and
      * go out on the voice channel rather than as a positional effect.
      *
      * @return true if the state actually had something to say
@@ -5824,7 +5822,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         entityData.set(HAULING, 0);
         entityData.set(DIVE_PHASE, 0);
         entityData.set(GRASP, 0);
-        // RZUT WROTAMI cut short by anything that does not go through finish() (a stagger, a phase turn): the gate
+        // RZUT WROTAMI cut short by anything that does not go through finish (a stagger, a phase turn): the gate
         // goes to frost out there (VelkharGateThrowEntity) and is back on his arm, never left hidden
         if (getAttackState() == GATE_THROW && state != GATE_THROW && !isDormant()) {
             entityData.set(SHIELD_GONE, false);
@@ -5832,7 +5830,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         setAttackState(state);
         // HE LOCKS ONTO THE TARGET, NOT ONTO WHERE HIS BODY HAPPENED TO BE.
         //
-        // This took getYRot(), and the yaw only catches up to the player at a
+        // This took getYRot, and the yaw only catches up to the player at a
         // limited turn rate - so an attack chosen while he was still coming
         // round locked him to a stale angle for its whole duration. Against a
         // player who circles, which is every player, that is how he ended up
@@ -5875,7 +5873,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     /**
      * Nothing he does may outlive its own clip.
      *
-     * <p>THE POSE HE GETS STUCK IN. Every attack ends by calling finish() on a
+     * <p>THE POSE HE GETS STUCK IN. Every attack ends by calling finish on a
      * tick number written into its handler, and a handler that returns before
      * reaching that line - because the target died, because a branch above it
      * took the early exit, because the state is one of the cinematics that
@@ -5963,7 +5961,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                 // ================================================================
                 // THE LEAP IS NOT CONDITIONAL ON THE FURNITURE.
                 //
-                // This was gated on isOnThrone(), which is a search for the
+                // This was gated on isOnThrone, which is a search for the
                 // throne BLOCK underneath him. When that search fails he does
                 // not leap and - because the facing lock lives inside the same
                 // branch - he also never turns to face the player, so he
@@ -6358,7 +6356,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                             getX(), getEyeY(), getZ(), 60, 1.0D, 1.5D, 1.0D, 0.25D);
                 }
                 // THE SECOND EXIT. This is what was cutting the scene: a
-                // finish() on tick 72 left over from the short version of this
+                // finish on tick 72 left over from the short version of this
                 // clip, sitting in the same case as the one on 136 and firing
                 // first. It ended the break the moment the beams appeared.
                 //
@@ -8033,7 +8031,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                 //  he went from one to the other, which is the actual claim)
                 // THE SPIKES ERUPT WHEN THE MODEL LANDS, NOT WHEN THE HITBOX
                 // DOES. This was the bug: the impact fired on PHYSICS ground
-                // contact - onGround(), or the entity Y crossing the floor -
+                // contact - onGround, or the entity Y crossing the floor -
                 // which the dive reached around tick 57, while the animation's
                 // slam does not bottom out until tick 62. Effect keyed to the
                 // physics, visual keyed to the clip, and the two drifted, so
@@ -8657,7 +8655,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                         // ONCE. The wave used to hit whoever it launched on
                         // every subsequent step, because they were hanging in
                         // the air where the next rung swept through - and
-                        // push() adds, so it compounded into orbit.
+                        // push adds, so it compounded into orbit.
                         if (!riftStruck.add(victim.getUUID())) {
                             continue;
                         }
@@ -9075,7 +9073,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                     // where his facing may move, and it has to: the blow at
                     // the end is a frontal cone and the shield is on the
                     // front. Written to attackFacing as well as to yRot,
-                    // because faceTarget() rewrites yRot from that field
+                    // because faceTarget rewrites yRot from that field
                     // every tick and would otherwise put it straight back.
                     if (flat > 0.2D) {
                         float want = (float) (Math.atan2(in.z, in.x) * (180.0D / Math.PI)) - 90.0F;
@@ -9124,7 +9122,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                             continue;
                         }
                         // THE WALL'S ANSWER IS A SIGNATURE BLOW, and it was
-                        // not being dealt like one. strike() has no floor
+                        // not being dealt like one. strike has no floor
                         // worth the name, so the counter for swinging into a
                         // lit tower shield arrived through the player's plate
                         // as a few points - the same shield bash he eats in
@@ -9242,7 +9240,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                 setDeltaMovement(0.0D, getDeltaMovement().y, 0.0D);
                 if (attackTicks == 2) {
                     playSound(FFSounds.SPELL_DOOM.get(), 4.0F, 0.9F);
-                    // LOUD, AND TO THE WHOLE FIGHT. speak() is positional and
+                    // LOUD, AND TO THE WHOLE FIGHT. speak is positional and
                     // rate-limited with the rest of his barks - correct for a
                     // taunt between blows and wrong for this, which is the one
                     // attack that is announced. broadcastToFight puts the line
@@ -9290,7 +9288,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             // a trick the fight tells twice.
             //
             // Removed at the root rather than disabled: the offer, the case,
-            // swapPartner(), the state constant, its length, its sound and
+            // swapPartner, the state constant, its length, its sound and
             // its clip. A move left in the table "just in case" is a move
             // that gets picked again by the next person who widens a filter.
             // ================================================================
@@ -9305,7 +9303,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                 //   44-62  a greatsword of ice forms in every pair of hands
                 //   62-76  they jump, and it comes over from behind the head
                 //
-                // HE USED TO SLIDE THIS WHOLE DISTANCE. getNavigation().stop()
+                // HE USED TO SLIDE THIS WHOLE DISTANCE. getNavigation.stop
                 // ran on tick zero and a leapAt at fifty threw him across the
                 // floor on a raw delta, so the model travelled with its legs
                 // still - which is what a boss looks like when the movement
@@ -9471,7 +9469,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                                 : mirror.getViewVector(1.0F);
                         // THE SAME ARC HE USES, not the one he was fixed away
                         // from. These numbers were 0.34 plus up to 0.26, which
-                        // is exactly the height leapAt() carries a note about
+                        // is exactly the height leapAt carries a note about
                         // abandoning: "at 0.34 to 0.60 he barely cleared his
                         // own boots, so what read as a leap was a long stride
                         // with a hop in it". His leap was raised to 0.62 and
@@ -9479,7 +9477,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                         // he jumped and they hopped - which is the report that
                         // the illusions do not jump with him.
                         //
-                        // Through launch(), which also silences the copy's own
+                        // Through launch, which also silences the copy's own
                         // navigation for the flight. Setting the velocity alone
                         // did nothing: its pathing ran on the very next tick and
                         // wrote straight over it, so the clones went on walking
@@ -9515,7 +9513,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                                 land.x, land.y + 1.4D, land.z, 70, 1.8D, 1.2D, 1.8D, 0.26D);
                         floorBurst(serverLevel, land, 3.2D);
                         mirror.playSound(FFSounds.VELKHAR_IMPACT.get(), 3.0F, 0.72F);
-                        // (07.10.2026: "aby faktycznie wykonywaly atak") the cut lands where its blade comes down -
+                        // the cut lands where its blade comes down -
                         // on whoever stands there, the one it leapt at or not - and not only "if the target is
                         // within five and a half blocks of the copy", which a leap that came down short never was
                         for (LivingEntity v : level().getEntitiesOfClass(LivingEntity.class,
@@ -9887,7 +9885,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                                 slam.x, slam.y + 0.2D, slam.z, 1, 0.0D, 0.0D, 0.0D, 0.0D);
                         if (held != null) {
                             strikeHeavy(held, GRASP_SLAM);
-                            // after the strike: hurt() writes its own knockback
+                            // after the strike: hurt writes its own knockback
                             held.setDeltaMovement(0.0D, -1.2D, 0.0D);
                             held.hurtMarked = true;
                             if (held instanceof ServerPlayer sp) {
@@ -10839,7 +10837,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                 // earlier attempts at this all looked like.
                 getNavigation().stop();
                 if (attackTicks <= 1) {
-                    // combos chain without calling finish(), so the carried-list
+                    // combos chain without calling finish, so the carried-list
                     // is cleared where the charge STARTS, not where it ends
                     struckThisAttack.clear();
                 }
@@ -10900,13 +10898,13 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                             boolean first = !hipFistConnected;
                             hipFistConnected = true;
                             // ================================================================
-                            // THROUGH strike(), NOT STRAIGHT INTO hurt().
+                            // THROUGH strike, NOT STRAIGHT INTO hurt.
                             //
-                            // These constants are in HEARTS. strike() turns a
+                            // These constants are in HEARTS. strike turns a
                             // heart into RAW_PER_HEART - sixteen - and puts a
                             // floor under the result so armour cannot eat the
                             // whole blow. Four call sites were handing the
-                            // heart value to hurt() as if it were raw damage,
+                            // heart value to hurt as if it were raw damage,
                             // so they dealt 1.9 x 1.6 = 3 instead of 30: a
                             // TENTH of what every other blow of his does, and
                             // against armour that rounds to nothing.
@@ -10925,7 +10923,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                             //      tickle for exactly the players built to
                             //      stand in front of him.
                             //
-                            //      Written AFTER strike(), because hurt()
+                            //      Written AFTER strike, because hurt
                             //      applies vanilla's own knockback and would
                             //      overwrite anything set before it - the same
                             //      trap the spire's shove fell into. And the
@@ -11830,7 +11828,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                     }
                 }
                 // TWENTY, NOT SIX. The launcher looked for the ring within six
-                // blocks while orbsAlive() - the thing that decides whether he
+                // blocks while orbsAlive - the thing that decides whether he
                 // may cast this at all - looks within twenty. Walk more than
                 // six blocks after casting and the orbs stop being found by the
                 // launcher but go on being found by the gate: they never fire,
@@ -12160,7 +12158,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                         }
                         strike(victim, DMG_SHIELD_BASH);
                         Vec3 away = to.lengthSqr() < 1.0E-4D ? getViewVector(1.0F) : to;
-                        // Set outright rather than added to: push() is scaled
+                        // Set outright rather than added to: push is scaled
                         // down by knockback resistance and by whatever the
                         // target was already doing, and this has to launch
                         // them regardless. It is the reposition tool.
@@ -12304,7 +12302,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                         // DAMAGE FIRST, THEN THROW. This is why the shove did
                         // nothing.
                         //
-                        // LivingEntity.hurt() applies its OWN knockback -
+                        // LivingEntity.hurt applies its OWN knockback -
                         // vanilla's, small, aimed from the attacker, and scaled
                         // by the victim's knockback resistance. Calling it
                         // AFTER setDeltaMovement meant every shove computed
@@ -12556,7 +12554,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                     Vec3 flat = Vec3.ZERO;
                     // WHO HE IS JUMPING AT, FOUND AGAIN HERE.
                     //
-                    // This read getTarget() and nothing else, and by this tick
+                    // This read getTarget and nothing else, and by this tick
                     // that is very often null: the sequence runs the best part
                     // of fifteen seconds, he spends it standing on a spire not
                     // pathing to anybody, and the shove has just put them
@@ -12726,7 +12724,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                                     40, 0.4D, 0.5D, 0.4D, 0.4D);
                             // and it drives them DOWN, because he is above
                             // them - being hit by a falling man does not lift
-                            // you. After strike(), as always.
+                            // you. After strike, as always.
                             Vec3 ram = ascentAim.lengthSqr() > 1.0E-4D
                                     ? ascentAim.normalize().scale(0.7D) : Vec3.ZERO;
                             victim.setDeltaMovement(ram.x, -0.55D, ram.z);
@@ -12740,7 +12738,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                     }
                     if (onGround() || verticalCollision) {
                         landTheAscent(serverLevel);
-                        // not finish(): the kneel and the rise are part of the
+                        // not finish: the kneel and the rise are part of the
                         // attack, and ending here dropped him straight from the
                         // fall into the idle with nothing between
                         entityData.set(DIVE_PHASE, 3);
@@ -13295,7 +13293,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         setDeltaMovement(0.0D, getDeltaMovement().y, 0.0D);
         entityData.set(TWIN_CHAIN, false);
         skyhookBound = false;
-        // ---- BUT NOT WHILE HE IS STILL ASLEEP. finish() hands the shield
+        // ---- BUT NOT WHILE HE IS STILL ASLEEP. finish hands the shield
         //      back after anything that ends, which is right for an interrupted
         //      attack and wrong for a king who has not stood up yet: one stray
         //      call on the throne and he is armed again for as long as it takes
@@ -13329,7 +13327,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // no frame in which he was simply standing there holding it.
         // Phase two breathes too, just less. A 30-tick floor - a second and a
         // half - between separate attacks, so he is not an unbroken rotation.
-        // Combos are exempt: they chain without calling finish(), so this only
+        // Combos are exempt: they chain without calling finish, so this only
         // ever governs the gap BETWEEN strings and single attacks.
         globalAttackCooldown = getPhase() == 1
                 ? (int) (cooldown * 1.6F) + 24
@@ -13400,7 +13398,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * Throws chunks of the actual floor upward in a ring.
      *
      * <p>Block-debris particles rather than real FallingBlockEntities on
-     * purpose: `fall()` deletes the source block, and 1.20.1 gives no way to
+     * purpose: `fall` deletes the source block, and 1.20.1 gives no way to
      * cancel a falling block's landing behaviour, so a miss would chew holes
      * in a hand-built arena. These carry the floor's own texture and cost
      * nothing permanent.
@@ -13694,7 +13692,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         if (step == 0) {
             // AIMED AT THE TARGET, NOT ALONG HIS NOSE.
             //
-            // getYRot() is where his body happens to have finished turning,
+            // getYRot is where his body happens to have finished turning,
             // and the wave is spawned on a fixed tick regardless of whether
             // the turn had caught up - so on any fight where the player kept
             // moving the shadow went off at an angle and sometimes missed
@@ -14568,7 +14566,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * <p>The ring is spawned in one beat and emptied over six more, and any
      * exit that does not reach the last of those - an interrupt, a phase
      * change, the watchdog, the target dying - used to leave orbs circling
-     * for the rest of the fight. They are harmless, but orbsAlive() gates the
+     * for the rest of the fight. They are harmless, but orbsAlive gates the
      * attack on there being none, so a single straggler retired the move
      * permanently.
      *
@@ -14669,7 +14667,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // worth three blocks delivered about half of one. That is why it read
         // as a shuffle rather than a shove.
         //
-        // The window says "he is mid-push, do not brake yet"; coast() honours
+        // The window says "he is mid-push, do not brake yet"; coast honours
         // it. Ending the push in the handlers' hands rather than here is
         // deliberate - they know when the cast starts, and the drag going back
         // to normal by itself means nothing has to remember to switch it off.
@@ -14759,7 +14757,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     private double floorBelow(double x, double z) {
         // A FLOOR IS SOMETHING YOU CAN STAND ON, not something that is not air.
         //
-        // This asked isAir(), and his own floor cracks are a BLOCK - laid on
+        // This asked isAir, and his own floor cracks are a BLOCK - laid on
         // top of the stone, replaceable, with no collision at all. So anything
         // placed on a square he had already cracked came up one block high,
         // which is the spire hanging in the air: the cracks are spread by the
@@ -14932,11 +14930,11 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     /**
      * A blow written in RAW damage, put through the funnel anyway.
      *
-     * <p>WHY THIS EXISTS. Seventeen of his damage sites called hurt() directly
-     * with a raw number while thirty went through strike(). The two are not
+     * <p>WHY THIS EXISTS. Seventeen of his damage sites called hurt directly
+     * with a raw number while thirty went through strike. The two are not
      * equivalent and the difference only shows on an armoured player:
-     * strikeFor() guarantees a FLOOR - whatever armour and resistance do to
-     * the blow, a minimum still lands - and a raw hurt() has no floor at all.
+     * strikeFor guarantees a FLOOR - whatever armour and resistance do to
+     * the blow, a minimum still lands - and a raw hurt has no floor at all.
      *
      * <p>So against endgame plate the thirty kept working and the seventeen
      * quietly stopped. That is the whole of "his attacks hit for nothing now"
@@ -14946,7 +14944,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      *
      * <p>Takes the raw figure the call site was already written around and
      * converts it, so no attack changes strength - they only stop being
-     * erased. New code should use strike() and think in hearts.
+     * erased. New code should use strike and think in hearts.
      */
 
     private static float PH1_MUL = 1.0F;
@@ -14988,7 +14986,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     /**
      * The phase's own multiplier and the player's, in one number.
      *
-     * <p>Split out of strike() and strikeHeavy(), which each carried their own
+     * <p>Split out of strike and strikeHeavy, which each carried their own
      * copy of the phase ladder - two copies of one rule is how the half-phase
      * ends up hitting differently depending on which funnel a blow took.
      */
@@ -15006,12 +15004,12 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     private static final float PHASE2_DAMAGE = 0.85F, PHASE3_DAMAGE = 0.6F;
 
     /**
-     * Set while strike() / strikeHeavy() hand a blow on to strikeFor, whose phase cut is already in it.
+     * Set while strike / strikeHeavy hand a blow on to strikeFor, whose phase cut is already in it.
      *
      * <p>THE LAST PHASE IS MISSILES, and the missiles did not take the cut. His spears, orbs, hunters, frost strikes
-     * and the ring's shards call the static strikeFor themselves, past phaseScale(), so lowering the phase's damage
+     * and the ring's shards call the static strikeFor themselves, past phaseScale, so lowering the phase's damage
      * lowered almost nothing a player meets in it. strikeFor now cuts a blow of his by the phase when it did not come
-     * through strike() - only from the third phase on, where the request was; the first two keep what they had.
+     * through strike - only from the third phase on, where the request was; the first two keep what they had.
      */
     private boolean scaledStrike;
 
@@ -15092,7 +15090,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * the twins out-sustained anything the player could out-damage, which is
      * not a tilted trade, it is a closed one.
      *
-     * <p>Only the blades, and only in his hands: this hangs off strike(),
+     * <p>Only the blades, and only in his hands: this hangs off strike,
      * which is the melee path. Spikes, shards and anything he throws are
      * dealt elsewhere and heal him nothing, so the answer to it is range -
      * which is exactly the answer TWIN_HARVEST was added to complicate.
@@ -15131,7 +15129,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         return top * getMaxHealth();
     }
 
-    /** Heals him by `amount`, but never past healCeiling(). */
+    /** Heals him by `amount`, but never past healCeiling. */
     public void healWithinPhase(float amount) {
         float room = healCeiling() - getHealth();
         if (room > 0.0F && amount > 0.0F) {
@@ -15213,7 +15211,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             return 0.0F;
         }
         // his missiles in the last phase: the same cut his own blows take (see scaledStrike) - and with the twins out too
-        // (08.10.2026: "oslab ataki ... w 3 fazie": its spikes and harvest went past the blades' cut, at full weight)
+        //
         if (attacker instanceof VelkharEntity king && !king.scaledStrike
                 && (king.getPhase() >= 3 || king.isDualWielding())) {
             hearts *= king.phaseScale();
@@ -15446,7 +15444,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * Where the wand's burning point actually is, in world space.
      *
      * <p>THE SPELLS WERE COMING OUT OF HIS CHEST. Every cast in the third
-     * phase originated at {@code (getX(), getY() + 2.4, getZ())} - the middle
+     * phase originated at {@code (getX, getY + 2.4, getZ)} - the middle
      * of his ribs - while the focus he is holding sat off to one side doing
      * nothing. He looked like a man with a decorative stick, which is what was
      * reported: the wand should be USED.
@@ -15645,7 +15643,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     /**
      * Could he actually arrive behind them?
      *
-     * <p>teleportBehind() gives up when the spot is outside the arena, and
+     * <p>teleportBehind gives up when the spot is outside the arena, and
      * giving up costs a whole attack - he plays the flash, goes nowhere and
      * then stands there on cooldown. Cheaper to ask before choosing it.
      */
@@ -15657,7 +15655,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
 
     private void teleportBehind(LivingEntity target) {
         // arriving somewhere else facing something else is a snap on purpose,
-        // and the only one - see the ceiling in tick()
+        // and the only one - see the ceiling in tick
         yawSnapThisTick = true;
         Vec3 behind = target.position().subtract(target.getViewVector(1.0F).scale(2.5D));
         Vec3 origin = position();
@@ -15710,7 +15708,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     /**
      * The shield is still THERE while he swings.
      *
-     * <p>isGuarding() drops the moment he commits, which made the answer to
+     * <p>isGuarding drops the moment he commits, which made the answer to
      * the whole phase "wait for any attack, then hit him freely" - the guard
      * was only ever up when nothing was happening, so it never actually
      * defended anything. It is strapped to his arm; it does not vanish because
@@ -16188,7 +16186,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // swing is not a punish, it is friction.
         //
         // So all that is left here is feedback: the guard rings, and the
-        // count in hurt() does the rest.
+        // count in hurt does the rest.
         playSound(FFSounds.VELKHAR_SHIELD_SET.get(), 1.6F, 1.3F);
         if (level() instanceof ServerLevel sl) {
             Vec3 gate = shieldCentre();
@@ -16230,7 +16228,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
     /**
      * THE CEILING, APPLIED WHERE THE DAMAGE IS FINAL.
      *
-     * <p>This was attempted twice in hurt() and both were wrong. Capping there
+     * <p>This was attempted twice in hurt and both were wrong. Capping there
      * clamps the damage BEFORE vanilla's armour formula, so the two multiply
      * and eighteen became four. The second attempt tried to be clever: work
      * out what armour would leave, clamp THAT, and hand back the amount which
@@ -16294,7 +16292,8 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         //
         // It was three in phase one and two in phase two, sold as "three
         // times the armour", and the note defending it worked an example:
-        //. That arithmetic skips a step. This is
+        // "a thirty-damage swing in phase one divides to ten and then meets
+        // the ten-per-hit ceiling". That arithmetic skips a step. This is
         // getDamageAfterMagicAbsorb, and getDamageAfterArmorAbsorb has
         // already run: vanilla has taken its share before the first line of
         // this method executes. A thirty-damage swing does not arrive here as
@@ -16353,7 +16352,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // A flat fifth off every blow from every source, which is the whole
         // of what "beyond vanilla" can mean without inventing a stat nobody
         // else's mod knows how to read.
-        // (gone, 05.10.2026: three equal phases of three hundred)
+        //
         boolean ranged = source.getDirectEntity() != null
                 && source.getDirectEntity() != source.getEntity();
         // FIFTEEN IS THE NORMAL HIT, IN BOTH ARMOURED PHASES.
@@ -16844,7 +16843,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      * <p>The blow is measured on the distance each one was actually carried,
      * from the point they were picked up to where they are now - not on how
      * long the run lasted - so being scooped late costs less than being
-     * scooped at the start. Dealt through strike() - not the finisher's
+     * scooped at the start. Dealt through strike - not the finisher's
      * strikeHeavy, whose guaranteed floor through armour made a full drag a
      * one-shot (07.10.2026; see CLEAVE_BASE).
      */
@@ -16869,7 +16868,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                 mult *= CLEAVE_WALL_BONUS;
             }
             strike(carried, CLEAVE_BASE * mult);
-            // AFTER the strike: hurt() applies vanilla knockback and would
+            // AFTER the strike: hurt applies vanilla knockback and would
             // overwrite anything set before it
             if (wall) {
                 carried.setDeltaMovement(-cleaveLine.x * 0.35D, 0.35D, -cleaveLine.z * 0.35D);
@@ -16909,7 +16908,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
      *
      * <p>Decided on the ENTRY POINT - the projectile's line this tick clipped
      * against his box - because the projectile's own position at the moment
-     * hurt() runs is where it was BEFORE it moved, up to a few blocks short
+     * hurt runs is where it was BEFORE it moved, up to a few blocks short
      * of him for a fast arrow. The line is run both ways from there so a shot
      * already inside the box still resolves; if nothing clips, its position
      * is used as it stands.
@@ -17501,7 +17500,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // toward them and keeps correcting for the first three seconds, so
         // walking out from under it does nothing and the answer is to keep
         // moving until its steering runs out.
-        // FAST AND AIMED (06.10.2026): three quarters of a block a tick, all but weightless (hunting()),
+        // FAST AND AIMED (06.10.2026): three quarters of a block a tick, all but weightless (hunting),
         // straight at them on the slant from the cloud - and the steering stops half a second short of them,
         // so a late break of the line still lets it by
         double reach = at.distanceTo(from);
@@ -17607,7 +17606,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         setAttackState(P2_TRANSITION);
         // CUTSCENE TWO: the crown falls away and the Bulwark King becomes the
         // Stormblade. The camera takes over on the fortress king only (the flag
-        // is gated on cinematic and cleared in finish(), same as the throne
+        // is gated on cinematic and cleared in finish, same as the throne
         // rise); the client already frames it and titles it "The crown falls
         // away". A hand-spawned copy just changes phase.
         if (cinematic) {
@@ -17657,7 +17656,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         entityData.set(MAGUS_SHOWN, false);             // the Twin Blades still, until the flash (P3_FLASH)
         // CUTSCENE FOUR: the swordsman burns away and the Hollow Magus rises -
         // the crown lifts off, the visor comes away, he leaves the floor. Camera
-        // on the fortress king, cleared in finish(); titled "Only winter remains".
+        // on the fortress king, cleared in finish; titled "Only winter remains".
         if (cinematic) {
             entityData.set(CUTSCENE, 4);
         }
@@ -17684,6 +17683,11 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             return false;
         }
         if (source.is(net.minecraft.tags.DamageTypeTags.IS_FREEZING)) {
+            return false;
+        }
+        // STUCK IN STONE: the wall takes nothing off him - he steps out
+        if (source.is(net.minecraft.world.damagesource.DamageTypes.IN_WALL)) {
+            freeFromWall();
             return false;
         }
         // THE WHITEOUT: gone into his storm, nothing reaches him; caught on his run - before his cut lands - he goes
@@ -17741,7 +17745,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // the dice and he parried out of his own attack.
         //
         // And it was worse than an interrupted animation. The evade only wins
-        // the ANIMATION - the controller tests evadeKind() before the attack
+        // the ANIMATION - the controller tests evadeKind before the attack
         // switch - while the attack handler goes on running on the server. So
         // the player saw a parry and was hit by a swing that was no longer
         // being drawn. A tell that stops matching what lands is the worst kind
@@ -17949,14 +17953,14 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // ================================================================
         // A SHOT IS JUDGED BY WHAT IT HIT, NOT BY WHERE THE ARCHER STOOD.
         //
-        // frontalHit() asks where the ATTACKER is, which is right for a sword
+        // frontalHit asks where the ATTACKER is, which is right for a sword
         // and wrong for an arrow: an archer in front of him who puts one over
         // the rim into the helm was being treated as having shot the shield,
         // and paid the guard's reduction for a head shot.
         //
         // So a projectile gets its own rule, decided on the point where its
         // path actually entered him. On the plate - nothing, and the arrow
-        // bounces, which vanilla does by itself when hurt() refuses. Anywhere
+        // bounces, which vanilla does by itself when hurt refuses. Anywhere
         // else - the helm, the legs - it lands, at half.
         // Half in every phase: there is no shield after the first, so from
         // then on every shot is a body shot and pays the same.
@@ -17977,7 +17981,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
                 shieldClang(source);
                 return false;
             }
-            // (phase one - past the plate, a shot lands whole; after it, at half)
+            // (phase one: "reszta nie jest odporna na strzaly" - past the plate, a shot lands whole; after it, at half)
             if (getPhase() != 1) {
                 amount *= PROJECTILE_BODY_FACTOR;
             }
@@ -18019,7 +18023,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             // This branch exists precisely for hits landing WHILE HE IS
             // ATTACKING - that is what tells it apart from the braced guard
             // above - and it answered them by starting a different attack.
-            // begin() replaces whatever is running, so a player trading into
+            // begin replaces whatever is running, so a player trading into
             // a wind-up could delete a cleave, a chain throw or the back half
             // of a combo by tapping the shield twice.
             //
@@ -18036,7 +18040,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         } else if (isGuarding() && !bypasses) {
             // The back of a shield is just a man's back, and going round him
             // is still the right answer - but it no longer BREAKS anything.
-            // Five hits used to call breakGuard(), which set the attack state
+            // Five hits used to call breakGuard, which set the attack state
             // to NONE mid-swing, and an interrupted attack is a stun however
             // it is spelled. The reward for flanking is that the hits land in
             // full, which they already do; it is not that the king kneels.
@@ -18121,7 +18125,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         // "still immune to arrows even from behind" exactly.
         //
         // What it was for - arrows glancing off the gate - is what
-        // projectileStruckShield() already does above, on the actual point of
+        // projectileStruckShield already does above, on the actual point of
         // entry. All that stays from here is the aggro: a shooter he has not
         // noticed yet gets noticed.
         // ================================================================
@@ -18223,9 +18227,9 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         float before = getHealth() + getAbsorptionAmount();
         // THE CEILING MUST HOLD BEFORE
         // HE CAN DIE OF THE BLOW, not after. A hit worth more than he had left took him to zero inside super.hurt,
-        // and vanilla called die() right there - his hoard was stood in the middle of the room, his death begun -
+        // and vanilla called die right there - his hoard was stood in the middle of the room, his death begun -
         // before the lines below gave back what went over the ceiling and set him on his feet again, in the next
-        // phase, with his chest already out. While this blow is measured, die() asks the ceiling first.
+        // phase, with his chest already out. While this blow is measured, die asks the ceiling first.
         ceilingFloor = before - allowed;
         boolean took;
         try {
@@ -18287,7 +18291,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             // the citadel's stone yields to the pick now, and not before (StormcrownBeaconBlockEntity.kingFell)
             com.jastkub.frozenfortress.block.entity.StormcrownBeaconBlockEntity.kingFell((ServerLevel) level(), position());
             // CUTSCENE FIVE: the end. The camera holds on the fortress king as he
-            // comes apart over his death animation; there is no finish() to clear
+            // comes apart over his death animation; there is no finish to clear
             // it, but he is removed when the animation ends, which takes the flag
             // with him. Titled "The last winter falls".
             if (cinematic) {
@@ -18464,7 +18468,7 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         floorBurst(serverLevel, position(), 6.0D);
         FloorScarHandler.tear(serverLevel, position(), 7.0D, 1.0D);
 
-        // (NOTHING OF IT HURTS ANY MORE)
+        //
     }
 
     // ================================================================
@@ -19578,6 +19582,29 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
         noPhysics = false;
     }
 
+    /** Out of the stone he is caught in: the nearest place his whole body fits - straight up first, then round him
+     *  on his floor, then round him a step up. */
+    private void freeFromWall() {
+        for (int dy = 1; dy <= 6; dy++) {
+            if (level().noCollision(this, getBoundingBox().move(0.0D, dy, 0.0D))) {
+                teleportTo(getX(), getY() + dy, getZ());
+                return;
+            }
+        }
+        for (int lift = 0; lift <= 2; lift++) {
+            for (int r = 1; r <= 5; r++) {
+                for (int k = 0; k < 12; k++) {
+                    double a = Math.PI * 2.0D * k / 12.0D;
+                    double dx = Math.cos(a) * r, dz = Math.sin(a) * r;
+                    if (level().noCollision(this, getBoundingBox().move(dx, lift, dz))) {
+                        teleportTo(getX() + dx, getY() + lift, getZ() + dz);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
     /** A blow of his that something he made lands (the thrown shield, the spectral swords): his own funnel. */
     public void strikeFromAfar(LivingEntity victim, float hearts) {
         strike(victim, hearts);
@@ -19799,8 +19826,8 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             // THE DODGE CANNOT OUTLIVE ITSELF.
             //
             // This branch sits before every other test in the controller, so
-            // for as long as evadeKind() is non-zero he plays a dodge and
-            // nothing else - walk included. And evadeKind() is a synced LATCH:
+            // for as long as evadeKind is non-zero he plays a dodge and
+            // nothing else - walk included. And evadeKind is a synced LATCH:
             // anything that stops the server's countdown reaching zero leaves
             // it lit forever, and he then wanders the arena in a dodge pose
             // with his feet frozen, which is exactly the report.
@@ -20037,10 +20064,10 @@ public class VelkharEntity extends Monster implements GeoEntity, IceSpikeEntity.
             // attacks below set their own before returning, so this only ever
             // governs the quiet states.
             // MOVING OR STANDING, off the SERVER'S OWN answer. Every client-side
-            // guess at this - getDeltaMovement() (zero here), a raw per-tick
+            // guess at this - getDeltaMovement (zero here), a raw per-tick
             // delta (flickers), even a smoothed speed (lags) - left a window
             // where he stood in a pose while the model travelled, "straightens
-            // like a pole and slides". isStriding() is set by the pathing brain
+            // like a pole and slides". isStriding is set by the pathing brain
             // on the server the tick it decides to move him, so there is no
             // guessing and no window: feet move exactly when he does.
             if (isStriding()) {

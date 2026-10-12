@@ -9,7 +9,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 /**
  * Frostbite (Ukaszenie Mrozu): what the creatures' and Velkhar's frost leaves in you - it slows the victim, bites
  * for periodic damage, thins their armour and STOPS THEM MENDING. Nothing to do with a trap room's heart's cold
- * (Odmrozenie, FrostHeartBlockEntity).
+ *.
  *
  * <p>It used to be a slow and a small tick of damage, which is a debuff you
  * ignore: neither half changes what you do, and the damage is smaller than
@@ -50,7 +50,7 @@ public class FrostbiteEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide) {
-            // (it no longer fills the game's freezing)
+            //
             entity.hurt(entity.damageSources().freeze(), 1.0F + amplifier * 0.5F);
         }
     }

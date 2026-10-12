@@ -23,7 +23,7 @@ import net.minecraftforge.registries.RegistryObject;
  *   <li>UKASZENIE MROZU (frostbite_edge, I-III, swords): a blow lays Frostbite on whatever it cuts.</li>
  *   <li>ZAR OGNISKA (hearth_ember, I-III, chestplates): a frost heart's cold gets into you 15% a level slower
  *   (FrostHeartBlockEntity).</li>
- *   <li>PEWNY KROK (sure_footing, I-III, boots): every throw that lands on you 20% a level shorter (steady()).</li>
+ *   <li>PEWNY KROK (sure_footing, I-III, boots): every throw that lands on you 20% a level shorter (steady).</li>
  *   <li>ECHO KROLA (kings_echo, I-II, bows): where an arrow strikes, a spike of ice comes up out of the floor a
  *   second later (CommonEvents).</li>
  * </ul>

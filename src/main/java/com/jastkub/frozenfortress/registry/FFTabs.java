@@ -52,6 +52,7 @@ public final class FFTabs {
                         output.accept(FFItems.PRIESTESS_CRYSTAL.get());
                         output.accept(FFItems.SHEPHERD_BELL.get());
                         output.accept(FFItems.DROWNED_BRAID.get());
+                        output.accept(FFItems.FROSTY_FANG.get());
                         output.accept(FFItems.LANTERN_LENS.get());
                         output.accept(FFItems.TURNKEY_CHAIN.get());
                         output.accept(FFItems.MUSIC_DISC_SILENT_WINTER.get());
@@ -59,6 +60,7 @@ public final class FFTabs {
                         output.accept(FFItems.EVERFROST_CRYSTAL.get());
                         output.accept(FFItems.FROSTWALKER_BAND.get());
                         output.accept(FFItems.GLACIER_RING.get());
+                        output.accept(FFItems.VIGIL_SHARD.get());
                         output.accept(FFItems.GALE_FEATHER.get());
                         output.accept(FFItems.WARMTH_POTION.get());
                         output.accept(FFItems.EVERFROST_INGOT.get());
@@ -145,6 +147,7 @@ public final class FFTabs {
                         output.accept(FFItems.RIME_PRIESTESS_SPAWN_EGG.get());
                         output.accept(FFItems.DROWNED_LADY_SPAWN_EGG.get());
                         output.accept(FFItems.ICE_AUROCHS_SPAWN_EGG.get());
+                        output.accept(FFItems.FROSTY_SPAWN_EGG.get());
                         output.accept(FFItems.FORGE_OVERSEER_SPAWN_EGG.get());
                         output.accept(FFItems.SHADE_SHEPHERD_SPAWN_EGG.get());
                         output.accept(FFItems.SHADE_SPAWN_EGG.get());

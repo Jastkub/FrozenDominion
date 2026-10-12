@@ -50,7 +50,7 @@ public class IceWardPillarEntity extends Entity implements GeoEntity {
 
     private double baseY;
     /**
-     * Radians per tick the ring turns: 0.015, a lap in about twenty seconds (0.035 until 06.10.2026).
+     * Radians per tick the ring turns: 0.015, a lap in about twenty seconds.
      */
     private static final double ORBIT_SPEED = 0.015D;
     private double orbitRadius;

@@ -83,6 +83,7 @@ public final class PartyScaling {
     private static final Set<String> TROPHIES = Set.of(
             "frozen_dominion:turnkey_chain", "frozen_dominion:shepherd_bell", "frozen_dominion:priestess_crystal",
             "frozen_dominion:overseer_hammerhead", "frozen_dominion:aurochs_horn", "frozen_dominion:drowned_braid",
+            "frozen_dominion:frosty_fang",
             "frozen_dominion:lantern_lens", "frozen_dominion:warden_core", "frozen_dominion:monstrosity_skull",
             "frozen_dominion:bone_lord_femur", "frozen_dominion:lamplighter_candle",
             "frozen_dominion:kingsrime_seal");

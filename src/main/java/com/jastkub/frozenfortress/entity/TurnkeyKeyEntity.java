@@ -57,7 +57,7 @@ public class TurnkeyKeyEntity extends Mob implements GeoEntity {
     private static final RawAnimation FLY = RawAnimation.begin().thenLoop("animation.turnkey_key.fly");
     private static final RawAnimation TURN = RawAnimation.begin().thenPlayAndHold("animation.turnkey_key.turn");
     /** Blocks a tick: slow enough to be caught, quick enough to need catching. */
-    private static final double SPEED = 0.08D;                 // (halved)
+    private static final double SPEED = 0.08D;                 //
     private static final int TURN_TICKS = 12;
     /** Ticks it spends bursting off the ring to its own place in the fan before it makes for its lock. */
     private static final int SCATTER_TICKS = 14;

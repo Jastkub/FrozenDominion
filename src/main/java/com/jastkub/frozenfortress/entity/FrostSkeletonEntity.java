@@ -65,14 +65,14 @@ public class FrostSkeletonEntity extends FrostServantEntity {
             ST_PILE = 7, ST_REFORM = 8, ST_CLING = 9, ST_CLIMB = 10, ST_CLAMBER = 11;
     /**
      * UP THE CHASM'S PILLARS: hand over hand up a pillar's face out of the
-     * mist (the clip "climb", a stroke CLIMB_TICKS long, each hand seven pixels over the other - so it rises that much
+     * mist (the clip "climb", a stroke CLIMB_TICKS long, each hand 8.6 pixels over the other - so it rises that much
      * a half-stroke), to where it hangs by both hands from the edge, HANG under the top; then over it ("clamber"):
      * its body's way up and in keyed to the clip's poses (tools/gen_frost_skeleton.py CLAMBER_KEYS).
      */
     private static final int CLIMB_TICKS = 12;
-    private static final double CLIMB_RISE = 7.0D / 16.0D / (CLIMB_TICKS / 2.0D), HANG = 2.2D;
+    private static final double CLIMB_RISE = 8.6D / 16.0D / (CLIMB_TICKS / 2.0D), HANG = 2.75D;
     private static final int[] CLAMBER_AT = {0, 6, 12, 18, 26};
-    private static final double[] CLAMBER_UP = {0.0D, 0.45D, 1.75D, 2.2D, 2.2D};
+    private static final double[] CLAMBER_UP = {0.0D, 0.56D, 2.19D, 2.75D, 2.75D};
     private static final double[] CLAMBER_IN = {0.0D, 0.05D, 0.4D, 0.85D, 1.0D};
     private static final RawAnimation CLIMB = RawAnimation.begin().thenLoop("animation.frost_skeleton.climb");
     private static final RawAnimation CLAMBER = RawAnimation.begin().thenPlayAndHold("animation.frost_skeleton.clamber");
@@ -164,7 +164,7 @@ public class FrostSkeletonEntity extends FrostServantEntity {
     private int reformsLeft = REFORMS;
     /** Broken up as a pile: no fall, no lingering - it is gone. */
     private boolean scattered;
-    /** Set alight: it goes up at once, for good. */
+    /** Its bones set alight as they lay (09.10.2026: a fire in the PILE, not on the standing thing): gone for good. */
     private boolean burning;
     private int cooldown;
     private int tripCooldown = 100;
@@ -356,9 +356,9 @@ public class FrostSkeletonEntity extends FrostServantEntity {
     public void aiStep() {
         super.aiStep();
         if (level().isClientSide) {
-            return;                               // (no particles to its rising)
+            return;                               //
         }
-        if (isOnFire() && isAlive() && !burning) {
+        if (isOnFire() && isAlive() && !burning && (getAttackState() == ST_PILE || getAttackState() == ST_REFORM)) {
             burnUp();
             return;
         }
@@ -574,9 +574,9 @@ public class FrostSkeletonEntity extends FrostServantEntity {
     // ------------------------------------------------------------------ falling apart
     @Override
     public boolean hurt(DamageSource source, float amount) {
-        // GETTING UP, OR PULLING ITSELF TOGETHER, IT IS UNTOUCHABLE: only fire (which ends it at any time) and what kills outright get through
+        // GETTING UP, OR PULLING ITSELF TOGETHER, IT IS UNTOUCHABLE: only what kills outright gets through (a fire put to it as it pulls together: aiStep, burnUp)
         if (!level().isClientSide && (getAttackState() == ST_RISE || getAttackState() == ST_REFORM) && isAlive()
-                && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && !source.is(DamageTypeTags.IS_FIRE)) {
+                && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
             if (source.getEntity() != null) {
                 playSound(FFSounds.FROST_SKELETON_STEP.get(), 0.8F, 0.5F);
             }
@@ -614,15 +614,16 @@ public class FrostSkeletonEntity extends FrostServantEntity {
     }
 
     /**
-     * Beaten, it does not die: it falls apart, and lies as a pile - twice.
-     * Fire, a blast, the void - or a third beating - and it is done.
+     * Beaten, it does not die: it falls apart, and lies as a pile - and gets up again, unless the pile is set alight.
+     * Burnt down standing it falls apart all the same (the frost in it puts the flames out as it goes): it is the
+     * bones on the floor that a flame has to be put to. A blast, the void - or a second beating - and it is done.
      */
     @Override
     public void die(DamageSource source) {
         if (!level().isClientSide && reformsLeft > 0 && !scattered && getAttackState() != ST_PILE
-                && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && !source.is(DamageTypeTags.IS_FIRE)
-                && !source.is(DamageTypeTags.IS_EXPLOSION)) {
+                && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && !source.is(DamageTypeTags.IS_EXPLOSION)) {
             setHealth(1.0F);
+            clearFire();
             setAttackState(ST_PILE);
             setDeltaMovement(0.0D, getDeltaMovement().y, 0.0D);
             bones(14);
@@ -646,9 +647,9 @@ public class FrostSkeletonEntity extends FrostServantEntity {
     }
 
     /**
-     * FIRE ENDS IT: frost holds these bones together, and a flame put to them - a
-     * flint and steel, a fire charge, a blade with Fire Aspect, a fire on the floor - takes the frost
-     * out of them at a stroke: no pile, no getting up again, standing or lying.
+     * FIRE ENDS IT - LYING: frost holds these bones together, and a flame put to the pile they fell into - a flint and steel, a
+     * fire charge, a fire or lava on the floor - takes the frost out of them: it does not get up again. Standing, fire
+     * only burns it (twice as hard: hurt).
      */
     private void burnUp() {
         burning = true;
@@ -661,7 +662,7 @@ public class FrostSkeletonEntity extends FrostServantEntity {
         }
     }
 
-    /** A flint and steel (or a fire charge) put to it - standing, or lying as a pile. */
+    /** A flint and steel (or a fire charge) put to it: standing, it burns; lying as a pile, it is done (aiStep). */
     @Override
     protected net.minecraft.world.InteractionResult mobInteract(Player player, net.minecraft.world.InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);

@@ -52,6 +52,15 @@
           "name": "frozen_dominion:aurochs_horn"
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frozen_dominion:shackle_key"
+        }
+      ]
     }
   ]
 }

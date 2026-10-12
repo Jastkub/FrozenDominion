@@ -1,0 +1,25 @@
+{
+  "name": "Frosty",
+  "icon": "frozen_dominion:frosty_fang",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Alfa psiarni, ojciec wszystkich frostmawów, zwinięty w legowisku za cysterną Topielicy. Nie szarżuje - krąży, kłapie i skacze. Trzecie ugryzienie przychodzi później niż dwa pierwsze."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Gdy skok chybi, jego szczęki więzną w lodzie - wtedy bij. Jego oddech i kły zostawiają w tobie szron; pełny, zamrozi cię w miejscu. W połowie życia ściąga zamieć: słuchaj warkotu."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Wstaje na tylne łapy i grabi przednimi - raz z prawej, raz z lewej, szeroko. Gdy uderzy obiema w ziemię, podłoga pęka w linię i wyrasta z niej lód: zejdź z linii w bok, nie uciekaj wzdłuż niej. Gdy otrząsa się jak pies z wody, lód z jego grzywy spada w kręgi na ziemi."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Jego wataha wychodzi z ciemności pięć razy: na początku i potem coraz liczniej."
+    }
+  ],
+  "advancement": "frozen_dominion:met/frosty"
+}

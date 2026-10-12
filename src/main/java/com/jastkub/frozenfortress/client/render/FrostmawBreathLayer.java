@@ -1,7 +1,7 @@
 package com.jastkub.frozenfortress.client.render;
 
 import com.jastkub.frozenfortress.FrozenFortress;
-import com.jastkub.frozenfortress.entity.FrostmawEntity;
+import com.jastkub.frozenfortress.entity.BreathingMaw;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -23,8 +23,10 @@ import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
  * (FrostmawEntity.breathe: within 5.5, a cone of about fifty degrees), wavering on its own wind.
  *
  * <p>Drawn from the HEAD bone at the line of its lips, in model space in blocks, going out along -Z.
+ * (Frosty breathes it too - FrostyRenderer, at his own length: its model space is drawn 2.2 times over.)
  */
-public class FrostmawBreathLayer extends GeoRenderLayer<FrostmawEntity> {
+public class FrostmawBreathLayer<T extends net.minecraft.world.entity.LivingEntity & software.bernie.geckolib.core.animatable.GeoAnimatable & BreathingMaw>
+        extends GeoRenderLayer<T> {
 
     private static final ResourceLocation SHEET = FrozenFortress.id("textures/entity/frost_breath.png");
 
@@ -32,15 +34,20 @@ public class FrostmawBreathLayer extends GeoRenderLayer<FrostmawEntity> {
     private static final float MOUTH_Y = 13.9F / 16.0F;
     private static final float MOUTH_Z = -20.2F / 16.0F;
 
-    private static final float LENGTH = 5.2F;
+    private final float LENGTH;
     private static final float R0 = 0.10F;
     private static final float R1 = 1.7F;
     private static final int CHUNKS = 80;
     private static final int PUFFS = 16;
     private static final float TRAVEL = 10.0F;
 
-    public FrostmawBreathLayer(GeoRenderer<FrostmawEntity> renderer) {
+    public FrostmawBreathLayer(GeoRenderer<T> renderer) {
+        this(renderer, 5.2F);
+    }
+
+    public FrostmawBreathLayer(GeoRenderer<T> renderer, float length) {
         super(renderer);
+        this.LENGTH = length;
     }
 
     private static float hash(int i, int salt) {
@@ -50,7 +57,7 @@ public class FrostmawBreathLayer extends GeoRenderLayer<FrostmawEntity> {
     }
 
     @Override
-    public void renderForBone(PoseStack poses, FrostmawEntity maw, GeoBone bone, RenderType type,
+    public void renderForBone(PoseStack poses, T maw, GeoBone bone, RenderType type,
                               MultiBufferSource buffers, VertexConsumer buffer, float partialTick,
                               int packedLight, int packedOverlay) {
         if (!"head".equals(bone.getName())) {

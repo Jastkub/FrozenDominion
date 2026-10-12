@@ -1,0 +1,18 @@
+The frostmaws' and Frosty's voices (frostmaw_howl, _growl, _roar, _bite, _hurt, _idle, _death) are cut from
+real recordings of wolves and dogs, cleaned of their noise, pitched down and faded - otherwise unchanged:
+
+frostmaw_howl.ogg
+  Wolf howl, Denali National Park and Preserve - National Park Service, public domain.
+  https://www.nps.gov/subjects/sound/sounds-wolf.htm  (credit: National Park Service)
+
+frostmaw_growl.ogg, frostmaw_idle.ogg
+  Dog growl, sample S007 - Farago T., Pongracz P., Range F., Viranyi Z., Miklosi A. (2010) "'The Bone Is Mine':
+  Affective and Referential Aspects of Dog Growls". PLoS ONE 5(12): e15175.
+  https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0015175
+  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0).
+
+frostmaw_growl_2, _idle_2, _idle_3, _roar, _roar_2, _roar_3, _bite, _bite_2, _hurt .. _hurt_5, _death
+  Sunset Editorial / USC Cinema sound effect libraries (SSE Library: Animals; Red Library: Animals - Dogs),
+  archive.org collection "usc-sound-effect-archive", dedicated to the public domain (CC0 1.0).
+  https://archive.org/details/SSE_Library_ANIMALS
+  https://archive.org/details/Red_Library_Animals_Dogs

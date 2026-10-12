@@ -22,7 +22,7 @@ public class AttackFxRenderer extends GeoEntityRenderer<AttackFxEntity> {
 
     /**
      * Kinds with nothing in them that glows. GeckoLib refuses an empty glow mask outright - it took the game down on
-     * the drift's snow (06.10.2026, "Invalid glow layer texture provided, must have at least one pixel") - so for
+     * the drift's snow - so for
      * these the glow layer is not drawn at all. gen_defender_fx.py checks every mask and names the empty ones.
      */
     private static final java.util.Set<String> NO_GLOW = java.util.Set.of(AttackFxEntity.SNOW_BURST);

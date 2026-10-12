@@ -69,7 +69,7 @@ public class HunterOrbEntity extends Entity implements GeoEntity {
      * running is worth doing, and deliberately not much under, so it is worth
      * doing for four seconds rather than forever.
      */
-    // 0.265 (0.235 until 06.10.2026): still a hair under a sprint, so running buys time and
+    // 0.265: still a hair under a sprint, so running buys time and
     // breaking them is the answer
     private static final double SPEED = 0.265D;
     private static final float BLAST_DAMAGE = 1.6F;
@@ -305,7 +305,7 @@ public class HunterOrbEntity extends Entity implements GeoEntity {
      * it, and canBeHitByProjectile decides whether somebody else's arrow, bolt
      * or bomb may select it as the thing it just struck. Saying no to the
      * second costs nothing here - any damage at all still pops it, and a projectile passing
-     * through is caught by the sweep in tick() instead - and it takes this
+     * through is caught by the sweep in tick instead - and it takes this
      * entity out of every other mod's projectile hit scan.
      *
      * <p>Which is the point. LegendaryMonsters' annihilation bomb casts

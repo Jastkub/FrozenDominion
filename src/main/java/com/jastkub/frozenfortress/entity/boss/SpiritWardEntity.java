@@ -32,7 +32,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
  * being able to count them at a glance.
  *
  * <p>PURELY COSMETIC, like {@link ShieldEchoEntity}. It carries no damage, no
- * collision and no damage gate: the refusal lives in VelkharEntity.hurt(),
+ * collision and no damage gate: the refusal lives in VelkharEntity.hurt,
  * which asks how many of these are standing and breaks the nearest one. So
  * this could be deleted tomorrow and the fight would play identically, just
  * illegibly - which is the right way round for something whose job is to be

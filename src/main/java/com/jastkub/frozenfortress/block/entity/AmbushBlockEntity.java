@@ -69,6 +69,9 @@ public class AmbushBlockEntity extends BlockEntity {
         switch (ambush.state) {
             case ARMED -> {
                 BlockPos c = ambush.chestCell(s);
+                if (s.getBlockState(c).getBlock() instanceof com.jastkub.frozenfortress.block.ChainedChestBlock) {
+                    break;                                  // still in its chains: nothing taken yet
+                }
                 boolean gone = !(s.getBlockState(c).getBlock() instanceof ChestBlock);
                 boolean sprung = ambush.item.isEmpty()
                         ? gone || ChestBlockEntity.getOpenCount(s, c) > 0
@@ -103,15 +106,16 @@ public class AmbushBlockEntity extends BlockEntity {
     }
 
     /**
-     * Its chest's cell. A citadel laid before 08.10.2026 had it watching the cell its chest was lifted out of (onto its
-     * pedestal, a block up): until it has once seen its chest, it looks for it a
+     * Its chest's cell. A citadel laid before 08.10.2026 had it watching the cell its chest was lifted out of: until it has once seen its chest, it looks for it a
      * block or two over or under, and keeps to it from then on.
      */
     private BlockPos chestCell(ServerLevel s) {
         BlockPos c = worldPosition.offset(chest[0], chest[1], chest[2]);
         if (!bound) {
             for (int dy : new int[]{0, 1, -1, 2, -2}) {
-                if (s.getBlockState(c.above(dy)).getBlock() instanceof ChestBlock) {
+                // (a chest in chains too, 11.10.2026 - every chest of the citadel is: it is a chest once they are off)
+                if (s.getBlockState(c.above(dy)).getBlock() instanceof ChestBlock
+                        || s.getBlockState(c.above(dy)).getBlock() instanceof com.jastkub.frozenfortress.block.ChainedChestBlock) {
                     chest[1] += dy;
                     bound = true;
                     setChanged();

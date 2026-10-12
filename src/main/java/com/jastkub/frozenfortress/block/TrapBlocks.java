@@ -154,8 +154,7 @@ public final class TrapBlocks {
     /**
      * CRUMBLING ICE (the Rift's second run): a shelf of ice that holds you for a moment - it cracks the moment you
      * step on it (stage 1, a crack you see and hear) and is gone under you a heartbeat later (stage 2: nothing to
-     * stand on, nothing drawn); five seconds on it has frozen back. Nothing breaks it by hand. (Should its tick ever be
-     * lost, a random tick brings it back all the same)
+     * stand on, nothing drawn); five seconds on it has frozen back. Nothing breaks it by hand.
      */
     public static class CrumblingIce extends Block {
         public static final IntegerProperty STAGE = IntegerProperty.create("stage", 0, 2);

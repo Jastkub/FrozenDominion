@@ -68,7 +68,7 @@ public class DoomBladeEntity extends Entity implements GeoEntity {
         // Eleven blocks up was unconditional, and the fight happens INDOORS.
         // Under any ceiling lower than that the blade appeared inside the
         // stonework - and a blade inside a block is standing on a floor as far
-        // as groundBelow() is concerned, so it landed on its very first
+        // as groundBelow is concerned, so it landed on its very first
         // falling tick: the screen cracked, the damage went out, and the thing
         // the player was told to watch for never came down at all. That is the
         // "it shakes before the sword hits" and the "sword just vanishes" in

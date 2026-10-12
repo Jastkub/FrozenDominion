@@ -161,7 +161,7 @@ public class VelkharCloneRenderer extends FrostGeoRenderer<VelkharCloneEntity> {
 
         @Override
         public ResourceLocation getTextureResource(VelkharCloneEntity entity) {
-            // A SHADOW UNTIL IT LANDS. See VelkharCloneEntity.isShade(): they
+            // A SHADOW UNTIL IT LANDS. See VelkharCloneEntity.isShade: they
             // peel out of him as near-black silhouettes and only become the
             // pale mirror on the tick they come down on somebody.
             return entity.isShade()

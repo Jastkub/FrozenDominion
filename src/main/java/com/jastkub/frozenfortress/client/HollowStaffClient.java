@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level;
  * The client's side of the Staff of the Hollow King (07.10.2026): the "frozen_dominion:requiem" item property (1 while
  * Requiem lasts - models/item/hollow_kings_staff.json switches to the lit model, its crown and halo alight), and the
  * client's game time for the item's Requiem bar (HollowStaffItem#getBarWidth, reached through DistExecutor).
- * Register from FMLClientSetupEvent#enqueueWork: HollowStaffClient.registerItemProperties(FFItems.HOLLOW_KINGS_STAFF.get()).
+ * Register from FMLClientSetupEvent#enqueueWork: HollowStaffClient.registerItemProperties(FFItems.HOLLOW_KINGS_STAFF.get).
  */
 public final class HollowStaffClient {
 

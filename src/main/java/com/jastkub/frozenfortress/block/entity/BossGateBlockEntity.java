@@ -65,6 +65,10 @@ public class BossGateBlockEntity extends BlockEntity implements GeoBlockEntity {
     private int[] barrierBox = {0, 0, 0, 0, 0, 0};
     /** The room it shuts, from this block: x0 y0 z0 x1 y1 z1, the far corner exclusive. */
     private int[] roomBox = {0, 0, 0, 0, 0, 0};
+    /** A part of that box that is NOT the room (from this block, the far corner exclusive), or null: a room that is
+     *  not a box - the Rift is an L, and the box round it took in the Storm's stairs that pass over its low end, so
+     *  whoever went down them shut the Rift's gates and got its scene. Whoever stands in it is not inside. */
+    private int[] roomCut;
     /** Its keeper's entity type. */
     private String keeper = "";
     /** Drawn this much wider and taller than the 4x5 model (the prison's gate is 12x14). */
@@ -132,7 +136,7 @@ public class BossGateBlockEntity extends BlockEntity implements GeoBlockEntity {
 
     /** Is it down with this point inside its room - a fight on, with whoever stands there in it? */
     public boolean shutOn(Vec3 p) {
-        return !exit && (state == SLAMMING || state == SHUT) && room().contains(p);   // (an exit gate is down all along)
+        return !exit && (state == SLAMMING || state == SHUT) && holds(p, 0.0D);   // (an exit gate is down all along)
     }
 
     /** Its keeper's entity type, e.g. frozen_dominion:turnkey. */
@@ -215,10 +219,45 @@ public class BossGateBlockEntity extends BlockEntity implements GeoBlockEntity {
         return false;
     }
 
-    private boolean someoneInside(ServerLevel level) {
+    /** Is this point in its room (the box grown by `grow`, less its cut)? */
+    private boolean holds(Vec3 p, double grow) {
+        if (!room().inflate(grow).contains(p)) {
+            return false;
+        }
+        if (roomCut == null || roomCut.length != 6) {
+            return true;
+        }
+        AABB cut = new AABB(Vec3.atLowerCornerOf(worldPosition.offset(roomCut[0], roomCut[1], roomCut[2])),
+                Vec3.atLowerCornerOf(worldPosition.offset(roomCut[3], roomCut[4], roomCut[5])));
+        return !cut.contains(p);
+    }
+
+    /**
+     * THE CHASM KILLS. Under the Bone Lord's hall the bridges stand over a shaft to the bedrock with spikes at its foot,
+     * and a fall into it was a fall a good enough set of armour lived through. Whoever goes down past the hall's floor
+     * and comes to rest at the bottom dies of it (FFDamage.CHASM_SPIKES). Watched by the hall's way in only, once a tick.
+     */
+    private void pitTick(ServerLevel s) {
+        if (exit || !"frozen_dominion:bone_lord".equals(keeper)) {
+            return;
+        }
         AABB room = room();
+        for (Player p : s.players()) {
+            // anywhere well under the bridges (they are twenty-five over the hall's floor): the spikes on that floor,
+            // the shaft's foot under it, a ledge or a pillar's side half way down - nobody stands there but who fell
+            if (!counts(p) || p.getY() > room.minY + 16.0D || p.getX() < room.minX || p.getX() > room.maxX
+                    || p.getZ() < room.minZ || p.getZ() > room.maxZ) {
+                continue;
+            }
+            if (p.onGround() || p.isInWater()) {
+                p.hurt(com.jastkub.frozenfortress.FFDamage.chasmSpikes(s), Float.MAX_VALUE);
+            }
+        }
+    }
+
+    private boolean someoneInside(ServerLevel level) {
         for (Player p : level.players()) {
-            if (counts(p) && room.contains(p.position())) {
+            if (counts(p) && holds(p.position(), 0.0D)) {
                 return true;
             }
         }
@@ -230,6 +269,7 @@ public class BossGateBlockEntity extends BlockEntity implements GeoBlockEntity {
             return;
         }
         gate.clock++;
+        gate.pitTick(s);
         if (gate.exit) {
             gate.exitTick(s);
             return;
@@ -303,7 +343,7 @@ public class BossGateBlockEntity extends BlockEntity implements GeoBlockEntity {
                 // there - it has fallen, whether or not the word came
                 if (!fallen && clock % 20 == 0) {
                     boolean seen = false;
-                    for (Player p : s.getEntitiesOfClass(Player.class, room(), BossGateBlockEntity::counts)) {
+                    for (Player p : s.getEntitiesOfClass(Player.class, room(), p -> counts(p) && holds(p.position(), 0.0D))) {
                         seen = true;
                         break;
                     }
@@ -443,9 +483,8 @@ public class BossGateBlockEntity extends BlockEntity implements GeoBlockEntity {
         }
         BlockPos at = heart != null && heart.length == 3 ? worldPosition.offset(heart[0], heart[1], heart[2])
                 : BlockPos.containing(room().getCenter());
-        AABB in = room().inflate(1.0D);
         com.jastkub.frozenfortress.BossCutscenes.placeScene(level, scene, Vec3.atBottomCenterOf(at), sceneYaw,
-                p -> in.contains(p.position()));
+                p -> holds(p.position(), 1.0D));
     }
 
     /** Down: a keeper that waits for it (GateKeeper - the Lamplighter's entrance) is told so. */
@@ -474,9 +513,8 @@ public class BossGateBlockEntity extends BlockEntity implements GeoBlockEntity {
 
     private void slam(ServerLevel s) {
         shutIn.clear();
-        AABB inside = room().inflate(2.0D);
         for (Player p : s.players()) {
-            if (counts(p) && inside.contains(p.position())) {
+            if (counts(p) && holds(p.position(), 2.0D)) {
                 shutIn.add(p.getUUID());
             }
         }
@@ -551,6 +589,7 @@ public class BossGateBlockEntity extends BlockEntity implements GeoBlockEntity {
         shift = tag.getFloat("Shift");
         if (tag.contains("BarrierBox")) barrierBox = tag.getIntArray("BarrierBox");
         if (tag.contains("RoomBox")) roomBox = tag.getIntArray("RoomBox");
+        roomCut = tag.contains("RoomCut") ? tag.getIntArray("RoomCut") : null;
         keeper = tag.getString("Keeper");
         scaleX = tag.contains("ScaleX") ? tag.getFloat("ScaleX") : 1.0F;
         scaleY = tag.contains("ScaleY") ? tag.getFloat("ScaleY") : 1.0F;
@@ -572,6 +611,9 @@ public class BossGateBlockEntity extends BlockEntity implements GeoBlockEntity {
                 facing = com.jastkub.frozenfortress.block.TemplateTurn.turn(facing, k);
                 barrierBox = com.jastkub.frozenfortress.block.TemplateTurn.box(barrierBox, k, false);
                 roomBox = com.jastkub.frozenfortress.block.TemplateTurn.box(roomBox, k, true);
+                if (roomCut != null && roomCut.length == 6) {
+                    roomCut = com.jastkub.frozenfortress.block.TemplateTurn.box(roomCut, k, true);
+                }
                 if (heart != null && heart.length == 3) {
                     int[] h = com.jastkub.frozenfortress.block.TemplateTurn.turn(heart[0], heart[2], k);
                     heart = new int[]{h[0], heart[1], h[1]};
@@ -587,6 +629,9 @@ public class BossGateBlockEntity extends BlockEntity implements GeoBlockEntity {
         tag.putFloat("Shift", shift);
         tag.putIntArray("BarrierBox", barrierBox);
         tag.putIntArray("RoomBox", roomBox);
+        if (roomCut != null) {
+            tag.putIntArray("RoomCut", roomCut);
+        }
         tag.putString("Keeper", keeper);
         tag.putFloat("ScaleX", scaleX);
         tag.putFloat("ScaleY", scaleY);
