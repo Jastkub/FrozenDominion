@@ -1,0 +1,12 @@
+{
+  "criteria": {
+    "met": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "met"
+    ]
+  ]
+}

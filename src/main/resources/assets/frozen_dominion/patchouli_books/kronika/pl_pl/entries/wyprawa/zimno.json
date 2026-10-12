@@ -16,7 +16,7 @@
       "type": "patchouli:spotlight",
       "item": "frozen_dominion:warmth_potion",
       "title": "Mikstura Ciepła",
-      "text": "Ogień wyprawy zamknięty w mosiądzu. Rzucona pęka i daje minutę ciepła każdemu w promieniu czterech bloków - rzuć pod nogi, by ogrzać siebie. Tylko w skrzyniach: w obozie, w wieży i w cytadeli."
+      "text": "Ogień wyprawy w mosiądzu. Rzucona pęka: minuta ciepła i 4 s Regeneracji IV dla każdego w promieniu czterech bloków - rzuć pod nogi, by ogrzać siebie. Tylko w skrzyniach: obóz, wieża, cytadela."
     }
   ]
 }

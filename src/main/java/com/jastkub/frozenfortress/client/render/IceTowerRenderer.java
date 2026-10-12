@@ -49,7 +49,7 @@ public class IceTowerRenderer extends GeoEntityRenderer<IceTowerEntity> {
      * <p>preRender scales the pose stack on Y by the rise, and everything
      * drawn after that inherits it - so a band drawn there would be squashed
      * flat at the start of the rise and stretched at the end, which is the one
-     * thing wind must not do. render() is before that scale is pushed.
+     * thing wind must not do. render is before that scale is pushed.
      */
     @Override
     public void render(IceTowerEntity entity, float entityYaw, float partialTick,

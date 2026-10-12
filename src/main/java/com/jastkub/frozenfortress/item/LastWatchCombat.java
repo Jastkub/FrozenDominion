@@ -107,7 +107,7 @@ public final class LastWatchCombat {
     }
 
     public static boolean isHeavy(LivingEntity e) {
-        // (1.20.1's canChangeDimensions() - false for the bosses - is now that and canUsePortal: the vanilla bosses
+        // (1.20.1's canChangeDimensions - false for the bosses - is now that and canUsePortal: the vanilla bosses
         //  refuse portals there)
         return e.getMaxHealth() >= HEAVY_HEALTH || !e.canChangeDimensions(e.level(), e.level())
                 || (e.isAlive() && !e.isSleeping() && !e.canUsePortal(true))

@@ -46,7 +46,7 @@ public class CitadelSpawnerBlockEntity extends BlockEntity implements GeoBlockEn
     private static final float NEST_MINUTE = 1200.0F / 360.0F;
     /** Hostile things of any kind within 16 blocks at which a nest holds its brood back. */
     private static final int CROWD = 6;
-    /** Ticks it swells before its brood comes out (its spawn clip throws it open at 1.45 s). */
+    /** Ticks it swells before its brood comes out. */
     private static final int WINDUP = 28;
     private int windup;
 

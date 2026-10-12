@@ -210,7 +210,7 @@ public class TurnkeyEntity extends FrostServantEntity implements GateKeeper {
         if (isDormant()) {
             getNavigation().stop();
             setDeltaMovement(0.0D, getDeltaMovement().y, 0.0D);
-            //
+            //:
             // sixteen now, still only in his sight (nobody wakes him through the wall of his hall) - and it is
             // you he gets up for
             Player near = level().getNearestPlayer(this, WAKE_SEEN);
@@ -520,7 +520,28 @@ public class TurnkeyEntity extends FrostServantEntity implements GateKeeper {
         level().addFreshEntity(new PortcullisEntity(level(), this, x, y, z + 2.0D, true));
         level().addFreshEntity(new PortcullisEntity(level(), this, x - 2.0D, y, z, false));
         level().addFreshEntity(new PortcullisEntity(level(), this, x + 2.0D, y, z, false));
+        // AND NOT ALONE IN IT:
+        // one of his prisoners shut in the cell with you, the strength of the cells in it - one at a time
+        if (level() instanceof ServerLevel s && !(cellmate != null && s.getEntity(cellmate) instanceof FrostboundSentinelEntity
+                && s.getEntity(cellmate).isAlive())) {
+            FrostboundSentinelEntity mate = FFEntities.FROSTBOUND_SENTINEL.get().create(s);
+            if (mate != null) {
+                double a = Math.PI / 4.0D + random.nextInt(4) * Math.PI / 2.0D;
+                mate.moveTo(x + Math.cos(a), y, z + Math.sin(a), (float) Math.toDegrees(a) + 90.0F, 0.0F);
+                mate.finalizeSpawn(s, s.getCurrentDifficultyAt(target.blockPosition()), MobSpawnType.MOB_SUMMONED, null);
+                mate.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20 * 60 * 10, 1));
+                mate.setTarget(target);
+                s.addFreshEntity(mate);
+                cellmate = mate.getUUID();
+                s.sendParticles(FFParticles.ICE_SHARD.get(), mate.getX(), mate.getY() + 1.2D, mate.getZ(),
+                        40, 0.4D, 1.0D, 0.4D, 0.1D);
+            }
+        }
     }
+
+    /** Who he shut in with you last (cage): while it stands, the next cell is yours alone. */
+    @javax.annotation.Nullable
+    private java.util.UUID cellmate;
 
     // ------------------------------------------------------------------ the key ring
     /** The locks in his hall's pillars (TurnkeyLockBlock), within twenty of where he slept. */

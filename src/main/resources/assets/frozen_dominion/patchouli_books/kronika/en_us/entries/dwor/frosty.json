@@ -1,0 +1,25 @@
+{
+  "name": "Frosty",
+  "icon": "frozen_dominion:frosty_fang",
+  "category": "frozen_dominion:dwor",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The alpha of the kennels, sire of every frostmaw, curled in his den past the Drowned Lady's cistern. He does not charge - he circles, snaps and leaps. The third bite comes later than the first two."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When a leap misses, his jaws stick in the ice - strike then. His breath and fangs leave rime in you; full, it freezes you where you stand. At half health he brings down a blizzard: listen for the growl."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "He rises on his hind legs and rakes with the fore paws - right, then left, wide. When he brings both down on the floor, it splits in a line and ice grows out of it: step out of the line sideways, do not run along it. When he shakes himself like a hound out of water, the ice of his mane comes down into rings on the floor."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "His pack comes out of the dark five times: at the start, and in greater numbers after."
+    }
+  ],
+  "advancement": "frozen_dominion:met/frosty"
+}

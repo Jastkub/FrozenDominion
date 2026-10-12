@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 
 /**
- * AN ICICLE OF A TRAP'S CEILING (IcicleTrapBlockEntity) - its own, apart from the Monstrosity's
+ * AN ICICLE OF A TRAP'S CEILING - its own, apart from the Monstrosity's
  * avalanche (FallingIcicleEntity): the same shadow on the floor first, the same shudder and fall, but a trap's hurt and
  * nothing more - a blow of a falling stalactite, no frost laid on you.
  */

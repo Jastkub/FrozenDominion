@@ -321,7 +321,7 @@ public final class StormEyeRenderers {
             Matrix4f m = pose.pose();
             PoseStack.Pose n = pose;
             int steps = Mth.clamp((int) ((y1 - y0) / 0.8F), 4, 260);
-            // ONE CONSUMER AT A TIME (07.10.2026, the port's crash "Not building!"): asking the buffer source for a
+            // ONE CONSUMER AT A TIME: asking the buffer source for a
             // second render type ends the first, so the cloud is written whole - bands, then shell - and only then the
             // vein, from the first band's points kept for it
             VertexConsumer cloud = buffers.getBuffer(RenderType.entityTranslucent(CLOUD));

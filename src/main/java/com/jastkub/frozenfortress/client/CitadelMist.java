@@ -26,12 +26,14 @@ import net.neoforged.fml.common.Mod;
 public final class CitadelMist {
 
     /** Where the haze starts and where it closes over everything. */
-    // (07.10.2026: "lekko podkrec" - it was 110 and 8; - it was 85 and 5, a wall forty off a third gone; now half gone at twenty-five)
+    //
     private static final float FAR = 55.0F, NEAR = 3.0F;
     /** Its colour, and how far the fog is turned to it. */
     private static final float RED = 0.62F, GREEN = 0.71F, BLUE = 0.82F, TINT = 0.46F;
     /** Comes in over ~4 s; lifts over ~10 s once the crown is taken. */
     private static final float RISE = 0.0125F, FALL = 0.005F;
+    /** The chance a tick of a mote of frost drifting up round you (at full strength). */
+    private static final float MOTES = 0.11F;
 
     private static float strength;
     private static float lastStrength;
@@ -51,7 +53,7 @@ public final class CitadelMist {
         }
         // motes of frost drifting up round you
         RandomSource r = p.getRandom();
-        if (r.nextFloat() < 0.32F * strength) {
+        if (r.nextFloat() < MOTES * strength) {
             double x = p.getX() + (r.nextDouble() - 0.5D) * 16.0D;
             double y = p.getY() + r.nextDouble() * 4.0D - 0.5D;
             double z = p.getZ() + (r.nextDouble() - 0.5D) * 16.0D;

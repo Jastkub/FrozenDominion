@@ -2,7 +2,7 @@
   "type": "frozen_dominion:frost_forging",
   "pattern": [
     "CGC",
-    "GNG",
+    "GGG",
     "CGC"
   ],
   "key": {
@@ -11,9 +11,6 @@
     },
     "G": {
       "item": "minecraft:gold_ingot"
-    },
-    "N": {
-      "item": "frozen_dominion:nest_shard"
     }
   },
   "result": {

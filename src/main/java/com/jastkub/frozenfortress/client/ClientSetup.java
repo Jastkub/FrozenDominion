@@ -95,6 +95,7 @@ public final class ClientSetup {
         event.registerEntityRenderer(FFEntities.DROWNED_LADY.get(), com.jastkub.frozenfortress.client.render.DrownedLadyRenderer::new);
         event.registerEntityRenderer(FFEntities.VELKHAR_SMITH.get(), com.jastkub.frozenfortress.client.render.VelkharSmithRenderer::new);
         event.registerEntityRenderer(FFEntities.ICE_AUROCHS.get(), com.jastkub.frozenfortress.client.render.IceAurochsRenderer::new);
+        event.registerEntityRenderer(FFEntities.FROSTY.get(), com.jastkub.frozenfortress.client.render.FrostyRenderer::new);
         event.registerEntityRenderer(FFEntities.FORGE_OVERSEER.get(), com.jastkub.frozenfortress.client.render.ForgeOverseerRenderer::new);
         event.registerEntityRenderer(FFEntities.FORGE_OVERSEER_PLATE.get(), com.jastkub.frozenfortress.client.render.ForgeOverseerFxRenderers.Plate::new);
         event.registerEntityRenderer(FFEntities.FORGE_OVERSEER_SLAG.get(), com.jastkub.frozenfortress.client.render.ForgeOverseerFxRenderers.Slag::new);

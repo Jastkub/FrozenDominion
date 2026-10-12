@@ -30,13 +30,13 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 /**
- * THE FROST ANVIL (Kowadło Szronu): beside the imprisoned smith, the anvil Velkhar's armour was
+ * THE FROST ANVIL: beside the imprisoned smith, the anvil Velkhar's armour was
  * forged on. It is iron, as hard as any anvil - and while the Stormcrown burns its Mining Fatigue III keeps any pick
  * off it, so the player comes back for it once the beacon is taken. On it:
  * It is THE FORGE: its window (FrostForgeMenu)
  * forges what the frozen court made - the everfrost ingot from four crystals and four of gold, the everfrost gear,
  * and (in time) the Kingsrime and the legendary arms, whose cores go in its heart (FrostForgingRecipe).
- * (The Seal Core is made on any crafting table now)
+ *
  */
 public class FrostAnvilBlock extends HorizontalDirectionalBlock {
 

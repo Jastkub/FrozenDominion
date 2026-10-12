@@ -73,7 +73,7 @@ public class VelkharModel extends DefaultedEntityGeoModel<VelkharEntity> {
         // the transition, but the new look must not arrive until the plates
         // blow - so the texture is chosen off an effective phase that stays
         // one behind until the explosion. Everything below reads `phase`, not
-        // entity.getPhase(), so the lag applies to the blink and heart sheets
+        // entity.getPhase, so the lag applies to the blink and heart sheets
         // too and he cannot flicker into the storm palette for a single frame.
         int phase = entity.getPhase();
         if (phase == 2 && entity.skinLagsBehindPhase()) {

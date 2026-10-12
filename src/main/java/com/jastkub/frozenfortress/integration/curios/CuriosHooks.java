@@ -119,7 +119,7 @@ public final class CuriosHooks {
 
     /**
      * Two-line slot blurb. Both keys always exist, which keeps this off
-     * I18n.exists() - that class is client-only and this one is loaded on
+     * I18n.exists - that class is client-only and this one is loaded on
      * the server too.
      */
     public static void appendSlotTooltip(List<Component> tooltip, String slot) {
@@ -167,7 +167,7 @@ public final class CuriosHooks {
 
         @Override
         public boolean canEquipFromUse(SlotContext context, ItemStack stack) {
-            // Safe for this one only: it has no use() of its own and no
+            // Safe for this one only: it has no use of its own and no
             // armour slot to compete with, so nothing else wants the click.
             return true;
         }

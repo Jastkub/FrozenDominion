@@ -29,8 +29,7 @@ import java.util.UUID;
 public class HeartOfWinterItem extends Item {
 
     public static final String BLESSING_TAG = "frozen_dominion:winter_blessing";
-    /** (1.21.1: modifiers carry an id, not a UUID. This is the very id the world upgrade gives the old UUID's modifier
-     *  - "minecraft:" and the UUID - so a heart eaten before the port is still recognised and never doubled.) */
+    /** */
     public static final net.minecraft.resources.ResourceLocation HEALTH_MODIFIER_ID =
             net.minecraft.resources.ResourceLocation.withDefaultNamespace("6c8f2e1a-9b4d-4c7e-8a2f-3d5b1e9c0a7d");
 

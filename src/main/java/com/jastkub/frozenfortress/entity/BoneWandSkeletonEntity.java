@@ -57,14 +57,14 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * SLUGA ROZDZKI - A SERVANT OF THE WAND OF THE DEAD (07.10.2026).
+ * SLUGA ROZDZKI - A SERVANT OF THE WAND OF THE DEAD.
  * One of the citadel's Frost Skeletons, called up out of the floor by BoneWandItem - the same bones, the same clips
  * (geo/animations of frost_skeleton), its frost turned the wand's grave-green so it is told from the hostile ones at a
  * glance (textures/entity/bone_wand_skeleton, tools/gen_bone_wand.py).
  *
  * <p><b>Why not a subclass of FrostSkeletonEntity.</b> That one is a {@link FrostServantEntity}, and some fifty
  * places in the mod read "instanceof FrostServantEntity" as "the King's side": every court foe's setTarget refuses
- * it, its hurt() drops every blow from the court (and every blow it deals to the court is dropped by theirs), and
+ * it, its hurt drops every blow from the court (and every blow it deals to the court is dropped by theirs), and
  * every trap, boss attack and area spares it. A servant built on it could neither hurt the citadel nor be hurt or
  * even looked at by it - no distraction at all. So it is its own PathfinderMob (not an Enemy: no golem hunts it, it
  * does not stop its master sleeping) that plays the skeleton's clips and keeps its tricks.

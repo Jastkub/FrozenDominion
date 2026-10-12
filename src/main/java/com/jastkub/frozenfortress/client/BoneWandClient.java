@@ -11,7 +11,7 @@ import net.minecraft.world.item.Item;
  * The client's side of the Wand of the Dead (07.10.2026): the "frozen_dominion:bone_wand_spent" item property (1 while
  * the Call of the Grave cools - models/item/bone_wand.json switches to bone_wand_spent, the skull's eyes gone dark),
  * and the client's game time for the item's bar (BoneWandItem#getBarWidth, reached only on the client).
- * Register from FMLClientSetupEvent#enqueueWork: BoneWandClient.registerItemProperties(FFItems.BONE_WAND.get()).
+ * Register from FMLClientSetupEvent#enqueueWork: BoneWandClient.registerItemProperties(FFItems.BONE_WAND.get).
  */
 public final class BoneWandClient {
 

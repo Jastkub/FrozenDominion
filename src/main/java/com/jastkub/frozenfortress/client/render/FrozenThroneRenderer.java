@@ -10,7 +10,7 @@ import software.bernie.geckolib.renderer.GeoBlockRenderer;
  *
  * <p>The culling box that stops it popping out of view lives on the block
  * entity rather than here: in Forge the override is IForgeBlockEntity's
- * getRenderBoundingBox(), and GeoBlockRenderer has no such method to
+ * getRenderBoundingBox, and GeoBlockRenderer has no such method to
  * override. Only shouldRenderOffScreen belongs to the renderer.
  */
 public class FrozenThroneRenderer extends GeoBlockRenderer<FrozenThroneBlockEntity> {

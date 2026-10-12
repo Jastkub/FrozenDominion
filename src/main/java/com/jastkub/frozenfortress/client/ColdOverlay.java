@@ -49,7 +49,7 @@ public final class ColdOverlay {
         LocalPlayer p = mc.player;
         float target = 0.0F;
         if (p != null && p.isAlive() && !p.isSpectator() && p.level().getGameTime() - heartSaid < 10L) {
-            target = heartDepth;                      // (the heart's own cold)
+            target = heartDepth;                      //
         }
         lastStrength = strength;
         strength += (target - strength) * (target > strength ? 0.06F : 0.1F);

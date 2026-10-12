@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 /**
- * ROZDZKA UMARLYCH - THE WAND OF THE DEAD (07.10.2026). The
+ * ROZDZKA UMARLYCH - THE WAND OF THE DEAD. The
  * smith's iron skull on an Everfrost shaft, its grip a Frost Skeleton's own vertebra - the 1% drop that is the whole
  * gate (forged on the Frost Anvil: fitting / ingot / vertebra, top to bottom). A caller, not a fighter: a weak blow,
  * and the dead of the citadel at its master's word. Its worth is numbers and distraction - every servant is one of

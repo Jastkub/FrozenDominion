@@ -19,6 +19,9 @@ public abstract class FrostServantEntity extends Monster implements software.ber
 
     protected static final EntityDataAccessor<Integer> ATTACK_STATE =
             SynchedEntityData.defineId(FrostServantEntity.class, EntityDataSerializers.INT);
+    /** Which of its deaths it is dying (deathVariants): chosen on the server as it dies, the clip picked by it. */
+    private static final EntityDataAccessor<Integer> DEATH_VARIANT =
+            SynchedEntityData.defineId(FrostServantEntity.class, EntityDataSerializers.INT);
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
@@ -34,6 +37,7 @@ public abstract class FrostServantEntity extends Monster implements software.ber
     protected void defineSynchedData(net.minecraft.network.syncher.SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(ATTACK_STATE, 0);
+        builder.define(DEATH_VARIANT, 0);
     }
 
     public int getAttackState() {
@@ -43,7 +47,13 @@ public abstract class FrostServantEntity extends Monster implements software.ber
     public void setAttackState(int state) {
         entityData.set(ATTACK_STATE, state);
         attackTicks = 0;
+        if (BEATS_LOGGED && state != 0 && !level().isClientSide) {
+            com.mojang.logging.LogUtils.getLogger().info("[beat] {} {}", getType().getDescriptionId(), state);
+        }
     }
+
+    /** For tests on a dev server (tools/server_frosty_test.py): -Dfrozen_dominion.logBeats=true logs every beat. */
+    private static final boolean BEATS_LOGGED = Boolean.getBoolean("frozen_dominion.logBeats");
 
     public boolean isAttacking() {
         return getAttackState() != 0;
@@ -88,32 +98,61 @@ public abstract class FrostServantEntity extends Monster implements software.ber
         return false;
     }
 
+    // ------------------------------------------------------------------ more than one way to die (12.10.2026)
+    /**
+     * How many deaths it has: its death clips
+     * death, death_2, ... - one of them, at random, as it dies. 1, the default: its one death.
+     */
+    protected int deathVariants() {
+        return 1;
+    }
+
+    /** The death it is dying (0 for the first): synced, so the clip is the same for everyone watching. */
+    public int deathVariant() {
+        return entityData.get(DEATH_VARIANT);
+    }
+
+    /** Its clip for the death it is dying, of `clips` (death, death_2, ...). */
+    protected software.bernie.geckolib.animation.RawAnimation deathAnim(
+            software.bernie.geckolib.animation.RawAnimation[] clips) {
+        return clips[Math.max(0, Math.min(clips.length - 1, deathVariant()))];
+    }
+
+    @Override
+    public void die(net.minecraft.world.damagesource.DamageSource source) {
+        // chosen in the tick its health went to nothing: the choice goes out in the same update as its death
+        if (!level().isClientSide && deathVariants() > 1 && !isRemoved() && !dead) {
+            entityData.set(DEATH_VARIANT, random.nextInt(deathVariants()));
+        }
+        super.die(source);
+    }
+
     /** How long the body lingers so its death animation can finish. */
     protected int getDeathDuration() {
         return 40;
     }
 
     /**
-     * The tick of its dying on which the body SHATTERS into ice (its death clip scales the model to nothing on the
-     * same tick - tools/gen_defenders.py); -1, the default, for those that simply fall.
+     * THE BODY FADES: those that die by falling and lying - no shattering into ice - go
+     * from the world over these last ticks of their dying, drawn ever fainter (FrostGeoRenderer), and leave no puff of
+     * smoke behind. 0, the default: the body stays whole to its end and goes with the game's own puff.
      */
-    protected int shatterTick() {
-        return -1;
+    public int fadeTicks() {
+        return 0;
+    }
+
+    /** The death's duration, readable by the renderer (it fades the body over its end - fadeTicks). */
+    public int deathDuration() {
+        return getDeathDuration();
     }
 
     @Override
     protected void tickDeath() {
         deathTime++;
-        if (deathTime == shatterTick() && level() instanceof net.minecraft.server.level.ServerLevel sl) {
-            double h = getBbHeight(), w = getBbWidth();
-            sl.sendParticles(com.jastkub.frozenfortress.registry.FFParticles.ICE_SHARD.get(),
-                    getX(), getY() + h * 0.45D, getZ(), 70, w * 0.5D, h * 0.35D, w * 0.5D, 0.22D);
-            sl.sendParticles(com.jastkub.frozenfortress.registry.FFParticles.SOUL_FROST.get(),
-                    getX(), getY() + h * 0.5D, getZ(), 24, w * 0.4D, h * 0.3D, w * 0.4D, 0.04D);
-            playSound(com.jastkub.frozenfortress.registry.FFSounds.ICE_SHATTER.get(), 1.4F, 1.05F + random.nextFloat() * 0.2F);
-        }
         if (deathTime >= getDeathDuration() && !level().isClientSide() && !isRemoved()) {
-            level().broadcastEntityEvent(this, (byte) 60);
+            if (fadeTicks() <= 0) {
+                level().broadcastEntityEvent(this, (byte) 60);
+            }
             remove(RemovalReason.KILLED);
         }
     }
@@ -133,7 +172,7 @@ public abstract class FrostServantEntity extends Monster implements software.ber
     private boolean striding;
 
     /**
-     * Which of its standing and going clips plays now (the garrison's polish, user): the idle, now and then its fidget instead, the
+     * Which of its standing and going clips plays now: the idle, now and then its fidget instead, the
      * stroll at a wander's pace and the walk at a chase's. Chosen on how far it really goes - the limb swing the game
      * keeps for every living thing, four times its speed in blocks a tick, eased - and not on GeckoLib's "moving"
      * alone, which stays false at a wander: a garrison strolling at half speed slid along the floor in its idle.

@@ -12,7 +12,21 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Przed drzwiami każdej sali, w której ktoś czeka, stoi kapliczka. Połóż na niej rękę, a zapłonie i zapamięta cię.$(br2)Gdy padniesz gdziekolwiek w cytadeli, wstaniesz przy najbliższej zapalonej kapliczce, z tym, co niosłeś - czasem czeka to na samej kapliczce i trzeba po to sięgnąć. Przepada tylko doświadczenie."
+      "text": "Przed drzwiami każdej sali, w której ktoś czeka, stoi kapliczka. Połóż na niej rękę, a zapłonie i zapamięta cię.$(br2)Ale zapamiętać to nie to samo, co czuwać. Kapliczka czuwa nad tobą tylko wtedy, gdy oddasz jej Odłamek Czuwania."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "frozen_dominion:vigil_shard",
+      "title": "Odłamek Czuwania",
+      "text": "Jeden odłamek, jedno powstanie."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Odłamki leżą w skrzyniach cytadeli - nie więcej niż kilkanaście w całej. Każdy oddany kapliczce to jedno powstanie przy niej, ze wszystkim, co niesiesz; przepada tylko doświadczenie."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Gdy nikt nad tobą nie czuwa, śmierć jest śmiercią: to, co niosłeś, leży tam, gdzie padłeś, a ty budzisz się tam, gdzie spałeś przed cytadelą."
     }
   ],
   "advancement": "frozen_dominion:root"

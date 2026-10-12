@@ -96,7 +96,7 @@ public final class VelkharBossBar {
      * <p>These are the thresholds VelkharEntity actually tests - 0.66 for the
      * Stormblade and 0.33 for the Hollow Magus - and if those ever move, this
      * moves with them or the bar starts lying. The third, the sword tearing
-     * (the Twin Blades), is his own: VelkharEntity.tearFraction().
+     * (the Twin Blades), is his own: VelkharEntity.tearFraction.
      */
     private static final float[] PHASE_MARKS = {VelkharEntity.PHASE2_AT, VelkharEntity.PHASE3_AT};
     private static final String[] ROMAN = {"I", "II", "III", "IV"};
@@ -201,7 +201,7 @@ public final class VelkharBossBar {
                     x + RAIL_X + ghostW, y + TRACK_Y + TRACK_H, withAlpha(GHOST, a));
         }
 
-        // (a phase turn used to burn the whole run white while it lasted - gone with the flash below)
+        //
 
         // ================================================================
         // THE THREE MARKS, at the health where the fight becomes a different
@@ -306,7 +306,7 @@ public final class VelkharBossBar {
         int subW = mc.font.width(subText);
         g.drawString(mc.font, subText, screenW / 2 - subW / 2, y + SPR_H - 2, subCol, true);
 
-        // (the advice for each phase is in the books on the lecterns at his statues)
+        //
 
         // --- a lone storm marker, off the right cap, clear of everything
         if (storming) {

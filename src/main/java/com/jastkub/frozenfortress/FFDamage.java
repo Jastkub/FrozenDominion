@@ -24,12 +24,23 @@ public final class FFDamage {
     public static final ResourceKey<DamageType> BONE_LORD_FIST =
             ResourceKey.create(Registries.DAMAGE_TYPE, FrozenFortress.id("bone_lord_fist"));
 
+    /**
+     * THE CHASM OF BONES' FLOOR: the spikes at the foot of the shaft under the Bone Lord's bridges. A fall into it is
+     * the end, whatever is worn - through armour, enchantments, resistance, and no totem answers it.
+     */
+    public static final ResourceKey<DamageType> CHASM_SPIKES =
+            ResourceKey.create(Registries.DAMAGE_TYPE, FrozenFortress.id("chasm_spikes"));
+
     private FFDamage() {
     }
 
     public static DamageSource boneLordFist(Level level, net.minecraft.world.entity.Entity lord) {
         return new DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
                 .getHolderOrThrow(BONE_LORD_FIST), lord);
+    }
+
+    public static DamageSource chasmSpikes(Level level) {
+        return new DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(CHASM_SPIKES));
     }
 
     public static DamageSource heartFrost(Level level) {

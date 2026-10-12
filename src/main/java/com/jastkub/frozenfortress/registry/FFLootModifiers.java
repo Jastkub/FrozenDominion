@@ -43,14 +43,17 @@ public final class FFLootModifiers {
     }
 
     /**
-     * EVERY CURIO ONCE. A curio rolled in one of the mod's chests for a player who has already had that curio out of one is
-     * replaced - by a book of one of the citadel's own enchantments, or a handful of Everfrost Shards. What each player
-     * has had is kept on the player (persisted through death), so it holds across every chest and every citadel.
+     * EVERY CURIO ONCE IN EACH STRUCTURE. A curio rolled in one of the mod's chests for a player who has already had
+     * that curio out of another chest of the SAME structure (the same citadel, camp or watchtower) is replaced - by a
+     * book of one of the citadel's own enchantments, or a handful of Everfrost Shards. A new citadel starts the count
+     * again. What each player has had is kept on the player, per structure (persisted through death).
      */
     public static class UniqueCurios extends LootModifier {
         public static final MapCodec<UniqueCurios> CODEC =
                 RecordCodecBuilder.mapCodec(inst -> codecStart(inst).apply(inst, UniqueCurios::new));
         private static final String KEY = "FrozenDominionCurios";
+        /** Per structure: its key (structureKey) to the curios this player has had out of its chests. */
+        private static final String KEY_BY = "FrozenDominionCuriosBy";
 
         public UniqueCurios(LootItemCondition[] conditions) {
             super(conditions);
@@ -68,8 +71,15 @@ public final class FFLootModifiers {
             if (!(who instanceof Player player)) {
                 return loot;
             }
+            // ONCE IN EACH STRUCTURE, not once in the world: what a player has had is counted per citadel (or camp,
+            // or watchtower), so a second citadel's chests are as full as the first one's were
+            String where = structureKey(ctx);
+            if (where == null) {
+                return loot;
+            }
             CompoundTag kept = player.getPersistentData().getCompound(Player.PERSISTED_NBT_TAG);
-            ListTag had = kept.getList(KEY, Tag.TAG_STRING);
+            CompoundTag by = kept.getCompound(KEY_BY);
+            ListTag had = by.getList(where, Tag.TAG_STRING);
             Set<String> seen = new HashSet<>();
             for (int i = 0; i < had.size(); i++) {
                 seen.add(had.getString(i));
@@ -77,7 +87,10 @@ public final class FFLootModifiers {
             boolean changed = false;
             for (int i = 0; i < loot.size(); i++) {
                 ItemStack stack = loot.get(i);
-                if (!isCurio(stack)) {
+                // NOT THE HEARTH AMULET. It is the key to the citadel's cold, not a find: the expedition camp's chest
+                // has to give it every time, to a player who lost theirs as well as to one who never had it - a camp
+                // chest that rolled a book in its place left them with no way to stand the Chill
+                if (!isCurio(stack) || stack.is(FFItems.HEARTH_AMULET.get())) {
                     continue;
                 }
                 String id = String.valueOf(net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(stack.getItem()));
@@ -90,10 +103,31 @@ public final class FFLootModifiers {
                 }
             }
             if (changed) {
-                kept.put(KEY, had);
+                by.put(where, had);
+                kept.put(KEY_BY, by);
+                kept.remove(KEY);          // the old count, kept for the whole world
                 player.getPersistentData().put(Player.PERSISTED_NBT_TAG, kept);
             }
             return loot;
+        }
+
+        /** Which of the mod's structures the chest stands in (its kind, where it starts, its dimension); null outside. */
+        private static String structureKey(LootContext ctx) {
+            net.minecraft.world.phys.Vec3 at = ctx.getParamOrNull(LootContextParams.ORIGIN);
+            if (at == null) {
+                return null;
+            }
+            net.minecraft.server.level.ServerLevel level = ctx.getLevel();
+            net.minecraft.core.BlockPos pos = net.minecraft.core.BlockPos.containing(at);
+            var structures = level.registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.STRUCTURE);
+            for (var e : level.structureManager().getAllStructuresAt(pos).entrySet()) {
+                ResourceLocation id = structures.getKey(e.getKey());
+                if (id == null || !FrozenFortress.MODID.equals(id.getNamespace()) || e.getValue().isEmpty()) {
+                    continue;
+                }
+                return id + "@" + e.getValue().iterator().nextLong() + "@" + level.dimension().location();
+            }
+            return null;
         }
 
         /** A curio: anything in one of Curios' slot tags. */

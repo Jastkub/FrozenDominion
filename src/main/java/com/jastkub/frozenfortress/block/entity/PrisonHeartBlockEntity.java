@@ -1,5 +1,6 @@
 package com.jastkub.frozenfortress.block.entity;
 
+import net.minecraft.world.item.ItemStack;
 import com.jastkub.frozenfortress.entity.HollowGolemEntity;
 import com.jastkub.frozenfortress.registry.FFBlockEntities;
 import com.jastkub.frozenfortress.registry.FFBlocks;
@@ -222,6 +223,18 @@ public class PrisonHeartBlockEntity extends BlockEntity {
         CitadelStatueBlockEntity.splinters(serverLevel, where, 2.6F, 28, 4.0F);
     }
 
+    /** What the guardian dropped as it died, kept for the chest its death puts up (onGuardianDeath). */
+    private final java.util.List<ItemStack> spoils = new java.util.ArrayList<>();
+
+    /** Its guardian's drops (BoneLordSpoils, as it dies, just before onGuardianDeath). */
+    public void takeSpoils(java.util.List<ItemStack> items) {
+        for (ItemStack st : items) {
+            if (!st.isEmpty()) {
+                spoils.add(st.copy());
+            }
+        }
+    }
+
     /** Called by the guardian as it dies. */
     public void onGuardianDeath(ServerLevel serverLevel) {
         if (stage == DONE) {
@@ -229,14 +242,25 @@ public class PrisonHeartBlockEntity extends BlockEntity {
         }
         stage = DONE;
         sync();
+        // ONE CHEST, IN CHAINS: what she dropped (BoneLordSpoils hands it here, takeSpoils) and the reliquary's own
+        // table in the same chained coffer - a Shackle Key opens it. (It was a plain chest of the reliquary alone, put
+        // over the chained one her drops had just been laid in: they went with it.)
         BlockPos at = at(reliquary);
-        serverLevel.setBlock(at, Blocks.CHEST.defaultBlockState().setValue(ChestBlock.FACING, Direction.NORTH), 3);
-        if (serverLevel.getBlockEntity(at) instanceof ChestBlockEntity chest) {
+        serverLevel.setBlock(at, FFBlocks.CHAINED_CHEST.get().defaultBlockState()
+                .setValue(net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING, Direction.NORTH), 3);
+        if (serverLevel.getBlockEntity(at) instanceof ChainedChestBlockEntity coffer) {
+            coffer.releaseWith(spoils);
             ResourceLocation rl = ResourceLocation.tryParse(lootTable);
             if (rl != null) {
-                chest.setLootTable(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.LOOT_TABLE, rl), serverLevel.random.nextLong());
+                coffer.alsoRoll(rl, serverLevel.random.nextLong());
+            }
+        } else {
+            for (ItemStack st : spoils) {                       // (no chest after all: they lie where it stood)
+                serverLevel.addFreshEntity(new net.minecraft.world.entity.item.ItemEntity(serverLevel,
+                        at.getX() + 0.5D, at.getY() + 0.5D, at.getZ() + 0.5D, st));
             }
         }
+        spoils.clear();
         serverLevel.playSound(null, at, FFSounds.VELKHAR_WHISPER.get(), SoundSource.BLOCKS, 2.0F, 0.8F);
         serverLevel.sendParticles(FFParticles.SOUL_FROST.get(), at.getX() + 0.5D, at.getY() + 1.0D, at.getZ() + 0.5D,
                 60, 0.6D, 1.0D, 0.6D, 0.06D);

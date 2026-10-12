@@ -268,7 +268,7 @@ public final class FFEntities {
                     .sized(5.6F, 6.0F)
                     .clientTrackingRange(16)
                     .fireImmune()
-                    // NO noSummon(). It sets canSummon=false, which is the flag
+                    // NO noSummon. It sets canSummon=false, which is the flag
                     // the /summon command itself checks - so the colossus could
                     // not be spawned by hand at all, and there was no way to
                     // look at it outside a live fight at fifteen percent health.
@@ -600,6 +600,13 @@ public final class FFEntities {
                             com.jastkub.frozenfortress.entity.DrownedTideEntity::new, MobCategory.MISC)
                     .sized(1.0F, 1.0F).clientTrackingRange(10).updateInterval(20).fireImmune().noSave().noSummon()
                     .build("drowned_tide"));
+
+    /** FROSTY, the alpha of the kennels (Legowisko, past the Drowned Lady): the hound's rig 2.2 times its size. */
+    public static final DeferredHolder<EntityType<?>, EntityType<com.jastkub.frozenfortress.entity.FrostyEntity>> FROSTY =
+            ENTITY_TYPES.register("frosty", () -> EntityType.Builder.<com.jastkub.frozenfortress.entity.FrostyEntity>of(
+                            com.jastkub.frozenfortress.entity.FrostyEntity::new, MobCategory.MONSTER)
+                    .sized(3.3F, 3.5F).clientTrackingRange(10).fireImmune()
+                    .build("frosty"));
 
     /** THE ICE AUROCHS (Lodowy Tur) of the Frost Heart's hall, and the ring of ice his stomp sends out. */
     public static final DeferredHolder<EntityType<?>, EntityType<com.jastkub.frozenfortress.entity.IceAurochsEntity>> ICE_AUROCHS =

@@ -304,7 +304,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
     /** Degrees a tick it comes round after them while it breathes. */
     private static final float BREATH_TURN = 2.4F;
     /** How far it carries, and the half-angle of the cone, in degrees. */
-    // SIXTEEN (nine until 06.10.2026); the gust is drawn
+    // SIXTEEN; the gust is drawn
     // to match it in GolemBreathLayer
     private static final double BREATH_REACH = 16.0D;
     private static final double BREATH_HALF = 31.0D;          // (as wide as its gust is drawn now)
@@ -405,7 +405,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
      * to its right, up, forward along its facing. The client draws the orb on the tracked hand
      * bone itself (HollowGolemRenderer), so it is in the hand whatever frame the arm is in.
      */
-    //  re-measured on the reworked model:
+    // re-measured on the reworked model:
     // tools/pose_model.py, "shards" at 1.9 s (the orb held, the tick before the throw), hand_r's pivot + the orb layer's
     // palm offset (0, -4.5, -2) px - so the bombs leave exactly where the orb was drawn. It was -3.18, 5.09, 5.57.
     public static final double PALM_RIGHT = -2.52D, PALM_UP = 4.59D, PALM_FWD = 5.81D;
@@ -443,7 +443,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
     /**
      * THE DROP PER TICK - and this number is why the attack did not work.
      *
-     * <p>FrostBoltEntity overrides {@code getInertia()} to return 1. That one
+     * <p>FrostBoltEntity overrides {@code getInertia} to return 1. That one
      * line changes what every other number on it means: vanilla's projectile
      * tick does {@code delta = (delta + power) * inertia}, so with no drag the
      * thrust is not a speed, it is an ACCELERATION that keeps being added for
@@ -456,7 +456,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
      * the delta accumulates it, so the downward speed after ten ticks is about
      * one and three quarter blocks a tick: the bombs left the hand, turned
      * over almost immediately and detonated at the colossus's own feet. The
-     * report was describing three
+     * report - "atak z bombami jest rozwalony" - was describing three
      * projectiles nose-diving into the floor in front of it.
      *
      * <p>Back into the convention the rest of the mod uses, and the flight
@@ -650,13 +650,13 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
     private static final RawAnimation GRAB = RawAnimation.begin().thenPlayAndHold(CLIP + "grab");
     private static final RawAnimation STAGGER = RawAnimation.begin().thenLoop(CLIP + "stagger");
     private static final RawAnimation FRACTURE = RawAnimation.begin().thenPlayAndHold(CLIP + "fracture");
-    /** Its death - tools/monstrosity_attacks.py death(). */
+    /** Its death - tools/monstrosity_attacks.py death. */
     private static final RawAnimation DEATH_ANIM = RawAnimation.begin().thenPlayAndHold(CLIP + "death");
     private static final int A_DEATH = 30;
     /** As long as the clip; then what is left of it bursts. */
     private static final int DEATH_TICKS = 124;
     /** How long it stays on its knee after its charge breaks on a pillar. */
-    private static final int STAGGER_TICKS = 100;
+    private static final int STAGGER_TICKS = 100;     //
     /** Its second phase: the pauldrons are off (synced - the renderer hides them). */
     private static final EntityDataAccessor<Boolean> FRACTURED =
             SynchedEntityData.defineId(HollowGolemEntity.class, EntityDataSerializers.BOOLEAN);
@@ -1315,7 +1315,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
     /**
      * AN ICICLE ON ITS HEAD: down on
      * its knee, as a pillar puts it - and then a while it shrugs them off, so one rain is one chance, not a lock.
-     * Its own rain falls wide of where it stands (rain()); the icicles that find it are the ones aimed at a player
+     * Its own rain falls wide of where it stands (rain); the icicles that find it are the ones aimed at a player
      * it was drawn under.
      */
     public boolean icicleStruck() {
@@ -1455,7 +1455,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
         // no MeleeAttackGoal: the six run off one clock in tickAttacks, and a
         // vanilla melee goal steering navigation in the same tick is what turns
         // a committed swing into a shuffle
-        // NO navigation goal - see tickStride(). A six-block-wide mob cannot
+        // NO navigation goal - see tickStride. A six-block-wide mob cannot
         // path anywhere indoors, and one that tries just stands still.
         goalSelector.addGoal(6, new net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal(
                 this, 0.8D, 1.0F));
@@ -1597,7 +1597,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
                     // ASKED FOR, NOT TAKEN. This wrote the facing outright,
                     // which is how something that turns at a degree and a half
                     // a tick could still come round instantly - it simply did
-                    // not go through the turn at all. The ceiling in tick()
+                    // not go through the turn at all. The ceiling in tick
                     // decides how much of this arrives; during a wind-up that
                     // is the charge rate, which is fast but is still a turn
                     // the player can watch happen.
@@ -1792,7 +1792,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
                 if (!struck.add(victim.getUUID())) {
                     continue;           // ONCE per charge, not once per tick
                 }
-                strike(victim, 3.0F * CHARGE_SOFTER);
+                strike(victim, 3.0F * CHARGE_SOFTER);   //
                 carried.add(victim.getUUID());
                 victim.hurtMarked = true;
                 thump(1.0F);
@@ -1962,7 +1962,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
         // shorten every window - which jumped over every tick divisible by four, and every attack
         // that lets go on one (the bombs at 40, the javelin at 24, the geyser at 20, the avalanche at
         // 20 and 32, the hammer at 24, the grab's smash at 44) wound up and did nothing. Its fury
-        // shortens the rests between attacks instead (end()).
+        // shortens the rests between attacks instead (end).
         if (attack != ATK_ROAR) {
             getNavigation().stop();
             setDeltaMovement(0.0D, getDeltaMovement().y, 0.0D);
@@ -2333,7 +2333,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
                     Vec3 at = position().add(getForward().scale(3.4D));
                     boom(sl, at, 5.0D, 3.4F, 4.0F, 0.5D);
                     playSound(FFSounds.GOLEM_SLAM.get(), 4.6F, 0.82F);
-                    // ---- THE ROOM TAKES IT. boom() carries knockback for
+                    // ---- THE ROOM TAKES IT. boom carries knockback for
                     //      whoever was standing in the blast; this is for
                     //      everyone who was not. Both fists, from over the
                     //      head, into stone - it should be felt from the far
@@ -2457,7 +2457,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
                 }
                 // ...and from then on it FOLLOWS: the whole
                 // body comes round after them at BREATH_TURN a tick, the head pinned to it (the gust is drawn from the
-                // head, and a head leading the body made the stream writhe - 06.10.2026: tick() pins it after the cap).
+                // head, and a head leading the body made the stream writhe - 06.10.2026: tick pins it after the cap).
                 // A walk sideways close in is caught; a run round it, or a pillar, is not.
                 if (attackTicks >= 14) {
                     getNavigation().stop();
@@ -2829,7 +2829,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
         // it is looking - a mob that strafes sideways at a fixed facing is
         // the single loudest tell that something is on rails.
         float want = (float) (Math.atan2(to.z, to.x) * (180.0D / Math.PI)) - 90.0F;
-        // the ceiling in tick() has the last word; this only has to ask for
+        // the ceiling in tick has the last word; this only has to ask for
         // less than the ceiling allows, or the two would fight each tick
         float turn = net.minecraft.util.Mth.clamp(
                 net.minecraft.util.Mth.wrapDegrees(want - getYRot()),
@@ -2881,7 +2881,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
         //
         // A footfall is an ANIMATION event, so it is counted in animation
         // ticks. The clip plants the right foot at its own tick 12 and the
-        // left at 36 - those are the two frames where sin() carries a leg to
+        // left at 36 - those are the two frames where sin carries a leg to
         // full forward extension - so those are the two frames that make a
         // noise. Weight landing and the sound of weight landing now cannot
         // come apart, at any speed, which is the whole effect.
@@ -2985,7 +2985,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
         playSound(FFSounds.GOLEM_SLAM.get(), 4.2F, 0.6F);
     }
 
-    /** What it did last (no ranged attack twice running). */
+    /** What it did last. */
     private int lastAttack = -1;
 
     private void begin(int which) {
@@ -3287,7 +3287,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
             }
             strike(v, hearts);
             Vec3 away = v.position().subtract(at).normalize();
-            // SET, never push. push() adds to whatever they were already
+            // SET, never push. push adds to whatever they were already
             // doing, which is how a shove becomes a launch when two of these
             // land in the same second.
             v.setDeltaMovement(away.x * 0.75D, lift, away.z * 0.75D);
@@ -3426,6 +3426,12 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
 
     /** The prison it guards, when it is the prison's and not the king's. */
     private net.minecraft.core.BlockPos prisonHeart;
+
+    /** The heart of the prison it guards, or null (one woken by hand, or a tamed one). */
+    @javax.annotation.Nullable
+    public net.minecraft.core.BlockPos prisonHeart() {
+        return prisonHeart;
+    }
 
     /**
      * THE AIR BENDS WHEN IT ROARS: a stream of churned air out of its maw and `rings` rings thrown out to `reach`,
@@ -3755,7 +3761,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
     /**
      * THE CEILING, APPLIED WHERE THE DAMAGE IS FINAL.
      *
-     * <p>Capping inside hurt() does not work, and neither does back-solving
+     * <p>Capping inside hurt does not work, and neither does back-solving
      * for an amount that will survive armour: the vanilla formula is not
      * linear, so the fraction that gets through an eight-hundred point hit
      * (76% against armour 30) is nothing like the fraction that gets through
@@ -3778,7 +3784,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
             capWindowDamage = 0.0F;
         }
         // ON ITS KNEE, ITS HEART OPEN: everything takes double, and the ceilings with it
-        float open = attack == ATK_STAGGER ? 1.6F : 1.0F;      // (it was 2)
+        float open = attack == ATK_STAGGER ? 1.6F : 1.0F;      //
         landed *= open;
         // (a party has its health grown, and its second grown the same - PartyScaling)
         float allowed = Math.min(HIT_CAP * open, Math.max(0.0F,
@@ -3864,7 +3870,7 @@ public class HollowGolemEntity extends Monster implements GeoEntity,
     /**
      * Decides when to charge, and does nothing else.
      *
-     * <p>Its own goal rather than a branch in tick() so the melee goal stops
+     * <p>Its own goal rather than a branch in tick so the melee goal stops
      * steering while it runs - two things writing navigation in the same tick
      * is how a charge turns into a shuffle.
      */

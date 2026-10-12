@@ -185,7 +185,7 @@ public class KingsrimeSwordItem extends SwordItem {
             }
             return InteractionResultHolder.consume(stack);
         }
-        // A SHIELD IN THE OTHER HAND : the plain use key raises it, at once,
+        // A SHIELD IN THE OTHER HAND: the plain use key raises it, at once,
         // as it would with any sword - a block a moment late is no block against the king's twin blades. The Royal
         // Step stays on sneak; the crescent and the coronation are for a free hand: sword and board, or the full art.
         if (player.getOffhandItem().canPerformAction(net.neoforged.neoforge.common.ItemAbilities.SHIELD_BLOCK)) {
@@ -470,7 +470,7 @@ public class KingsrimeSwordItem extends SwordItem {
     }
 
     // ===================================================================================================== cooldowns
-    /** A COPY of the sword's state (1.21.1: it lives in the stack's custom data); a change goes back by save(). */
+    /** A COPY of the sword's state (1.21.1: it lives in the stack's custom data); a change goes back by save. */
     private static CompoundTag tag(ItemStack stack) {
         return com.jastkub.frozenfortress.util.FFItemData.element(stack, TAG);
     }

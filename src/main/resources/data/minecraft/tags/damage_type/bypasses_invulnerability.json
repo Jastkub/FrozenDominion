@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "frozen_dominion:storm_eye"
+    "frozen_dominion:storm_eye",
+    "frozen_dominion:chasm_spikes"
   ]
 }

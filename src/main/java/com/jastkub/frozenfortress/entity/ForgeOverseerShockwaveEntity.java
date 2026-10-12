@@ -32,7 +32,7 @@ import java.util.UUID;
 /**
  * THE RING OFF THE SLAM: where the Forge Overseer's hammer strikes the floor, the floor heaves up under a crest of frost
  * and the heave runs out in a ring, from one block to seven in fourteen ticks (geo/entity/fx_overseer_shockwave, its clip
- * play - linear keys on the same line as radius() here). In his second half it is drawn and run 9/7 the size.
+ * play - linear keys on the same line as radius here). In his second half it is drawn and run 9/7 the size.
  *
  * <p>The crest takes whoever it reaches on the floor - damage, slowed, thrown up and out - and a JUMP clears it: feet
  * more than 0.9 over the floor as it passes go over it. If his hammer was quenched when it struck, whoever the crest

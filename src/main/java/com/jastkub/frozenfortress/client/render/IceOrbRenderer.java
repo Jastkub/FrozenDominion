@@ -35,7 +35,7 @@ public class IceOrbRenderer extends GeoEntityRenderer<IceOrbEntity> {
                           MultiBufferSource bufferSource, VertexConsumer buffer,
                           boolean isReRender, float partialTick, int packedLight,
                           int packedOverlay, int colour) {
-        // they GROW rather than appear - see IceOrbEntity.form()
+        // they GROW rather than appear - see IceOrbEntity.form
         float form = animatable.form();
         if (form < 1.0F) {
             float ease = form * form * (3.0F - 2.0F * form);

@@ -43,7 +43,7 @@ import java.util.WeakHashMap;
  * wielder's CLIENT drives the body (a player's movement is the client's; a dash pushed from the server stutters), his
  * SERVER deals the blows, lays the effects (every one a thing with a body - AttackFxEntity's kinds fx_throne_bane_*,
  * ThroneBaneWaveEntity, IceSpikeEntity) and plays the body animations for everyone who sees him (FFNetwork#playerAnim).
- * Both decide from the same things - onGround and the shift key as of the tick before (the client's use() runs before
+ * Both decide from the same things - onGround and the shift key as of the tick before (the client's use runs before
  * its own movement that tick, and its last move packet carries exactly that state) - so they agree.
  *
  * <ul>

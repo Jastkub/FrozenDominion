@@ -43,6 +43,13 @@ import java.util.EnumSet;
  *  6 = shard volley  (a fan of ice spears for anyone keeping their distance)
  *  7 = ground rupture (a line of spikes tearing toward the target)
  *  8 = warding stance (arms crossed; shrugs off blows and bats away arrows)
+ * 14 = the bending of the air: his core flares and a wave of bent space goes out from it - one, or
+ *      two in a row - striking whoever it reaches in his sight; a pillar between you and his core is the answer.
+ *
+ * <p>HIS LOOK: nothing he does is drawn in particles
+ * any more - his blows leave arcs of frost, his slams craters and crests, his beam is a beam
+ * (LastWatchBeamEntity), his vent steams, his stance wears a ward; the frost beam and the core vent, taken out of his
+ * pool for being only particles (05.10.2026), are back in it with bodies.
  */
 public class VaultWardenEntity extends FrostServantEntity {
 
@@ -57,11 +64,10 @@ public class VaultWardenEntity extends FrostServantEntity {
     private static final RawAnimation BEAM = RawAnimation.begin().thenPlay("animation.vault_warden.beam");
     private static final RawAnimation AWAKEN = RawAnimation.begin().thenPlay("animation.vault_warden.awaken");
     private static final RawAnimation SPIN = RawAnimation.begin().thenPlay("animation.vault_warden.spin");
-    private static final RawAnimation VOLLEY = RawAnimation.begin().thenPlay("animation.vault_warden.volley");
     private static final RawAnimation RUPTURE = RawAnimation.begin().thenPlay("animation.vault_warden.rupture");
     private static final RawAnimation WARD = RawAnimation.begin().thenLoop("animation.vault_warden.ward");
     private static final RawAnimation HURT = RawAnimation.begin().thenPlay("animation.vault_warden.hurt");
-    private static final RawAnimation DEATH = RawAnimation.begin().thenPlay("animation.vault_warden.death");
+    private static final RawAnimation DEATH = RawAnimation.begin().thenPlayAndHold("animation.vault_warden.death");
     private static final RawAnimation SHATTER = RawAnimation.begin().thenPlay("animation.vault_warden.shatter");
     private static final RawAnimation STOMP = RawAnimation.begin().thenPlay("animation.vault_warden.stomp");
     private static final RawAnimation CORE_VENT = RawAnimation.begin().thenPlay("animation.vault_warden.core_vent");
@@ -70,6 +76,9 @@ public class VaultWardenEntity extends FrostServantEntity {
     private static final RawAnimation LOCK = RawAnimation.begin().thenPlay("animation.vault_warden.lock");
     /** The vault locks: grates dropped round you, and the charge after (VaultBarEntity). */
     public static final int VAULT_LOCK = 13;
+    /** The wave of bent space (RoarWarpEntity's, the Monstrosity's): how far it goes, what it does. */
+    public static final int TIME_WARP = 14;
+    static final float WARP_REACH = 12.0F, WARP_DMG = 9.0F;
 
     /** Shown only while he is actually awake and fighting - a statue in an
      *  empty vault should not put a health bar on anyone's screen. */
@@ -201,16 +210,15 @@ public class VaultWardenEntity extends FrostServantEntity {
         }
         checkEnrage();
         tickPlating();
+        tickWarps();
     }
 
     private void awaken() {
         entityData.set(DORMANT, false);
         setAttackState(4);
         level().playSound(null, blockPosition(), FFSounds.VAULT_WARDEN_AWAKEN.get(), SoundSource.HOSTILE, 2.0F, 1.0F);
-        if (level() instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(FFParticles.ICE_SHARD.get(),
-                    getX(), getY() + 1.6D, getZ(), 40, 0.7D, 1.4D, 0.7D, 0.1D);
-        }
+        AttackFxEntity.spawn(level(), AttackFxEntity.SNOW_BURST, position().add(0.0D, 1.6D, 0.0D), yBodyRot, 2.4F, 20, this);
+        AttackFxEntity.spawn(level(), AttackFxEntity.GLINT, corePoint(), yBodyRot, 2.2F, 14, this);
     }
 
     @Override
@@ -223,14 +231,14 @@ public class VaultWardenEntity extends FrostServantEntity {
             amount *= 0.2F;
         }
         // THE CORE IS HIS WEAK POINT: the glowing core on his chest, struck from in front - a blade aimed at it, an
-        // arrow that lands in it - takes the blow at twice its weight, and the plating cannot learn it; laid open
-        // (bent over his fists after the third blow, or reeling from his charge into a wall) at three times. It
-        // flashes and rings, so the lesson is seen and heard. (Those two openings' own bonuses are what it
-        // replaces: the core is where they pay.)
+        // arrow that lands in it - takes the blow at three times its weight, and the plating cannot learn it; laid open (bent over his fists
+        // after the third blow, or reeling from his charge into a wall) at four and a half (was three). It flashes and
+        // rings, so the lesson is seen and heard. (Those two openings' own bonuses are what it replaces: the core is
+        // where they pay.)
         boolean core = !level().isClientSide && !isDormant() && getAttackState() != 4 && coreHit(source);
         if (core) {
             boolean open = comboOpen() || staggerTicks > 0;
-            amount *= open ? 3.0F : 2.0F;
+            amount *= open ? 4.5F : 3.0F;
             level().broadcastEntityEvent(this, CORE_STRUCK);
             playSound(FFSounds.CRYSTAL_CHIME.get(), 1.8F, open ? 0.6F : 0.85F);
             playSound(net.minecraft.sounds.SoundEvents.AMETHYST_BLOCK_RESONATE, 1.4F, 0.7F);
@@ -287,7 +295,7 @@ public class VaultWardenEntity extends FrostServantEntity {
     }
 
     /** Where his core is: on his chest, before him (the model's core, at about two thirds of his height). */
-    private Vec3 corePoint() {
+    Vec3 corePoint() {
         Vec3 fwd = Vec3.directionFromRotation(0.0F, yBodyRot);
         return position().add(fwd.scale(0.6D)).add(0.0D, getBbHeight() * 0.67D, 0.0D);
     }
@@ -324,11 +332,12 @@ public class VaultWardenEntity extends FrostServantEntity {
         /** Per-attack cooldowns. The single shared timer let him repeat the
          *  same heavy attack back to back, which is how a boss ends up feeling
          *  like a slot machine rather than an opponent. */
-        private final int[] perAttack = new int[14];
+        private final int[] perAttack = new int[16];
 
         private static int cooldownFor(int state) {
             return switch (state) {
                 case 8 -> 400;   // warding stance
+                case TIME_WARP -> 300;
                 case VAULT_LOCK -> 300;
                 case 12 -> 380;  // core vent
                 case 11 -> 260;  // seismic step
@@ -337,8 +346,6 @@ public class VaultWardenEntity extends FrostServantEntity {
                 case 7 -> 240;   // ground rupture
                 case 9 -> 220;   // charge
                 case 5 -> 200;   // spin
-                case 2 -> 160;   // ground slam
-                case 6 -> 140;   // shard volley
                 default -> 30;   // swings stay available
             };
         }
@@ -425,7 +432,10 @@ public class VaultWardenEntity extends FrostServantEntity {
                 offer(VAULT_LOCK, dist > 4.0D && dist < 16.0D && sighted, 4);
                 offer(7, dist > 4.0D && dist < 20.0D && sighted, 4);        // rupture
                 // - the frost beam and
-                // the core vent are out of his pool; the code is left for now
+                // the core vent were out of his pool for it; drawn with bodies now (12.10.2026), they are back
+                offer(3, dist > 5.0D && dist < 16.0D && sighted, 3);        // the sweeping beam
+                offer(12, nearby >= 1 && mob.getHealth() < mob.getMaxHealth() * 0.75F, 2);   // the core vent
+                offer(TIME_WARP, dist < WARP_REACH && sighted, mob.isEnraged() ? 4 : 3);    // the bent air
                 // nothing of his
                 // ice comes at you through a wall: every attack that raises it wants you in his sight
                 offer(10, dist < 12.0D && sighted, mob.isEnraged() ? 5 : 3);   // ring shatter
@@ -455,8 +465,11 @@ public class VaultWardenEntity extends FrostServantEntity {
             switch (state) {
                 case 1 -> { // THREE BLOWS: the swing (8), the backhand (18), a held beat with both fists high, and
                     // both down (32) - then they stay in the floor and he stays bent over them till 58: the opening
-                    if ((mob.attackTicks == 8 || mob.attackTicks == 18) && dist < 4.6D) {
-                        mob.doHurtTarget(target);
+                    if (mob.attackTicks == 8 || mob.attackTicks == 18) {
+                        mob.swingArc(mob.attackTicks == 18);
+                        if (dist < 4.6D) {
+                            mob.doHurtTarget(target);
+                        }
                     }
                     if (mob.attackTicks == 24) {
                         mob.playSound(FFSounds.VAULT_WARDEN_AWAKEN.get(), 1.4F, 1.2F);   // the beat: you hear it held
@@ -483,12 +496,22 @@ public class VaultWardenEntity extends FrostServantEntity {
                         finish(20);
                     }
                 }
-                case 2 -> { // ground slam at tick 14: ring shockwave
-                    if (mob.attackTicks == 14) {
-                        mob.groundSlam();
+                case TIME_WARP -> { // arms up calling it, the core flaring (4-12), the wave out on 12 - and a second
+                    // on 30 when he is roused (enraged, or one time in three)
+                    if (mob.attackTicks == 4) {
+                        mob.playSound(FFSounds.FROST_CHARGE.get(), 2.0F, 0.4F);
+                        AttackFxEntity.spawn(mob.level(), AttackFxEntity.GLINT, mob.corePoint(), mob.yBodyRot, 2.6F, 10,
+                                mob);
                     }
-                    if (mob.attackTicks > 30) {
-                        finish(18);
+                    if (mob.attackTicks == 12) {
+                        mob.timeWarp();
+                        mob.warpTwice = mob.isEnraged() || mob.random.nextInt(3) == 0;
+                    }
+                    if (mob.attackTicks == 30 && mob.warpTwice) {
+                        mob.timeWarp();
+                    }
+                    if (mob.attackTicks > (mob.warpTwice ? 48 : 32)) {
+                        finish(24);
                     }
                 }
                 case 3 -> { // frost beam: a sweep, not a snapshot
@@ -507,6 +530,9 @@ public class VaultWardenEntity extends FrostServantEntity {
                 }
                 case 5 -> { // spin: damage pulses ticks 10-30
                     if (mob.attackTicks >= 10 && mob.attackTicks <= 30 && mob.attackTicks % 5 == 0) {
+                        // an arc of frost torn round him with each turn (his body comes round 72 degrees a pulse)
+                        AttackFxEntity.spawn(mob.level(), "overseer_sweep", mob.position(),
+                                mob.yBodyRot + 72.0F * (mob.attackTicks - 10) / 5, 1.5F, 12, mob);
                         for (LivingEntity victim : mob.level().getEntitiesOfClass(LivingEntity.class,
                                 mob.getBoundingBox().inflate(3.4D),
                                 e -> e != mob && !(e instanceof FrostServantEntity))) {
@@ -517,14 +543,6 @@ public class VaultWardenEntity extends FrostServantEntity {
                     }
                     if (mob.attackTicks > 36) {
                         finish(20);
-                    }
-                }
-                case 6 -> { // shard volley: a fan of ice spears at ticks 14/18/22
-                    if (mob.attackTicks == 14 || mob.attackTicks == 18 || mob.attackTicks == 22) {
-                        mob.shardVolley(target, (mob.attackTicks - 18) * 12.0F);
-                    }
-                    if (mob.attackTicks > 34) {
-                        finish(22);
                     }
                 }
                 case 7 -> { // ground rupture: spikes tearing along the floor
@@ -539,10 +557,9 @@ public class VaultWardenEntity extends FrostServantEntity {
                     mob.getNavigation().stop();
                     if (mob.attackTicks == 4) {
                         mob.playSound(FFSounds.SENTINEL_SHIELD.get(), 1.6F, 0.6F);
-                    }
-                    if (mob.attackTicks % 12 == 0 && mob.level() instanceof ServerLevel sl) {
-                        sl.sendParticles(FFParticles.FROST_SWIRL.get(),
-                                mob.getX(), mob.getY(1.6D), mob.getZ(), 8, 1.2D, 1.0D, 1.2D, 0.02D);
+                        // braced: a ward of rime closes round him for as long as he holds it
+                        AttackFxEntity.spawn(mob.level(), AttackFxEntity.RIME_WARD, mob.position(), mob.yBodyRot,
+                                2.6F, 62, mob).follow(mob);
                     }
                     // Everything he soaked up comes back out when he stands.
                     // Without this the whole stance reads as a long animation
@@ -633,10 +650,6 @@ public class VaultWardenEntity extends FrostServantEntity {
                         if (mob.attackTicks % 6 == 0) {
                             mob.coreVentPulse();
                         }
-                        if (mob.attackTicks % 4 == 0 && mob.level() instanceof ServerLevel sl) {
-                            sl.sendParticles(FFParticles.SOUL_FROST.get(),
-                                    mob.getX(), mob.getY(2.0D), mob.getZ(), 10, 0.9D, 0.7D, 0.9D, 0.06D);
-                        }
                     }
                     if (mob.attackTicks > 54) {
                         finish(30);
@@ -652,50 +665,87 @@ public class VaultWardenEntity extends FrostServantEntity {
         }
     }
 
-    void groundSlam() {
-        playSound(FFSounds.VAULT_WARDEN_SLAM.get(), 1.8F, 0.9F);
-        if (level() instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(FFParticles.SHOCKWAVE.get(),
-                    getX(), getY() + 0.2D, getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
-            serverLevel.sendParticles(FFParticles.ICE_SHARD.get(),
-                    getX(), getY() + 0.4D, getZ(), 30, 2.0D, 0.3D, 2.0D, 0.12D);
-        }
-        for (LivingEntity victim : level().getEntitiesOfClass(LivingEntity.class,
-                getBoundingBox().inflate(6.0D), e -> e != this && !(e instanceof FrostServantEntity))) {
-            double d = distanceTo(victim);
-            if (d >= 7.0D) {
-                continue;
-            }
-            // Being airborne used to make this whiff completely, so a simple
-            // hop was a free answer to his heaviest attack. Now a jump softens
-            // it and buys distance instead of erasing it - and he drags you
-            // back down so the next one lands on the floor with you.
-            boolean airborne = !victim.onGround();
-            float damage = (float) (18.0D - d * 2.0D);
-            if (airborne) {
-                damage *= 0.55F;
-            }
-            victim.hurt(damageSources().mobAttack(this), Math.max(4.0F, damage));
-            if (airborne) {
-                victim.push(0.0D, -0.85D, 0.0D);
-            } else {
-                victim.push(0.0D, 0.6D, 0.0D);
-            }
-            victim.addEffect(new MobEffectInstance(FFEffects.FROSTBITE, 60, 0), this);
-        }
+    /** The arc of frost one of his swings tears through the air before him (the backhand turned the other way). */
+    void swingArc(boolean backhand) {
+        playSound(FFSounds.VAULT_WARDEN_SWIPE.get(), 1.6F, backhand ? 0.8F : 0.95F);
+        AttackFxEntity.spawn(level(), "overseer_sweep", position(), yBodyRot + (backhand ? 180.0F : 0.0F), 1.5F, 12, this);
+    }
 
-        // Aftershocks: the floor keeps splitting where the target was standing,
-        // so riding out the slam in place is punished too.
-        LivingEntity mark = getTarget();
-        if (mark != null && hasLineOfSight(mark)) {
-            for (int i = 0; i < 3; i++) {
-                double ang = random.nextDouble() * Math.PI * 2.0D;
-                double r = 1.5D + random.nextDouble() * 2.5D;
-                level().addFreshEntity(new com.jastkub.frozenfortress.entity.projectile.IceSpikeEntity(
-                        level(), this, mark.getX() + Math.cos(ang) * r, mark.getY(),
-                        mark.getZ() + Math.sin(ang) * r, 7.0F, 12 + i * 6));
-            }
+    /** Set while the bent air comes twice this time (TIME_WARP). */
+    boolean warpTwice;
+
+    /** One wave of bent space out of his core: the client draws it (RoarWarpEntity, the Monstrosity's), this strikes
+     *  as its rim passes - whoever it reaches with his core in their sight, once. */
+    private final java.util.List<Warp> warps = new java.util.ArrayList<>();
+
+    private static final class Warp {
+        final Vec3 centre;
+        final long start;
+        final java.util.Set<java.util.UUID> struck = new java.util.HashSet<>();
+
+        Warp(Vec3 centre, long start) {
+            this.centre = centre;
+            this.start = start;
         }
+    }
+
+    void timeWarp() {
+        // where RoarWarpFx draws a warp of any owner but the Monstrosity: before him at three fifths of his height
+        Vec3 fwd = Vec3.directionFromRotation(0.0F, getYRot());
+        Vec3 centre = position().add(fwd.scale(2.6D)).add(0.0D, getBbHeight() * 0.6D, 0.0D);
+        com.jastkub.frozenfortress.entity.RoarWarpEntity.roar(this, com.jastkub.frozenfortress.entity.RoarWarpEntity.RING_LIFE
+                + 12, 0.85F, WARP_REACH, 1);
+        warps.add(new Warp(centre, level().getGameTime()));
+        playSound(FFSounds.VAULT_WARDEN_CORE.get(), 2.6F, 0.6F);
+        playSound(FFSounds.SHOCKWAVE.get(), 2.2F, 0.5F);
+        AttackFxEntity.spawn(level(), AttackFxEntity.GLINT, corePoint(), yBodyRot, 3.0F, 10, this);
+    }
+
+    /** The rims going out: their radius as RoarWarpFx draws it (0.6 + reach * (1 - (1 - f)^1.6) over RING_LIFE). */
+    private void tickWarps() {
+        if (warps.isEmpty()) {
+            return;
+        }
+        long now = level().getGameTime();
+        int life = com.jastkub.frozenfortress.entity.RoarWarpEntity.RING_LIFE;
+        warps.removeIf(w -> {
+            float f = (now - w.start) / (float) life;
+            if (f > 1.0F) {
+                return true;
+            }
+            float r = 0.6F + WARP_REACH * (1.0F - (float) Math.pow(1.0F - f, 1.6D));
+            for (Player p : level().players()) {
+                if (!p.isAlive() || p.isCreative() || p.isSpectator() || w.struck.contains(p.getUUID())) {
+                    continue;
+                }
+                double d = p.position().add(0.0D, 1.0D, 0.0D).distanceTo(w.centre);
+                if (d > r || d < r - 2.2D) {
+                    continue;
+                }
+                // a pillar between: the bent air breaks on the stone
+                if (level().clip(new net.minecraft.world.level.ClipContext(w.centre, p.getEyePosition(),
+                        net.minecraft.world.level.ClipContext.Block.COLLIDER,
+                        net.minecraft.world.level.ClipContext.Fluid.NONE, this)).getType()
+                        != net.minecraft.world.phys.HitResult.Type.MISS) {
+                    continue;
+                }
+                w.struck.add(p.getUUID());
+                p.hurt(damageSources().indirectMagic(this, this), WARP_DMG);
+                // time thick round them for a breath: slowed hard, their swings slowed with it
+                p.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 50, 2), this);
+                p.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 50, 1), this);
+                Vec3 out = p.position().subtract(w.centre);
+                Vec3 flat = new Vec3(out.x, 0.0D, out.z);
+                flat = flat.lengthSqr() < 1.0E-4D ? fwdOf(this) : flat.normalize();
+                p.setDeltaMovement(flat.x * 0.9D, 0.35D, flat.z * 0.9D);
+                p.hurtMarked = true;
+            }
+            return false;
+        });
+    }
+
+    private static Vec3 fwdOf(VaultWardenEntity w) {
+        return Vec3.directionFromRotation(0.0F, w.getYRot());
     }
 
     /** Set while a charge is in flight, cleared the moment it connects. */
@@ -716,6 +766,7 @@ public class VaultWardenEntity extends FrostServantEntity {
         Vec3 fwd = Vec3.directionFromRotation(0.0F, getYRot());
         Vec3 at = position().add(fwd.scale(2.6D));
         playSound(FFSounds.VAULT_WARDEN_SLAM.get(), 2.0F, 0.8F);
+        AttackFxEntity.spawn(level(), "aurochs_crash", at, yBodyRot, 1.5F, 24, this);
         for (LivingEntity v : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(5.0D),
                 e -> e != this && !(e instanceof FrostServantEntity) && e.isAlive())) {
             if (v.position().distanceTo(at) > 2.8D) {
@@ -771,10 +822,7 @@ public class VaultWardenEntity extends FrostServantEntity {
     private void enterStagger(int ticks) {
         staggerTicks = ticks;
         playSound(FFSounds.ICE_CRACK.get(), 1.6F, 0.7F);
-        if (level() instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(FFParticles.ICE_SHARD.get(),
-                    getX(), getY(1.8D), getZ(), 30, 0.8D, 0.8D, 0.8D, 0.1D);
-        }
+        AttackFxEntity.spawn(level(), AttackFxEntity.SNOW_BURST, position().add(0.0D, getBbHeight() * 0.6D, 0.0D), yBodyRot, 1.8F, 20, this);
     }
 
     private void checkEnrage() {
@@ -784,12 +832,10 @@ public class VaultWardenEntity extends FrostServantEntity {
         enraged = true;
         playSound(FFSounds.VAULT_WARDEN_AWAKEN.get(), 2.4F, 0.75F);
         playSound(FFSounds.SHOCKWAVE.get(), 2.0F, 0.6F);
-        if (level() instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(FFParticles.SOUL_FROST.get(),
-                    getX(), getY(1.4D), getZ(), 80, 1.2D, 1.6D, 1.2D, 0.2D);
-            serverLevel.sendParticles(FFParticles.SHOCKWAVE.get(),
-                    getX(), getY() + 0.2D, getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
-        }
+        // roused: the air round him bends once, and the floor rings
+        com.jastkub.frozenfortress.entity.RoarWarpEntity.roar(this, 30, 0.6F, 8.0F, 1);
+        AttackFxEntity.spawn(level(), "overseer_shockwave", position(), yBodyRot, 2.4F, 20, this);
+        AttackFxEntity.spawn(level(), AttackFxEntity.SNOW_BURST, position().add(0.0D, getBbHeight() * 0.5D, 0.0D), yBodyRot, 3.0F, 20, this);
         // He stops nursing the wound and simply comes at you.
         net.minecraft.world.entity.ai.attributes.AttributeInstance speed =
                 getAttribute(Attributes.MOVEMENT_SPEED);
@@ -806,10 +852,8 @@ public class VaultWardenEntity extends FrostServantEntity {
      */
     void vaultShatter() {
         playSound(FFSounds.VAULT_WARDEN_SLAM.get(), 2.0F, 0.85F);
-        if (level() instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(FFParticles.SHOCKWAVE.get(),
-                    getX(), getY() + 0.2D, getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
-        }
+        AttackFxEntity.spawn(level(), "overseer_shockwave", position(), yBodyRot, 2.2F, 20, this);
+        AttackFxEntity.spawn(level(), "aurochs_crash", position(), yBodyRot, 1.8F, 24, this);
         int rings = enraged ? 4 : 3;
         for (int ring = 1; ring <= rings; ring++) {
             double radius = 2.5D + ring * 2.2D;
@@ -839,10 +883,8 @@ public class VaultWardenEntity extends FrostServantEntity {
     void chargeImpact() {
         playSound(FFSounds.VAULT_WARDEN_SLAM.get(), 1.9F, 1.15F);
         setDeltaMovement(getDeltaMovement().multiply(0.15D, 1.0D, 0.15D));
-        if (level() instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(FFParticles.ICE_SHARD.get(),
-                    getX(), getY() + 0.4D, getZ(), 24, 1.4D, 0.4D, 1.4D, 0.16D);
-        }
+        AttackFxEntity.spawn(level(), "aurochs_crash", position().add(fwdOf(this).scale(1.2D)), yBodyRot, 1.4F, 22, this);
+        AttackFxEntity.spawn(level(), AttackFxEntity.SNOW_BURST, position().add(0.0D, 1.0D, 0.0D), yBodyRot, 1.8F, 20, this);
         for (LivingEntity victim : level().getEntitiesOfClass(LivingEntity.class,
                 getBoundingBox().inflate(3.2D), e -> e != this && !(e instanceof FrostServantEntity))) {
             victim.hurt(damageSources().mobAttack(this), 7.0F);
@@ -877,12 +919,11 @@ public class VaultWardenEntity extends FrostServantEntity {
     }
 
     /** The core burning in the open: short reach, relentless, and it costs
-     *  him - see hurt(), where an open core takes extra. */
+     *  him - see hurt, where an open core takes extra. */
     void coreVentPulse() {
-        if (level() instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(FFParticles.FROST_SWIRL.get(),
-                    getX(), getY(1.6D), getZ(), 24, 1.6D, 0.9D, 1.6D, 0.14D);
-        }
+        // the cold out of his opened core: a plume of it before him, and round his feet
+        AttackFxEntity.spawn(level(), "overseer_steam", corePoint(), yBodyRot, 1.8F, 22, this);
+        AttackFxEntity.spawn(level(), "aurochs_steam", position(), yBodyRot, 1.6F, 22, this);
         for (LivingEntity victim : level().getEntitiesOfClass(LivingEntity.class,
                 getBoundingBox().inflate(4.5D), e -> e != this && !(e instanceof FrostServantEntity))) {
             victim.hurt(damageSources().mobAttack(this), 5.0F);
@@ -1010,12 +1051,8 @@ public class VaultWardenEntity extends FrostServantEntity {
         java.util.Arrays.fill(exposure, 0.0F);
         staggerTicks = Math.max(staggerTicks, 40);
         playSound(FFSounds.VAULT_WARDEN_AWAKEN.get(), 2.4F, 0.6F);
-        if (level() instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(FFParticles.SHOCKWAVE.get(),
-                    getX(), getY(1.0D), getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
-            serverLevel.sendParticles(FFParticles.ICE_SHARD.get(),
-                    getX(), getY(1.3D), getZ(), 120, 1.2D, 1.2D, 1.2D, 0.35D);
-        }
+        AttackFxEntity.spawn(level(), "crush_burst", corePoint(), yBodyRot, 2.0F, 20, this);
+        AttackFxEntity.spawn(level(), "overseer_shockwave", position(), yBodyRot, 2.0F, 20, this);
         announce("§cThe plating overloads - the core is exposed!");
     }
 
@@ -1072,12 +1109,8 @@ public class VaultWardenEntity extends FrostServantEntity {
      *  out as a ring of vault ice. */
     void wardBreak() {
         playSound(FFSounds.VAULT_WARDEN_SWIPE.get(), 2.0F, 1.1F);
-        if (level() instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(FFParticles.SHOCKWAVE.get(),
-                    getX(), getY() + 0.2D, getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
-            serverLevel.sendParticles(FFParticles.FROST_SWIRL.get(),
-                    getX(), getY(1.2D), getZ(), 40, 2.2D, 1.2D, 2.2D, 0.18D);
-        }
+        AttackFxEntity.spawn(level(), "overseer_shockwave", position(), yBodyRot, 2.4F, 20, this);
+        AttackFxEntity.spawn(level(), AttackFxEntity.SNOW_BURST, position().add(0.0D, 1.4D, 0.0D), yBodyRot, 2.6F, 20, this);
         for (LivingEntity victim : level().getEntitiesOfClass(LivingEntity.class,
                 getBoundingBox().inflate(5.5D), e -> e != this && !(e instanceof FrostServantEntity))) {
             victim.hurt(damageSources().mobAttack(this), 11.0F);
@@ -1085,21 +1118,6 @@ public class VaultWardenEntity extends FrostServantEntity {
             Vec3 push = victim.position().subtract(position()).normalize().scale(1.1D);
             victim.push(push.x, 0.45D, push.z);
         }
-    }
-
-    /** A spear of vault ice, hurled at a chosen spread from dead ahead. */
-    void shardVolley(LivingEntity target, float spreadDegrees) {
-        Vec3 to = target.getEyePosition().subtract(getEyePosition());
-        double rad = Math.toRadians(spreadDegrees);
-        double cos = Math.cos(rad), sin = Math.sin(rad);
-        Vec3 aim = new Vec3(to.x * cos - to.z * sin, to.y, to.x * sin + to.z * cos);
-        com.jastkub.frozenfortress.entity.projectile.FrostBoltEntity bolt =
-                new com.jastkub.frozenfortress.entity.projectile.FrostBoltEntity(
-                        level(), this, aim.x, aim.y, aim.z);
-        bolt.setPos(getX(), getEyeY() - 0.4D, getZ());
-        bolt.setDamage(9.0F);
-        level().addFreshEntity(bolt);
-        playSound(FFSounds.FROST_BOLT_FIRE.get(), 1.6F, 0.7F);
     }
 
     /** The floor splits: a line of spikes tearing outward toward the target. */
@@ -1124,10 +1142,7 @@ public class VaultWardenEntity extends FrostServantEntity {
                 }
             }
         }
-        if (level() instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(FFParticles.SHOCKWAVE.get(),
-                    getX(), getY() + 0.2D, getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
-        }
+        AttackFxEntity.spawn(level(), "aurochs_crash", position().add(dir.scale(2.2D)), yBodyRot, 1.4F, 22, this);
     }
 
     /**
@@ -1142,21 +1157,21 @@ public class VaultWardenEntity extends FrostServantEntity {
     void frostBeam() {
         Vec3 start = getEyePosition();
         Vec3 dir = getLookAngle().normalize();
-        if (level() instanceof ServerLevel serverLevel) {
-            for (double d = 1.0D; d < 16.0D; d += 0.5D) {
-                Vec3 point = start.add(dir.scale(d));
-                serverLevel.sendParticles(FFParticles.SOUL_FROST.get(),
-                        point.x, point.y, point.z, 1, 0.05D, 0.05D, 0.05D, 0.0D);
-                if (!level().getBlockState(net.minecraft.core.BlockPos.containing(point)).isAir()) {
-                    break;
-                }
-            }
+        // a beam with a body (the Last Watch's: a flare, the lance, rings running out it, a flare where it ends),
+        // as far as the first stone - each pulse a fresh one along where he looks now, so it sweeps
+        double reach = 16.0D;
+        net.minecraft.world.phys.HitResult wall = level().clip(new net.minecraft.world.level.ClipContext(start,
+                start.add(dir.scale(reach)), net.minecraft.world.level.ClipContext.Block.COLLIDER,
+                net.minecraft.world.level.ClipContext.Fluid.NONE, this));
+        if (wall.getType() != net.minecraft.world.phys.HitResult.Type.MISS) {
+            reach = wall.getLocation().distanceTo(start);
         }
+        level().addFreshEntity(new LastWatchBeamEntity(level(), start, dir, (float) reach, false).lasting(4));
         for (LivingEntity victim : level().getEntitiesOfClass(LivingEntity.class,
                 getBoundingBox().inflate(16.0D), e -> e != this && !(e instanceof FrostServantEntity))) {
             Vec3 to = victim.getEyePosition().subtract(start);
             double along = to.dot(dir);
-            if (along > 0.0D && along < 16.0D && to.subtract(dir.scale(along)).length() < 1.2D
+            if (along > 0.0D && along < reach && to.subtract(dir.scale(along)).length() < 1.2D
                     && hasLineOfSight(victim)) {
                 victim.hurt(damageSources().mobAttack(this), 12.0F);
                 victim.addEffect(new MobEffectInstance(FFEffects.FROSTBITE, 100, 1), this);
@@ -1169,10 +1184,16 @@ public class VaultWardenEntity extends FrostServantEntity {
         return false;
     }
 
-    /** A construct this big takes its time coming apart. */
+    /** A construct this big takes its time coming down: on his knees by 18, over his fists by 30 (his death clip). */
     @Override
     protected int getDeathDuration() {
-        return 55;
+        return 70;
+    }
+
+    /** ...and he fades there, kneeling - no puff of smoke (12.10.2026). */
+    @Override
+    public int fadeTicks() {
+        return 20;
     }
 
     @Override
@@ -1191,11 +1212,9 @@ public class VaultWardenEntity extends FrostServantEntity {
             }
             switch (getAttackState()) {
                 case 1: return state.setAndContinue(COMBO);
-                case 2: return state.setAndContinue(SLAM);
                 case 3: return state.setAndContinue(BEAM);
                 case 4: return state.setAndContinue(AWAKEN);
                 case 5: return state.setAndContinue(SPIN);
-                case 6: return state.setAndContinue(VOLLEY);
                 case 7: return state.setAndContinue(RUPTURE);
                 case 8: return state.setAndContinue(WARD);
                 case 9: return state.setAndContinue(SLAM);
@@ -1203,6 +1222,7 @@ public class VaultWardenEntity extends FrostServantEntity {
                 case 11: return state.setAndContinue(STOMP);
                 case 12: return state.setAndContinue(CORE_VENT);
                 case VAULT_LOCK: return state.setAndContinue(LOCK);
+                case TIME_WARP: return state.setAndContinue(LOCK);
             }
             if (state.isMoving()) {
                 return state.setAndContinue(WALK);

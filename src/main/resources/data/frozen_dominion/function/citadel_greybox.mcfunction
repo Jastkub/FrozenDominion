@@ -1,6 +1,7 @@
 # FROZEN CITADEL - grey box. Run on a superflat with deep stone (see export.py).
 gamerule doMobSpawning false
 effect give @s minecraft:night_vision infinite 0 true
+place template frozen_dominion:citadel/gb_0_2 ~-120 ~-116 ~-24
 place template frozen_dominion:citadel/gb_0_3 ~-120 ~-116 ~24
 place template frozen_dominion:citadel/gb_0_4 ~-120 ~-116 ~72
 place template frozen_dominion:citadel/gb_1_0 ~-72 ~-116 ~-120

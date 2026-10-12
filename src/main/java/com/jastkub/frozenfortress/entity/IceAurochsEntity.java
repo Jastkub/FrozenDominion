@@ -104,27 +104,30 @@ public class IceAurochsEntity extends FrostServantEntity implements GateKeeper {
     static final int PAW_T = 34, PAW_SCRAPE_1 = 4, PAW_SCRAPE_2 = 14, PAW_SNORT = 24, PAW_AIM = 28;
     static final int PAWQ_T = 20, PAWQ_SCRAPE = 3, PAWQ_SNORT = 11, PAWQ_AIM = 15;
     static final int SKID_T = 16, CRASH_T = 14, STUN_T = 80, RECOVER_T = 20, BONK_T = 20;
+    /** HIS SECOND HALF GETS UP SOONER: down for this, up in this
+     *  (the recover clip played as much faster: RAGE_RECOVER), and his rests between attacks run out twice as fast. */
+    static final int STUN_T_RAGE = 56, RECOVER_T_RAGE = 14;
+    static final double RAGE_RECOVER = 20.0D / 14.0D;
     static final int TOSS_T = 30, TOSS_HIT = 14;
     static final int KICK_T = 26, KICK_HIT = 12;
     static final int STOMP_T = 50, STOMP_SLAM = 24, STOMP_SECOND = 36;
     static final int BELLOW_T = 40, BELLOW_ROAR = 12;
     /** HIS DEATH (tools/gen_ice_aurochs.py DEATH_*: the "death" clip - change one, change both; BossScenes' death film
      *  is cut to them): reared up, a scrape of the hoof as if to charge (SCRAPE), down on his knees (KNEEL), a last
-     *  bellow (BELLOW), over onto his side (FALL), the light gone out of his eyes (EYES) - and the ice of him breaking
-     *  apart (SHATTER: fx_aurochs_shatter). The clip runs DEATH_LAG behind his deathTime: the controller blends into
-     *  it first. */
-    public static final int DEATH_T = 84, DEATH_SHATTER = 76, DEATH_SCRAPE = 14, DEATH_KNEEL = 24, DEATH_BELLOW = 32,
+     *  bellow (BELLOW), over onto his side (FALL), the light gone out of his eyes (EYES) - and he lies still (STILL)
+     *  and fades (fadeTicks). The clip runs DEATH_LAG behind his deathTime: the controller blends into it first. */
+    public static final int DEATH_T = 84, DEATH_STILL = 76, DEATH_SCRAPE = 14, DEATH_KNEEL = 24, DEATH_BELLOW = 32,
             DEATH_FALL = 56, DEATH_EYES = 66, DEATH_LAG = 4;
 
     // ---- the numbers of his fight
-    static final float CHARGE_DMG = 13.0F, TOSS_DMG = 10.0F, KICK_DMG = 11.0F;
+    static final float CHARGE_DMG = 16.0F, TOSS_DMG = 10.0F, KICK_DMG = 11.0F;     // (11.10.2026: the charge 13)
     /** Blocks a tick: a charge crosses twenty blocks in a second and a quarter (a second, enraged). */
     static final double CHARGE_SPEED = 0.78D, CHARGE_SPEED_RAGE = 0.92D;
     /** The longest a charge runs, in ticks. */
     static final int CHARGE_MAX = 34;
     /** How far past the spot he aimed at he runs before he pulls up (at a person; at a hearth he stops on it). */
     static final double OVERRUN = 4.0D;
-    /** The run-up a pillar needs to break him: less, and he only shoulders it. (Six, not five) */
+    /** The run-up a pillar needs to break him: less, and he only shoulders it. */
     static final double CHARGE_MIN_RUN = 6.0D;
     /** How far ahead of his middle the horns and the brow reach while he charges (the model: 3.1 blocks). */
     static final double NOSE = 3.0D;
@@ -160,7 +163,7 @@ public class IceAurochsEntity extends FrostServantEntity implements GateKeeper {
     private static final RawAnimation KICK_ANIM = RawAnimation.begin().thenPlay(P + "kick");
     private static final RawAnimation BELLOW_ANIM = RawAnimation.begin().thenPlay(P + "bellow");
     private static final RawAnimation HURT = RawAnimation.begin().thenPlay(P + "hurt");
-    private static final RawAnimation DEATH = RawAnimation.begin().thenPlay(P + "death");
+    private static final RawAnimation DEATH = RawAnimation.begin().thenPlayAndHold(P + "death");
 
     private final ServerBossEvent bossEvent = new ServerBossEvent(
             Component.translatable("entity.frozen_dominion.ice_aurochs"),
@@ -209,7 +212,7 @@ public class IceAurochsEntity extends FrostServantEntity implements GateKeeper {
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.STEP_HEIGHT, 1.0D)   // (1.21: was setMaxUpStep) over a hearth, a plinth, a step - he is huge
-                .add(Attributes.MAX_HEALTH, 280.0D)
+                .add(Attributes.MAX_HEALTH, 322.0D)          // (+15%: 11.10.2026)
                 .add(Attributes.ATTACK_DAMAGE, 10.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.24D)
                 .add(Attributes.ARMOR, 10.0D)
@@ -580,7 +583,8 @@ public class IceAurochsEntity extends FrostServantEntity implements GateKeeper {
                 if (t >= CRASH_T) {
                     setAttackState(STUNNED);
                     // the stars ride on him for as long as he is down
-                    AttackFxEntity.spawn(level(), "aurochs_dizzy", position(), yBodyRot, 1.0F, STUN_T, this).follow(this);
+                    AttackFxEntity.spawn(level(), "aurochs_dizzy", position(), yBodyRot, 1.0F, secondHalf ? STUN_T_RAGE : STUN_T,
+                            this).follow(this);
                 }
             }
             case STUNNED -> {
@@ -589,7 +593,7 @@ public class IceAurochsEntity extends FrostServantEntity implements GateKeeper {
                 if (t % 12 == 4) {
                     playSound(FFSounds.ICE_AUROCHS_DIZZY.get(), 1.4F, 0.95F + random.nextFloat() * 0.1F);
                 }
-                if (t >= STUN_T) {
+                if (t >= (secondHalf ? STUN_T_RAGE : STUN_T)) {
                     setAttackState(RECOVER);
                 }
             }
@@ -598,7 +602,7 @@ public class IceAurochsEntity extends FrostServantEntity implements GateKeeper {
                 if (t == 14) {
                     playSound(FFSounds.ICE_AUROCHS_SNORT.get(), 1.6F, 1.0F);
                 }
-                if (t >= RECOVER_T) {
+                if (t >= (secondHalf ? RECOVER_T_RAGE : RECOVER_T)) {
                     finish(10);
                 }
             }
@@ -1130,6 +1134,14 @@ public class IceAurochsEntity extends FrostServantEntity implements GateKeeper {
     }
 
     // ------------------------------------------------------------------------------------------------ hurt, death
+    /** The miniboss's ceiling (BossCeiling), lifted while it is open: down on his knees after the pillar. */
+    private final BossCeiling ceiling = new BossCeiling();
+
+    @Override
+    protected float getDamageAfterMagicAbsorb(DamageSource source, float amount) {
+        return ceiling.apply(this, source, super.getDamageAfterMagicAbsorb(source, amount), getAttackState() == CRASH || getAttackState() == STUNNED);
+    }
+
     @Override
     public boolean hurt(DamageSource source, float amount) {
         if (!source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
@@ -1183,17 +1195,15 @@ public class IceAurochsEntity extends FrostServantEntity implements GateKeeper {
         return DEATH_T + 36;
     }
 
+    /** He lies where he rolled and fades over his last ticks (11.10.2026: no breaking into ice). */
     @Override
-    protected int shatterTick() {
-        return DEATH_SHATTER + DEATH_LAG;                     // (its particles only ride along with the model)
+    public int fadeTicks() {
+        return 30;
     }
 
     /** His death's sounds, on its clip's beats - and the ice of him breaking apart where he lies (geometry). */
     @Override
     protected void tickDeath() {
-        if (!level().isClientSide && deathTime + 1 == DEATH_SHATTER + DEATH_LAG) {
-            AttackFxEntity.spawn(level(), "aurochs_shatter", position(), yBodyRot, 1.0F, 30, null);
-        }
         super.tickDeath();
         if (level().isClientSide) {
             return;
@@ -1249,6 +1259,7 @@ public class IceAurochsEntity extends FrostServantEntity implements GateKeeper {
             // into the entrance at once (its first frame is the sleep it wakes from): its clip runs on the very
             // ticks the scene's cuts and sounds are timed to (BossScenes) - and out of it as from any other
             state.getController().transitionLength(getAttackState() == INTRO ? 0 : 4);
+            state.getController().setAnimationSpeed(getAttackState() == RECOVER && isEnraged() ? RAGE_RECOVER : 1.0D);
             if (isDeadOrDying()) {
                 return state.setAndContinue(DEATH);
             }
@@ -1381,7 +1392,7 @@ public class IceAurochsEntity extends FrostServantEntity implements GateKeeper {
                 double dist = Math.hypot(target.getX() - mob.getX(), target.getZ() - mob.getZ());
                 mob.getLookControl().setLookAt(target, 20.0F, 20.0F);
                 if (mob.rest > 0) {
-                    mob.rest--;
+                    mob.rest -= two ? 2 : 1;
                     approach(target, dist, two);
                     return;
                 }

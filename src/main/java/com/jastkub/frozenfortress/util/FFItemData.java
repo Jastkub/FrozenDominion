@@ -12,7 +12,7 @@ import java.util.function.Consumer;
  * the minecraft:custom_data component under the very same keys - which is also where the world upgrade puts an old
  * stack's tag, so pieces made before the port keep what they had.
  *
- * <p>Reads hand back a COPY: a change to it does not reach the stack. Every change goes through update(), which writes
+ * <p>Reads hand back a COPY: a change to it does not reach the stack. Every change goes through update, which writes
  * the tag back (and drops the component if nothing is left in it).
  */
 public final class FFItemData {
@@ -20,7 +20,7 @@ public final class FFItemData {
     private FFItemData() {
     }
 
-    /** Whether the stack carries any data of its own (the old hasTag()). */
+    /** Whether the stack carries any data of its own (the old hasTag). */
     public static boolean has(ItemStack stack) {
         return stack.has(DataComponents.CUSTOM_DATA);
     }

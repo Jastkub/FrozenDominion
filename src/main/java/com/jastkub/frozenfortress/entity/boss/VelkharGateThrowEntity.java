@@ -33,7 +33,7 @@ import java.util.Set;
 import java.util.UUID;
 
 /**
- * RZUT WROTAMI - HIS TOWER SHIELD, THROWN (Velkhar's first phase).
+ * RZUT WROTAMI - HIS TOWER SHIELD, THROWN.
  *
  * <p>It leaves his shield arm spinning flat like a discus and flies OUT along an arc that bows to one side and runs on
  * three blocks past where the player stood - then turns and comes BACK to his hand, so it has to be dodged twice. It
@@ -147,7 +147,7 @@ public class VelkharGateThrowEntity extends Entity implements GeoEntity {
         ServerLevel sl = (ServerLevel) level();
         VelkharEntity king = sl.getEntity(entityData.get(KING)) instanceof VelkharEntity k ? k : null;
         if (king == null || !king.isAlive() || king.getAttackState() != VelkharEntity.GATE_THROW) {
-            // his throw was cut short: it goes to frost and is his again (finish() put it back on his arm)
+            // his throw was cut short: it goes to frost and is his again (finish put it back on his arm)
             sl.sendParticles(FFParticles.SOUL_FROST.get(), getX(), getY() + LIFT, getZ(), 30, 0.8D, 0.2D, 0.8D, 0.06D);
             discard();
             return;

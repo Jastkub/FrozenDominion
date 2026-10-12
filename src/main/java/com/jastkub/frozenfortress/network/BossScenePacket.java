@@ -9,7 +9,7 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 /**
  * A boss's scene for this player: its entrance or its death (BossCutscenes on the server, BossScenes on the client).
  * With where the boss stood and which way it faced as it began - the frame its shots are laid out in, there on this
- * client even before the boss itself is. (bossType - not "type", which is the payload's own type().)
+ * client even before the boss itself is. (bossType - not "type", which is the payload's own type.)
  */
 public record BossScenePacket(int entityId, byte kind, short ticks, String bossType, double x, double y, double z,
                               float yaw) implements CustomPacketPayload {

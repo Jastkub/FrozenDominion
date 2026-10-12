@@ -19,8 +19,7 @@ import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
 /**
  * THE HOLLOW MAGUS DRESSED AS ONE: the long coat split at the sides and falling past his feet, the inner robe, a
- * girdle and stoles of runes, a two-tiered mantle, open bell sleeves. (Its collar of ice, the crown of shards turning
- * round his skull and the crystals circling his waist are gone)
+ * girdle and stoles of runes, a two-tiered mantle, open bell sleeves.
  *
  * <p>Its own model (tools/gen_velkhar_magus.py), so not one island of his twelve sheets moves. Every bone of it rides
  * one of his, authored in his model space: CAPTURE AND REPLAY, as MaskMeshLayer - the pose in force at each of his

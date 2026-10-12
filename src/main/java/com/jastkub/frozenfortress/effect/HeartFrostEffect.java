@@ -4,7 +4,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 
 /**
- * HEART'S FROST (Odmrozenie) - what a trap room's beating heart lays
+ * HEART'S FROST - what a trap room's beating heart lays
  * on whoever is in its room and away from a burning hearth (FrostHeartBlockEntity). Its frost is the heart's own,
  * apart from the game's freezing and the creatures' frostbite (07.10.2026; the rime over the screen, ColdOverlay's
  * mist and heartbeat follow it - HeartColdPacket); this is its name and its

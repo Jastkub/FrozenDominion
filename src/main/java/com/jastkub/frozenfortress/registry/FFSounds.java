@@ -156,7 +156,7 @@ public final class FFSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_VELKHAR_PHASE2 = register("music.velkhar.phase2");
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_VELKHAR_PHASE3 = register("music.velkhar.phase3");
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_VELKHAR_OUTRO = register("music.velkhar.outro");
-    /** The citadel's theme: "Dark Cave" by SunixMuz, CC BY 4.0. */
+    /** The citadel's theme, while it is explored (tools/music/citadel.py). */
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_CITADEL = register("music.citadel_theme");
     /** The Monstrosity's statue waking: a bass impact, then the ice pouring off it as it shakes. */
     public static final DeferredHolder<SoundEvent, SoundEvent> MONSTROSITY_STATUE_WAKE = register("entity.ice_monstrosity.statue_wake");
@@ -169,7 +169,7 @@ public final class FFSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> FROST_SKELETON_COLLAPSE = register("entity.frost_skeleton.collapse");
     public static final DeferredHolder<SoundEvent, SoundEvent> FROST_SKELETON_REFORM = register("entity.frost_skeleton.reform");
     public static final DeferredHolder<SoundEvent, SoundEvent> FROST_SKELETON_SHATTER = register("entity.frost_skeleton.shatter");
-    /** The court's two miniboss fights, behind their dropped gates. */
+    /** The court's fights, behind their dropped gates: each its own score in tools/music/ (VSCO 2 CE samples, CC0). */
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_TURNKEY = register("music.turnkey_fight");
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_PRIESTESS = register("music.priestess_fight");
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DROWNED = register("music.drowned_fight");
@@ -179,6 +179,8 @@ public final class FFSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_LAMPLIGHTER = register("music.lamplighter_fight");
     /** The Bone Lord's chase over the Chasm of Bones. */
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_BONE_LORD = register("music.bone_lord_fight");
+    /** Frosty's fight, in his den (tools/music/frosty.py). */
+    public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_FROSTY = register("music.frosty_fight");
     /** The Ice Monstrosity's fight, in its prison. */
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_MONSTROSITY = register("music.monstrosity_fight");
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_SILENT_WINTER = register("music_disc.silent_winter");
@@ -551,8 +553,7 @@ public final class FFSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> GREAT_BACKHAND = register("item.great_backhand");
     public static final DeferredHolder<SoundEvent, SoundEvent> GREAT_THRUST = register("item.great_thrust");
     public static final DeferredHolder<SoundEvent, SoundEvent> GREAT_SLAM = register("item.great_slam");
-    /** One of the dead hurled by the Bone Lord, screaming as it flies (tools/gen_bone_lord_scream.py: a stand-in the
-     *  user may record over - keep the name). */
+    /** One of the dead hurled by the Bone Lord, screaming as it flies. */
     public static final DeferredHolder<SoundEvent, SoundEvent> BONE_LORD_THROWN_SCREAM = register("entity.bone_lord.thrown_scream");
     /** The Bone Lord's footfall: thud, crack and the rattle of his bones, loud in the middle of the range where any
      *  speakers play it (tools/gen_bone_lord_step.py; BoneLordClient plays it on the clip's foot-plants). */

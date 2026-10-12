@@ -62,7 +62,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "frozen_dominion:shackle_key"
+          "name": "frozen_dominion:shackle_key",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
         }
       ]
     },

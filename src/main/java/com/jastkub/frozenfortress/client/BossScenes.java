@@ -70,7 +70,7 @@ public final class BossScenes {
     @Nullable
     private static Vec3 subject;
     private static float height = 3.0F;
-    /** Its line is said (once, at voiceAt()). */
+    /** Its line is said (once, at voiceAt). */
     private static boolean said;
     private static final int VOICE_AT = 8;
     /** Where the boss stood as its scene began and which way it faced: the frame of its shots. */
@@ -406,7 +406,7 @@ public final class BossScenes {
         return new Vec3(-Mth.sin(y), 0.0D, Mth.cos(y));
     }
 
-    /** His right hand's side (as the keepers' own right()). */
+    /** His right hand's side (as the keepers' own right). */
     private static Vec3 right() {
         float y = anchorYaw * Mth.DEG_TO_RAD;
         return new Vec3(-Mth.cos(y), 0.0D, -Mth.sin(y));
@@ -773,6 +773,7 @@ public final class BossScenes {
                 case "drowned_lady" -> lady();
                 case "rime_priestess" -> priestess();
                 case "ice_aurochs" -> aurochs();
+                case "frosty" -> frosty();
                 case "shade_shepherd" -> shepherd();
                 case "lamplighter" -> lamplighter();
                 case "bone_lord" -> boneLord();
@@ -829,6 +830,7 @@ public final class BossScenes {
                 case "drowned_lady" -> ladyDeath();
                 case "forge_overseer" -> overseerDeath();
                 case "ice_aurochs" -> aurochsDeath();
+                case "frosty" -> frostyDeath();
                 case "shade_shepherd" -> shepherdDeath();
                 case "lamplighter" -> lamplighterDeath();
                 case "bone_lord" -> boneLordDeath();
@@ -928,11 +930,11 @@ public final class BossScenes {
 
         /** THE AUROCHS'S END: wide as the blow rears him and he scrapes the floor once more, as if to charge - and his
          *  forelegs buckle (felt); low under his head heaved up in a last bellow, felt; wide from his side as he rolls
-         *  over (felt); high over him as the ice of him breaks apart (its flash). (No words of his.) */
+         *  over (felt); high over him as he lies still and the cold takes what is left of him. (No words of his.) */
         private static Film aurochsDeath() {
             int l = IceAurochsEntity.DEATH_LAG;
             int kn = IceAurochsEntity.DEATH_KNEEL + l, be = IceAurochsEntity.DEATH_BELLOW + l;
-            int fa = IceAurochsEntity.DEATH_FALL + l, sh = IceAurochsEntity.DEATH_SHATTER + l;
+            int fa = IceAurochsEntity.DEATH_FALL + l, sh = IceAurochsEntity.DEATH_STILL + l;
             return new Film(sh + 4, -1,
                     new Shot(0, Shot.FADE).from(40, 9.0F, 3.0F).to(30, 8.0F, 2.6F).look(1.2F, 1.2F, 0)
                             .lookTo(1.4F, 0.9F, 0).fov(58, 52),
@@ -942,8 +944,25 @@ public final class BossScenes {
                             .lookTo(0.4F, 0.5F, 0).fov(54, 50),
                     new Shot(IceAurochsEntity.DEATH_EYES + l + 2, Shot.CUT).from(30, 10.0F, 6.0F).to(20, 12.0F, 7.0F)
                             .look(0.6F, 0.4F, -0.6F).fov(52, 58))
-                    .hits(new int[]{kn, be, be + 4, be + 8, fa, sh}, 0.7F, 1.2F, 0.6F, 0.4F, 1.0F, 1.0F)
-                    .flash(sh, 0.55F, 10.0F);
+                    .hits(new int[]{kn, be, be + 4, be + 8, fa}, 0.7F, 1.2F, 0.6F, 0.4F, 1.0F);
+        }
+
+        /** FROSTY'S END: wide as the blow rears him; from his side as the hind legs go and he comes down (felt); low at
+         *  his head for the last breath - a howl gone to nothing; high over him as he lies still. */
+        private static Film frostyDeath() {
+            int l = com.jastkub.frozenfortress.entity.FrostyEntity.DEATH_LAG;
+            int fa = com.jastkub.frozenfortress.entity.FrostyEntity.DEATH_FALL + l;
+            int br = com.jastkub.frozenfortress.entity.FrostyEntity.DEATH_BREATH + l;
+            int sh = com.jastkub.frozenfortress.entity.FrostyEntity.DEATH_STILL + l;
+            return new Film(sh + 4, -1,
+                    new Shot(0, Shot.FADE).from(40, 13.0F, 4.0F).to(30, 12.0F, 3.5F).look(1.5F, 1.6F, 0)
+                            .lookTo(1.6F, 1.2F, 0).fov(58, 52),
+                    new Shot(fa - 8, Shot.CUT).from(-80, 12.0F, 2.0F).to(-70, 12.5F, 2.6F).look(0, 1.2F, 0)
+                            .lookTo(0, 0.8F, 0).fov(54, 50),
+                    new Shot(br - 4, Shot.CUT).from(20, 6.0F, 0.8F).to(15, 5.4F, 0.9F).look(2.4F, 0.8F, 0)
+                            .lookTo(2.4F, 0.7F, 0).fov(48, 44),
+                    new Shot(sh - 4, Shot.CUT).from(30, 15.0F, 9.0F).to(20, 16.0F, 10.0F).look(0, 0.5F, 0).fov(52, 58))
+                    .hits(new int[]{fa, br}, 1.2F, 0.4F);
         }
 
         /** THE SHEPHERD'S END: before him as he reels and goes down on his knees over his crook; high and wide as his
@@ -1111,6 +1130,27 @@ public final class BossScenes {
                             .lookTo(2.1F, 2.4F, 0).fov(52, 48))
                     .hits(new int[]{p[0], p[1], IceAurochsEntity.INTRO_STAMP, be, be + 4, be + 8},
                             0.25F, 0.25F, 0.6F, 1.5F, 0.8F, 0.5F);
+        }
+
+        /** FROSTY: his den, he curled asleep on its floor - high over him; close on his head as the eyes open; low at
+         *  his side as he heaves up off the floor; before him, wide, as he shakes the snow off; and from under his
+         *  raised head, the howl (felt). (No words of his - he is a wolf.) */
+        private static Film frosty() {
+            int ri = com.jastkub.frozenfortress.entity.FrostyEntity.INTRO_RISE;
+            int sh = com.jastkub.frozenfortress.entity.FrostyEntity.INTRO_SHAKE;
+            int hw = com.jastkub.frozenfortress.entity.FrostyEntity.INTRO_HOWL;
+            return new Film(hw + 12, -1,
+                    new Shot(0, Shot.FADE).from(35, 15.0F, 7.0F).to(25, 13.0F, 6.0F).look(0, 1.0F, 0)
+                            .lookTo(0.6F, 1.2F, 0).fov(60, 54),
+                    new Shot(com.jastkub.frozenfortress.entity.FrostyEntity.INTRO_EYES - 2, Shot.CUT).from(12, 5.6F, 1.4F)
+                            .to(8, 5.0F, 1.3F).look(2.6F, 1.0F, 0).lookTo(2.6F, 1.1F, 0).fov(46, 42),
+                    new Shot(ri, Shot.CUT).from(-70, 10.0F, 0.6F).to(-60, 9.4F, 0.9F).look(0, 1.6F, 0)
+                            .lookTo(0, 2.6F, 0).fov(56, 52),
+                    new Shot(sh - 2, Shot.DIP).from(5, 12.0F, 1.2F).to(0, 10.5F, 1.4F).look(1.0F, 2.2F, 0)
+                            .lookTo(1.2F, 2.4F, 0).fov(58, 54),
+                    new Shot(hw, Shot.CUT).from(-22, 7.5F, 0.4F).to(-16, 6.8F, 0.5F).look(2.0F, 4.0F, 0)
+                            .lookTo(2.2F, 4.8F, 0).fov(52, 46))
+                    .hits(new int[]{ri + 8, ri + 18, hw + 6, hw + 10}, 0.5F, 0.5F, 1.5F, 0.7F);
         }
 
         /** THE SHADE SHEPHERD: his dark chamber, he asleep on one knee over his crook - rising; the crook high, its

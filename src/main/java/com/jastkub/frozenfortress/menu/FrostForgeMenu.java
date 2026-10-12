@@ -24,7 +24,7 @@ import net.minecraft.world.level.Level;
 import java.util.Optional;
 
 /**
- * THE FROST ANVIL'S WINDOW (FrostAnvilBlock): a
+ * THE FROST ANVIL'S WINDOW: a
  * grid of three by three, the CORE beside it (FrostForgingRecipe), and what they make. Like a crafting table: what is
  * left in it goes back to whoever closes it; shift on the result forges as many as the grid allows. Every piece taken
  * is struck - the hammer heard and the sparks seen at the anvil.

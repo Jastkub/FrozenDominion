@@ -7,8 +7,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 
 /**
- * The citadel's theme ("Dark Cave" by SunixMuz, CC BY 4.0 - see
- * sounds/music/CREDITS.txt), playing while the player is inside its walls.
+ * The citadel's theme (tools/music/citadel.py - see sounds/music/CREDITS.txt),
+ * playing while the player is inside its walls.
  * It comes in over three seconds and goes out over three when asked to, so
  * walking out of the gate does not cut it off mid-bar. On the Music slider,
  * because it is the place's music, not a record.

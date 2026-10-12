@@ -30,6 +30,9 @@ public class WarmthPotionItem extends Item {
 
     /** A minute of Warmth. */
     public static final int DURATION = 1200;
+    /** And a breath of the fire itself: Regeneration IV (amplifier 3 -
+     *  a heart's half every six ticks, twice III's) for four seconds, to everyone the burst warms: some six hearts. */
+    public static final int REGEN_TICKS = 80, REGEN_LEVEL = 3;
 
     public WarmthPotionItem() {
         super(new Properties().stacksTo(64).rarity(Rarity.UNCOMMON));
@@ -56,6 +59,9 @@ public class WarmthPotionItem extends Item {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.translatable("effect.frozen_dominion.warmth").append(" (1:00)")
+                .withStyle(ChatFormatting.BLUE));
+        tooltip.add(Component.translatable("effect.minecraft.regeneration").append(" ")
+                .append(Component.translatable("potion.potency." + REGEN_LEVEL)).append(" (0:04)")
                 .withStyle(ChatFormatting.BLUE));
         tooltip.add(Component.translatable("item.frozen_dominion.warmth_potion.desc").withStyle(ChatFormatting.GRAY));
     }

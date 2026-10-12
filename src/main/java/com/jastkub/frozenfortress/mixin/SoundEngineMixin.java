@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SoundEngine.class)
 public abstract class SoundEngineMixin {
 
-    /** The sound play() is starting (render thread only), for the volume it works out without it. */
+    /** The sound play is starting (render thread only), for the volume it works out without it. */
     @Unique
     private static SoundInstance frozenDominion$starting;
 

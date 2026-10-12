@@ -7,7 +7,6 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -44,31 +43,6 @@ public class FrostSnowballEntity extends ThrowableProjectile {
 
     @Override
     protected void defineSynchedData(net.minecraft.network.syncher.SynchedEntityData.Builder builder) {
-    }
-
-    /**
-     * Client: a trail of snow behind it, so the throw can be followed by eye. At its speed it crosses most of a block
-     * between two frames, so the trail is laid along the whole of the tick's flight, not only at where it ended.
-     */
-    @Override
-    public void tick() {
-        double px = getX(), py = getY(), pz = getZ();
-        super.tick();
-        if (!level().isClientSide || isRemoved() || tickCount < 2) {
-            return;
-        }
-        double cy = getBbHeight() * 0.5D;
-        // blue, not white: white snow over a white camp in falling snow was the one thing it could not be seen against
-        for (int i = 0; i < 3; i++) {
-            double f = i / 3.0D;
-            double x = Mth.lerp(f, px, getX()), y = Mth.lerp(f, py, getY()) + cy, z = Mth.lerp(f, pz, getZ());
-            level().addParticle(i == 0 ? com.jastkub.frozenfortress.registry.FFParticles.FROST_SWIRL.get()
-                            : com.jastkub.frozenfortress.registry.FFParticles.SOUL_FROST.get(), x, y, z,
-                    (random.nextDouble() - 0.5D) * 0.02D, 0.01D, (random.nextDouble() - 0.5D) * 0.02D);
-        }
-        if (tickCount % 2 == 0) {
-            level().addParticle(ParticleTypes.ITEM_SNOWBALL, getX(), getY() + cy, getZ(), 0.0D, 0.0D, 0.0D);
-        }
     }
 
     /** Through the king's own: it is not thrown at them. */

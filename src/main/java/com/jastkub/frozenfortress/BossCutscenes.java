@@ -44,13 +44,15 @@ public final class BossCutscenes {
             "frozen_dominion:lamplighter", 72,
             "frozen_dominion:drowned_lady", deathScene(DrownedLadyEntity.DEATH_T, DrownedLadyEntity.DEATH_LAG),
             "frozen_dominion:ice_aurochs", deathScene(IceAurochsEntity.DEATH_T, IceAurochsEntity.DEATH_LAG),
+            "frozen_dominion:frosty", deathScene(com.jastkub.frozenfortress.entity.FrostyEntity.DEATH_T,
+                    com.jastkub.frozenfortress.entity.FrostyEntity.DEATH_LAG),
             "frozen_dominion:shade_shepherd", deathScene(ShadeShepherdEntity.DEATH_T, ShadeShepherdEntity.DEATH_LAG),
             "frozen_dominion:forge_overseer", deathScene(ForgeOverseerEntity.DEATH_T, ForgeOverseerEntity.DEATH_LAG),
             "frozen_dominion:bone_lord", 70,
             // her death clip, to the shattering
             "frozen_dominion:ice_monstrosity", 124);
     /** Every scene longer than its clip - the card has time to be read, and
-     *  the boss's spoken line (BossScenes) time to be said whole. */
+     *  the boss's spoken line time to be said whole. */
     private static final int LINGER = 30;
     /** Where a keeper made whole again keeps the name of the one it took over from (sceneId). */
     public static final String SCENE = "ffScene";

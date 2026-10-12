@@ -105,7 +105,7 @@ public class HollowStaffItem extends Item {
     }
 
     // ================================================================================================ state (custom data)
-    /** A COPY of the staff's state (1.21.1: it lives in the stack's custom data); a change goes back by save(). */
+    /** A COPY of the staff's state (1.21.1: it lives in the stack's custom data); a change goes back by save. */
     static CompoundTag state(ItemStack stack) {
         return com.jastkub.frozenfortress.util.FFItemData.element(stack, TAG);
     }

@@ -38,8 +38,15 @@ public class CitadelLockBlockEntity extends BlockEntity {
     /** How far a gate may reach from its lock, and how large one may be. */
     private static final int REACH = 24;
     private static final int MAX_GATE = 1200;
-    /** Ticks between two courses of the gate going away. */
-    private static final int COURSE_TICKS = 3;
+    /** Ticks between two courses of the gate going away - a secret's masonry slower, so it is seen to give. */
+    private static final int COURSE_TICKS = 3, SECRET_COURSE_TICKS = 6;
+    /** A SECRET OPENING, SEEN: runes of frost-light run from the
+     *  worked catch to the masonry it moves, one every TRAIL_TICKS, TRAIL_STEP apart (tools/gen_secret_fx.py:
+     *  fx_secret_trail) - the masonry starts to give as the last of them reaches it, each block of it splitting and
+     *  sinking (fx_secret_crumble). No camera of its own (12.10.2026: the first secret's catch stands beside its masonry
+     *  - BY_THE_GATE in tools/citadel/citadel6.py - so the wall going is in front of whoever worked it). */
+    private static final int TRAIL_TICKS = 1;
+    private static final double TRAIL_STEP = 0.7D;
 
     private final List<ResourceLocation> keys = new ArrayList<>();
     private final Set<ResourceLocation> inserted = new LinkedHashSet<>();
@@ -51,6 +58,9 @@ public class CitadelLockBlockEntity extends BlockEntity {
     /** The gate still standing while it opens, lowest course first. */
     private final List<BlockPos> pending = new ArrayList<>();
     private int courseClock;
+    /** The secret's runes still to run to its masonry (not saved: a reload finishes the opening without them). */
+    private final List<net.minecraft.world.phys.Vec3> trail = new ArrayList<>();
+    private boolean secret;
 
     public CitadelLockBlockEntity(BlockPos pos, BlockState state) {
         super(FFBlockEntities.CITADEL_LOCK.get(), pos, state);
@@ -119,6 +129,38 @@ public class CitadelLockBlockEntity extends BlockEntity {
         serverLevel.playSound(null, worldPosition, FFSounds.VELKHAR_SWORD_PULL.get(), SoundSource.BLOCKS, 2.6F, 0.5F);
         serverLevel.playSound(null, worldPosition, FFSounds.ICE_GRIND.get(), SoundSource.BLOCKS, 2.0F, 0.6F);
         collectGate();
+        secret = pending.stream().anyMatch(p -> {
+            BlockState st = level.getBlockState(p);
+            return st.is(FFBlocks.SECRET_STONE_BRICKS.get()) || st.is(FFBlocks.SECRET_DEEPSLATE_BRICKS.get());
+        });
+        if (!secret || pending.isEmpty()) {
+            return;
+        }
+        // the runes' way: from the catch to the middle of the masonry's face on the catch's side
+        net.minecraft.world.phys.Vec3 from = net.minecraft.world.phys.Vec3.atCenterOf(worldPosition);
+        net.minecraft.world.phys.Vec3 to = nearestFace(from);
+        trail.clear();
+        double len = from.distanceTo(to);
+        int n = Math.max(2, (int) Math.ceil(len / TRAIL_STEP));
+        for (int i = 1; i <= n; i++) {
+            trail.add(from.lerp(to, i / (double) n));
+        }
+        courseClock = -trail.size() * TRAIL_TICKS - 4;          // the masonry waits for its runes
+    }
+
+    /** The middle of the waiting masonry, half a block out of it on the side `from` is on (along the larger of x, z). */
+    private net.minecraft.world.phys.Vec3 nearestFace(net.minecraft.world.phys.Vec3 from) {
+        double sx = 0, sy = 0, sz = 0;
+        for (BlockPos p : pending) {
+            sx += p.getX() + 0.5D;
+            sy += p.getY() + 0.5D;
+            sz += p.getZ() + 0.5D;
+        }
+        net.minecraft.world.phys.Vec3 mid = new net.minecraft.world.phys.Vec3(sx / pending.size(), sy / pending.size(),
+                sz / pending.size());
+        net.minecraft.world.phys.Vec3 toward = from.subtract(mid);
+        return Math.abs(toward.x) >= Math.abs(toward.z)
+                ? mid.add(Math.signum(toward.x) * 0.6D, 0.0D, 0.0D) : mid.add(0.0D, 0.0D, Math.signum(toward.z) * 0.6D);
     }
 
     /** Every gate block joined to this lock face to face, lowest first. */
@@ -167,21 +209,42 @@ public class CitadelLockBlockEntity extends BlockEntity {
         if (lock.pending.isEmpty() || !(level instanceof ServerLevel serverLevel)) {
             return;
         }
-        if (++lock.courseClock < COURSE_TICKS) {
+        if (!lock.trail.isEmpty() && Math.floorMod(lock.courseClock, TRAIL_TICKS) == 0) {
+            net.minecraft.world.phys.Vec3 at = lock.trail.remove(0);
+            com.jastkub.frozenfortress.entity.AttackFxEntity.spawn(serverLevel, "secret_trail", at,
+                    serverLevel.random.nextFloat() * 360.0F, 1.0F, 28, null);
+            if (lock.trail.size() % 3 == 0) {
+                serverLevel.playSound(null, BlockPos.containing(at), SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.BLOCKS,
+                        0.7F, 1.2F + 0.4F * serverLevel.random.nextFloat());
+            }
+        }
+        if (++lock.courseClock < (lock.secret ? SECRET_COURSE_TICKS : COURSE_TICKS)) {
             return;
         }
         lock.courseClock = 0;
         // one course of the gate goes - the lowest still standing
         int y = lock.pending.get(0).getY();
+        BlockPos last = null;
         while (!lock.pending.isEmpty() && lock.pending.get(0).getY() == y) {
             BlockPos p = lock.pending.remove(0);
             if (isGate(level.getBlockState(p))) {
                 level.setBlock(p, Blocks.AIR.defaultBlockState(), 3);
-                serverLevel.sendParticles(FFParticles.ICE_SHARD.get(),
-                        p.getX() + 0.5D, p.getY() + 0.5D, p.getZ() + 0.5D, 3, 0.3D, 0.3D, 0.3D, 0.05D);
+                if (lock.secret) {
+                    // the block splitting along a seam of light, its chunks sinking into a breath of frost
+                    com.jastkub.frozenfortress.entity.AttackFxEntity.spawn(serverLevel, "secret_crumble",
+                            net.minecraft.world.phys.Vec3.atBottomCenterOf(p), 90.0F * serverLevel.random.nextInt(4),
+                            1.0F, 26, null);
+                } else {
+                    serverLevel.sendParticles(FFParticles.ICE_SHARD.get(),
+                            p.getX() + 0.5D, p.getY() + 0.5D, p.getZ() + 0.5D, 3, 0.3D, 0.3D, 0.3D, 0.05D);
+                }
+                last = p;
             }
         }
         serverLevel.playSound(null, pos, SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS, 1.0F, 0.5F);
+        if (lock.secret && last != null) {
+            serverLevel.playSound(null, last, SoundEvents.DEEPSLATE_BRICKS_BREAK, SoundSource.BLOCKS, 1.6F, 0.6F);
+        }
         if (lock.pending.isEmpty()) {
             serverLevel.playSound(null, pos, SoundEvents.IRON_DOOR_CLOSE, SoundSource.BLOCKS, 2.0F, 0.5F);
         }

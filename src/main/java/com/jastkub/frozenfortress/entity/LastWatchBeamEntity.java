@@ -56,6 +56,14 @@ public class LastWatchBeamEntity extends Entity implements GeoEntity {
         entityData.set(SPLIT, split);
     }
 
+    /** Ticks it shines (LIFE: the Last Watch's whole clip; the Vault Warden's sweep, a few at a time). */
+    private int lasting = LIFE;
+
+    public LastWatchBeamEntity lasting(int ticks) {
+        this.lasting = ticks;
+        return this;
+    }
+
     public Vector3f dir() {
         return entityData.get(DIR);
     }
@@ -80,7 +88,7 @@ public class LastWatchBeamEntity extends Entity implements GeoEntity {
     @Override
     public void tick() {
         super.tick();
-        if (!level().isClientSide && tickCount >= LIFE) {
+        if (!level().isClientSide && tickCount >= lasting) {
             discard();
         }
     }

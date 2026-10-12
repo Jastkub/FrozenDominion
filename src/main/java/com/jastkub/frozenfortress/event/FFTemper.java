@@ -27,7 +27,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 
 /**
- * TEMPERING (the crafting plan's fourth phase): a part of one of the citadel's
+ * TEMPERING: a part of one of the citadel's
  * creatures, set in the Frost Anvil's core with a piece of Everfrost or Kingsrime gear, tempers it - the recipes
  * (recipes/temper_*.json, tools/gen_temper_recipes.py) leave the kind in the item's tag, and this reads it:
  *

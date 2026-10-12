@@ -1,88 +1,27 @@
-citadel_dark_cave.ogg
-  "Dark Cave (Opening, trailer, epic music, Free CCBY)" by SunixMuz
-  https://freesound.org/s/767841/
-  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
-  https://creativecommons.org/licenses/by/4.0/
-  Converted to Ogg Vorbis and normalised; otherwise unchanged.
-  Music by SunixMuz, licensed under CC BY.
+Music
+=====
 
-turnkey_dark_castle.ogg (the Turnkey's fight)
-  "Dark Castle (Opening, trailer, epic music, Free CCBY)" by SunixMuz
-  https://freesound.org/s/767840/
-  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
-  https://creativecommons.org/licenses/by/4.0/
-  From the HQ preview; loudness matched to the citadel's theme, 30 ms fades at
-  the ends for the loop; otherwise unchanged.
-  Music by SunixMuz, licensed under CC BY.
+The boss fights and the citadel are original compositions for Frozen Dominion
+(Jastkub). No one else's music is used. Their scores are in tools/music/ - one
+script a piece - and tools/music/render_all.py plays them into this folder.
 
-priestess_blessed_hall.ogg (the Priestess's fight)
-  "Blessed Hall (Opening, trailer, epic music, Free CCBY)" by SunixMuz
-  https://freesound.org/s/767837/
-  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
-  https://creativecommons.org/licenses/by/4.0/
-  From the HQ preview; loudness matched to the citadel's theme, 30 ms fades at
-  the ends for the loop; otherwise unchanged.
-  Music by SunixMuz, licensed under CC BY.
+citadel_theme.ogg       the citadel, while it is explored
+                        "Halls of the Frozen Dominion"
+turnkey_fight.ogg       the Turnkey             "The Last Lock"
+priestess_fight.ogg     the Rime Priestess      "Litany of Rime"
+lamplighter_fight.ogg   the Lamplighter         "Last Light"
+shepherd_fight.ogg      the Shade Shepherd      "Dance of Shades"
+overseer_fight.ogg      the Forge Overseer      "The Cold Forge"
+bone_lord_fight.ogg     the Bone Lord           "Over the Chasm"
+drowned_fight.ogg       the Drowned Lady        "Beneath the Black Ice"
+aurochs_fight.ogg       the Ice Aurochs         "Stampede"
+frosty_fight.ogg        Frosty                  "The Hunt of the Alpha"
+monstrosity_fight.ogg   the Ice Monstrosity     "The Colossus Wakes"
 
-monstrosity_battle_melody.ogg (the Ice Monstrosity's fight)
-  "Battle Melody (Opening, trailer, epic music, Free CCBY)" by SunixMuz
-  https://freesound.org/s/767835/
-  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
-  https://creativecommons.org/licenses/by/4.0/
-  From the HQ preview; loudness matched to the citadel's theme, trimmed of
-  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
-  Music by SunixMuz, licensed under CC BY.
+Instruments: performed with the samples of the Versilian Studios Chamber
+Orchestra 2 Community Edition (VSCO 2 CE, https://github.com/sgossner/VSCO-2-CE),
+released under CC0 1.0 (public domain) - no attribution required; named here
+as the instruments the music is played on.
 
-drowned_fountain_of_life.ogg (the Drowned Lady's fight)
-  "Fountain of Life (Opening, trailer, epic music, Free CCBY)" by SunixMuz
-  https://freesound.org/s/767845/
-  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
-  https://creativecommons.org/licenses/by/4.0/
-  From the HQ preview; loudness matched to the citadel's theme, trimmed of
-  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
-  Music by SunixMuz, licensed under CC BY.
-
-aurochs_brave_fight.ogg (the Ice Aurochs's fight)
-  "Brave Fight (Opening, trailer, epic music, Free CCBY)" by SunixMuz
-  https://freesound.org/s/767838/
-  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
-  https://creativecommons.org/licenses/by/4.0/
-  From the HQ preview; loudness matched to the citadel's theme, trimmed of
-  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
-  Music by SunixMuz, licensed under CC BY.
-
-shepherd_devil_dance.ogg (the Shade Shepherd's fight)
-  "Devil Dance (Opening, trailer, epic music, Free CCBY)" by SunixMuz
-  https://freesound.org/s/767842/
-  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
-  https://creativecommons.org/licenses/by/4.0/
-  From the HQ preview; loudness matched to the citadel's theme, trimmed of
-  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
-  Music by SunixMuz, licensed under CC BY.
-
-overseer_battle_of_avalon.ogg (the Forge Overseer's fight)
-  "Battle Of Avalon (Opening, trailer, epic music, Free CCBY)" by SunixMuz
-  https://freesound.org/s/767836/
-  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
-  https://creativecommons.org/licenses/by/4.0/
-  From the HQ preview; loudness matched to the citadel's theme, trimmed of
-  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
-  Music by SunixMuz, licensed under CC BY.
-
-lamplighter_bravery.ogg (the Lamplighter's fight)
-  "Bravery (Opening, trailer, epic music, Free CCBY)" by SunixMuz
-  https://freesound.org/s/767839/
-  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
-  https://creativecommons.org/licenses/by/4.0/
-  From the HQ preview; loudness matched to the citadel's theme, trimmed of
-  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
-  Music by SunixMuz, licensed under CC BY.
-
-bone_lord_an_epic_journey.ogg (the Bone Lord's chase)
-  "An Epic Journey (Opening, trailer, epic music, Free CCBY)" by SunixMuz
-  https://freesound.org/s/767834/
-  Licensed under Creative Commons Attribution 4.0 (CC BY 4.0)
-  https://creativecommons.org/licenses/by/4.0/
-  From the HQ preview; loudness matched to the citadel's theme, trimmed of
-  silence, 30 ms fades at the ends for the loop; otherwise unchanged.
-  Music by SunixMuz, licensed under CC BY.
+velkhar_phase1.ogg, velkhar_phase2.ogg, velkhar_phase3.ogg, velkhar_outro.ogg
+and silent_winter.ogg (the music disc) are not made by those scripts.

@@ -341,7 +341,7 @@ public class VelkharRenderer extends FrostGeoRenderer<VelkharEntity> {
     /**
      * One plate off, children put back.
      *
-     * <p>setHidden() also hides children - it calls setChildrenHidden() on the
+     * <p>setHidden also hides children - it calls setChildrenHidden on the
      * way through, which is not obvious from the name and has already broken
      * the visor once in this file. The plate bones hang off the harness bones,
      * so hiding a pauldron plate would take the arm with it.
@@ -423,7 +423,7 @@ public class VelkharRenderer extends FrostGeoRenderer<VelkharEntity> {
         // BEFORE ANYTHING ELSE, and before any recursion: see clearWeaponPath.
         clearWeaponPath(model);
         // THE SHIELD IS DECIDED AT DRAW TIME NOW, with the weapons - see
-        // carries(). It was the last bone left writing visibility onto the
+        // carries. It was the last bone left writing visibility onto the
         // shared model, and it duly produced the same bug the sword had:
         // summon a king after an earlier one died holding no shield, and the
         // new one arrives bare, because the dying one wrote "hidden" onto the
@@ -462,8 +462,8 @@ public class VelkharRenderer extends FrostGeoRenderer<VelkharEntity> {
         // simply never appears - which is a silent failure on the one attack
         // whose entire point is a thing you can see. The state is the same
         // information arriving by a second road.
-        // WHAT HE CARRIES IS NOT DECIDED HERE ANY MORE. See carries() and the
-        // renderRecursively override below: setHidden() writes to a model that
+        // WHAT HE CARRIES IS NOT DECIDED HERE ANY MORE. See carries and the
+        // renderRecursively override below: setHidden writes to a model that
         // every Velkhar in the world shares, so it could never be right for
         // more than one of them at a time.
         // ONE SWORD AT A TIME. The greatsword is in the same fist the ice one
@@ -531,7 +531,7 @@ public class VelkharRenderer extends FrostGeoRenderer<VelkharEntity> {
         // The head swaps on the frame the mask comes off.
         boolean tearing = animatable.isDiscardingVisor();
         boolean unmasked = animatable.getPhase() >= 3 && animatable.isMaskOff();
-        // setHidden() ALSO HIDES CHILDREN - it calls setChildrenHidden() on the
+        // setHidden ALSO HIDES CHILDREN - it calls setChildrenHidden on the
         // way through, which is not obvious from the name and is exactly what
         // broke this. The visor rides on the head, so hiding the head took the
         // visor down with it, the layer was never walked for that bone, and the
@@ -843,7 +843,7 @@ public class VelkharRenderer extends FrostGeoRenderer<VelkharEntity> {
         if (flash >= 0.0F && flash < FLASH_TICKS) {
             renderFlash(poseStack, bufferSource, flash / FLASH_TICKS, 7.0F, 0.92F, 0.97F, 1.0F, 1.0F);
         }
-        // THE PHASE BREAK'S LIGHT (08.10.2026: "lepsza i ladniejsza animacje pekania zbroi"): on the frame the plate
+        // THE PHASE BREAK'S LIGHT: on the frame the plate
         // goes, the light that was holding it together leaves him all at once - the same shell and floor ring as the
         // third transition's flash, colder, smaller and quicker, under the pieces flying out through it
         float broke = entity.tickCount - entity.breakFlashAt + partialTick;

@@ -25,14 +25,14 @@ public class HollowGolemRenderer extends GeoEntityRenderer<HollowGolemEntity> {
     public HollowGolemRenderer(EntityRendererProvider.Context context) {
         super(context, new GolemModel());
         this.shadowRadius = 1.6F;
-        // (the orb is drawn in render() now: light gathering before its palm, see drawOrb)
+        // (the orb is drawn in render now: light gathering before its palm, see drawOrb)
         addRenderLayer(new GolemBreathLayer(this));
         addRenderLayer(new GolemSaddleLayer(this));
         // ONLY IF THERE IS SOMETHING TO GLOW.
         //
         // This layer is not free to add speculatively: GeckoLib builds its
         // emissive texture by scanning the mask for lit pixels and throws if
-        // it finds none, from inside render() - so a hide with nothing lit on
+        // it finds none, from inside render - so a hide with nothing lit on
         // it does not lose its glow, it crashes the client the first frame the
         // golem is visible. The flat-ice pass produced exactly that, because
         // the simplified shapes carry no ice_core anywhere.
@@ -250,7 +250,7 @@ public class HollowGolemRenderer extends GeoEntityRenderer<HollowGolemEntity> {
             }
             float yaw = net.minecraft.util.Mth.clamp(data.netHeadYaw(), -HEAD_YAW, HEAD_YAW) * k;
             float pitch = net.minecraft.util.Mth.clamp(data.headPitch(), -HEAD_PITCH, HEAD_PITCH) * k;
-            //  walking straight at you
+            // walking straight at you
             // it has no reason to look aside, so its head swings with its gait too: side to side once a stride, the
             // heavier the stride the further
             float stride = net.minecraft.util.Mth.clamp(state.getLimbSwingAmount() * 1.6F, 0.0F, 1.0F);

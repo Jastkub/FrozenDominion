@@ -45,7 +45,7 @@ public class DrownedTideEntity extends Entity implements GeoEntity {
     static final double BAND = 0.8D;
     /** Feet this far over the floor go over the crest. */
     static final double CLEAR = 0.9D;
-    static final float DMG = 10.0F;
+    static final float DMG = 14.0F;                       // (11.10.2026: 10)
 
     private static final RawAnimation PLAY = RawAnimation.begin().thenPlayAndHold("animation.drowned_tide.play");
 

@@ -100,6 +100,9 @@ public final class FFItems {
             ITEMS.register("shepherd_bell", () -> new Item(new Item.Properties().rarity(Rarity.EPIC).fireResistant()));
     public static final DeferredHolder<Item, Item> DROWNED_BRAID =
             ITEMS.register("drowned_braid", () -> new Item(new Item.Properties().rarity(Rarity.EPIC).fireResistant()));
+    /** Frosty's (11.10.2026): it took the Lady's braid's place in Sovereign's Lament - every part in one weapon. */
+    public static final DeferredHolder<Item, Item> FROSTY_FANG =
+            ITEMS.register("frosty_fang", () -> new Item(new Item.Properties().rarity(Rarity.EPIC).fireResistant()));
     public static final DeferredHolder<Item, Item> LANTERN_LENS =
             ITEMS.register("lantern_lens", () -> new Item(new Item.Properties().rarity(Rarity.EPIC).fireResistant()));
     public static final DeferredHolder<Item, Item> TURNKEY_CHAIN =
@@ -212,6 +215,9 @@ public final class FFItems {
     /** The Glacier Ring: nothing moves its wearer (09.10.2026). */
     public static final DeferredHolder<Item, Item> GLACIER_RING =
             ITEMS.register("glacier_ring", com.jastkub.frozenfortress.item.GlacierRingItem::new);
+    /** A Vigil Shard: given to a Frost Shrine, one rising before it (11.10.2026). */
+    public static final DeferredHolder<Item, Item> VIGIL_SHARD =
+            ITEMS.register("vigil_shard", com.jastkub.frozenfortress.item.VigilShardItem::new);
     /** A Gale Feather: one fall into the Eye of the Storm turned back, spent (08.10.2026). */
     public static final DeferredHolder<Item, Item> GALE_FEATHER =
             ITEMS.register("gale_feather", com.jastkub.frozenfortress.item.GaleFeatherItem::new);
@@ -374,6 +380,9 @@ public final class FFItems {
             () -> new DeferredSpawnEggItem(FFEntities.SHADE_SHEPHERD, 0x24242F, 0xA8A294, new Item.Properties()));
     public static final DeferredHolder<Item, Item> SHADE_SPAWN_EGG = ITEMS.register("shade_spawn_egg",
             () -> new DeferredSpawnEggItem(FFEntities.SHADE, 0x2A2838, 0x9EF0FF, new Item.Properties()));
+    public static final DeferredHolder<Item, Item> FROSTY_SPAWN_EGG =
+            ITEMS.register("frosty_spawn_egg", () -> new DeferredSpawnEggItem(FFEntities.FROSTY,
+                    0x7C889C, 0xC4ECFF, new Item.Properties()));
     public static final DeferredHolder<Item, Item> ICE_AUROCHS_SPAWN_EGG =
             ITEMS.register("ice_aurochs_spawn_egg", () -> new DeferredSpawnEggItem(FFEntities.ICE_AUROCHS,
                     0x2E3A4E, 0xB2DEF4, new Item.Properties()));

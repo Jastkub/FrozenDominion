@@ -86,7 +86,7 @@ public class IceBoulderEntity extends Entity implements GeoEntity {
 
     /** Sends it on its way. Called by Velkhar on the frame he punches it. */
     /** Blocks a tick once thrown. See the note in hurlAt. */
-    // 0.66 (0.52 until 06.10.2026): still a rock, not a bullet
+    // 0.66: still a rock, not a bullet
     private static final double HURL_SPEED = 0.66D;
 
     /**

@@ -65,7 +65,7 @@ import java.util.List;
  *   <li>HOOK (Hak Pasterza) - the crook wound back over his shoulder, the bell jangling ({@link #HOOK_TELL} ticks):
  *   then swept round and down, three blocks out before him - what it catches is dragged in to his feet (and
  *   two of his herd sent at it).</li>
- *   <li>DASH (Smuga Cienia) - from six to
+ *   <li>DASH - from six to
  *   eighteen blocks off: he gathers, low, the bell jangling (0.3 s), and glides at you in eight ticks however far,
  *   leaving his shadow behind him at every one (ShadeAfterimageEntity) - to where you stood, not after you - and ends
  *   it in his hook. Step aside while he glides and the hook finds nothing.</li>
@@ -73,7 +73,7 @@ import java.util.List;
  *   blows: his breath goes out to the fire as a thing of its own (ShadeShepherdGustEntity, fx_shade_gust) and puts it
  *   out with a hiss. It can be stopped: step into its path (it chills you instead) or strike it from the air.</li>
  *   <li>CALL and SEND - the herd, above, in waves.</li>
- *   <li>PULSE (Puls Mroku; his second half only) - the crook raised over his head, the bell tolled twice, slow, and
+ *   <li>PULSE - the crook raised over his head, the bell tolled twice, slow, and
  *   the dark gathering at his feet; then the crook driven into the floor and a ring of shadow runs out from him to
  *   the far walls (ShadePulseEntity): every fire of his chamber goes out, and whoever does not jump it is struck and
  *   blinded.</li>
@@ -134,7 +134,7 @@ public class ShadeShepherdEntity extends FrostServantEntity implements GateKeepe
     static final double HOOK_TO = 1.8D;
     /** The dash: from this far to this far (flat), and it ends this far short of where you stood. */
     static final double DASH_MIN = 6.0D, DASH_MAX = 18.0D, DASH_STOP = 2.2D;
-    static final float SHIELD_PER = 0.12F, SHIELD_MAX = 0.48F;
+    static final float SHIELD_PER = 0.14F, SHIELD_MAX = 0.70F;          // (11.10.2026: 0.12 / 0.48)
     static final int HERD_CAP = 5, HERD_CAP_TWO = 7;
     /** How far he wakes to (flat), and how far he keeps from where he was put. */
     static final double WAKE_R = 16.0D;
@@ -143,8 +143,8 @@ public class ShadeShepherdEntity extends FrostServantEntity implements GateKeepe
     static final double ROOM = 40.0D;
     /** What his chamber all dark does at most: his rests shortened by half, his waits between attacks by two fifths,
      *  his walk and his hook four tenths up - and his herd's bite six tenths up (ShadeEntity). */
-    static final float DARK_REST = 0.5F, DARK_WAIT = 0.4F, DARK_SPEED = 0.4F, DARK_HOOK = 0.4F;
-    public static final float DARK_HERD = 0.6F;
+    static final float DARK_REST = 0.6F, DARK_WAIT = 0.5F, DARK_SPEED = 0.55F, DARK_HOOK = 0.6F;   // (11.10.2026: harder)
+    public static final float DARK_HERD = 0.9F;
     private static final net.minecraft.resources.ResourceLocation DARK_SPEED_ID = com.jastkub.frozenfortress.FrozenFortress.id("shepherd_dark");
 
     private static final EntityDataAccessor<Boolean> DORMANT =
@@ -202,7 +202,7 @@ public class ShadeShepherdEntity extends FrostServantEntity implements GateKeepe
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 240.0D)
+                .add(Attributes.MAX_HEALTH, 276.0D)          // (+15%: 11.10.2026)
                 .add(Attributes.ATTACK_DAMAGE, 8.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.24D)
                 .add(Attributes.ARMOR, 6.0D)
@@ -790,6 +790,14 @@ public class ShadeShepherdEntity extends FrostServantEntity implements GateKeepe
     }
 
     // ------------------------------------------------------------------------------------------------ hurt, death
+    /** The miniboss's ceiling (BossCeiling), lifted while it is open: his herd all gone. */
+    private final BossCeiling ceiling = new BossCeiling();
+
+    @Override
+    protected float getDamageAfterMagicAbsorb(DamageSource source, float amount) {
+        return ceiling.apply(this, source, super.getDamageAfterMagicAbsorb(source, amount), herdCount == 0);
+    }
+
     @Override
     public boolean hurt(DamageSource source, float amount) {
         if (level().isClientSide) {

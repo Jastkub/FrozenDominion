@@ -46,7 +46,7 @@ import java.util.Optional;
  * - which is exactly where his head is. Everything was right except where the
  * vertices were going.
  *
- * <p>The bone still drives it. {@link GeoBone#getModelSpaceMatrix()} carries
+ * <p>The bone still drives it. {@link GeoBone#getModelSpaceMatrix} carries
  * bone-local coordinates into model space, so head tracking and the
  * third-phase fall come along with no extra machinery, and the mesh is
  * authored bone-local to match.
@@ -80,8 +80,8 @@ public class MaskMeshLayer extends GeoRenderLayer<VelkharEntity> {
      * reconstructions have failed: renderForBone is the right SPACE but the
      * wrong place to draw, because MultiBufferSource keeps one active builder
      * and asking for another mid-model throws the vertices away; and
-     * getModelSpaceMatrix() is relative to the model root while a layer's
-     * render() runs at entity level, and the difference is a matrix GeckoLib
+     * getModelSpaceMatrix is relative to the model root while a layer's
+     * render runs at entity level, and the difference is a matrix GeckoLib
      * does not expose. Taking a copy of the matrix where it is correct and
      * restoring it where the buffer works needs no theory about either.
      */

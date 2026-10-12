@@ -88,7 +88,7 @@ public class PortcullisEntity extends Entity implements GeoEntity {
     }
 
     /** Four high, a hand's breadth thick, turned with the grate - and closed at the corners
-     *  the north and south grates reach out over the corners, the east
+     *: the north and south grates reach out over the corners, the east
      *  and west ones in to meet them, so the four walls of the cage leave no gap. */
     @Override
     protected AABB makeBoundingBox() {

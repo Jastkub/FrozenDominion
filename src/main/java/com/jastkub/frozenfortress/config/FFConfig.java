@@ -74,6 +74,12 @@ public final class FFConfig {
         public final ModConfigSpec.BooleanValue partyFocus;
         public final ModConfigSpec.BooleanValue partyTrophies;
 
+        public final ModConfigSpec.DoubleValue bossHitCap;
+        public final ModConfigSpec.DoubleValue bossSecondCap;
+        public final ModConfigSpec.DoubleValue bossDamageFloor;
+        public final ModConfigSpec.DoubleValue bossHealthScaling;
+        public final ModConfigSpec.DoubleValue bossHealthScalingMax;
+
         Common(ModConfigSpec.Builder b) {
             b.comment("How the fight behaves. Must match across a server.").push("fight");
 
@@ -173,6 +179,34 @@ public final class FFConfig {
                     .comment("Each player who fought it gets their own trophy (only they can pick it up),",
                              "and Velkhar leaves a hoard chest for each. Keys stay single.")
                     .define("personalTrophies", true);
+            b.pop();
+
+            //
+            b.comment("Against gear from other mods that makes the citadel trivial: the minibosses cannot be",
+                      "burst down past their mechanics, and their blows (and the Vault Warden's) still land through",
+                      "any armour. Velkhar and the Monstrosity are left out: their blows assume such gear already.")
+                    .push("hardness");
+            bossHitCap = b
+                    .comment("The most one blow takes off a miniboss outside its open windows (after its armour),",
+                             "times its party health factor. Its windows (stunned, spent, its core bare) lift it.")
+                    .defineInRange("minibossHitCap", 16.0D, 1.0D, 10000.0D);
+            bossSecondCap = b
+                    .comment("The most a miniboss loses in one second outside its windows (same rules).")
+                    .defineInRange("minibossSecondCap", 24.0D, 1.0D, 10000.0D);
+            bossDamageFloor = b
+                    .comment("The least of a boss's blow that reaches a player whatever protects them - armour,",
+                             "enchantments, resistance, other mods' damage reduction - as a share of the blow.",
+                             "Full vanilla netherite with Protection IV leaves about 0.13; 0 turns this off.",
+                             "A shield that blocks the blow still blocks all of it.")
+                    .defineInRange("bossDamageFloor", 0.2D, 0.0D, 1.0D);
+            bossHealthScaling = b
+                    .comment("Boss blows grow with a player's maximum health over the vanilla twenty, to this",
+                             "power: damage x (maxHealth / 20) ^ scaling. 0 turns it off; 1 keeps every blow the",
+                             "same share of anyone's health.")
+                    .defineInRange("bossHealthScaling", 0.75D, 0.0D, 1.0D);
+            bossHealthScalingMax = b
+                    .comment("...but never more than this many times the blow.")
+                    .defineInRange("bossHealthScalingMax", 4.0D, 1.0D, 100.0D);
             b.pop();
         }
 

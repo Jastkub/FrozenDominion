@@ -11,7 +11,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Each floor's best things lie in chests bound in chains. They say the citadel never gives the same talisman twice - whoever finds a repeat gets something else."
+      "text": "Every chest of the citadel is bound in chains. The key can be put together even in your inventory, no table needed. They say the citadel never gives the same talisman twice - whoever finds a repeat gets something else."
     }
   ],
   "advancement": "frozen_dominion:root"

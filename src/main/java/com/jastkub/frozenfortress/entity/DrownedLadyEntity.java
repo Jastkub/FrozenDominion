@@ -178,7 +178,7 @@ public class DrownedLadyEntity extends FrostServantEntity implements GateKeeper 
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 220.0D)
+                .add(Attributes.MAX_HEALTH, 253.0D)          // (+15%: 11.10.2026)
                 .add(Attributes.ATTACK_DAMAGE, 8.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.23D)
                 .add(Attributes.ARMOR, 6.0D)
@@ -806,6 +806,14 @@ public class DrownedLadyEntity extends FrostServantEntity implements GateKeeper 
     }
 
     // ------------------------------------------------------------------------------------------------ hurt, death
+    /** The miniboss's ceiling (BossCeiling), lifted while it is open: reeling, her hands broken. */
+    private final BossCeiling ceiling = new BossCeiling();
+
+    @Override
+    protected float getDamageAfterMagicAbsorb(DamageSource source, float amount) {
+        return ceiling.apply(this, source, super.getDamageAfterMagicAbsorb(source, amount), getAttackState() == STUNNED);
+    }
+
     @Override
     public boolean hurt(DamageSource source, float amount) {
         if (!woundBlow && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
@@ -848,7 +856,7 @@ public class DrownedLadyEntity extends FrostServantEntity implements GateKeeper 
         bossEvent.removeAllPlayers();
         super.die(source);
         if (!level().isClientSide) {
-            // her way out north rises (its exit gate)
+            // her way out north rises
             com.jastkub.frozenfortress.block.entity.BossGateBlockEntity.keeperFell(level(), this);
             // the floor is hers no longer: the holes skin over, the runes sink back, her shape and hands are gone
             for (DrownedIcePlateEntity p : myPlates()) {
@@ -1068,7 +1076,8 @@ public class DrownedLadyEntity extends FrostServantEntity implements GateKeeper 
                 chosen = LASH;
             } else if (floor) {
                 // weighed, so no fight goes the same way twice; each one only when its time has come round again
-                int wBreak = perAttack[BREAK] <= 0 && mob.openPlates() < (two ? MAX_HOLES_TWO : MAX_HOLES) - 1 ? 3 : 0;
+                //
+                int wBreak = perAttack[BREAK] <= 0 && mob.openPlates() < (two ? MAX_HOLES_TWO : MAX_HOLES) - 1 ? 5 : 0;
                 int wGrasp = perAttack[SINK] <= 0 && !onRune && dist > 3.0D ? 2 : 0;
                 int wTide = perAttack[TIDE] <= 0 && dist < DrownedTideEntity.R1 - 1.0D ? (mob.openPlates() >= 2 ? 3 : 2) : 0;
                 int sum = wBreak + wGrasp + wTide;
@@ -1084,7 +1093,7 @@ public class DrownedLadyEntity extends FrostServantEntity implements GateKeeper 
             }
             perAttack[chosen] = switch (chosen) {
                 case LASH -> 30;
-                case BREAK -> two ? 110 : 140;                 // (second half: a small break between the great ones)
+                case BREAK -> two ? 70 : 90;                   // (second half: a small break between the great ones; 12.10.2026: was 110 / 140)
                 case SINK -> two ? 200 : 260;
                 case TIDE -> two ? 240 : 320;
                 default -> 0;

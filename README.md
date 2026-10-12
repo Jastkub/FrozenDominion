@@ -45,5 +45,6 @@ models, textures, sounds and the guide are generated with.
 **All Rights Reserved** © 2026 Jastkub. You may read the source and build it for your own use. **Modpacks on
 CurseForge are welcome.** Anything else — redistribution, ports, reuse of code or assets — please ask first.
 
-Third-party material keeps its own license: music by SunixMuz and others under CC BY 4.0 (see `CREDITS.txt`), and
-the libraries in `libs/` under their own (MIT) licenses.
+The music is original, written for Frozen Dominion and played with the samples of the VSCO 2 Community Edition
+(CC0; see `sounds/music/CREDITS.txt`). Third-party material keeps its own license: the libraries in `libs/` under
+their own (MIT) licenses.

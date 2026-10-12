@@ -33,7 +33,7 @@ public class VelkharCloneEntity extends Monster implements GeoEntity {
     // A copy woven in the second phase stands and moves like the second-phase
     // king, not like the phase-one tank. It used to loop the phase-one idle -
     // upright, braced, square - so beside a hunched Velkhar it read as a
-    // different, stiffer man standing to attention. Same coiled arc
+    // different, stiffer man standing to attention: "jak cioł". Same coiled arc
     // and same run he uses now.
     private static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.velkhar.idle_duel");
     private static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.velkhar.run2");
@@ -228,7 +228,7 @@ public class VelkharCloneEntity extends Monster implements GeoEntity {
      * <p>The set piece drives them: every tick of PHANTOM_EDGE he pushes his
      * attack tick into each copy, and at tick 60 he pushes -1 to cut them
      * loose. That works perfectly as long as the attack RUNS TO THE END - and
-     * it does not have to. finish() can be called from the watchdog, from a
+     * it does not have to. finish can be called from the watchdog, from a
      * phase change, from anything that interrupts him. The moment it is, the
      * loop that would have released them stops running, and they are left
      * holding a rite tick nobody will ever clear.
@@ -389,7 +389,7 @@ public class VelkharCloneEntity extends Monster implements GeoEntity {
     // the fight. A thing that dies to a single hit has to be worth killing
     // quickly, or ignoring it is simply correct play.
     //
-    // Raw damage, not hearts - these go straight to hurt() and always have,
+    // Raw damage, not hearts - these go straight to hurt and always have,
     // which is right here because a copy is not him and does not draw on his
     // lifesteal, his floor or his phase scaling.
     // ================================================================
@@ -709,7 +709,7 @@ public class VelkharCloneEntity extends Monster implements GeoEntity {
             }
             if (mob.inRite()) {
                 if (mob.riteTick() < EDGE_FORM) {
-                    // beside him, not at the player - see escortTo()
+                    // beside him, not at the player - see escortTo
                     if (mob.escorting) {
                         mob.getNavigation().moveTo(mob.escortX, mob.getY(),
                                                    mob.escortZ, 1.45D);
@@ -726,7 +726,7 @@ public class VelkharCloneEntity extends Monster implements GeoEntity {
             if (mob.tickMove(target)) {
                 return;
             }
-            // (07.10.2026: "naprawilbym raz na zawsze") TO ITS MARK, PATH OR NO PATH. A path asked for every tick was
+            // TO ITS MARK, PATH OR NO PATH. A path asked for every tick was
             // thrown away every tick, and among the hall's pillars a path that will not come leaves it standing there:
             // the path is asked for twice a second, and whenever there is none it simply steers straight at them
             if (++repath >= 10 || mob.getNavigation().isDone()) {
@@ -775,7 +775,7 @@ public class VelkharCloneEntity extends Monster implements GeoEntity {
             if (swinging) {
                 return state.setAndContinue(SLASH);
             }
-            // Movement read from the actual position delta, not state.isMoving().
+            // Movement read from the actual position delta, not state.isMoving.
             // The copy is AI-driven, so its velocity is not simulated on the
             // client - it slides in the idle pose exactly the way HE did until
             // the same fix. xo/zo -> position is the real on-screen travel.

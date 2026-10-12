@@ -194,7 +194,7 @@ public final class KingsrimeItems {
         }
     }
 
-    /** Frostbite on every hit; every eighth drives a line of ice spikes ahead (it was every third). */
+    /** Frostbite on every hit; every eighth drives a line of ice spikes ahead. */
     public static class KingsrimeSword extends SwordItem {
         private static final String HITS = "frozen_dominion:hits";
         private static final int SPIKES_EVERY = 8;

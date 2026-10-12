@@ -82,7 +82,7 @@ public class LamplighterEntity extends FrostServantEntity implements GateKeeper 
     public static final float BEAM_HALF = 12.0F;
     /** How far a blow of his light goes: the dome. */
     public static final double REACH = 24.0D;
-    private static final float LIT_TAKES = 0.25F;
+    private static final float LIT_TAKES = 0.10F;            // (11.10.2026: 0.25)
     private static final int FLASH_AT = 24;
     /** His own lantern: opened after this long in a pier's shadow, open this long, its light this far round him. */
     public static final int HAND_AFTER = 80, HAND_T = 160;
@@ -145,7 +145,7 @@ public class LamplighterEntity extends FrostServantEntity implements GateKeeper 
     /** How long each player has stood in the beam (ticks; below zero: the grace after it froze them). */
     private final java.util.Map<java.util.UUID, Integer> exposure = new java.util.HashMap<>();
     /**
-     * Ticks of a beam's light before it passes its VERDICT on you (see verdict()). A sweeping beam is over a man
+     * Ticks of a beam's light before it passes its VERDICT on you (see verdict). A sweeping beam is over a man
      * standing in its way for about ten ticks (eight with two beams), so it judges after six: whoever it crosses out
      * of the shadow is judged.
      * The hunting beam of the last watch stays on you as long as it likes; it takes a second.
@@ -165,7 +165,7 @@ public class LamplighterEntity extends FrostServantEntity implements GateKeeper 
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 280.0D)
+                .add(Attributes.MAX_HEALTH, 322.0D)          // (+15%: 11.10.2026)
                 .add(Attributes.ATTACK_DAMAGE, 9.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.23D)
                 .add(Attributes.ARMOR, 8.0D)
@@ -616,6 +616,14 @@ public class LamplighterEntity extends FrostServantEntity implements GateKeeper 
             playSound(SoundEvents.BEACON_ACTIVATE, 3.0F, 0.7F);
             setAttackState(0);
         }
+    }
+
+    /** The miniboss's ceiling (BossCeiling), lifted while it is open: down on his knee in the dark. */
+    private final BossCeiling ceiling = new BossCeiling();
+
+    @Override
+    protected float getDamageAfterMagicAbsorb(DamageSource source, float amount) {
+        return ceiling.apply(this, source, super.getDamageAfterMagicAbsorb(source, amount), getAttackState() == STAGGER);
     }
 
     @Override

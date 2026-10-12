@@ -174,7 +174,7 @@ public class IceSpearEntity extends Entity implements GeoEntity {
         // sideways.
         //
         // Taken off the velocity every tick rather than set once at the
-        // muzzle, because these steer - see chase(). A bolt that keeps its
+        // muzzle, because these steer - see chase. A bolt that keeps its
         // launch heading while curving onto a target is a bolt flying crabwise
         // for the second half of its flight.
         // ================================================================
@@ -295,7 +295,7 @@ public class IceSpearEntity extends Entity implements GeoEntity {
             // line of flight, so being hit pushes you the way the shot was
             // going rather than away from the shooter.
             //
-            // AFTER strikeFor, never before. hurt() applies vanilla's own
+            // AFTER strikeFor, never before. hurt applies vanilla's own
             // knockback and it overwrites anything written first - the same
             // trap that made the spire's shove do nothing.
             if (isQuarrel()) {

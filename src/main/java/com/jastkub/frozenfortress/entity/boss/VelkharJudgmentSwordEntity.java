@@ -33,7 +33,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import javax.annotation.Nullable;
 
 /**
- * LODOWY SAD - ONE OF THE THREE SPECTRAL SWORDS (Velkhar's first phase).
+ * LODOWY SAD - ONE OF THE THREE SPECTRAL SWORDS.
  *
  * <p>It forms over the spot the player stood on when he called it (half a second), hangs there point-down (the circle
  * on the floor under it - VelkharJudgmentMarkEntity - counting down), falls, and shatters on the floor: everyone

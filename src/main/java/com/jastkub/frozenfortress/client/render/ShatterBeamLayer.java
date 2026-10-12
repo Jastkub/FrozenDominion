@@ -44,7 +44,7 @@ public class ShatterBeamLayer extends GeoRenderLayer<VelkharEntity> {
     // ================================================================
     // THE ANCHORS RIDE HIS BONES.
     //
-    // They were three points written in the layer's own space - and a layer's render() is handed the pose BEFORE
+    // They were three points written in the layer's own space - and a layer's render is handed the pose BEFORE
     // GeckoLib turns the model to his heading, so "out on the left arm" was a fixed compass point: face him north
     // and the gate's beams came out of the air beside him. Each anchor is now a point on one of his bones, captured
     // in renderForBone (the pose in force at that bone), with the way its plate faces: the beams leave the gate's

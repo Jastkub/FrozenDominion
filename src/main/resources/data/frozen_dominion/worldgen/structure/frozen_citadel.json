@@ -14,6 +14,11 @@
   "terrain_level": 116,
   "tiles": [
     {
+      "name": "frozen_dominion:citadel/gb_0_2",
+      "x": 0,
+      "z": 96
+    },
+    {
       "name": "frozen_dominion:citadel/gb_0_3",
       "x": 0,
       "z": 144

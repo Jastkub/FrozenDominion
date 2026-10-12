@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Każdy z siedmiorga dworzan zostawia po sobie coś, czego nie ma nigdzie indziej. Z tego i z odłamków korony kowale wykuwali bronie, o których wyprawa tylko słyszała."
+      "text": "Każdy z dworzan - i alfa ich psiarni - zostawia po sobie coś, czego nie ma nigdzie indziej. Z tego i z odłamków korony kowale wykuwali bronie, o których wyprawa tylko słyszała."
     },
     {
       "type": "patchouli:text",
@@ -35,7 +35,7 @@
       "core": "frozen_dominion:crown_shard",
       "result": "frozen_dominion:sovereigns_lament",
       "i0": "frozen_dominion:kingsrime_sword",
-      "i1": "frozen_dominion:drowned_braid",
+      "i1": "frozen_dominion:frosty_fang",
       "i2": "frozen_dominion:shepherd_bell",
       "i3": "frozen_dominion:kingsrime_ingot",
       "i4": "frozen_dominion:kingsrime_ingot",

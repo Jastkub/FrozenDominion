@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Gniazda rodzą sługi, gdy ktoś jest blisko, ale nie bez końca. Koronołom je rozłupuje - zostaje z nich odłamek, czasem dwa.$(br2)Te odłamki są cenniejsze, niż wyglądają: bez nich nie wykujesz ani klucza do okowów, ani sztabki."
+      "text": "Gniazda rodzą sługi, gdy ktoś jest blisko, ale nie bez końca. Koronołom je rozłupuje - zostaje z nich odłamek, czasem dwa.$(br2)Te odłamki są cenniejsze, niż wyglądają: bez nich nie złożysz klucza do okowów."
     }
   ],
   "advancement": "frozen_dominion:root"
