@@ -180,5 +180,29 @@
       "frozen_dominion_spells:cast_frost_shell_release"
     ],
     "subtitle": "subtitles.frozen_dominion_spells.cast_frost_shell_release"
+  },
+  "cast_winters_sorrow_charge": {
+    "sounds": [
+      "frozen_dominion_spells:cast_winters_sorrow_charge"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_winters_sorrow_charge"
+  },
+  "cast_winters_sorrow_release": {
+    "sounds": [
+      "frozen_dominion_spells:cast_winters_sorrow_release"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_winters_sorrow_release"
+  },
+  "cast_rime_path_charge": {
+    "sounds": [
+      "frozen_dominion_spells:cast_rime_path_charge"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_rime_path_charge"
+  },
+  "cast_rime_path_release": {
+    "sounds": [
+      "frozen_dominion_spells:cast_rime_path_release"
+    ],
+    "subtitle": "subtitles.frozen_dominion_spells.cast_rime_path_release"
   }
 }

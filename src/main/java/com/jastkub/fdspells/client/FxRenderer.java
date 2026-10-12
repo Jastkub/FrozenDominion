@@ -27,8 +27,30 @@ public class FxRenderer<T extends Entity & GeoEntity & Fx> extends GeoEntityRend
 
     public FxRenderer(EntityRendererProvider.Context ctx, String kind) {
         super(ctx, new Model<>(kind));
-        addRenderLayer(new AutoGlowingGeoLayer<>(this));
+        // its light as faint as the rest of it (a ghost of a shell must not have solid glowing seams)
+        addRenderLayer(new AutoGlowingGeoLayer<>(this) {
+            @Override
+            public void render(PoseStack poses, T fx, BakedGeoModel model, RenderType type, MultiBufferSource buffers,
+                               VertexConsumer buffer, float partialTick, int light, int overlay) {
+                float a = fx.opacity(partialTick);
+                if (a >= 1.0F) {
+                    super.render(poses, fx, model, type, buffers, buffer, partialTick, light, overlay);
+                    return;
+                }
+                RenderType glow = getRenderType(fx);
+                getRenderer().reRender(model, poses, buffers, fx, glow, buffers.getBuffer(glow), partialTick,
+                        15728640, overlay, net.minecraft.util.FastColor.ARGB32.color((int) (a * 255.0F), 255, 255, 255));
+            }
+        });
         shadowRadius = 0.0F;
+    }
+
+    /** Its opacity this frame (Fx.opacity) as the colour it is drawn in. */
+    @Override
+    public software.bernie.geckolib.util.Color getRenderColor(T fx, float partialTick, int packedLight) {
+        float a = fx.opacity(partialTick);
+        return a >= 1.0F ? super.getRenderColor(fx, partialTick, packedLight)
+                : software.bernie.geckolib.util.Color.ofRGBA(1.0F, 1.0F, 1.0F, a);
     }
 
     @Override

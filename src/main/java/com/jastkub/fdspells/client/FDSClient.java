@@ -31,6 +31,7 @@ public final class FDSClient {
         e.registerEntityRenderer(FDSRegistry.FALLING_ICICLE.get(), c -> new FxRenderer<>(c, "falling_icicle"));
         e.registerEntityRenderer(FDSRegistry.FROST_JAVELIN_ENTITY.get(), c -> new FxRenderer<>(c, "frost_javelin"));
         e.registerEntityRenderer(FDSRegistry.ICE_PILLAR.get(), c -> new FxRenderer<>(c, "ice_pillar"));
+        e.registerEntityRenderer(FDSRegistry.ICE_SPIRE.get(), c -> new FxRenderer<>(c, "ice_spire"));
         e.registerEntityRenderer(FDSRegistry.FROST_SHACKLES_ENTITY.get(), c -> new FxRenderer<>(c, "frost_shackles"));
         e.registerEntityRenderer(FDSRegistry.FROST_HEART_ENTITY.get(), c -> new FxRenderer<>(c, "frost_heart"));
         e.registerEntityRenderer(FDSRegistry.FROST_RING.get(), c -> new FxRenderer<>(c, "frost_ring"));

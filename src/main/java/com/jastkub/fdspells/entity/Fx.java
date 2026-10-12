@@ -9,7 +9,7 @@ public interface Fx {
 
     String kind();
 
-    /** Turned to its yaw (and pitch, see pitched()) - a wave, a javelin; or not at all - a heart, a ring. */
+    /** Turned to its yaw (and pitch, see pitched) - a wave, a javelin; or not at all - a heart, a ring. */
     default boolean faces() {
         return false;
     }
@@ -26,6 +26,11 @@ public interface Fx {
 
     /** Scale overall this frame (things that form and melt). */
     default float size(float partialTick) {
+        return 1.0F;
+    }
+
+    /** How much of it is seen this frame (1: all of it; the Frost Shell is barely there - 12.10.2026). */
+    default float opacity(float partialTick) {
         return 1.0F;
     }
 }

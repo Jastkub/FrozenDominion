@@ -42,10 +42,22 @@ public class FrostShellEntity extends FxEntity {
         return Math.min(1.0F, (tickCount + pt) / 6.0F);
     }
 
+    /**
+     * FURTHER OFF, AND BARELY THERE: the plates stand well clear of the body - not in the
+     * caster's own eyes - and are seen as a ghost of ice, brighter for a breath as it closes.
+     */
     @Override
     public float spread(float pt) {
         LivingEntity o = owner();
-        return o != null ? Math.max(0.8F, o.getBbWidth() / 0.6F) : 1.0F;
+        return SPREAD * (o != null ? Math.max(0.8F, o.getBbWidth() / 0.6F) : 1.0F);
+    }
+
+    static final float SPREAD = 1.75F, SEEN = 0.22F;
+
+    @Override
+    public float opacity(float pt) {
+        float t = tickCount + pt;
+        return SEEN + (1.0F - SEEN) * Math.max(0.0F, 1.0F - t / 10.0F) * 0.5F;
     }
 
     @Override
